@@ -1,6 +1,13 @@
 <?php
 
-define(API_URL, 'http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=');
+define(API_KEY, 'IP');
+define(API_URL, 'http://www.esvapi.org/v2/rest/passageQuery?key='.API_KEY
+               .'&include-passage-references=false'
+               .'&include-first-verse-numbers=false'
+               .'&include-footnotes=false'
+               .'&include-footnote-links=false'
+               .'&include-surrounding-chapters=true'
+               .'&passage=');
 
 $input = array(
 	"ref"=>FILTER_SANITIZE_STRING

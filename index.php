@@ -1,12 +1,13 @@
 <?php
 
+define('SEARCH_DEFAULT', 'Type your search here...');
 define('STORY_NAME', 'name');
 define('STORY_REF', 'ref');
 
 $stories = array(
   array(STORY_NAME=>'Creation', STORY_REF=>'Genesis 1:1-2:25'),
   array(STORY_NAME=>'The Fall', STORY_REF=>'Genesis 1:1-2:25'),
-  array(STORY_NAME=>'The Flood', STORY_REF=>'Genesis 1:1-2:25'),
+  array(STORY_NAME=>'The Flood', STORY_REF=>'Psalm 1:1-160:25'),
   array(STORY_NAME=>'Leaving Egypt', STORY_REF=>'Exodus xx:yy'),
 );
 
@@ -30,39 +31,39 @@ $stories = array(
 
 <div id="search">
   <form id="searchform" onsubmit="return false;">
-    <input name="searchtext" type="text" size="50" value="Type your search here..." />
+    <input name="searchtext" type="text" size="50" value="" />
   </form>
 </div>
 
 <div id="index">
-  <table id="index_table" width="100%" cellpadding="0" cellspacing="0">
+  <table id="index_table" cellpadding="0" cellspacing="0" align="center">
     <colgroup>
+      <col width="48%"/><col width="2%"/><col width="48%"/>
       <col width="48%"/><col width="2%"/><col width="48%"/>
     </colgroup>
     <tbody>
-      <?php $count = 0; ?>
+      <?php $story_id = 0; ?>
       <?php foreach($stories as $story) : ?>
-      <tr id="story<?php echo $count; ?>" class="story">
-        <td align="right" id="story_name<?php echo $count; ?>"><?php echo $story[STORY_NAME]; ?></td>
-        <td align="center">...</td>
-        <td id="story_ref<?php echo $count; ?>" class="story_ref"><?php echo $story[STORY_REF]; ?></td>
+      <tr id="story<?php echo $story_id; ?>" class="story">
+        <td align="right" id="story_name<?php echo $story_id; ?>"><?php echo $story[STORY_NAME]; ?></td>
+        <td align="center" nowrap>&nbsp;&nbsp;&nbsp;</td>
+        <td id="story_ref<?php echo $story_id; ?>" class="story_ref"><?php echo $story[STORY_REF]; ?></td>
+      <?php $story_id++ ?>
       </tr>
-      <?php $count++ ?>
       <?php endforeach; ?>
     </tbody>
   </table>
 </div>
 
 <div id="footer">
-  Thanks to the <a href="http://www.tyndale.com">Tyndale House Publishers</a> for permitting use of the index they<br/>
-  provide with their New Living Translations Bibles. This website was<br/>
-  authored by <a href="http://leighmcculloch.com">Leigh McCulloch</a> with the goal to make this<br/>
-  useful index accessible to everyone.
+  Thanks to the <a href="http://www.tyndale.com">Tyndale House Publishers</a> for permitting use of the index they provide with their New Living Translations Bibles.
+  
+  This website was authored by <a href="http://leighmcculloch.com">Leigh McCulloch</a> with the goal to make this useful index accessible to everyone.
+  
+  Scripture quotations marked &quot;ESV&quot; are taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.
 </div>
 
 <script type="text/javascript">
-  var default_values = new Array();
-
 	$(document).ready(function() {
 		$('.story').hover(function() {
 			$(this).css('cursor','pointer');
@@ -86,25 +87,20 @@ $stories = array(
       }
       $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))').hide();
       $('#index_table tr:containsNoCase("' + $(this).val() + '")').show();
-    });
-    
-    $('input[name=searchtext]').focus(function() {
-      if (!default_values[this.id]) {
-        default_values[this.id] = this.value;
-      }
-      if (this.value == default_values[this.id]) {
+    }).focus(function() {
+      if (this.value == '<?php echo SEARCH_DEFAULT; ?>') {
         this.value = '';
       }
-      $(this).blur(function() {
-        if (this.value == '') {
-          this.value = default_values[this.id];
-        }
-      });
-    });
+    }).blur(function() {
+      if (this.value == '') {
+        this.value = '<?php echo SEARCH_DEFAULT; ?>';
+      }
+    }).value = '<?php echo SEARCH_DEFAULT; ?>';
+    
 	});
 
   function passage_pop_up(name, ref) {
-    var margin = $(document).width()/10;
+    var margin = $(document).width()/50;
     
     if($('#passage')) {
       $('#passage').remove();
@@ -128,6 +124,7 @@ $stories = array(
       },
       close: function() {
         $(this).html('Loading...');
+        $('input[name=searchtext]').focus();
       }
     });
   }

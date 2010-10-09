@@ -29,6 +29,7 @@ body {
 
 #index {
   margin:0 auto 1em auto;
+  text-align:center;
 }
 
 #footer {
@@ -36,8 +37,12 @@ body {
   text-align:center;
 }
 
-/* styles for the passages */
+/* styles for the passages below */
 .chapter-num, .verse-num, .footnote {
   vertical-align: super;
   font-size:0.7em;
+}
+
+.esv {
+  font-size:1em;
 }
