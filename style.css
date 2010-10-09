@@ -36,3 +36,8 @@ body {
   text-align:center;
 }
 
+/* styles for the passages */
+.chapter-num, .verse-num, .footnote {
+  vertical-align: super;
+  font-size:0.7em;
+}
