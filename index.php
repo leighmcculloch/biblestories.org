@@ -124,8 +124,15 @@ $stories = array(
       },
       close: function() {
         $(this).html('Loading...');
+        $(window).unbind('resize');
         $('input[name=searchtext]').focus();
       }
+    });
+    
+    $(window).bind('resize', function() {
+      $('#passage').dialog('option', 'position', $('#passage').dialog('option', 'position'))
+      .dialog('option', 'height', $(document).height()-(margin*2))
+      .dialog('option', 'width', $(document).width()-(margin*2));
     });
   }
 </script>
