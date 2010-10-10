@@ -26,7 +26,7 @@ $stories = array(
 
 <div id="header">
   <h1>Stories in the Bible</h1>
-  <h2>An index of all the stories in the Old<br/>and New Testaments of the Christian Bible.</h2>
+  <h2>An index of all the stories in the <!--Old<br/>and New Testaments of the Christian--> Bible.</h2>
 </div>
 
 <div id="search">
