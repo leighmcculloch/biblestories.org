@@ -74,24 +74,24 @@ function get_index($file) {
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('.story').hover(function() {
-			$(this).css('cursor','pointer');
-		});
-		$('.story').click(function () {
-		  var id = $(this).attr('id').replace('story','');
-		  var ref = $('#story_ref'+id).html();
-		  var name = $('#story_name'+id).html() + ' - ' + ref;
-		  passage_pop_up(name, ref);
-		});
-		
-		$.expr[":"].containsNoCase = function(el, i, m) {
+  $(document).ready(function() {
+    $('.story').hover(function() {
+      $(this).css('cursor','pointer');
+    });
+    $('.story').click(function () {
+      var id = $(this).attr('id').replace('story','');
+      var ref = $('#story_ref'+id).html();
+      var name = $('#story_name'+id).html() + ' - ' + ref;
+      passage_pop_up(name, ref);
+    });
+    
+    $.expr[":"].containsNoCase = function(el, i, m) {
       var search = m[3];
       if (!search) return true;
       return eval("/" + search + "/i").test($(el).text());
     };
-		
-		$('input[name=searchtext]').focus().keyup(function() {
+    
+    $('input[name=searchtext]').focus().keyup(function() {
       if (event.keyCode == 27) {
         $(this).val('');
       }
@@ -107,7 +107,7 @@ function get_index($file) {
       }
     }).value = '<?php echo SEARCH_DEFAULT; ?>';
     
-	});
+  });
 
   function passage_pop_up(name, ref) {
     var margin = $(document).width()/50;
