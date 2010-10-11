@@ -4,12 +4,22 @@ define('SEARCH_DEFAULT', 'Type your search here...');
 define('STORY_NAME', 'name');
 define('STORY_REF', 'ref');
 
-$stories = array(
-  array(STORY_NAME=>'Creation', STORY_REF=>'Genesis 1:1-2:25'),
-  array(STORY_NAME=>'The Fall', STORY_REF=>'Genesis 1:1-2:25'),
-  array(STORY_NAME=>'The Flood', STORY_REF=>'Psalm 1:1-160:25'),
-  array(STORY_NAME=>'Leaving Egypt', STORY_REF=>'Exodus xx:yy'),
-);
+$stories = get_index('index.txt');
+
+function get_index($file) {
+  $index = array();
+  $fp = fopen($file, "r");
+  while(!feof($fp)) {
+    $line = fgets($fp);
+    $line = explode ('  ', $line, 2);
+    
+    $name = trim($line[0], "\t ");
+    $ref = trim($line[1], "\t ");
+    $index[] = array(STORY_NAME=>$name, STORY_REF=>$ref);
+  }
+  fclose($fp);
+  return $index;
+}
 
 ?>
 <HTML>
