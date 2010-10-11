@@ -123,8 +123,8 @@ function get_index($file) {
       modal: true,
       autoOpen: true,
       position: 'center',
-      height: $(document).height()-(margin*2),
-      width: $(document).width()-(margin*2),
+      height: $(window).height()-(margin*2),
+      width: $(window).width()-(margin*2),
       closeOnEscape: true,
       hide: 'fade',
       show: 'fade',
@@ -144,8 +144,8 @@ function get_index($file) {
     
     $(window).bind('resize', function() {
       $('#passage').dialog('option', 'position', $('#passage').dialog('option', 'position'))
-      .dialog('option', 'height', $(document).height()-(margin*2))
-      .dialog('option', 'width', $(document).width()-(margin*2));
+      .dialog('option', 'height', $(window).height()-(margin*2))
+      .dialog('option', 'width', $(window).width()-(margin*2));
     });
   }
 </script>
