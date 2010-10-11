@@ -130,7 +130,6 @@ function get_index($file) {
       show: 'fade',
       draggable: false,
       resizable: false,
-      buttons: { "Ok": function() { $(this).dialog("close"); } },
       open: function() {
         $(this).html('Loading...');
         $(this).load('ref.php?ref='+encodeURI(ref));
