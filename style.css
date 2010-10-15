@@ -3,6 +3,14 @@ body {
   font-size:1em;
 }
 
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
 p {
   margin:0;
   padding:0;
@@ -55,6 +63,7 @@ p {
   font-family:Georgia;
   margin:0 auto;
   width:80%;
+  text-align:justify;
 }
 
 #navigationtop {
@@ -91,7 +100,7 @@ span.verse-num {
 }
 span.chapter-num {
   font-family: Verdana, Arial, Helvetica, sans-serif;
-  color:#06C;
+  color:#000;
 	font-weight: bold;
 	padding-right: .5em;
 }
