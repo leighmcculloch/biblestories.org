@@ -47,7 +47,7 @@ function get_story_short_name($name)
 define(API_KEY, 'IP');
 define(API_URL, 'http://www.esvapi.org/v2/rest/passageQuery?key='.API_KEY
                .'&include-passage-references=false'
-               .'&include-first-verse-numbers=false'
+               .'&include-first-verse-numbers=true'
                .'&include-footnotes=false'
                .'&include-footnote-links=false'
                .'&include-surrounding-chapters=true'
