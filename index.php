@@ -29,6 +29,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 </div>
 
 <div id="index">
+  <span class="searchnoresults">There are no stories matching your search.</span>
   <table id="index_table" cellpadding="0" cellspacing="0" align="center">
     <colgroup>
       <col width="48%"/><col width="2%"/><col width="48%"/>
@@ -54,6 +55,8 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 
 <script type="text/javascript">
   $(document).ready(function() {
+    $('.searchnoresults').hide();
+    
     $.expr[":"].containsNoCase = function(el, i, m) {
       var search = m[3];
       if (!search) return true;
@@ -64,8 +67,19 @@ $stories = get_index(INDEX_FILE_DEFAULT);
       if (event.keyCode == 27) {
         $(this).val('');
       }
-      $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))').hide();
-      $('#index_table tr:containsNoCase("' + $(this).val() + '")').show();
+      
+      var rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
+      var rows_enabled = $('#index_table tr:containsNoCase("' + $(this).val() + '")');
+      
+      rows_disabled.fadeOut();
+      rows_enabled.fadeIn();
+      
+      if(rows_enabled.length==0) {
+        $('.searchnoresults').fadeIn();
+      }
+      else {
+        $('.searchnoresults').fadeOut();
+      }
     }).focus(function() {
       if (this.value == '<?php echo SEARCH_DEFAULT; ?>') {
         this.value = '';
