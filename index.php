@@ -24,7 +24,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 
 <div id="search">
   <form id="searchform" onsubmit="return false;">
-    <input name="searchtext" type="text" size="50" value="" />
+    <input name="searchtext" type="text" size="35" value="" />
   </form>
 </div>
 
