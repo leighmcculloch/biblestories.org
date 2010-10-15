@@ -1,8 +1,9 @@
 <?php
 
 /* ====== GENERAL DEFINITIONS ======*/
-define('SEARCH_DEFAULT', 'Type your search here...');
 define('TITLE_DEFAULT', 'Great Stories of the Bible');
+define('SLOGAN_DEFAULT', 'An index of great stories in the Bible');
+define('SEARCH_DEFAULT', 'Type your search here...');
 define('INDEX_FILE_DEFAULT', 'index.txt');
 define('RETURN_TO_INDEX_DEFAULT', '&#x21FD;Find other great stories in the Bible');
 

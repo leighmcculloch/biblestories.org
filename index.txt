@@ -70,42 +70,42 @@ Ezekiel's Vision    Ezekiel 37:1-14
 The Fiery Furnace   Daniel 3:1-30
 The Lions' Den    Daniel 6:1-28
 Jonah   Jonah 1:1-4:11
-Jesus is Born   Mathew 1:18-25
-Jesus is Born   Luke 2:1-40
+Jesus is Born by Mathew   Mathew 1:18-25
+Jesus is Born by Luke   Luke 2:1-40
 Wise Men and King Herod   Mathew 2:1-23
-Jesus is Tempted    Mathew 4:1-11
-Jesus is Tempted    Mark 1:12-13
-Jesus is Tempted    Luke 4:1-13
-Jesus Feeds 5,000    Mathew 14:13-21
-Jesus Feeds 5,000    Mark 6:30-44
-Jesus Feeds 5,000    Luke 9:10-17
-Jesus Feeds 5,000    John 6:1-15
+Jesus is Tempted by Mathew    Mathew 4:1-11
+Jesus is Tempted by Mark    Mark 1:12-13
+Jesus is Tempted by Luke    Luke 4:1-13
+Jesus Feeds 5,000 by Mathew    Mathew 14:13-21
+Jesus Feeds 5,000 by Mark    Mark 6:30-44
+Jesus Feeds 5,000 by Luke    Luke 9:10-17
+Jesus Feeds 5,000 by John    John 6:1-15
 The Bread of Life   John 6:1-71
-Jesus Walks on Water    Mathew 14:22-36
-Jesus Walks on Water    Mark 6:45-56
-Jesus Walks on Water    John 6:16-21
+Jesus Walks on Water by Mathew    Mathew 14:22-36
+Jesus Walks on Water by Mark    Mark 6:45-56
+Jesus Walks on Water by John    John 6:16-21
 The Good Samaritan    Luke 10:25-37
 The Lost Son    Luke 15:1-32
 Jesus Raises Lazarus    John 11:1-44
 Jesus and Zacchaeus   Luke 19:1-10
-The Triumphal Entry   Mathew 21:1-11
-The Triumphal Entry   Luke 19:28-40
-The Triumphal Entry   John 12:12-19
-The Last Supper   Mathew 26:17-30
-The Last Supper   Mark 14:12-26
-The Last Supper   Luke 22:7-30
-The Last Supper   John 13:1-30
+The Triumphal Entry by Mathew   Mathew 21:1-11
+The Triumphal Entry by Luke   Luke 19:28-40
+The Triumphal Entry by John   John 12:12-19
+The Last Supper by Mathew   Mathew 26:17-30
+The Last Supper by Mark   Mark 14:12-26
+The Last Supper by Luke   Luke 22:7-30
+The Last Supper by John   John 13:1-30
 Jesus' Trial   Mathew 26:47-27:31
-Jesus' Crucifixion    Mathew 27:32-56
-Jesus' Crucifixion    Mark 15:21-41
-Jesus' Crucifixion    Luke 23:26-49
-Jesus' Crucifixion    John 19:16-42
-Jesus' Resurrection   Mathew 28:1-15
-Jesus' Resurrection   Mark 16:1-14
-Jesus' Resurrection   Luke 24:1-34
-Jesus' Resurrection   John 20:1-10
-Jesus' Ascension    Luke 24:35-53
-Jesus' Ascension    Acts 1:6-11
+Jesus' Crucifixion by Mathew    Mathew 27:32-56
+Jesus' Crucifixion by Mark    Mark 15:21-41
+Jesus' Crucifixion by Luke    Luke 23:26-49
+Jesus' Crucifixion by John    John 19:16-42
+Jesus' Resurrection by Mathew   Mathew 28:1-15
+Jesus' Resurrection by Mark   Mark 16:1-14
+Jesus' Resurrection by Luke   Luke 24:1-34
+Jesus' Resurrection by John   John 20:1-10
+Jesus' Ascension (First Account)    Luke 24:35-53
+Jesus' Ascension (Second Account)    Acts 1:6-11
 The Holy Spirit Comes   Acts 2:1-47
 The Apostles' Courage   Acts 4:1-31
 Ananias and Sapphira    Acts 5:1-11
