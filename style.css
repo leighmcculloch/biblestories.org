@@ -1,10 +1,14 @@
 body {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
   font-size:1em;
 }
 
+p {
+  margin:0;
+  padding:0;
+}
+
 #header {
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
   text-align:center;
 }
 
@@ -37,12 +41,130 @@ body {
   text-align:center;
 }
 
-/* styles for the passages below */
-.chapter-num, .verse-num, .footnote {
-  vertical-align: super;
-  font-size:0.7em;
+/* styles for the story page only */
+#passage_heading {
+  text-align:center;
 }
 
+#passage_heading h2 {
+  font-size:1.2em;
+  margin:0 0 0.6em 0;
+}
+
+#passage {
+  font-family:Georgia;
+  margin:0 auto;
+  width:80%;
+}
+
+#navigationtop {
+  text-align:center;
+  font-size:1em;
+  margin:0 0 1.3em 0;
+}
+
+#navigationbottom {
+  text-align:center;
+  font-size:0.9em;
+  margin:1em 0;
+}
+
+/* styles for the passages below */
 .esv {
   font-size:1em;
+}
+
+/* styles for the passages below - taken from the esvapi.org css style */
+h3 {
+	text-align: left;
+}
+span.woc {
+	color: #900;
+}
+span.verse-num {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+	padding-right: .15em;
+	padding-left: .25em;
+	vertical-align: text-top;
+}
+span.chapter-num {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  color:#06C;
+	font-weight: bold;
+	padding-right: .5em;
+}
+div.esv-text p {
+	text-indent: 2em;
+}
+div.esv-text p.same-paragraph {
+	text-indent: 0;
+}
+div.block-indent p {
+	text-indent: 0;
+	padding-left: 2.5em;
+	margin-left: 0;
+}
+span.indent {
+	padding-left: 2em;
+}
+span.indent-2, span.psalm-doxology-line {
+	padding-left: 4em;
+}
+span.declares-line {
+	padding-left: 6em;
+}
+span.small-caps {
+	font-variant: small-caps;
+}
+span.selah {
+	font-style: italic;
+	margin-left: 1em;
+}
+p.extra-space {
+	margin-top: 2em;
+}
+div.block-indent span.verse-num, div.block-indent span.woc  {
+	padding-left: 0;
+}
+h4 {
+	font-weight: normal;
+}
+h4.speaker {
+	padding-left: 10em;
+	font-variant: small-caps;
+	margin-bottom: -1em;
+}
+h4.textual-note {
+	font-variant: small-caps;	
+}
+h4.psalm-acrostic-title {
+	font-variant: small-caps;
+}
+h4.psalm-title {
+
+}
+span.footnote {
+	font-size: 80%;
+	padding-right: .5em;
+	padding-left: 0em;
+	vertical-align: text-top;
+}
+div.footnotes h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+div.footnotes p {
+	text-indent: 0;
+}
+span.footnote-ref {
+	font-weight: bold;
+}
+p.copyright {
+	text-indent: 0;
+}
+object.audio {
+	margin: 0 0 0 10px;
+	padding: 0;
 }

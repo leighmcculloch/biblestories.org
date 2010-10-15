@@ -1,30 +1,13 @@
 <?php
 
-define('SEARCH_DEFAULT', 'Type your search here...');
-define('STORY_NAME', 'name');
-define('STORY_REF', 'ref');
+require_once('functions.php');
 
-$stories = get_index('index.txt');
-
-function get_index($file) {
-  $index = array();
-  $fp = fopen($file, "r");
-  while(!feof($fp)) {
-    $line = fgets($fp);
-    $line = explode ('  ', $line, 2);
-    
-    $name = trim($line[0], "\t ");
-    $ref = trim($line[1], "\t ");
-    $index[] = array(STORY_NAME=>$name, STORY_REF=>$ref);
-  }
-  fclose($fp);
-  return $index;
-}
+$stories = get_index(INDEX_FILE_DEFAULT);
 
 ?>
 <HTML>
 <HEAD>
-  <TITLE>Stories in the Bible</TITLE>
+  <TITLE><?php echo TITLE_DEFAULT; ?></TITLE>
   <link href="style.css" rel="stylesheet" type="text/css">
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
@@ -35,8 +18,8 @@ function get_index($file) {
 <div id="passage"></div>
 
 <div id="header">
-  <h1>Stories in the Bible</h1>
-  <h2>An index of great stories in the <!--Old<br/>and New Testaments of the Christian--> Bible.</h2>
+  <h1>Stories of the Bible</h1>
+  <h2>An index of great stories in the Bible.</h2>
 </div>
 
 <div id="search">
@@ -55,9 +38,9 @@ function get_index($file) {
       <?php $story_id = 0; ?>
       <?php foreach($stories as $story) : ?>
       <tr id="story<?php echo $story_id; ?>" class="story">
-        <td align="right" id="story_name<?php echo $story_id; ?>"><?php echo $story[STORY_NAME]; ?></td>
+        <td align="right" id="story_name<?php echo $story_id; ?>"><a href="/<?php echo $story[STORY_SHORT_NAME]; ?>"><?php echo $story[STORY_NAME]; ?></a></td>
         <td align="center" nowrap>&nbsp;&nbsp;&nbsp;</td>
-        <td id="story_ref<?php echo $story_id; ?>" class="story_ref"><?php echo $story[STORY_REF]; ?></td>
+        <td id="story_ref<?php echo $story_id; ?>" class="story_ref"><a href="/<?php echo $story[STORY_SHORT_NAME]; ?>"><?php echo $story[STORY_REF]; ?></a></td>
       <?php $story_id++ ?>
       </tr>
       <?php endforeach; ?>
@@ -70,21 +53,11 @@ function get_index($file) {
   
   This website was authored by <a href="http://leighmcculloch.com">Leigh McCulloch</a> with the goal to make this useful index accessible to everyone.
   
-  Scripture quotations marked &quot;ESV&quot; are taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.
+  Scripture taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.
 </div>
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('.story').hover(function() {
-      $(this).css('cursor','pointer');
-    });
-    $('.story').click(function () {
-      var id = $(this).attr('id').replace('story','');
-      var ref = $('#story_ref'+id).html();
-      var name = $('#story_name'+id).html() + ' - ' + ref;
-      passage_pop_up(name, ref);
-    });
-    
     $.expr[":"].containsNoCase = function(el, i, m) {
       var search = m[3];
       if (!search) return true;
@@ -108,45 +81,6 @@ function get_index($file) {
     }).value = '<?php echo SEARCH_DEFAULT; ?>';
     
   });
-
-  function passage_pop_up(name, ref) {
-    var margin = $(document).width()/50;
-    
-    if($('#passage')) {
-      $('#passage').remove();
-    }
-    
-    $('body').append('<div id="passage"></div>');
-    
-    $('#passage').dialog({
-      title: name,
-      modal: true,
-      autoOpen: true,
-      position: 'center',
-      height: $(window).height()-(margin*2),
-      width: $(window).width()-(margin*2),
-      closeOnEscape: true,
-      hide: 'fade',
-      show: 'fade',
-      draggable: false,
-      resizable: false,
-      open: function() {
-        $(this).html('Loading...');
-        $(this).load('ref.php?ref='+encodeURI(ref));
-      },
-      close: function() {
-        $(this).html('Loading...');
-        $(window).unbind('resize');
-        $('input[name=searchtext]').focus();
-      }
-    });
-    
-    $(window).bind('resize', function() {
-      $('#passage').dialog('option', 'position', $('#passage').dialog('option', 'position'))
-      .dialog('option', 'height', $(window).height()-(margin*2))
-      .dialog('option', 'width', $(window).width()-(margin*2));
-    });
-  }
 </script>
 
 </BODY>

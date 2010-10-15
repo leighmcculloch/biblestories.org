@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule   ^([A-Za-z0-9_]+)$     story.php?name=$1       [L]
