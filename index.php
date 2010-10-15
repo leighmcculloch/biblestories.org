@@ -18,8 +18,8 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 <div id="passage"></div>
 
 <div id="header">
-  <h1>Stories of the Bible</h1>
-  <h2>An index of great stories in the Bible.</h2>
+  <h1><?php echo TITLE_DEFAULT; ?></h1>
+  <h2><?php echo SLOGAN_DEFAULT; ?></h2>
 </div>
 
 <div id="search">
