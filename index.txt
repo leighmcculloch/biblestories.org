@@ -76,10 +76,10 @@ Wise Men and King Herod   Mathew 2:1-23
 Jesus is Tempted    Mathew 4:1-11
 Jesus is Tempted    Mark 1:12-13
 Jesus is Tempted    Luke 4:1-13
-Jesus Fees 5,000    Mathew 14:13-21
-Jesus Fees 5,000    Mark 6:30-44
-Jesus Fees 5,000    Luke 9:10-17
-Jesus Fees 5,000    John 6:1-15
+Jesus Feeds 5,000    Mathew 14:13-21
+Jesus Feeds 5,000    Mark 6:30-44
+Jesus Feeds 5,000    Luke 9:10-17
+Jesus Feeds 5,000    John 6:1-15
 The Bread of Life   John 6:1-71
 Jesus Walks on Water    Mathew 14:22-36
 Jesus Walks on Water    Mark 6:45-56
@@ -96,10 +96,10 @@ The Last Supper   Mark 14:12-26
 The Last Supper   Luke 22:7-30
 The Last Supper   John 13:1-30
 Jesus' Trial   Mathew 26:47-27:31
-Jesus' Curcifixion    Mathew 27:32-56
-Jesus' Curcifixion    Mark 15:21-41
-Jesus' Curcifixion    Luke 23:26-49
-Jesus' Curcifixion    John 19:16-42
+Jesus' Crucifixion    Mathew 27:32-56
+Jesus' Crucifixion    Mark 15:21-41
+Jesus' Crucifixion    Luke 23:26-49
+Jesus' Crucifixion    John 19:16-42
 Jesus' Resurrection   Mathew 28:1-15
 Jesus' Resurrection   Mark 16:1-14
 Jesus' Resurrection   Luke 24:1-34
