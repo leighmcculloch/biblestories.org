@@ -11,14 +11,37 @@ define('RETURN_TO_INDEX_DEFAULT', '&#x21FD;Find other great stories in the Bible
 define('STORY_NAME', 'name');
 define('STORY_SHORT_NAME', 'short-name');
 define('STORY_REF', 'ref');
+define('INDEX_3COL_COLWIDTH', 40);
 
 function get_index($file)
+{
+  return get_index_three_column($file);
+}
+
+function get_index_three_column($file)
 {
   $index = array();
   $fp = fopen($file, "r");
   while(!feof($fp)) {
     $line = fgets($fp);
-    $line = explode ('  ', $line, 2);
+    $line = str_split($line, INDEX_3COL_COLWIDTH);
+    
+    $shortname = trim($line[0], "\r\n\t ");
+    $name = trim($line[1], "\r\n\t ");
+    $ref = trim($line[2], "\r\n\t ");
+    $index[] = array(STORY_SHORT_NAME=>$shortname, STORY_NAME=>$name, STORY_REF=>$ref);
+  }
+  fclose($fp);
+  return $index;
+}
+
+function get_index_two_column($file)
+{
+  $index = array();
+  $fp = fopen($file, "r");
+  while(!feof($fp)) {
+    $line = fgets($fp);
+    $line = explode('  ', $line, 2);
     
     $name = trim($line[0], "\r\n\t ");
     $shortname = get_story_short_name($name);
@@ -27,6 +50,20 @@ function get_index($file)
   }
   fclose($fp);
   return $index;
+}
+
+function write_index($index, $file)
+{
+  $fp = fopen($file, "w+");
+  foreach($index as $row)
+  {
+    fwrite($fp, str_pad($row[STORY_SHORT_NAME], INDEX_3COL_COLWIDTH));
+    fwrite($fp, str_pad($row[STORY_NAME], INDEX_3COL_COLWIDTH));
+    fwrite($fp, str_pad($row[STORY_REF], INDEX_3COL_COLWIDTH));
+    fwrite($fp, "\n");
+    fflush($fp);
+  }
+  fclose($fp);
 }
 
 function get_story_short_name($name)
