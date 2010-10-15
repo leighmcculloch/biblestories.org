@@ -71,14 +71,14 @@ $stories = get_index(INDEX_FILE_DEFAULT);
       var rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
       var rows_enabled = $('#index_table tr:containsNoCase("' + $(this).val() + '")');
       
-      rows_disabled.fadeOut();
-      rows_enabled.fadeIn();
+      rows_disabled.hide();
+      rows_enabled.show();
       
       if(rows_enabled.length==0) {
-        $('.searchnoresults').fadeIn();
+        $('.searchnoresults').show();
       }
       else {
-        $('.searchnoresults').fadeOut();
+        $('.searchnoresults').hide();
       }
     }).focus(function() {
       if (this.value == '<?php echo SEARCH_DEFAULT; ?>') {
