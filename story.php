@@ -45,7 +45,8 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
 </div>
   
 <div id="passage_heading">
-  <h2><?php echo $story[STORY_NAME]; ?> (<?php echo $story[STORY_REF]; ?>)</h2>
+  <h2><?php echo $story[STORY_NAME]; ?> (<?php echo $story[STORY_REF]; ?>)</h2><br/>
+  <span class="text-smaller">A</span> <span class="text-larger">A</span> <span class="text-listen"></span>
 </div>
 <div id="passage">
   <?php echo get_passage($story[STORY_REF]); ?>
@@ -59,6 +60,22 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
 <div id="footer">
   <?php include 'copyright.php'; ?>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.text-smaller,.text-larger').hover(function() {
+      $(this).css('cursor','pointer');
+    });
+    $('.text-smaller').click(function () {
+      $('html').css('font-size', 0.8*parseFloat($('html').css('font-size'), 10));
+      return false;
+    });
+    $('.text-larger').click(function () {
+      $('html').css('font-size', 1.2*parseFloat($('html').css('font-size'), 10));
+      return false;
+    });
+  });
+</script>
 
 </BODY>
 </HTML>

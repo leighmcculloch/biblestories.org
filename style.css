@@ -1,6 +1,7 @@
 body {
   font-family:Verdana, Arial, Helvetica, sans-serif;
   font-size:1em;
+  margin:1em 5%;
 }
 
 a {
@@ -12,7 +13,7 @@ a:hover {
 }
 
 p {
-  margin:0;
+  margin:1em 0;
   padding:0;
 }
 
@@ -71,7 +72,7 @@ p {
 #passage {
   font-family:Georgia;
   margin:0 auto;
-  width:80%;
+  width:100%;
   text-align:justify;
 }
 
@@ -79,6 +80,14 @@ p {
   text-align:center;
   font-size:1em;
   margin:0 0 1.3em 0;
+}
+
+.text-smaller {
+  font-size:0.75em;
+}
+
+.text-larger {
+  font-size:1.25em;
 }
 
 #navigationbottom {
@@ -105,7 +114,7 @@ span.verse-num {
 	font-weight: bold;
 	padding-right: .15em;
 	padding-left: .25em;
-	vertical-align: text-top;
+	/*vertical-align: text-top;*/
 }
 span.chapter-num {
   font-family: Verdana, Arial, Helvetica, sans-serif;
