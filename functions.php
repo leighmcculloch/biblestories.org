@@ -5,7 +5,7 @@ define('TITLE_DEFAULT', 'Great Stories of the Bible');
 define('SLOGAN_DEFAULT', 'An index of the great stories in the Bible');
 define('SEARCH_DEFAULT', 'Type your search here...');
 define('INDEX_FILE_DEFAULT', 'index.txt');
-define('RETURN_TO_INDEX_DEFAULT', '&#x21FD;Find other great stories in the Bible');
+define('RETURN_TO_INDEX_DEFAULT', '&#171; Find other great stories in the Bible');
 
 /* ====== STORY & INDEX ====== */
 define('STORY_NAME', 'name');
