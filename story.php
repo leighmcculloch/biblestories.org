@@ -74,6 +74,15 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
       $('html').css('font-size', 1.2*parseFloat($('html').css('font-size'), 10));
       return false;
     });
+    
+    var isiPad = navigator.userAgent.match(/iPad/i) != null;
+    var isiPhone = navigator.userAgent.match(/iPhone/i) != null;
+    var isiPod = navigator.userAgent.match(/iPod/i) != null;
+    if(isiPad||isiPhone||isiPod) {
+      $('.text-listen').html('<a href="<?php echo get_passage_mp3($story[STORY_REF]); ?>">Listen</a>');
+    } else {
+      $('.audio').appendTo('.text-listen');
+    }
   });
 </script>
 

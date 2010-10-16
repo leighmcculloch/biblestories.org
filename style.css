@@ -90,6 +90,10 @@ p {
   font-size:1.25em;
 }
 
+.text-listen {
+  font-size:0.75em;
+}
+
 #navigationbottom {
   text-align:center;
   font-size:0.9em;
@@ -99,6 +103,10 @@ p {
 /* styles for the passages below */
 .esv {
   font-size:1em;
+}
+
+.esv h2 {
+  display:none;
 }
 
 /* styles for the passages below - taken from the esvapi.org css style */
