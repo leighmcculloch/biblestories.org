@@ -98,15 +98,32 @@ define('API_URL_TEXT', API_URL
                .'&include-short-copyright=false'
                .'&audio-format=flash'
                .'&passage=');
+define('CACHE_DIR', 'cache');
 
 function get_passage($ref)
 {
-  return get_url(API_URL_TEXT.urlencode($ref));
+  $ref_id = get_passage_ref_id($ref);
+  $file = CACHE_DIR.'/'.$ref_id;
+  
+  /* get the cached file if it exists */
+  if(!file_exists($file)) {
+    mkdir(CACHE_DIR);
+    $passage = get_url(API_URL_TEXT.urlencode($ref));
+    file_put_contents($file, $passage);
+  }
+  
+  /* create the cached file if it doesn't exist */
+  return file_get_contents($file);
 }
 
 function get_passage_mp3($ref)
 {
   return API_URL_AUDIO.$ref;
+}
+
+function get_passage_ref_id($ref)
+{
+  return $ref;
 }
 
 /* ====== GENERIC ====== */
