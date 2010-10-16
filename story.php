@@ -58,7 +58,7 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
 </div>
   
 <div id="footer">
-  <?php include 'copyright.php'; ?>
+  <?php include 'footer.php'; ?>
 </div>
 
 <script type="text/javascript">

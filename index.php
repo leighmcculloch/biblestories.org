@@ -51,7 +51,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 </div>
 
 <div id="footer">
-  <?php include 'copyright.php'; ?>
+  <?php include 'footer.php'; ?>
 </div>
 
 <script type="text/javascript">
