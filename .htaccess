@@ -1,6 +1,8 @@
 RewriteEngine on
 
+# Translate www access to non-www domain
 RewriteCond %{HTTP_HOST} ^www.(.+)
 RewriteRule (.*) http://%1/$1 [R=301,L]
 
+# Translate [story short name] to the story.php script
 RewriteRule   ^([A-Za-z0-9_]+)$     story.php?name=$1       [L]
