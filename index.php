@@ -40,9 +40,9 @@ $stories = get_index(INDEX_FILE_DEFAULT);
       <?php $story_id = 0; ?>
       <?php foreach($stories as $story) : ?>
       <tr id="story<?php echo $story_id; ?>" class="story">
-        <td align="right" id="story_ref<?php echo $story_id; ?>" class="story_ref"><?php echo $story[STORY_REF]; ?></td>
+        <td align="right" id="story_ref<?php echo $story_id; ?>" class="story_ref"><span class="index_text"><?php echo $story[STORY_REF]; ?></span></td>
         <td align="center" nowrap>&nbsp;</td>
-        <td align="left" id="story_name<?php echo $story_id; ?>"><a href="/<?php echo $story[STORY_SHORT_NAME]; ?>"><?php echo $story[STORY_NAME]; ?></a></td>
+        <td align="left" id="story_name<?php echo $story_id; ?>"><span class="index_text"><a href="/<?php echo $story[STORY_SHORT_NAME]; ?>"><?php echo $story[STORY_NAME]; ?></a></span></td>
       <?php $story_id++ ?>
       </tr>
       <?php endforeach; ?>
