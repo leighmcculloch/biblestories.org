@@ -28,7 +28,7 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
 <HTML>
 <HEAD>
   <TITLE><?php echo $story[STORY_NAME]; ?></TITLE>
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link href="style.css" rel="stylesheet" type="text/css">
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
