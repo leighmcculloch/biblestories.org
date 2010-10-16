@@ -72,6 +72,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
       /* Enter Key */
       if (event.keyCode == 13) {
         $(this).blur();
+        return;
       }
       
       var rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
