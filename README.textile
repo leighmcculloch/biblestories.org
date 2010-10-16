@@ -5,7 +5,7 @@ searchable index of some of the great stories of the Bible. The
 stories range through the entire Chrsitian Bible, including the Old
 and New Testaments.
 
-h1. Thanks
+h2. Thanks
 
 Thanks to the Tyndale House Publishing Inc. for permission to freely
 republish the "Great Stories of the Bible" index, which is found in many
@@ -17,7 +17,7 @@ Translation's Second Edition Bible.
 ISBN-13: 978-1-4143-0232-4
 ISBN-10: 1-4143-0232-0
 
-h1. License
+h2. License
 
 Scripture taken from The Holy Bible, English Standard Version. Copyright
 ©2001 by Crossway Bibles, a publishing ministry of Good News Publishers.
