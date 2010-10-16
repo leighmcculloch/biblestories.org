@@ -70,42 +70,42 @@ ezekiels_vision                         Ezekiel's Vision                        
 the_fiery_furnace                       The Fiery Furnace                       Daniel 3:1-30                           
 the_lions_den                           The Lions' Den                          Daniel 6:1-28                           
 jonah                                   Jonah                                   Jonah 1:1-4:11                          
-jesus_is_born_by_mathew                 Jesus is Born by Mathew                 Mathew 1:18-25                          
-jesus_is_born_by_luke                   Jesus is Born by Luke                   Luke 2:1-40                             
+jesus_is_born_by_mathew                 Jesus is Born                           Mathew 1:18-25                          
+jesus_is_born_by_luke                   Jesus is Born                           Luke 2:1-40                             
 wise_men_and_king_herod                 Wise Men and King Herod                 Mathew 2:1-23                           
-jesus_is_tempted_by_mathew              Jesus is Tempted by Mathew              Mathew 4:1-11                           
-jesus_is_tempted_by_mark                Jesus is Tempted by Mark                Mark 1:12-13                            
-jesus_is_tempted_by_luke                Jesus is Tempted by Luke                Luke 4:1-13                             
-jesus_feeds_5000_by_mathew              Jesus Feeds 5,000 by Mathew             Mathew 14:13-21                         
-jesus_feeds_5000_by_mark                Jesus Feeds 5,000 by Mark               Mark 6:30-44                            
-jesus_feeds_5000_by_luke                Jesus Feeds 5,000 by Luke               Luke 9:10-17                            
-jesus_feeds_5000_by_john                Jesus Feeds 5,000 by John               John 6:1-15                             
+jesus_is_tempted_by_mathew              Jesus is Tempted                        Mathew 4:1-11                           
+jesus_is_tempted_by_mark                Jesus is Tempted                        Mark 1:12-13                            
+jesus_is_tempted_by_luke                Jesus is Tempted                        Luke 4:1-13                             
+jesus_feeds_5000_by_mathew              Jesus Feeds 5,000                       Mathew 14:13-21                         
+jesus_feeds_5000_by_mark                Jesus Feeds 5,000                       Mark 6:30-44                            
+jesus_feeds_5000_by_luke                Jesus Feeds 5,000                       Luke 9:10-17                            
+jesus_feeds_5000_by_john                Jesus Feeds 5,000                       John 6:1-15                             
 the_bread_of_life                       The Bread of Life                       John 6:1-71                             
-jesus_walks_on_water_by_mathew          Jesus Walks on Water by Mathew          Mathew 14:22-36                         
-jesus_walks_on_water_by_mark            Jesus Walks on Water by Mark            Mark 6:45-56                            
-jesus_walks_on_water_by_john            Jesus Walks on Water by John            John 6:16-21                            
+jesus_walks_on_water_by_mathew          Jesus Walks on Water                    Mathew 14:22-36                         
+jesus_walks_on_water_by_mark            Jesus Walks on Water                    Mark 6:45-56                            
+jesus_walks_on_water_by_john            Jesus Walks on Water                    John 6:16-21                            
 the_good_samaritan                      The Good Samaritan                      Luke 10:25-37                           
 the_lost_son                            The Lost Son                            Luke 15:1-32                            
 jesus_raises_lazarus                    Jesus Raises Lazarus                    John 11:1-44                            
 jesus_and_zacchaeus                     Jesus and Zacchaeus                     Luke 19:1-10                            
-the_triumphal_entry_by_mathew           The Triumphal Entry by Mathew           Mathew 21:1-11                          
-the_triumphal_entry_by_luke             The Triumphal Entry by Luke             Luke 19:28-40                           
-the_triumphal_entry_by_john             The Triumphal Entry by John             John 12:12-19                           
-the_last_supper_by_mathew               The Last Supper by Mathew               Mathew 26:17-30                         
-the_last_supper_by_mark                 The Last Supper by Mark                 Mark 14:12-26                           
-the_last_supper_by_luke                 The Last Supper by Luke                 Luke 22:7-30                            
-the_last_supper_by_john                 The Last Supper by John                 John 13:1-30                            
+the_triumphal_entry_by_mathew           The Triumphal Entry                     Mathew 21:1-11                          
+the_triumphal_entry_by_luke             The Triumphal Entry                     Luke 19:28-40                           
+the_triumphal_entry_by_john             The Triumphal Entry                     John 12:12-19                           
+the_last_supper_by_mathew               The Last Supper                         Mathew 26:17-30                         
+the_last_supper_by_mark                 The Last Supper                         Mark 14:12-26                           
+the_last_supper_by_luke                 The Last Supper                         Luke 22:7-30                            
+the_last_supper_by_john                 The Last Supper                         John 13:1-30                            
 jesus_trial                             Jesus' Trial                            Mathew 26:47-27:31                      
-jesus_crucifixion_by_mathew             Jesus' Crucifixion by Mathew            Mathew 27:32-56                         
-jesus_crucifixion_by_mark               Jesus' Crucifixion by Mark              Mark 15:21-41                           
-jesus_crucifixion_by_luke               Jesus' Crucifixion by Luke              Luke 23:26-49                           
-jesus_crucifixion_by_john               Jesus' Crucifixion by John              John 19:16-42                           
-jesus_resurrection_by_mathew            Jesus' Resurrection by Mathew           Mathew 28:1-15                          
-jesus_resurrection_by_mark              Jesus' Resurrection by Mark             Mark 16:1-14                            
-jesus_resurrection_by_luke              Jesus' Resurrection by Luke             Luke 24:1-34                            
-jesus_resurrection_by_john              Jesus' Resurrection by John             John 20:1-10                            
-jesus_ascension_first_account           Jesus' Ascension (First Account)        Luke 24:35-53                           
-jesus_ascension_second_account          Jesus' Ascension (Second Account)       Acts 1:6-11                             
+jesus_crucifixion_by_mathew             Jesus' Crucifixion                      Mathew 27:32-56                         
+jesus_crucifixion_by_mark               Jesus' Crucifixion                      Mark 15:21-41                           
+jesus_crucifixion_by_luke               Jesus' Crucifixion                      Luke 23:26-49                           
+jesus_crucifixion_by_john               Jesus' Crucifixion                      John 19:16-42                           
+jesus_resurrection_by_mathew            Jesus' Resurrection                     Mathew 28:1-15                          
+jesus_resurrection_by_mark              Jesus' Resurrection                     Mark 16:1-14                            
+jesus_resurrection_by_luke              Jesus' Resurrection                     Luke 24:1-34                            
+jesus_resurrection_by_john              Jesus' Resurrection                     John 20:1-10                            
+jesus_ascension_luke                    Jesus' Ascension                        Luke 24:35-53                           
+jesus_ascension_acts                    Jesus' Ascension                        Acts 1:6-11                             
 the_holy_spirit_comes                   The Holy Spirit Comes                   Acts 2:1-47                             
 the_apostles_courage                    The Apostles' Courage                   Acts 4:1-31                             
 ananias_and_sapphira                    Ananias and Sapphira                    Acts 5:1-11                             
