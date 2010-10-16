@@ -67,7 +67,7 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
       $(this).css('cursor','pointer');
     });
     $('.text-smaller').click(function () {
-      $('html').css('font-size', 0.8*parseFloat($('html').css('font-size'), 10));
+      $('html').css('font-size', (1/1.2)*parseFloat($('html').css('font-size'), 10));
       return false;
     });
     $('.text-larger').click(function () {
