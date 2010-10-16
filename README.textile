@@ -1,0 +1,28 @@
+h1. Stories in the Bible
+
+This is a website written in PHP. It's goal is to make accessable a
+searchable index of some of the great stories of the Bible. The
+stories range through the entire Chrsitian Bible, including the Old
+and New Testaments.
+
+h1. Thanks
+
+Thanks to the Tyndale House Publishing Inc. for permission to freely
+republish the "Great Stories of the Bible" index, which is found in many
+publishings of the New Living Translation Bibles. 
+
+The index used contains minor alterations and was taken specificaly
+from the Tyndale House Publishing Inc.'s NLT Compact Edition, New Living
+Translation's Second Edition Bible.
+ISBN-13: 978-1-4143-0232-4
+ISBN-10: 1-4143-0232-0
+
+h1. License
+
+Scripture taken from The Holy Bible, English Standard Version. Copyright
+©2001 by Crossway Bibles, a publishing ministry of Good News Publishers.
+Used by permission. All rights reserved. Text provided by the Crossway
+Bibles Web Service.
+
+Website design, layout and code is Public Domain exluding some CSS which
+is borrowed from the Crossway Bibles Web Service API default CSS style.
