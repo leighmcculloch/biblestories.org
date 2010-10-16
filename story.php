@@ -45,7 +45,7 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
 </div>
   
 <div id="passage_heading">
-  <h2><?php echo $story[STORY_NAME]; ?> (<?php echo $story[STORY_REF]; ?>)</h2><br/>
+  <h2><?php echo $story[STORY_NAME]; ?> (<?php echo $story[STORY_REF]; ?>)</h2>
   <span class="text-smaller">A</span> <span class="text-larger">A</span> <span class="text-listen"></span>
 </div>
 <div id="passage">
