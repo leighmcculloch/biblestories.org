@@ -86,5 +86,7 @@ $story_url = 'http://www.gnpcb.org/esv/search/?q='.$story[STORY_REF];
   });
 </script>
 
+<?php include('analytics.php'); ?>
+
 </BODY>
 </HTML>

@@ -108,5 +108,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
   });
 </script>
 
+<?php include('analytics.php'); ?>
+
 </BODY>
 </HTML>
