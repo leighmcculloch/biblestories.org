@@ -21,7 +21,7 @@ p {
 }
 
 #header h1 {
-  font-size:1.7em;
+  font-size:1.5em;
   margin:0;
 }
 
@@ -41,11 +41,16 @@ p {
 
 .searchnoresults {
   display:none;
+  font-size:0.8em;
 }
 
 #index {
   margin:0 auto 1em auto;
   text-align:center;
+}
+
+.index_text { 
+  font-size:0.8em;
 }
 
 #footer {
