@@ -8,7 +8,7 @@ $stories = get_index(INDEX_FILE_DEFAULT);
 <HTML>
 <HEAD>
   <TITLE><?php echo TITLE_DEFAULT; ?></TITLE>
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link href="style.css" rel="stylesheet" type="text/css">
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
