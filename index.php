@@ -75,11 +75,19 @@ $stories = get_index(INDEX_FILE_DEFAULT);
         return;
       }
       
-      var rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
-      var rows_enabled = $('#index_table tr:containsNoCase("' + $(this).val() + '")');
+      var rows_enabled = null;
+      var rows_disabled = null;
       
-      rows_disabled.hide();
+      if($(this).val().length==0) {
+        rows_enabled = $('#index_table tr');
+        rows_disabled = $([]);
+      } else {
+        rows_enabled = $('#index_table tr:containsNoCase("' + $(this).val() + '")');
+        rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
+      }
+      
       rows_enabled.show();
+      rows_disabled.hide();
       
       if(rows_enabled.length==0) {
         $('.searchnoresults').show();
