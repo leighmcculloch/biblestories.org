@@ -91,7 +91,7 @@ define('API_URL_TEXT', API_URL
                .'&include-first-verse-numbers=true'
                .'&include-footnotes=false'
                .'&include-footnote-links=false'
-               .'&include-surrounding-chapters=true'
+               .'&include-surrounding-chapters=false'
                .'&include-headings=false'
                .'&include-subheadings=false'
                .'&include-audio-link=true'
