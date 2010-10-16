@@ -81,12 +81,12 @@ function get_story_short_name($name)
 }
 
 /* ====== PASSAGE RETRIEVAL ====== */
-define(API_KEY, 'IP');
-define(API_URL, 'http://www.esvapi.org/v2/rest/passageQuery?key='.API_KEY);
-define(API_URL_AUDIO, API_URL
+define('API_KEY', 'IP');
+define('API_URL', 'http://www.esvapi.org/v2/rest/passageQuery?key='.API_KEY);
+define('API_URL_AUDIO', API_URL
                .'&output-format=mp3'
                .'&passage=');
-define(API_URL_TEXT, API_URL
+define('API_URL_TEXT', API_URL
                .'&include-passage-references=true'
                .'&include-first-verse-numbers=true'
                .'&include-footnotes=false'
