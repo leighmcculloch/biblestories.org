@@ -99,14 +99,16 @@ define('API_URL_TEXT', API_URL
                .'&audio-format=flash'
                .'&passage=');
 define('CACHE_DIR', 'cache');
+define('CACHE_AGE_LIMIT', 86400); /* 24 hours */
 
 function get_passage($ref)
 {
   $ref_id = get_passage_ref_id($ref);
   $file = CACHE_DIR.'/'.$ref_id;
   
-  /* get the cached file if it exists */
-  if(!file_exists($file)) {
+  /* check if the cached file needs updating */
+  $fileage = time()-filemtime($file);
+  if($fileage > CACHE_AGE_LIMIT) {
     mkdir(CACHE_DIR);
     $passage = get_url(API_URL_TEXT.urlencode($ref));
     file_put_contents($file, $passage);
