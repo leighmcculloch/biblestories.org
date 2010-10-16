@@ -65,8 +65,13 @@ $stories = get_index(INDEX_FILE_DEFAULT);
     };
     
     $('input[name=searchtext]').focus().keyup(function() {
+      /* ESC Key */
       if (event.keyCode == 27) {
         $(this).val('');
+      }
+      /* Enter Key */
+      if (event.keyCode == 13) {
+        $(this).blur();
       }
       
       var rows_disabled = $('#index_table tr:not(:containsNoCase("' + $(this).val() + '"))');
