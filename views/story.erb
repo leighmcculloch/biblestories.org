@@ -1,0 +1,53 @@
+<% content_for :body_class do %>page-story<% end %>
+
+<% content_for :title do %>: <%= story.title %><% end %>
+
+<% content_for :css do %>
+  <link href="style-<%= story.text_css %>.css" rel="stylesheet" type="text/css">
+<% end %>
+
+<% content_for :meta do %>
+  <meta name="description" content="<%= I18n.t(:meta_bible_story) %>: <%= story.title %>; <%= I18n.t(:meta_bible_ref) %>: <%= story.bible_ref %>.">
+<% end %>
+
+<div class="story-passage-heading">
+  <h2><%= story.title %> <span class="story-passage-bible-ref">(<%= story.bible_ref %>)</span></h2>
+  <div class="story-passage-bar">
+    <span class="story-text-smaller"><%= I18n.t(:story_text_smaller) %></span> <span class="story-text-larger"><%= I18n.t(:story_text_larger) %></span>
+    <% if story.audio_info && story.audio_info.length > 0 %>
+      <span class="story-text-listen"><%= I18n.t(:listen) %></span>
+    <% end %>
+  </div>
+</div>
+
+<div class="margin">
+  <div class="content">
+
+    <% if story.audio_info && story.audio_info.length > 0 %>
+    <span class="story-text-audio-player" style="display:none">
+      <audio controls="controls">
+        <% story.audio_info.each do |audio_info| %>
+            <!-- <%= audio_info[:bible_ref] %>; Start: <%= audio_info[:start_time] %>s; End: <%= audio_info[:end_time] %>s -->
+            <source src="<%= audio_info[:url] %>" title="<%= audio_info[:bible_ref] %>" type="audio/mpeg" data-start-time="<%= audio_info[:start_time] %>" />
+        <% end %>
+      </audio>
+    </span>
+    <% end %>
+
+    <div class="story-passage story-passage-<%= story.text_css %>">
+      <%= story.text_html %>
+    </div>
+
+    <div class="story-navigationbottom">
+      <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
+      <a href="/">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
+    </div>
+  </div>
+</div>
+
+<%= erb(:share) %>
+
+<% content_for :footer do %>
+  <p><%= story.text_copyright %> <%= story.audio_copyright %></p>
+<% end %>
+

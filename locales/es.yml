@@ -1,0 +1,22 @@
+es:
+  title: Grandes Historias de la Biblia
+  heading: Grandes Historias <span class="part">de la Biblia</span>
+  description: Un índice de las grandes historias de la Biblia
+  search_placeholder: Buscar historias de la Biblia ...
+  created_by: Creado por <a href="http://leighmcculloch.com">Leigh McCulloch</a>. Código fuente de sitios web es accesible en <a href="https://github.com/leighmcculloch/greatstoriesofthebible.org">github</a>.
+  tyndale_thanks: Gracias a la Tyndale House Publishing Inc. de autorización para publicar libremente las "grandes historias de la Biblia" índice, que se encuentra en las versiones de los New Living Translation Biblias.
+
+  story_text_smaller: A
+  story_text_larger: A
+  listen: Escuchar
+  read_the_surrounding_text_of: Lea el texto de alrededor de
+  find_other_great_stories_in_the_bible: Encontrar otras grandes historias en la Biblia
+  audio: Audio
+
+  meta_description: Un índice de historias en la Biblia. Leer y escuchar historias de la Biblia en su propio idioma.
+  meta_bible_story: Historia de la Biblia
+  meta_bible_ref: Referencia
+
+  # Crossway API
+  crossway_text_copyright: Escrituras tomadas de la Santa Biblia, Inglés Standard Version y Derechos de Autor © 2001 por <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, un ministerio de publicaciones de Good News Publishers. Utilizado con permiso. Todos los derechos reservados. Texto proporcionado por el <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles servicio web</a>.
+  crossway_audio_copyright: Scripture audio taken from The Holy Bible, English Standard Version and Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Audio provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.

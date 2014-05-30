@@ -1,0 +1,25 @@
+/* styles for passages */
+
+.story-passage-biblesorg h3,
+.story-passage-biblesorg h5 {
+  display:none;
+}
+
+.story-passage-biblesorg p {
+    text-indent: 2em;
+    margin:0;
+}
+
+.story-passage-biblesorg p.q1 {
+    padding-left: 2em;
+}
+.story-passage-biblesorg p.q2 {
+    padding-left: 4em;
+}
+
+.story-passage-biblesorg sup.v {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color:#eee;
+    font-weight: bold;
+}

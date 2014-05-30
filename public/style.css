@@ -1,0 +1,178 @@
+@import "reset.css";
+
+body {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:1em;
+  line-height:normal;
+}
+
+.margin {
+  margin:1em 5%;
+}
+
+.content {
+  margin:0 auto;
+  max-width:600px;
+}
+
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+p {
+  margin:1em 0;
+  padding:0;
+}
+
+.header,
+.story-passage-heading {
+  background-color:#f4f4f4;
+}
+
+.page-index .header,
+.story-passage-heading {
+  border-bottom: 1px solid #d5d5d6;
+}
+
+.header {
+  padding-top:6px;
+  text-align:center;
+}
+
+
+.header h1 {
+  font-size:1.5em;
+  font-weight: bold;
+  margin:0;
+}
+
+.header a {
+  text-decoration:none;
+  color:#000;
+}
+
+.header a:hover {
+    text-decoration:none;
+    color:#000;
+}
+
+.header h1 .part {
+    white-space:nowrap;
+}
+
+.header h2 {
+  font-size:1em;
+  font-weight: bold;
+  margin:0.5em 0;
+  padding-bottom:4px;
+}
+
+.header h2 .part {
+    white-space:nowrap;
+}
+
+.page-story .header h2 {
+    display:none;
+}
+
+.index-search {
+  text-align:center;
+  margin:1em 0;
+}
+
+.index-searchform {
+  margin:0;
+}
+
+.index-searchnoresults {
+  display:none;
+  font-size:0.8em;
+}
+
+.index-table {
+  margin:0 auto 1em auto;
+  text-align:center;
+}
+
+.index-text { 
+  font-size:0.8em;
+}
+
+.footer {
+  font-size:0.7em;
+  text-align:center;
+}
+
+/* styles for the story page only */
+.story-passage-heading {
+  text-align:center;
+  padding:0.5em 0 0.4em 0;
+}
+
+.story-passage-heading h2 {
+  font-size:1.2em;
+  font-weight: bold;
+  margin:0;
+}
+
+.story-passage-heading .story-passage-bar {
+  height:30px;
+  line-height:30px;
+  margin:0.3em 0 0em 0;
+}
+
+.story-passage {
+  font-family:Georgia;
+  margin:0 auto;
+  width:100%;
+  text-align:justify;
+}
+
+.story-passage-bible-ref {
+    white-space: nowrap;
+}
+
+.story-navigationtop {
+  text-align:center;
+  font-size:1em;
+  margin:0 0 1.3em 0;
+}
+
+.story-text-smaller {
+  font-size:0.75em;
+}
+
+.story-text-larger {
+  font-size:1.25em;
+}
+
+.story-text-listen {
+  font-size:0.75em;
+  cursor:pointer;
+}
+
+.story-text-audio-player .mejs-container {
+  display:block;
+  margin:0 auto;
+}
+
+.story-navigationbottom {
+  text-align:center;
+  font-size:0.9em;
+  margin:1em 0;
+}
+
+.story-navigationbottom a {
+    display:block;
+    margin:0.4em 0;
+}
+
+/* verse highlighting */
+
+.story-passage .highlightable:hover {
+    background-color: #FFFFC5;
+}

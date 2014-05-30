@@ -1,0 +1,34 @@
+<% content_for :body_class do %>page-index<% end %>
+
+<% content_for :meta do %>
+  <meta name="description" content="<%= I18n.t(:meta_description) %>">
+<% end %>
+
+<div class="index-search">
+  <form class="index-searchform" onsubmit="return false;">
+    <input class="index-searchtext" type="text" size="35" value="" placeholder="<%= I18n.t(:search_placeholder) %>" />
+  </form>
+</div>
+
+<div class="index-list">
+  <span class="index-searchnoresults">There are no stories matching your search.</span>
+  <table class="index-table">
+    <colgroup>
+      <col width="48%"/><col width="2%"/><col width="48%"/>
+      <col width="48%"/><col width="2%"/><col width="48%"/>
+    </colgroup>
+    <tbody>
+      <% stories.each_with_index do |story, story_index| %>
+      <tr id="story<%= story_index %>" class="story">
+        <td align="right" id="story_ref<%= story_index %>" class="story_ref"><span class="index-text"><%= story.bible_ref %></span></td>
+        <td align="center" nowrap>&nbsp;</td>
+        <td align="left" id="story_name<%= story_index %>"><span class="index-text"><a href="/<%= story.short_url %>"><%= story.title %></a></span></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% content_for :footer do %>
+  <p><%= I18n.t(:tyndale_thanks) %></p>
+<% end %>

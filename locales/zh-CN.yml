@@ -1,0 +1,22 @@
+zh:
+  title: 圣经中的大故事
+  heading: 圣经中的大故事
+  description: 在圣经中的伟大的故事索引
+  search_placeholder: 搜索圣经故事...
+  created_by: 由<a href="http://leighmcculloch.com">雷麦卡洛克</a>创建。网站源代码在<a href="https://github.com/leighmcculloch/greatstoriesofthebible.org">GitHub</a>访问。
+  tyndale_thanks: 感谢丁道尔家出版公司的许可自由地重新发布指数的“圣经伟大的故事”，这是在新生活翻译的圣经版本中。
+
+  story_text_smaller: 小
+  story_text_larger: 大
+  listen: 听
+  read_the_surrounding_text_of: 阅读的周围文本
+  find_other_great_stories_in_the_bible: 在圣经中发现的其他伟大的故事
+  audio: 音频
+
+  meta_description: 在圣经故事的索引。阅读和听你自己的语言的圣经故事。
+  meta_bible_story: 圣经故事
+  meta_bible_ref: 参考
+
+  # Crossway API
+  crossway_text_copyright: 由经文<a href="http://www.crosswaybibles.org">环形交叉口圣经</a>，好消息出版商的出版事工的圣经，英文标准版和采取版权所有©2001。经许可后使用。保留所有权利。由<a href="http://www.gnpcb.org/esv/share/services/">环形交叉口圣经的Web服务</a>提供的文本。
+  crossway_audio_copyright: Scripture audio taken from The Holy Bible, English Standard Version and Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Audio provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.

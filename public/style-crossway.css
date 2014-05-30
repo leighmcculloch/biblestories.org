@@ -1,0 +1,115 @@
+/* styles for passages - taken from the esvapi.org css style */
+.story-passage-crossway h3 {
+    text-align: left;
+}
+.story-passage-crossway span.woc {
+    color: #900;
+}
+.story-passage-crossway span.verse-num {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    font-weight: bold;
+    padding-right: .15em;
+    padding-left: .25em;
+    vertical-align: text-top;
+}
+.story-passage-crossway span.chapter-num {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color:#000;
+    font-weight: bold;
+    padding-right: .5em;
+}
+.story-passage-crossway div.esv-text p {
+    text-indent: 2em;
+}
+.story-passage-crossway div.esv-text p.same-paragraph {
+    text-indent: 0;
+}
+.story-passage-crossway div.block-indent p {
+    text-indent: 0;
+    padding-left: 2.5em;
+    margin-left: 0;
+}
+.story-passage-crossway span.indent {
+    padding-left: 2em;
+}
+.story-passage-crossway span.indent-2,
+.story-passage-crossway span.psalm-doxology-line {
+    padding-left: 4em;
+}
+.story-passage-crossway span.declares-line {
+    padding-left: 6em;
+}
+.story-passage-crossway span.small-caps {
+    font-variant: small-caps;
+}
+.story-passage-crossway span.selah {
+    font-style: italic;
+    margin-left: 1em;
+}
+.story-passage-crossway p.extra-space {
+    margin-top: 2em;
+}
+.story-passage-crossway div.block-indent span.verse-num,
+.story-passage-crossway div.block-indent span.woc  {
+    padding-left: 0;
+}
+.story-passage-crossway h4 {
+    font-weight: normal;
+}
+.story-passage-crossway h4.speaker {
+    padding-left: 10em;
+    font-variant: small-caps;
+    margin-bottom: -1em;
+}
+.story-passage-crossway h4.textual-note {
+    font-variant: small-caps;
+}
+.story-passage-crossway h4.psalm-acrostic-title {
+    font-variant: small-caps;
+}
+.story-passage-crossway h4.psalm-title {
+
+}
+.story-passage-crossway span.footnote {
+    font-size: 80%;
+    padding-right: .5em;
+    padding-left: 0em;
+    vertical-align: text-top;
+}
+.story-passage-crossway div.footnotes h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.story-passage-crossway div.footnotes p {
+    text-indent: 0;
+}
+.story-passage-crossway span.footnote-ref {
+    font-weight: bold;
+}
+.story-passage-crossway p.copyright {
+    text-indent: 0;
+}
+.story-passage-crossway object.audio {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+
+/* styles for passages */
+.story-passage-crossway .esv {
+    font-size:1em;
+}
+
+.story-passage-crossway .esv h2 {
+    display:none;
+}
+
+.story-passage-crossway span.verse-num {
+    vertical-align: baseline;
+}
+
+.story-passage-crossway span.verse-num,
+.story-passage-crossway span.chapter-num {
+    color:#eee;
+}
+
