@@ -49,6 +49,7 @@ before do
 end
 
 require_relative "controllers/index_controller"
+require_relative "controllers/pitch_controller"
 require_relative "controllers/story_controller"
 
 # 09:00AM same experience as current site using Crossway API
