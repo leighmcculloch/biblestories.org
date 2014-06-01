@@ -41,6 +41,13 @@ configure :production do
   $cache.extend(DalliGetOrSet)
 end
 
+before do
+  case request.host
+  when "greatstoriesofthebible.cn", "www.greatstoriesofthebible.cn"
+    I18n.locale = :zh
+  end
+end
+
 require_relative "controllers/index_controller"
 require_relative "controllers/story_controller"
 
