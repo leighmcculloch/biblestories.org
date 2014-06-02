@@ -10,7 +10,7 @@ class BiblesorgApi
 
   def self.get_version_for_locale
     version = LOCALE_TO_VERSION_MAP[I18n.locale]
-    version = LOCALE_TO_VERSION_MAP[:en] if version.nil?
+    version = LOCALE_TO_VERSION_MAP[I18n.default_locale] if version.nil?
     version
   end
 
