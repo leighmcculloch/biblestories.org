@@ -13,6 +13,7 @@ end
 configure :production do
   # exceptions
   use Bugsnag::Rack
+  enable :raise_errors
 
   # caching
   raise "MEMCACHEDCLOUD_SERVERS not defined as an environment variable!" if ENV["MEMCACHEDCLOUD_SERVERS"].nil?
