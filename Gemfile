@@ -20,6 +20,6 @@ end
 
 group :production do
   gem "dalli"
+  gem "bugsnag"
+  gem "newrelic_rpm"
 end
-
-gem 'newrelic_rpm'
