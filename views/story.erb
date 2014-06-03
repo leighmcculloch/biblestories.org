@@ -2,10 +2,6 @@
 
 <% content_for :title do %>: <%= story.title %><% end %>
 
-<% content_for :css do %>
-  <link href="style-<%= story.text_css %>.css" rel="stylesheet" type="text/css">
-<% end %>
-
 <% content_for :meta do %>
   <meta name="description" content="<%= I18n.t(:meta_bible_story) %>: <%= story.title %>; <%= I18n.t(:meta_bible_ref) %>: <%= story.bible_ref %>.">
 <% end %>

@@ -4,16 +4,11 @@
     <title><%= I18n.t(:title) %><%= yield_content :title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <%= yield_content :meta %>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <%= yield_content :css %>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-    <link href="external/mediaelementplayer.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-    <script src="external/mediaelement-and-player.min.js"></script>
-    <script src="external/mep-feature-playlist.js"></script>
-    <script src="index.js"></script>
-    <script src="story.js"></script>
+    <%= css :web %>
+    <%= js  :web %>
   </head>
   <body class="<%= yield_content :body_class %>">
     <div class="header">
