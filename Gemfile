@@ -19,7 +19,7 @@ group :development, :test do
   gem "mini_cache"
 end
 
-group :production, :staging do
+group :production do
   gem "dalli"
   gem "bugsnag"
   gem "newrelic_rpm"
