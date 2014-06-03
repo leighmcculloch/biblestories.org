@@ -10,7 +10,7 @@ configure :development, :test do
   $cache = MiniCache::Store.new
 end
 
-configure :production do
+configure :production, :staging do
   # exceptions
   use Bugsnag::Rack
   enable :raise_errors
