@@ -20,6 +20,8 @@ class Web < Sinatra::Application
 
     js_compression  :jsmin    # :jsmin | :yui | :closure | :uglify
     css_compression :simple   # :simple | :sass | :yui | :sqwish
+
+    prebuild true
   }
 
   # localization
