@@ -23,33 +23,23 @@ $(document).ready(function() {
             }
         );
 
-    $('.story-text-listen').click(function(){
-        var startTime = $('.story-text-audio-player audio source:first-child').data('start-time');
-        $('.story-text-listen').hide();
-        $('.story-text-audio-player').show();
-        $('.story-text-audio-player audio').mediaelementplayer({
-            loop: true,
-            shuffle: false,
-            playlist: false,
-            enableKeyboard: false,
-            audioHeight: 30,
-            audioWidth: 200,
-            startVolume: 1.0,
-            playlistposition: 'bottom',
-            features: ['playlistfeature', 'playpause', 'current', 'progress', 'duration'],
-            success: function (mediaElement, domObject) {
 
-                mediaElement.addEventListener('loadedmetadata', function(e) {
-                    if (typeof startTime != 'undefined' && startTime != 0) {
-                        startTime = 0;
-                        if (typeof mediaElement != 'undefined') {
-                            mediaElement.setCurrentTime(startTime);
-                        }
-                    }
-                }, false);
-                mediaElement.play();
-            }
-        });
-    });
+    var $audio = $('.story-text-audio-player audio').get(0);
+    if (typeof $audio != 'undefined') {
+        if (!!($audio.canPlayType && $audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
+            $('.story-text-listen').click(function(ev){
+                ev.preventDefault();
+                $('.story-text-listen').hide();
+                $('.story-text-audio-player').show();
+                if (typeof $audio != 'undefined') {
+                    $audio.addEventListener('canplay', function(e) {
+                        $audio.play();
+                    }, false);
+                    $audio.load();
+                }
+            });
+        }
+    }
+
 
 });

@@ -1,5 +1,3 @@
-@import "reset.css";
-
 body {
   font-family:Verdana, Arial, Helvetica, sans-serif;
   font-size:1em;
@@ -150,14 +148,21 @@ p {
   font-size:1.25em;
 }
 
-.story-text-listen {
+a.story-text-listen {
   font-size:0.75em;
-  cursor:pointer;
+  text-decoration:none;
+  color:#000;
 }
 
-.story-text-audio-player .mejs-container {
+a.story-text-listen:hover {
+ text-decoration:none;
+  color:#000;
+}
+
+.story-text-audio-player audio {
   display:block;
   margin:0 auto;
+  width:280px;
 }
 
 .story-navigationbottom {

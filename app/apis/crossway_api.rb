@@ -15,6 +15,7 @@ class CrosswayApi
       "&include-headings=false" <<
       "&include-subheadings=false" <<
       "&include-short-copyright=false" <<
+      "&include-audio-link=false" <<
       "&audio-format=flash" <<
       "&passage="
 

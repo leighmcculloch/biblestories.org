@@ -10,8 +10,8 @@
   <h2><%= story.title %> <span class="story-passage-bible-ref">(<%= story.bible_ref %>)</span></h2>
   <div class="story-passage-bar">
     <span class="story-text-smaller"><%= I18n.t(:story_text_smaller) %></span> <span class="story-text-larger"><%= I18n.t(:story_text_larger) %></span>
-    <% if story.audio_info && story.audio_info.length > 0 %>
-      <span class="story-text-listen"><%= I18n.t(:listen) %></span>
+    <% if story.audio_info && story.audio_info.length == 1 %>
+      <a href="<%= story.audio_info.first[:url] %>" class="story-text-listen"><%= I18n.t(:listen) %></a>
     <% end %>
   </div>
 </div>
@@ -19,14 +19,13 @@
 <div class="margin">
   <div class="content">
 
-    <% if story.audio_info && story.audio_info.length > 0 %>
+    <% if story.audio_info && story.audio_info.length == 1 %>
     <span class="story-text-audio-player" style="display:none">
-      <audio controls="controls">
-        <% story.audio_info.each do |audio_info| %>
-            <!-- <%= audio_info[:bible_ref] %>; Start: <%= audio_info[:start_time] %>s; End: <%= audio_info[:end_time] %>s -->
-            <source src="<%= audio_info[:url] %>" title="<%= audio_info[:bible_ref] %>" type="audio/mpeg" data-start-time="<%= audio_info[:start_time] %>" />
-        <% end %>
-      </audio>
+      <% story.audio_info.each do |audio_info| %>
+        <audio controls="controls" preload="none">
+          <source src="<%= audio_info[:url] %>" type="audio/mpeg">
+        </audio>
+      <% end %>
     </span>
     <% end %>
 
