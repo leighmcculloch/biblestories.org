@@ -76,7 +76,7 @@ class DigitalBiblePlatformApi
         start_time = start_time_info["verse_start"] if start_time_info
 
         # hack: all of the times returned seem to be off by anywhere from 4 to 13 seconds
-        start_time = start_time.to_i - 13
+        start_time = start_time.to_i
       end
       if end_verse
         end_time_info = response_json.find { |v| v["verse_id"] == (end_verse + 1) }
