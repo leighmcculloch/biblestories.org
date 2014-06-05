@@ -30,8 +30,11 @@ class CrosswayApi
   end
 
   def self.get_audio(bible_ref)
+    url = "#{API_URL_AUDIO}#{URI::encode(bible_ref)}"
+    response = HTTParty.head(url, { :maintain_method_across_redirects => true })
+    url = response.request.last_uri.to_s
     {
-      :audio_url => "#{API_URL_AUDIO}#{bible_ref}",
+      :audio_url => url,
       :copyright => I18n.t(:crossway_audio_copyright),
     }
   end
