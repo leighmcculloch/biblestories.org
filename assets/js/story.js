@@ -23,20 +23,29 @@ $(document).ready(function() {
             }
         );
 
+    $.scrollDepth();
 
-    var $audio = $('.story-text-audio-player audio').get(0);
-    if (typeof $audio != 'undefined') {
-        if (!!($audio.canPlayType && $audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
+    var audio = $('.story-text-audio-player audio').get(0);
+    if (typeof audio != 'undefined') {
+        if (!!(audio.canPlayType && audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
+            $(audio).gaPlayLength({
+              audioTime: true,
+              userTiming: true
+            });
             $('.story-text-listen').click(function(ev){
                 ev.preventDefault();
                 $('.story-text-listen').hide();
                 $('.story-text-audio-player').show();
-                if (typeof $audio != 'undefined') {
-                    $audio.addEventListener('canplay', function(e) {
-                        $audio.play();
+                if (typeof audio != 'undefined') {
+                    audio.addEventListener('canplay', function(e) {
+                        audio.play();
                     }, false);
-                    $audio.load();
+                    audio.load();
                 }
+            });
+        } else {
+            $('.story-text-listen').click(function(ev){
+                ga('send', 'event', 'Listen', 'direct');
             });
         }
     }
