@@ -6,11 +6,11 @@
     <%= yield_content :meta %>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <%= css :web %>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <%= js  :web %>
   </head>
   <body class="<%= yield_content :body_class %>">
+    <%= erb(:analytics) %>
     <div class="header">
       <h1><a href="/"><%= I18n.t(:heading) %></a></h1>
       <h2><%= I18n.t(:description) %></h2>
@@ -26,6 +26,5 @@
         </div>
       </div>
     </div>
-    <%= erb(:analytics) %>
   </body>
 </html>
