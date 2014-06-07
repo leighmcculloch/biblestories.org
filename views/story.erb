@@ -11,7 +11,8 @@
 <% end %>
 
 <div class="story-passage-heading">
-  <h2><%= story.title %> <span class="story-passage-bible-ref">(<%= story.bible_ref %>)</span></h2>
+  <h1><%= story.title %></h1>
+  <h2 class="story-passage-bible-ref">(<%= story.bible_ref %>)</h2>
   <div class="story-passage-bar">
     <span class="story-text-smaller"><%= I18n.t(:story_text_smaller) %></span> <span class="story-text-larger"><%= I18n.t(:story_text_larger) %></span>
     <% if story.audio_info && story.audio_info.length == 1 %>
