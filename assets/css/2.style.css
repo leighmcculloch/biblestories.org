@@ -1,8 +1,27 @@
+
+/* fonts */
 body {
-  font-family:Verdana, Arial, Helvetica, sans-serif;
-  font-size:1em;
-  line-height:normal;
+    font-family: "soleil", "Myriad Pro", Helvetica, Arial, Verdana, sans-serif;
+    font-size:1.2em;
+    line-height:normal;
 }
+
+.story-passage {
+    font-family: "chaparral-pro", Georgia, serif;
+    font-size:1em;
+}
+
+@media only screen and (max-device-width: 360px) {
+    body {
+        font-size:1em;
+    }
+
+    .story-passage {
+        font-size:1.2em;
+    }
+}
+
+/* styles */
 
 .margin {
   margin:1em 5%;
@@ -28,12 +47,10 @@ p {
 
 .header,
 .story-passage-heading {
-  background-color:#f4f4f4;
 }
 
 .page-index .header,
 .story-passage-heading {
-  border-bottom: 1px solid #d5d5d6;
 }
 
 .header {
@@ -108,7 +125,6 @@ p {
 /* styles for the story page only */
 .story-passage-heading {
   text-align:center;
-  padding:0.5em 0 0.4em 0;
 }
 
 .story-passage-heading h2 {
@@ -119,12 +135,9 @@ p {
 
 .story-passage-heading .story-passage-bar {
   height:30px;
-  line-height:30px;
-  margin:0.3em 0 0em 0;
 }
 
 .story-passage {
-  font-family:Georgia;
   margin:0 auto;
   width:100%;
   text-align:justify;
