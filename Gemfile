@@ -10,6 +10,7 @@ gem "httparty"
 gem "i18n"
 gem "rack-contrib"
 gem "json"
+gem "sanitize"
 
 group :development, :test do
   gem "debugger-ruby_core_source"

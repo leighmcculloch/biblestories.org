@@ -31,6 +31,14 @@ class Story
     @read_more_url = Apis.get_read_more(self.bible_ref_english)
   end
 
+  def text_plain
+    Sanitize.clean(self.text_html)
+  end
+
+  def text_plain_short
+    "#{self.text_plain[0..197]}..."
+  end
+
   def text_html
     load
     @text_html

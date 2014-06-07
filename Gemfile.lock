@@ -31,9 +31,12 @@ GEM
       rb-inotify (>= 0.9)
     method_source (0.8.2)
     mini_cache (1.0.0)
+    mini_portile (0.6.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     newrelic_rpm (3.8.1.221)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -54,6 +57,8 @@ GEM
       ffi (>= 0.5.0)
     rerun (0.10.0)
       listen (~> 2.7, >= 2.7.3)
+    sanitize (2.1.0)
+      nokogiri (>= 1.4.4)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -95,6 +100,7 @@ DEPENDENCIES
   pry-debugger
   rack-contrib
   rerun
+  sanitize
   sinatra
   sinatra-assetpack
   sinatra-contrib
