@@ -38,7 +38,7 @@ class Web < Sinatra::Application
   end
 
   # exceptions
-  configure :production, :staging do
+  configure :production do
     use Bugsnag::Rack
     enable :raise_errors
   end
