@@ -8,7 +8,7 @@ class DigitalBiblePlatformApi
       :en => "ENGESVN2DA", # English ESV New Testament
       # :en => "ENGWEBN2DA", # English WEB New Testament
       :es => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
-      :zh => "CHNUN1N2DA", # Chinese (Simplified) New Testament
+      :"zh-hans" => "CHNUN1N2DA", # Chinese (Simplified) New Testament
   }
 
   def self.get_damid_for_locale

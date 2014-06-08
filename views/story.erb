@@ -18,6 +18,7 @@
       <a href="<%= story.audio_info.first[:url] %>" class="story-text-listen"><%= I18n.t(:listen) %></a>
     <% end %>
   </div>
+  <%= erb(:languages) %>
 </div>
 
 <div class="margin">
@@ -39,7 +40,7 @@
 
     <div class="story-navigationbottom">
       <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
-      <a href="/">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
+      <a href="/<%= I18n.locale_path_prefix %>">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
     </div>
   </div>
 </div>

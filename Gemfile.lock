@@ -45,8 +45,6 @@ GEM
       debugger (~> 1.3)
       pry (~> 0.9.10)
     rack (1.5.2)
-    rack-contrib (1.1.0)
-      rack (>= 0.9.1)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -98,7 +96,6 @@ DEPENDENCIES
   newrelic_rpm
   pry
   pry-debugger
-  rack-contrib
   rerun
   sanitize
   sinatra

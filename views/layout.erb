@@ -11,10 +11,6 @@
     <%= js  :web %>
   </head>
   <body class="<%= yield_content :body_class %>">
-    <div class="header">
-      <h1><a href="/"><%= I18n.t(:heading) %></a></h1>
-      <h2><%= I18n.t(:description) %></h2>
-    </div>
 
     <%= yield %>
 

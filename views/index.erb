@@ -4,6 +4,12 @@
   <meta name="description" content="<%= I18n.t(:meta_description) %>">
 <% end %>
 
+<div class="header">
+  <h1><a href="/"><%= I18n.t(:heading) %></a></h1>
+  <h2><%= I18n.t(:description) %></h2>
+  <%= erb(:languages) %>
+</div>
+
 <div class="index-search">
   <form class="index-searchform" onsubmit="return false;">
     <input class="index-searchtext" type="text" size="35" value="" placeholder="<%= I18n.t(:search_placeholder) %>" />
@@ -22,7 +28,7 @@
       <tr id="story<%= story_index %>" class="story">
         <td align="right" id="story_ref<%= story_index %>" class="story_ref"><span class="index-text"><%= story.bible_ref %></span></td>
         <td align="center" nowrap>&nbsp;</td>
-        <td align="left" id="story_name<%= story_index %>"><span class="index-text"><a href="/<%= story.short_url %>"><%= story.title %></a></span></td>
+        <td align="left" id="story_name<%= story_index %>"><span class="index-text"><a href="/<%= I18n.locale_path_prefix %><%= story.short_url %>"><%= story.title %></a></span></td>
       </tr>
       <% end %>
     </tbody>

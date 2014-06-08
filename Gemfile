@@ -8,7 +8,6 @@ gem "sinatra-contrib"
 gem "sinatra-assetpack", :require => "sinatra/assetpack"
 gem "httparty"
 gem "i18n"
-gem "rack-contrib"
 gem "json"
 gem "sanitize"
 
