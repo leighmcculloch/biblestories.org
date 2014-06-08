@@ -26,7 +26,6 @@ body {
 }
 
 .header a {
-  text-decoration: none;
   color: #333;
 }
 
@@ -55,6 +54,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.header a {
+  text-decoration: none;
 }
 
 a.story-text-listen,
