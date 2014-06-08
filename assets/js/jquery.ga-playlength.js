@@ -1,6 +1,6 @@
 /*!
  * @preserve
- * jquery.ga-playlength.js | v0.1
+ * jquery.ga-playlength.js | v0.2
  * Copyright (c) 2014 Leigh McCulloch
  * Licensed under the BSD 3-clause license.
  *
@@ -120,7 +120,8 @@
         return (Math.floor(currentTime/10) * 10).toString();
       }
 
-      /*
+      /*!
+       * @preserve
        * Throttle function borrowed from:
        * Underscore.js 1.5.2
        * http://underscorejs.org
@@ -165,7 +166,7 @@
           sendEvent('Percentage', key);
           cache.push(key);
         }
-      }.bind(this));
+      });
 
       $(this).on('timeupdate', throttle(function () {
         var duration = this.duration;
@@ -183,7 +184,7 @@
             cache.push(key);
           }
         });
-      }.bind(this), 500));
+      }, 500));
 
       $(this).on('ended', function () {
         var key = '100%';
@@ -192,7 +193,7 @@
           sendEvent('Percentage', key, this.duration, timing);
           cache.push(key);
         }
-      }.bind(this));
+      });
 
     });
   };
