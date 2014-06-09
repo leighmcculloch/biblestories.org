@@ -32,5 +32,4 @@ end
 require_relative "app_controller_i18n"
 require_relative "asset_controller"
 require_relative "index_controller"
-require_relative "pitch_controller"
 require_relative "story_controller"
