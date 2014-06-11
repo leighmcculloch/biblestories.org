@@ -38,6 +38,30 @@
       <%= story.text_html %>
     </div>
 
+    <script type="text/javascript">
+        $.ajax({
+            url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538af91b78db2c14',
+            cache: true,
+            dataType: "script",
+            success: function() {
+                addthis.layers({
+                    'theme' : 'transparent',
+                    'responsive': {
+                        maxWidth: '700px'
+                    },
+                    'share' : {
+                        <% if I18n.locale == :"zh-hans" %>
+                        'services' : 'qzone,sinaweibo,kaixin,email,more',
+                        <% else %>
+                        'numPreferredServices' : 5,
+                        <% end %>
+                        'position' : 'right'
+                    }
+                });
+            }
+        });
+    </script>
+
     <div class="story-navigationbottom">
       <!--<a href="http://greatstories.org/<%= story.short_url %>">Short link: greatstories.org/<%= story.short_url %></span></a>-->
       <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
