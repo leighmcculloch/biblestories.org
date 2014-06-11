@@ -1,7 +1,7 @@
 class Web < Sinatra::Application
 
   # exceptions
-  configure :production do
+  configure :production, :staging do
     use Bugsnag::Rack
     enable :raise_errors
   end
@@ -10,7 +10,7 @@ class Web < Sinatra::Application
   configure :development, :test do
     $cache = MiniCache::Store.new
   end
-  configure :production do
+  configure :production, :staging do
     raise "MEMCACHEDCLOUD_SERVERS not defined as an environment variable!" if ENV["MEMCACHEDCLOUD_SERVERS"].nil?
     $cache = Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(','), {
         :username => ENV["MEMCACHEDCLOUD_USERNAME"],
