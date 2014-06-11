@@ -28,7 +28,7 @@
       <tr id="story<%= story_index %>" class="story">
         <td align="right" id="story_ref<%= story_index %>" class="story_ref"><span class="index-text"><%= story.bible_ref %></span></td>
         <td align="center" nowrap>&nbsp;</td>
-        <td align="left" id="story_name<%= story_index %>"><span class="index-text"><a href="/<%= I18n.locale_path_prefix %><%= story.short_url %>"><%= story.title %></a></span></td>
+        <td align="left" id="story_name<%= story_index %>"><span class="index-text"><a href="<%= I18n.url_for_locale(path: "#{story.short_url}") %>"><%= story.title %></a></span></td>
       </tr>
       <% end %>
     </tbody>

@@ -39,8 +39,9 @@
     </div>
 
     <div class="story-navigationbottom">
+      <!--<a href="http://greatstories.org/<%= story.short_url %>">Short link: greatstories.org/<%= story.short_url %></span></a>-->
       <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
-      <a href="/<%= I18n.locale_path_prefix %>">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
+      <a href="<%= I18n.url_for_locale %>">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
     </div>
   </div>
 </div>

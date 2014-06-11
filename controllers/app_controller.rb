@@ -1,35 +1,27 @@
 class Web < Sinatra::Application
 
-  # exceptions
-  configure :production, :staging do
-    use Bugsnag::Rack
-    enable :raise_errors
+  before do
+    I18n.locale = I18n.default_locale_for_host(request.host)
   end
 
-  # caching
-  configure :development, :test do
-    $cache = MiniCache::Store.new
+  before "/" do
+    unless I18n.path_for_locale.nil?
+      redirect to(I18n.url_for_locale), 301
+    end
   end
-  configure :production, :staging do
-    raise "MEMCACHEDCLOUD_SERVERS not defined as an environment variable!" if ENV["MEMCACHEDCLOUD_SERVERS"].nil?
-    $cache = Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(','), {
-        :username => ENV["MEMCACHEDCLOUD_USERNAME"],
-        :password => ENV["MEMCACHEDCLOUD_PASSWORD"]
-    })
-    module DalliGetOrSet
-      def get_or_set(key)
-        value = self.get(key)
-        return value if value
-        value = yield
-        self.set(key, value)
-        value
+
+  before "/:locale/?*" do
+    locale = params[:locale].to_sym
+    path = params[:splat][0]
+
+    if I18n.available_locales.include?(locale)
+      if request.host != I18n.host_for_locale(locale: locale) || I18n.path_for_locale(locale: locale).nil?
+        redirect to(I18n.url_for_locale(path: path, locale: locale)), 301
+      else
+        I18n.locale = locale
+        request.path_info = "/#{path}"
       end
     end
-    $cache.extend(DalliGetOrSet)
   end
-end
 
-require_relative "app_controller_i18n"
-require_relative "asset_controller"
-require_relative "index_controller"
-require_relative "story_controller"
+end
