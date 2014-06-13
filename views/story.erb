@@ -39,6 +39,9 @@
     </div>
 
     <script type="text/javascript">
+        var addthis_share = {
+            url: "<%= I18n.short_url_for_locale(path: story.short_url) %>"
+        }
         $.ajax({
             url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538af91b78db2c14',
             cache: true,
@@ -50,12 +53,18 @@
                         maxWidth: '700px'
                     },
                     'share' : {
+                        'theme' : 'transparent',
+                        'position' : 'right',
                         <% if I18n.locale == :"zh-hans" %>
                         'services' : 'qzone,sinaweibo,kaixin,email,more',
                         <% else %>
                         'numPreferredServices' : 5,
                         <% end %>
-                        'position' : 'right'
+                    },
+                    'mobile' : {
+                        'buttonBarPosition' : 'bottom',
+                        'buttonBarTheme' : 'transparent',
+                        'mobile' : true
                     }
                 });
             }
@@ -63,7 +72,7 @@
     </script>
 
     <div class="story-navigationbottom">
-      <!--<a href="http://greatstories.org/<%= story.short_url %>">Short link: greatstories.org/<%= story.short_url %></span></a>-->
+      <a href="<%= I18n.short_url_for_locale(path: story.short_url) %>" rel="nofollow"><%= I18n.short_url_for_locale(path: story.short_url)[7..-1] %></span></a>
       <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
       <a href="<%= I18n.url_for_locale %>">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
     </div>

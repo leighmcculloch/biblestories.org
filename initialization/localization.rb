@@ -5,14 +5,26 @@ class Web < Sinatra::Application
     LOCALE_DEFAULT = :en
 
     LOCALE_TO_URL_INFO = {
-        :en => [ "greatstoriesofthebible.org", nil ],
-        :es => [ "greatstoriesofthebible.org", "/es" ],
-        :"zh-hans" => [ "greatstoriesofthebible.cn", nil ],
+        :en => {
+            :host => "greatstoriesofthebible.org",
+            :short_host => "greatstories.org",
+            :locale_path => false,
+        },
+        :es => {
+            :host => "greatstoriesofthebible.org",
+            :short_host => "greatstories.org",
+            :locale_path => true,
+        },
+        :"zh-hans" => {
+            :host => "greatstoriesofthebible.cn",
+            :short_host => "greatstoriesofthebible.cn",
+            :locale_path => false,
+        },
     }
 
     def default_locale_for_host(host)
       default_locale = LOCALE_TO_URL_INFO.find do |_, info|
-        locale_host = info[0]
+        locale_host = info[:host]
         host.end_with?(locale_host)
       end
       return default_locale[0] if default_locale
@@ -21,21 +33,32 @@ class Web < Sinatra::Application
 
     def host_for_locale(locale: nil)
       locale = I18n.locale if locale.nil?
-      host = LOCALE_TO_URL_INFO[locale.to_sym][0]
+      host = LOCALE_TO_URL_INFO[locale.to_sym][:host]
       host = "dev.#{host}" if ENV["RACK_ENV"] == "development"
       host = "staging.#{host}" if ENV["RACK_ENV"] == "staging"
       host
     end
 
+    def short_host_for_locale(locale: nil)
+      locale = I18n.locale if locale.nil?
+      host = LOCALE_TO_URL_INFO[locale.to_sym][:short_host]
+      host
+    end
+
     def path_for_locale(locale: nil)
       locale = I18n.locale if locale.nil?
-      path = LOCALE_TO_URL_INFO[locale.to_sym][1]
+      path = LOCALE_TO_URL_INFO[locale.to_sym][:locale_path] ? "/#{locale.to_s}" : nil
       path
     end
 
     def url_for_locale(path: "", locale: nil)
       port_for_locale = ":8080" if ENV["RACK_ENV"] == "development"
       "http://#{host_for_locale(locale: locale)}#{port_for_locale}#{path_for_locale(locale: locale)}/#{path}"
+    end
+
+    def short_url_for_locale(path: "", locale: nil)
+      locale = I18n.locale if locale.nil?
+      "http://#{short_host_for_locale(locale: locale)}#{path_for_locale(locale: locale)}/#{path}"
     end
 
     def available_locales_info
