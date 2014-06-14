@@ -62,13 +62,13 @@ class Web < Sinatra::Application
     end
 
     def available_locales_info
-      # I18n.available_locales.map do |locale|
-      #   {
-      #       :native_name => I18n.t(:language, locale: locale),
-      #       :url_prefix => url_for_locale(locale: locale),
-      #   }
-      # end
-      []
+      return [] if ENV["RACK_ENV"] == "production"
+      I18n.available_locales.map do |locale|
+        {
+            :native_name => I18n.t(:language, locale: locale),
+            :url_prefix => url_for_locale(locale: locale),
+        }
+      end
     end
 
   end
