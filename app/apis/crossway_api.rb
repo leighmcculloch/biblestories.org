@@ -24,7 +24,7 @@ class CrosswayApi
     response = HTTParty.get(url)
     {
         :text => response.body,
-        :copyright => I18n.t(:crossway_text_copyright),
+        :copyright => %(Scripture taken from The Holy Bible, English Standard Version and Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.),
         :css => "crossway",
     }
   end
@@ -35,7 +35,7 @@ class CrosswayApi
     url = response.request.last_uri.to_s
     {
       :audio_url => url,
-      :copyright => I18n.t(:crossway_audio_copyright),
+      :copyright => %(Audio provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.),
     }
   end
 

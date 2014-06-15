@@ -18,6 +18,147 @@ es:
   meta_bible_story: Historia de la Biblia
   meta_bible_ref: Referencia
 
-  # Crossway API
-  crossway_text_copyright: Escrituras tomadas de la Santa Biblia, Inglés Standard Version y Derechos de Autor © 2001 por <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, un ministerio de publicaciones de Good News Publishers. Utilizado con permiso. Todos los derechos reservados. Texto proporcionado por el <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles servicio web</a>.
-  crossway_audio_copyright: Scripture audio taken from The Holy Bible, English Standard Version and Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Audio provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.
+  # Bible book titles
+  Genesis:      Génesis
+  Exodus:       Éxodo
+  Numbers:      Números
+  Joshua:       Josué
+  Judges:       Jueces
+  Ruth:         Rut
+  1_Samuel:     1 Samuel
+  2_Samuel:     2 Samuel
+  1_Kings:      1 Reyes
+  2_Kings:      2 Reyes
+  1_Chronicles: 1 Crónicas
+  2_Chronicles: 2 Crónicas
+  Ezra:         Esdras
+  Nehemiah:     Nehemías
+  Esther:       Ester
+  Job:          Job
+  Ezekiel:      Ezequiel
+  Daniel:       Daniel
+  Jonah:        Jonás
+  Matthew:      Mateo
+  Mark:         Marcos
+  Luke:         Lucas
+  John:         Juan
+  Acts:         Hechos
+
+  # Story titles
+  the_creation:                     La Creación
+  adam_and_eve:                     Adán y Eva
+  cain_and_abel:                    Caín y Abel
+  the_great_flood:                  La gran inundación
+  the_tower_of_babel:               La Torre de Babel
+  god_calls_abraham:                Dios llama a Abraham
+  sodom_and_gomorrah:               Sodoma y Gomorra
+  abrahams_obedience:               La obediencia de Abraham
+  isaac_marries_rebekah:            Isaac se casa con Rebeca
+  esaus_birthright:                 Birthright de Esaú
+  isaac_blesses_jacob:              Isaac bendice a Jacob
+  jacob_and_laban:                  Jacob y Labán
+  jacob_wrestles:                   Jacob Lucha
+  revenge_against_schechem:         La venganza contra Siquem
+  joseph_in_prison:                 José en la prisión
+  joseph_as_a_ruler:                José como un Gobernante
+  family_reunion:                   Family Reunion
+  moses_birth:                      Nacimiento de Moisés
+  the_burning_bush:                 La zarza ardiente
+  the_ten_plagues:                  Las diez plagas
+  the_exodus:                       El Éxodo
+  the_red_sea:                      El Mar Rojo
+  the_gold_calf:                    El Becerro de Oro
+  exploring_the_land:               Exploración de la Tierra
+  rebellion_in_the_ranks:           Rebelión en las filas
+  balak_and_balaam:                 Balac y Balaam
+  rahab_and_the_spies:              Rajab y los espías
+  jericho_falls:                    Jericho Falls
+  gibeons_con_artists:              Estafadores de Gabaón
+  deborah_and_barak:                Débora y Barac
+  gideon_as_judge:                  Gedeón como juez
+  abimelechs_ambition:              La ambición de Abimelec
+  samson_as_judge:                  Samson como Juez
+  ruth_naomi_and_boaz:              Ruth, Naomi y Boaz
+  samuel_is_born:                   Samuel nace
+  samuel_the_prophet:               Samuel el Profeta
+  saul_becomes_king:                Saúl se convierte en rey
+  jonathans_bravery:                Valentía de Jonathan
+  sauls_disobedience:               La desobediencia de Saúl
+  david_kills_goliath:              David Muertes Goliath
+  david_and_jonathan:               David y Jonatán
+  nabal_and_abigail:                Nabal y Abigail
+  sauls_death:                      La muerte de Saúl
+  davids_success:                   El éxito de David
+  david_and_bathsheba:              David y Betsabé
+  amnon_and_tamar:                  Amnón y Tamar
+  absalom:                          Absalón
+  solomons_wisdom:                  La sabiduría de Salomón
+  jeroboam_and_rehoboam:            Jeroboam y Roboam
+  elijahs_challenge:                Desafío de Elías
+  god_speaks_to_elijah:             Dios le habla a Elías
+  micaiah_the_prophet:              Miqueas el profeta
+  chariot_of_fire:                  Carro de Fuego
+  elisha_heals_naaman:              Eliseo sana a Naamán
+  famine_and_unbelief:              El hambre y la incredulidad
+  joash_and_jehoiada:               Joás y Joiada
+  hezekiah_trusts_god:              Ezequías Fideicomisos Dios
+  josiahs_reign:                    Reinado de Josías
+  fall_of_jerusalem:                Caída de Jerusalén
+  davids_power:                     Potencia de David
+  davids_census:                    Censo de David
+  jehoshaphat_and_ahab:             Josafat y Acab
+  ezra_rebuilds_the_altar:          Esdras Reconstruye el Altar
+  nehemiah_builds_the_wall:         Nehemías construye el Muro
+  enemy_opposition:                 Oposición Enemy
+  nehemiahs_justice:                Justicia de Nehemías
+  esther_saves_the_jews:            Ester salva a los Judios
+  job_is_tested:                    Job es probado
+  ezekiels_vision:                  Visión de Ezequiel
+  the_fiery_furnace:                El Horno de Fuego
+  the_lions_den:                    Foso de los leones
+  jonah:                            Jonás
+  jesus_is_born_by_matthew:         Jesús nace
+  jesus_is_born_by_luke:            Jesús nace
+  wise_men_and_king_herod:          Sabios y el rey Herodes
+  jesus_is_tempted_by_matthew:      Jesús es tentado
+  jesus_is_tempted_by_mark:         Jesús es tentado
+  jesus_is_tempted_by_luke:         Jesús es tentado
+  jesus_feeds_5000_by_matthew:      Jesús alimenta a 5000
+  jesus_feeds_5000_by_mark:         Jesús alimenta a 5000
+  jesus_feeds_5000_by_luke:         Jesús alimenta a 5000
+  jesus_feeds_5000_by_john:         Jesús alimenta a 5000
+  the_bread_of_life:                El Pan de Vida
+  jesus_walks_on_water_by_matthew:  Jesús camina sobre el agua
+  jesus_walks_on_water_by_mark:     Jesús camina sobre el agua
+  jesus_walks_on_water_by_john:     Jesús camina sobre el agua
+  the_good_samaritan:               El buen samaritano
+  the_lost_son:                     El hijo perdido
+  jesus_raises_lazarus:             Jesús resucita a Lázaro
+  jesus_and_zacchaeus:              Jesús y Zaqueo
+  the_triumphal_entry_by_matthew:   La Entrada Triunfal
+  the_triumphal_entry_by_luke:      La Entrada Triunfal
+  the_triumphal_entry_by_john:      La Entrada Triunfal
+  the_last_supper_by_matthew:       La última cena
+  the_last_supper_by_mark:          La última cena
+  the_last_supper_by_luke:          La última cena
+  the_last_supper_by_john:          La última cena
+  jesus_trial:                      Juicio de Jesús
+  jesus_crucifixion_by_matthew:     Crucifixión de Jesús
+  jesus_crucifixion_by_mark:        Crucifixión de Jesús
+  jesus_crucifixion_by_luke:        Crucifixión de Jesús
+  jesus_crucifixion_by_john:        Crucifixión de Jesús
+  jesus_resurrection_by_matthew:    Resurrección de Jesús
+  jesus_resurrection_by_mark:       Resurrección de Jesús
+  jesus_resurrection_by_luke:       Resurrección de Jesús
+  jesus_resurrection_by_john:       Resurrección de Jesús
+  jesus_ascension_luke:             Ascensión de Jesús
+  jesus_ascension_acts:             Ascensión de Jesús
+  the_holy_spirit_comes:            El Espíritu Santo viene
+  the_apostles_courage:             El coraje de los apóstoles
+  ananias_and_sapphira:             Ananías y Safira
+  philip_and_the_eunuch:            Felipe y el eunuco
+  saul_encounters_jesus:            Saúl Encuentros Jesús
+  peter_and_cornelius:              Pedro y Cornelio
+  paul_in_corinth:                  Pablo en Corinto
+  paul_in_ephesus:                  Pablo en Éfeso
+  paul_goes_to_rome:                Pablo va a Roma

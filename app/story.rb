@@ -3,11 +3,11 @@ require_relative "apis"
 class Story
   attr_reader :short_url, :title, :bible_ref, :bible_ref_english
 
-  def initialize(short_url, title, bible_ref, bible_ref_english)
-    @short_url = short_url
-    @title = title
-    @bible_ref = bible_ref
-    @bible_ref_english = bible_ref_english
+  def initialize(story_key, book_key, book_ref)
+    @short_url = story_key
+    @title = I18n.t(story_key)
+    @bible_ref = "#{I18n.t(book_key)} #{book_ref}"
+    @bible_ref_english = "#{I18n.t(book_key, locale: :en)} #{book_ref}"
   end
 
   def load
