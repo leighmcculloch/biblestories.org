@@ -9,9 +9,9 @@ class Stories
     
     stories = {}
     stories_text.each do |story_text|
-      story_key = story_text[0]
-      story_book_key = story_text[1]
-      story_book_ref = story_text[2]
+      story_key = story_text[0].strip
+      story_book_key = story_text[1].strip
+      story_book_ref = story_text[2].strip
       story = Story.new(story_key, story_book_key, story_book_ref)
       stories.merge!(story.short_url => story)
     end
