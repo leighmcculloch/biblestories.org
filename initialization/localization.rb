@@ -15,7 +15,7 @@ class Web < Sinatra::Application
             :short_host => "greatstories.org",
             :locale_path => true,
         },
-        :"zh-hans" => {
+        :"zh-Hans" => {
             :host => "greatstoriesofthebible.cn",
             :short_host => "greatstoriesofthebible.cn",
             :locale_path => false,

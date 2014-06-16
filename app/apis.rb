@@ -6,12 +6,12 @@ class Apis
   LOCALE_TO_API_TEXT_MAP = {
       :en => CrosswayApi,
       :es => BiblesorgApi,
-      :"zh-hans" => BiblesorgApi,
+      :"zh-Hans" => BiblesorgApi,
   }
   LOCALE_TO_API_AUDIO_MAP = {
       :en => CrosswayApi,
       :es => DigitalBiblePlatformApi,
-      :"zh-hans" => DigitalBiblePlatformApi,
+      :"zh-Hans" => DigitalBiblePlatformApi,
   }
 
   def self.get_text(bible_ref)

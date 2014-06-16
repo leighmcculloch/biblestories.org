@@ -5,7 +5,7 @@ class BiblesorgApi
   LOCALE_TO_VERSION_MAP = {
     :en => "eng-MSG",
     :es => "spa-DHH",
-    :"zh-hans" => "zho-RCUVSS",
+    :"zh-Hans" => "zho-RCUVSS",
   }
 
   def self.get_version_for_locale
