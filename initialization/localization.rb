@@ -75,6 +75,7 @@ class Web < Sinatra::Application
       available_locales = available_locales.keep_if { |l| locale_listed(l) } if ENV["RACK_ENV"] == "production"
       available_locales.map do |locale|
         {
+            :locale => locale,
             :native_name => I18n.t(:language, locale: locale),
             :url_prefix => url_for_locale(locale: locale),
         }

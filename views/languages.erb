@@ -1,6 +1,9 @@
 
 <ul class="languages">
   <% I18n.available_locales_info.each do |locale| %>
-      <li><a href="<%= "#{locale[:url_prefix]}#{request.path_info[1..-1]}" %>"><%= locale[:native_name] %></a></li>
+      <% content_for :meta do %>
+        <link rel="alternate" hreflang="<%= locale[:locale] %>" href="<%= "#{locale[:url_prefix]}#{request.path_info[1..-1]}" %>" />
+      <% end %>
+      <li><a href="<%= "#{locale[:url_prefix]}#{request.path_info[1..-1]}" %>" hreflang="<%= locale[:locale] %>"><%= locale[:native_name] %></a></li>
   <% end %>
 </ul>
