@@ -9,16 +9,19 @@ class Web < Sinatra::Application
             :host => "greatstoriesofthebible.org",
             :short_host => "greatstories.org",
             :locale_path => false,
+            :listed => true,
         },
         :es => {
             :host => "greatstoriesofthebible.org",
             :short_host => "greatstories.org",
             :locale_path => true,
+            :listed => false,
         },
         :"zh-Hans" => {
             :host => "greatstoriesofthebible.cn",
             :short_host => "greatstoriesofthebible.cn",
             :locale_path => false,
+            :listed => true,
         },
     }
 
@@ -61,9 +64,16 @@ class Web < Sinatra::Application
       "http://#{short_host_for_locale(locale: locale)}#{path_for_locale(locale: locale)}/#{path}"
     end
 
+    def locale_listed(locale)
+      locale_info = LOCALE_TO_URL_INFO[locale.to_sym]
+      return locale_info[:listed] if locale_info
+      false
+    end
+
     def available_locales_info
-      return [] if ENV["RACK_ENV"] == "production"
-      I18n.available_locales.map do |locale|
+      available_locales = I18n.available_locales
+      available_locales = available_locales.keep_if { |l| locale_listed(l) } if ENV["RACK_ENV"] == "production"
+      available_locales.map do |locale|
         {
             :native_name => I18n.t(:language, locale: locale),
             :url_prefix => url_for_locale(locale: locale),
