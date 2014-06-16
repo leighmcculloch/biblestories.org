@@ -5,9 +5,9 @@ class Story
 
   def initialize(story_key, book_key, book_ref)
     @short_url = story_key
-    @title = I18n.t(story_key)
-    @bible_ref = "#{I18n.t(book_key)} #{book_ref}"
-    @bible_ref_english = "#{I18n.t(book_key, locale: :en)} #{book_ref}"
+    @title = I18n.t("story.title.#{story_key}")
+    @bible_ref = "#{I18n.t("bible_book.#{book_key}")} #{book_ref}"
+    @bible_ref_english = "#{I18n.t("bible_book.#{book_key}", locale: :en)} #{book_ref}"
   end
 
   def load

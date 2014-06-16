@@ -2,7 +2,7 @@ require_relative "../app/stories"
 
 class Web < Sinatra::Application
   get "/" do
-    stories = Stories.load("stories.csv").values
+    stories = Stories.all.values
     erb :index, :locals => {
       :stories => stories
     }
