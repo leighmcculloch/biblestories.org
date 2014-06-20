@@ -221,3 +221,23 @@ p {
   height: 32px;
   margin:0 auto;
 }
+
+.sharebox a {
+  opacity: 0.333;
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: grayscale(90%); /* Current draft standard */
+  -webkit-filter: grayscale(90%); /* New WebKit */
+  -moz-filter: grayscale(90%);
+  -ms-filter: grayscale(90%);
+  -o-filter: grayscale(90%);
+  filter: gray; /* IE6+ */
+}
+
+.sharebox a:hover {
+  opacity: 1.0;
+  filter: none;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+}
