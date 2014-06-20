@@ -38,44 +38,42 @@
       <%= story.text_html %>
     </div>
 
-    <script type="text/javascript">
-        var addthis_share = {
-            url: "<%= I18n.short_url_for_locale(path: story.short_url) %>"
-        };
-        $.ajax({
-            url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538af91b78db2c14',
-            cache: true,
-            dataType: "script",
-            success: function() {
-                addthis.layers({
-                    'theme' : 'transparent',
-                    'responsive': {
-                        maxWidth: '700px'
-                    },
-                    'share' : {
-                        'theme' : 'transparent',
-                        'position' : 'right',
-                        <% if I18n.locale == :"zh-Hans" %>
-                        'services' : 'qzone,sinaweibo,kaixin,email,more',
-                        <% else %>
-                        'numPreferredServices' : 5,
-                        <% end %>
-                    },
-                    'mobile' : {
-                        'buttonBarPosition' : 'bottom',
-                        'buttonBarTheme' : 'transparent',
-                        'mobile' : true
-                    }
-                });
-            }
-        });
-    </script>
-
     <div class="story-navigationbottom">
       <a href="<%= I18n.short_url_for_locale(path: story.short_url) %>" rel="nofollow"><%= I18n.short_url_for_locale(path: story.short_url)[7..-1] %></span></a>
       <a href="<%= story.read_more_url %>"><%= I18n.t(:read_the_surrounding_text_of) %> <span class="story-passage-bible-ref"><%= story.bible_ref %></span></a>
       <a href="<%= I18n.url_for_locale %>">&#171; <%= I18n.t(:find_other_great_stories_in_the_bible) %></a>
+      <div class="sharebox">
+        <div class="addthis_sharing_toolbox addthis_default_style addthis_32x32_style">
+          <% if I18n.locale == :"zh-Hans" %>
+            <a class="addthis_button_qzone"></a>
+            <a class="addthis_button_sinaweibo"></a>
+            <a class="addthis_button_kaixin"></a>
+            <a class="addthis_button_preferred_1"></a>
+          <% else %>
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+          <% end %>
+          <a class="addthis_button_more"></a>
+        </div>
+      </div>
     </div>
+
+    <script type="text/javascript">
+      var addthis_share = {
+        url: "<%= I18n.short_url_for_locale(path: story.short_url) %>"
+      };
+      $(window).ready(function() {
+        $.ajax({
+          url: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-538af91b78db2c14',
+          cache: true,
+          async: true,
+          dataType: 'script'
+        });
+      });
+    </script>
+
   </div>
 </div>
 
