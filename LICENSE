@@ -1,5 +1,5 @@
 Copyright (c) 2014, Leigh McCulloch
-All rights reserved.
+All rights reserved. BSD-Contrib-v0.1 license.
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
@@ -14,6 +14,15 @@ and/or other materials provided with the distribution.
 3. Neither the name of the copyright holder nor the names of its contributors 
 may be used to endorse or promote products derived from this software without 
 specific prior written permission.
+
+Contribution is permitted subject to the following conditions. By contributing, 
+collaborating or supplying code to the copyright holder in patches or pull 
+requests you:
+
+a. Attest your contribution was created in whole by you.
+
+b. And, agree to assign copyright of your contribution to the copyright holder 
+above.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
