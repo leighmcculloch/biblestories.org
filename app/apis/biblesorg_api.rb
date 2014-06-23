@@ -20,13 +20,17 @@ class BiblesorgApi
     creds = { :username => API_KEY, :password => "X" }
     response = HTTParty.get(url, :basic_auth => creds)
     response_json = JSON.parse(response.body)
-    response_json["response"]["search"]["result"]["passages"][0]
+    passage_info = response_json["response"]["search"]["result"]["passages"][0]
+    passage_info.merge!({
+      "tracking" => response_json["response"]["meta"]["fums"]
+    })
+    passage_info
   end
 
   def self.get_text(bible_ref)
     passage = lookup(bible_ref)
     {
-      :text => passage["text"],
+      :text => "#{passage["text"]}#{passage["tracking"]}",
       :copyright => passage["copyright"],
       :css => "biblesorg",
     }
