@@ -5,7 +5,7 @@
 <% content_for :meta do %>
   <meta name="description" content="<%= I18n.t(:meta_bible_story) %>: <%= story.title %>; <%= I18n.t(:meta_bible_ref) %>: <%= story.bible_ref %>.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Story: <%= story.title %>">
+  <meta name="twitter:title" content="<%= story.title %>">
   <meta name="twitter:description" content="<%= story.text_plain_short %>">
 <% end %>
 
