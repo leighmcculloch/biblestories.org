@@ -2,6 +2,13 @@
 
 <% content_for :meta do %>
   <meta name="description" content="<%= I18n.t(:meta_description) %>">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= I18n.url_for_locale %>">
+  <meta property="og:title" content="<%= I18n.t(:title) %>">
+  <meta property="og:description" content="<%= I18n.t(:meta_description) %>">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= I18n.t(:title) %>">
+  <meta name="twitter:description" content="<%= I18n.t(:meta_description) %>">
 <% end %>
 
 <div class="header">

@@ -4,6 +4,10 @@
 
 <% content_for :meta do %>
   <meta name="description" content="<%= I18n.t(:meta_bible_story) %>: <%= story.title %>; <%= I18n.t(:meta_bible_ref) %>: <%= story.bible_ref %>.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="<%= I18n.url_for_locale(path: story.short_url) %>">
+  <meta property="og:title" content="<%= story.title %>">
+  <meta property="og:description" content="<%= story.text_plain_short %>">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="<%= story.title %>">
   <meta name="twitter:description" content="<%= story.text_plain_short %>">
@@ -84,4 +88,3 @@
 <% content_for :footer do %>
   <p><%= story.text_copyright %> <%= story.audio_copyright %></p>
 <% end %>
-
