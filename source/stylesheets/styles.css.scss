@@ -1,0 +1,95 @@
+@import '_reset';
+@import '_font-awesome';
+
+$font-primary: 'Open Sans', sans-serif;
+
+$color-logo: #ffcc33;
+$color-title: #383838;
+$color-description: #a9a9a9;
+$color-language: #e6e5e6;
+$color-search: #d1cccd;
+$color-search-query: #383838;
+$color-story-list: #1b1b1b;
+
+body {
+  font-family: $font-primary;
+  font-size: 0.5pt;
+  padding: 20px 0;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+   color: $color-search;
+}
+
+.index {
+  .header {
+    .item {
+      margin: 24px 0;
+      text-align: center;
+    }
+    .title {
+      font-size: 40em;
+      color: $color-title;
+      .fa-leaf {
+        color: $color-logo;
+        margin-right: 0.4em;
+      }
+      h1 {
+        display:inline;
+        font-weight: 600;
+      }
+    }
+    .description {
+      font-size: 28em;
+      color: $color-description;
+      h2 {
+        display:inline;
+        font-weight: 600;
+      }
+    }
+    .language {
+      color: $color-language;
+      font-size: 28em;
+    }
+  }
+
+  .search {
+    position: relative;
+    border-bottom: 1px solid $color-search;
+    max-width: 340px;
+    margin: 60px auto;
+    form {
+      .query {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 40em;
+        color: $color-search-query;
+      }
+      .fa-search {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 3px 3px 6px 3px;
+        font-size: 40em;
+        color: $color-search;
+      }
+    }
+  }
+
+  .story-index {
+    font-size: 40em;
+    text-align: center;
+    color: $color-story-list;
+    .separator {
+      color: $color-logo;
+    }
+    .story {
+      margin: 20px 0;
+    }
+  }
+}
+
