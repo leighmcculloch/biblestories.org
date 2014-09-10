@@ -77,11 +77,12 @@ body {
   .search {
     position: relative;
     border-bottom: 1px solid $color-search;
-    max-width: $width-mobile;
+    width: $width-mobile;
     margin: 60px auto;
     form {
+      padding-bottom: 5px;
       .query {
-        width: 100%;
+        width: $width-mobile - 31px;
         outline: none;
         border: none;
         font-size: 40em;
@@ -91,7 +92,7 @@ body {
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 3px 3px 6px 3px;
+        padding: 3px 3px 10px 3px;
         font-size: 40em;
         color: $color-search;
       }
@@ -103,7 +104,7 @@ body {
     text-align: center;
     color: $color-story-list;
     .story {
-      margin: 20px 0;
+      margin: 30px 0;
     }
   }
 }
