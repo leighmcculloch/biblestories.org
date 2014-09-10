@@ -6,24 +6,31 @@ $font-primary: 'Open Sans', sans-serif;
 $color-logo: #ffcc33;
 $color-title: #383838;
 $color-description: #a9a9a9;
-$color-language: #e6e5e6;
+$color-language-border: #e6e5e6;
+$color-language: #d1cccd;
 $color-search: #d1cccd;
 $color-search-query: #383838;
 $color-story-list: #1b1b1b;
 $color-footer: #a9a9a9;
 
-$width-mobile: 340px;
+$width-mobile: 320px;
 
 body {
   font-family: $font-primary;
   font-size: 0.5pt;
   font-weight: 600;
-  padding: 20px 0;
+  margin: 20px;
 }
 
-::-webkit-input-placeholder,
-:-moz-placeholder,
-::-moz-placeholder,
+::-webkit-input-placeholder {
+   color: $color-search;
+}
+:-moz-placeholder {
+   color: $color-search;
+}
+::-moz-placeholder {
+   color: $color-search;
+}
 :-ms-input-placeholder {
    color: $color-search;
 }
@@ -47,8 +54,9 @@ body {
 
 .index {
   .header {
+    text-align: center;
     .item {
-      margin: 24px 0;
+      margin: 27px 0;
       text-align: center;
     }
     .title {
@@ -69,22 +77,27 @@ body {
       }
     }
     .language {
+      margin: 0;
+      display:inline-block;
       color: $color-language;
       font-size: 28em;
+      padding: 6px;
+      border: 2px solid $color-language-border;
+      border-radius: 4px;
     }
   }
 
   .search {
-    position: relative;
-    border-bottom: 1px solid $color-search;
-    width: $width-mobile;
-    margin: 70px auto;
+    border-bottom: 2px solid $color-search;
+    max-width: $width-mobile;
+    margin: 40px auto 50px auto;
     form {
-      padding-bottom: 5px;
+      position: relative;
       .query {
-        width: $width-mobile - 31px;
+        width: 90%;
         outline: none;
         border: none;
+        padding: 0;
         font-size: 40em;
         color: $color-search-query;
       }
@@ -92,9 +105,9 @@ body {
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 3px 3px 10px 3px;
         font-size: 40em;
         color: $color-search;
+        line-height: 140%;
       }
     }
   }

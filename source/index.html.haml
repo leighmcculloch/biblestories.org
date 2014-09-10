@@ -9,7 +9,7 @@ title: Great Stories of the Bible
   .item.description
     %h2= t(:description)
   .item.language
-    = "EN"
+    = "English"
 
 .search
   %form{:onsubmit=>"return false;"}
@@ -17,7 +17,6 @@ title: Great Stories of the Bible
     %i.fa.fa-search
 
 .story-index
-  %i.logo.fa.fa-leaf
   - Stories.all.each do |_, story|
     .story= story.title
 
