@@ -63,7 +63,8 @@ body {
       font-size: 40em;
       color: $color-title;
       .fa-leaf {
-        margin-right: 0.4em;
+        font-size: 0.9em;
+        margin-right: 0.2em;
       }
       h1 {
         display:inline;
@@ -80,7 +81,7 @@ body {
       margin: 0;
       display:inline-block;
       color: $color-language;
-      font-size: 28em;
+      font-size: 24em;
       padding: 6px;
       border: 2px solid $color-language-border;
       border-radius: 4px;
