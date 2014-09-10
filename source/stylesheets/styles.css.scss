@@ -119,6 +119,10 @@ body {
     color: $color-story-list;
     .story {
       margin: 30px 0;
+      a {
+        color: $color-story-list;
+        text-decoration: none;
+      }
     }
   }
 }
