@@ -1,3 +1,6 @@
+require 'lib/stories'
+require 'lib/story'
+
 compass_config do |config|
   config.output_style = :compact
 end

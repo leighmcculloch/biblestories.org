@@ -1,0 +1,26 @@
+---
+title: Great Stories of the Bible
+---
+
+.header
+  .item.title
+    %i.logo.fa.fa-leaf
+    %h1= t(:title)
+  .item.description
+    %h2= t(:description)
+  .item.language
+    = "EN"
+
+.search
+  %form{:onsubmit=>"return false;"}
+    %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
+    %i.fa.fa-search
+
+.story-index
+  %i.logo.fa.fa-leaf
+  - Stories.all.each do |_, story|
+    .story= story.title
+
+.footer
+  %div= t(:thanks)
+  %div= t(:created_by)
