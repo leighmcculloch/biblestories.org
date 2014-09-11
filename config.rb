@@ -3,6 +3,21 @@ require 'lib/story'
 
 DEV = !ENV["DEV"].nil?
 
+$cache = Dalli::Client.new(ENV["GSOB_MEMCACHEDCLOUD_SERVERS"].split(','), {
+  :username => ENV["GSOB_MEMCACHEDCLOUD_USERNAME"],
+  :password => ENV["GSOB_MEMCACHEDCLOUD_PASSWORD"]
+})
+module DalliGetOrSet
+  def get_or_set(key)
+    value = self.get(key)
+    return value if value
+    value = yield
+    self.set(key, value)
+    value
+  end
+end
+$cache.extend(DalliGetOrSet)
+
 compass_config do |config|
   config.output_style = :compact
 end
@@ -21,6 +36,7 @@ activate :directory_indexes
 
 activate :i18n
 
+ignore 'story.html'
 after_configuration do
   Stories.all.each do |story_short_url, story|
     page "/#{story_short_url}.html", :proxy => "/localizable/story.html", :locals => { :story => story, :stories => Stories.all }, :ignore => true
@@ -85,11 +101,13 @@ activate :s3_sync do |s3_sync|
   s3_sync.version_bucket             = false
 end
 
-activate :cdn do |cdn|
-  cdn.cloudflare = {
-    zone: "greatstories.org",
-    base_urls: ["http://#{DEV ? "dev." : ""}greatstories.org"]
-  }
-  cdn.filter = /\.html$/
-  cdn.after_build = true
+unless DEV
+  activate :cdn do |cdn|
+    cdn.cloudflare = {
+      zone: "greatstories.org",
+      base_urls: ["http://greatstories.org"]
+    }
+    cdn.filter = /\.html$/
+    cdn.after_build = true
+  end
 end

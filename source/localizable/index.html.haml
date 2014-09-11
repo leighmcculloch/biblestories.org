@@ -19,7 +19,7 @@ title: Great Stories of the Bible
 .story-index
   - Stories.all.each do |_, story|
     .story
-      %a{:href=>story.short_url}= story.title
+      %a{:href=>"#{story.short_url}/"}= story.title
 
 .footer
   %div= t(:thanks)

@@ -1,58 +1,4 @@
-@import '_reset';
-@import '_font-awesome';
-
-$font-primary: 'Open Sans', sans-serif;
-
-$color-logo: #ffcc33;
-$color-title: #383838;
-$color-description: #a9a9a9;
-$color-language-border: #e6e5e6;
-$color-language: #d1cccd;
-$color-search: #d1cccd;
-$color-search-query: #383838;
-$color-story-list: #1b1b1b;
-$color-footer: #a9a9a9;
-
-$width-mobile: 320px;
-
-body {
-  font-family: $font-primary;
-  font-size: 0.5pt;
-  font-weight: 600;
-  margin: 20px;
-}
-
-::-webkit-input-placeholder {
-   color: $color-search;
-}
-:-moz-placeholder {
-   color: $color-search;
-}
-::-moz-placeholder {
-   color: $color-search;
-}
-:-ms-input-placeholder {
-   color: $color-search;
-}
-
-.logo {
-  color: $color-logo;
-}
-
-.footer {
-  font-size: 20em;
-  font-weight: 400;
-  line-height: 1.2em;
-  max-width: $width-mobile;
-  color: $color-footer;
-  text-align: center;
-  margin: 0 auto;
-  div {
-    margin: 10px 0;
-  }
-}
-
-.index {
+.page.index {
   .header {
     text-align: center;
     .item {
@@ -62,7 +8,7 @@ body {
     .title {
       font-size: 40em;
       color: $color-title;
-      .fa-leaf {
+      .logo {
         font-size: 0.9em;
         margin-right: 0.2em;
       }
@@ -109,6 +55,18 @@ body {
         font-size: 40em;
         color: $color-search;
         line-height: 140%;
+      }
+      ::-webkit-input-placeholder {
+         color: $color-search;
+      }
+      :-moz-placeholder {
+         color: $color-search;
+      }
+      ::-moz-placeholder {
+         color: $color-search;
+      }
+      :-ms-input-placeholder {
+         color: $color-search;
       }
     }
   }

@@ -2,7 +2,18 @@ require "csv"
 require_relative "story"
 
 class Stories
+  @short_urls = []
   @stories = {}
+
+  def self.all_short_urls
+    return @short_urls if @short_urls
+
+    stories_csv = CSV.read("data/stories.csv", { :col_sep => "," })
+    stories_csv = stories_csv.map { |story| story.map { |story_property| story_property.strip } }
+    @short_urls = stories_csv.map do |story_csv_line|
+      story_csv_line[0].strip
+    end
+  end
   
   def self.all
     return @stories[I18n.locale] if @stories[I18n.locale]

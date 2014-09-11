@@ -1,0 +1,36 @@
+$font-primary: 'Open Sans', sans-serif;
+
+$color-logo: #ffcc33;
+$color-title: #383838;
+$color-description: #a9a9a9;
+$color-language-border: #e6e5e6;
+$color-language: #d1cccd;
+$color-search: #d1cccd;
+$color-search-query: #383838;
+$color-story-list: #1b1b1b;
+$color-footer: #a9a9a9;
+
+$width-mobile: 320px;
+
+body {
+  font-family: $font-primary;
+  font-size: 0.5pt;
+  font-weight: 600;
+}
+
+.logo {
+  color: $color-logo;
+}
+
+.footer {
+  font-size: 20em;
+  font-weight: 400;
+  line-height: 1.2em;
+  max-width: $width-mobile;
+  color: $color-footer;
+  text-align: center;
+  margin: 0 auto;
+  div {
+    margin: 10px 0;
+  }
+}

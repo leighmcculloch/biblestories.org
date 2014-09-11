@@ -1,1 +1,36 @@
-= story.title
+---
+page_classes: story
+---
+
+- content_for(:title, "Great Stories | #{story.title}")
+- content_for(:javascript) do
+  = javascript_include_tag("story.js")
+
+.wrapper
+  .canvas
+    .side-menu
+      = "hi"
+
+    .content
+      .header
+        .item.menu
+          %i.fa.fa-bars.toggle-side-menu
+        .item.language
+          = "EN"
+        .item.controls
+          %span.zoom-smaller= t(:story_text_smaller)
+          %span.zoom-larger= t(:story_text_larger)
+          %span.separator= "|"
+          %span.audio
+            %i.fa.fa-volume-up
+
+      .story
+        .title
+          %i.logo.fa.fa-leaf
+          %h1= story.title
+        .text= story.text_html
+
+      .footer
+        %div= story.text_copyright
+        %div= story.audio_copyright
+        %div= t(:created_by)
