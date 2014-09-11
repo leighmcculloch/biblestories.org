@@ -9,7 +9,13 @@ page_classes: story
 .wrapper
   .canvas
     .side-menu
-      = "hi"
+      %i.close.fa.fa-bars.toggle-side-menu
+      .item.title
+        %i.logo.fa.fa-leaf
+        %h1= t(:title)
+      .item.share
+      .item.search
+      .item.stories
 
     .content
       .header
