@@ -1,6 +1,8 @@
 require 'lib/stories'
 require 'lib/story'
 
+DEV = !ENV["DEV"].nil?
+
 compass_config do |config|
   config.output_style = :compact
 end
@@ -18,6 +20,12 @@ set :images_dir, 'images'
 activate :directory_indexes
 
 activate :i18n
+
+after_configuration do
+  Stories.all.each do |story_short_url, story|
+    page "/#{story_short_url}.html", :proxy => "/localizable/story.html", :locals => { :story => story, :stories => Stories.all }, :ignore => true
+  end
+end
 
 configure :build do
   activate :minify_html
@@ -61,27 +69,27 @@ end
 # 3) `cp pngout /usr/local/bin/pngout`
 # Also, must be placed outside :build to ensure it occurs prior to other
 # extensions below that are also triggered after build.
-# activate :imageoptim
+activate :imageoptim unless DEV
 
 # Sync with AWS S3
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'greatstories.org'
-  s3_sync.region                     = 'us-east-1'
+  s3_sync.bucket                     = "#{DEV ? "dev." : ""}greatstories.org"
+  s3_sync.region                     = "us-east-1"
   s3_sync.delete                     = true
   s3_sync.after_build                = true
   s3_sync.prefer_gzip                = true
   s3_sync.path_style                 = true
   s3_sync.reduced_redundancy_storage = false
-  s3_sync.acl                        = 'public-read'
+  s3_sync.acl                        = "public-read"
   s3_sync.encryption                 = false
   s3_sync.version_bucket             = false
 end
 
-# activate :cdn do |cdn|
-#   cdn.cloudflare = {
-#     zone: 'greatstoriesofthebible.org',
-#     base_urls: ['http://greatstoriesofthebible.org']
-#   }
-#   cdn.filter = /\.html$/
-#   cdn.after_build = false
-# end
+activate :cdn do |cdn|
+  cdn.cloudflare = {
+    zone: "greatstories.org",
+    base_urls: ["http://#{DEV ? "dev." : ""}greatstories.org"]
+  }
+  cdn.filter = /\.html$/
+  cdn.after_build = true
+end
