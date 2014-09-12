@@ -14,13 +14,26 @@ page_classes: story
       %i.share-pointer.fa.fa-caret-left
       .item.share
         .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
-          %a.addthis_button_preferred_1
-          %a.addthis_button_preferred_2
-          %a.addthis_button_preferred_3
-          %a.addthis_button_email
-          %a.addthis_button_more
+          - case I18n.locale
+          - when :en
+            %a.addthis_button_facebook
+              %i.fa.fa-facebook
+            %a.addthis_button_twitter
+              %i.fa.fa-twitter
+            %a.addthis_button_tumblr
+              %i.fa.fa-tumblr
+            %a.addthis_button_email
+              %i.fa.fa-envelope
+            %a.addthis_button_more
+              %i.fa.fa-share-square
       .item.search
+        %form
+          %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
+          %i.fa.fa-search
       .item.stories
+        - Stories.all.each do |_, story|
+          .story
+            %a{:href=>"#{story.short_url}/"}= story.title
 
     .content
       .header

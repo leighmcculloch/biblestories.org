@@ -4,12 +4,15 @@ $color-story-title: #1b1b1b;
 $color-story-text: #1b1b1b;
 
 $color-side-menu-background: #3a3a3a;
-$color-side-menu-title-background: #2a2a2a;
-$color-side-menu-share-background: #323232;
-$width-side-menu: 300px;
-
-$color-side-menu-title: #dedede;
 $color-side-menu-close: #646464;
+$color-side-menu-title-background: #2a2a2a;
+$color-side-menu-title: #dedede;
+$color-side-menu-search: #6f6f6f;
+$color-side-menu-search-query: #fff;
+$color-side-menu-share-background: #323232;
+$color-side-menu-share-icon: #646464;
+
+$width-side-menu: 300px;
 
 /* off canvas side-menu animation */
 .page.story {
@@ -49,7 +52,6 @@ $color-side-menu-close: #646464;
   .side-menu {
     position: relative;
     background-color: $color-side-menu-background;
-    text-align: center;
     .item {
       padding: 25px;
     }
@@ -67,6 +69,7 @@ $color-side-menu-close: #646464;
       font-size: 56em;
     }
     .title {
+      text-align: center;
       font-size: 30em;
       background-color: $color-side-menu-title-background;
       color: $color-side-menu-title;
@@ -93,11 +96,17 @@ $color-side-menu-close: #646464;
         height: 32px;
         margin: 0 auto;
         a {
-          margin: 0 14px 0 0;
+          margin: 0 24px 0 0;
+          font-size: 44em;
+          color: $color-side-menu-share-icon;
+          text-decoration: none;
         }
       }
     }
     .search {
+      @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 30em);
+      padding: 0;
+      margin: 30px auto 20px auto;
     }
     .stories {
     }
