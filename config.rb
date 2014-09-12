@@ -5,7 +5,8 @@ DEV = !ENV["DEV"].nil?
 
 $cache = Dalli::Client.new(ENV["GSOB_MEMCACHEDCLOUD_SERVERS"].split(','), {
   :username => ENV["GSOB_MEMCACHEDCLOUD_USERNAME"],
-  :password => ENV["GSOB_MEMCACHEDCLOUD_PASSWORD"]
+  :password => ENV["GSOB_MEMCACHEDCLOUD_PASSWORD"],
+  :socket_timeout => 10
 })
 module DalliGetOrSet
   def get_or_set(key)

@@ -111,9 +111,9 @@ $width-side-menu: 300px;
     }
     .stories {
       text-align: center;
-      line-height: 2.3em;
       font-size: 30em;
       .story {
+        margin: 25px 0;
         a {
           color: $color-side-menu-stories-story;
           text-decoration: none;
