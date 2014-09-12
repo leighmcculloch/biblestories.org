@@ -16,7 +16,7 @@ title: Great Stories of the Bible
     %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
     %i.fa.fa-search
 
-.story-index
+.stories
   - Stories.all.each do |_, story|
     .story
       %a{:href=>"#{story.short_url}/"}= story.title

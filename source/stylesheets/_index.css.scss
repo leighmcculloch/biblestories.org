@@ -46,7 +46,7 @@ $color-story-list: #1b1b1b;
     @include search($width-mobile - 40px, $color-search, $color-search-query, 40em);
   }
 
-  .story-index {
+  .stories {
     font-size: 40em;
     text-align: center;
     color: $color-story-list;
