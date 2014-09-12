@@ -3,22 +3,21 @@ page_classes: story
 ---
 
 - content_for(:title, "Great Stories | #{story.title}")
-- content_for(:javascript) do
-  = javascript_include_tag("story.js")
 
 .wrapper
   .canvas
     .side-menu
+      %i.logo.fa.fa-leaf
       %i.close.fa.fa-bars.toggle-side-menu
       .item.title
-        %i.logo.fa.fa-leaf
         %h1= t(:title)
+      %i.share-pointer.fa.fa-caret-left
       .item.share
         .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
           %a.addthis_button_preferred_1
           %a.addthis_button_preferred_2
           %a.addthis_button_preferred_3
-          %a.addthis_button_preferred_4
+          %a.addthis_button_email
           %a.addthis_button_more
       .item.search
       .item.stories

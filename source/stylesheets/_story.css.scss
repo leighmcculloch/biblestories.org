@@ -53,6 +53,12 @@ $color-side-menu-close: #646464;
     .item {
       padding: 25px;
     }
+    .logo {
+      position: absolute;
+      top: 27px;
+      left: 55px;
+      font-size: 27em;
+    }
     .close {
       position: absolute;
       top: 16px;
@@ -64,39 +70,30 @@ $color-side-menu-close: #646464;
       font-size: 30em;
       background-color: $color-side-menu-title-background;
       color: $color-side-menu-title;
-      .logo {
-        font-size: 0.9em;
-        margin-right: 0.2em;
-      }
       h1 {
         display:inline;
       }
+    }
+    .share-pointer {
+      position: absolute;
+      top: 98px;
+      right: 0;
+      width: 0; 
+      height: 0; 
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 12px solid #fff;
     }
     .share {
       background-color: $color-side-menu-share-background;
       .addthis_sharing_toolbox {
         height: 32px;
         display: block;
-        width: 180px;
+        width: 250px;
         height: 32px;
         margin: 0 auto;
         a {
-          opacity: 0.333;
-          filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-          filter: grayscale(90%);
-          -webkit-filter: grayscale(90%);
-          -moz-filter: grayscale(90%);
-          -ms-filter: grayscale(90%);
-          -o-filter: grayscale(90%);
-          filter: gray; /* IE6+ */
-        }
-        a:hover {
-          opacity: 1.0;
-          filter: none;
-          -webkit-filter: none;
-          -moz-filter: none;
-          -ms-filter: none;
-          -o-filter: none;
+          margin: 0 14px 0 0;
         }
       }
     }

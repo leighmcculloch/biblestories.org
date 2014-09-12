@@ -1,11 +1,12 @@
-/*
- *= require _jquery-1.11.1.min
- */
-
+/* side menu */
 $(function() {
-    $('.toggle-side-menu').click(function() {
+    $('.toggle-side-menu')
+      .click(function() {
         toggleSideMenu();
-    });
+      })
+      /*.bind('touchstart', function() {
+        toggleSideMenu();
+      })*/;
 });
 
 function toggleSideMenu() {
@@ -16,7 +17,9 @@ function toggleSideMenu() {
   }
 }
 
+/* share buttons */
 var addthis_config = {
+  data_ga_property: 'UA-123456-1',
   data_track_addressbar: false,
   data_track_clickback: false
 };
