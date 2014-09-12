@@ -31,9 +31,11 @@ page_classes: story
           %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
           %i.fa.fa-search
       .item.stories
-        - Stories.all.each do |_, story|
-          .story
-            %a{:href=>"#{story.short_url}/"}= story.title
+        - Stories.all.each do |_, s|
+          .story{:class => ("current" if s.short_url == story.short_url)}
+            %a{:href=>"../#{s.short_url}/"}= s.title
+            - if s.short_url == story.short_url
+              %i.marker.fa.fa-leaf
 
     .content
       .header

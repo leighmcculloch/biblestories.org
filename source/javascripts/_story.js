@@ -34,3 +34,16 @@ $(window).ready(function() {
     dataType: 'script'
   });
 });
+
+/* zoom */
+$(function() {
+  var $storyText = $('.story .text');
+  $('.zoom-smaller').click(function () {
+    $storyText.css('font-size', parseFloat($storyText.css('font-size'), 10)/1.2);
+    return false;
+  });
+  $('.zoom-larger').click(function () {
+    $storyText.css('font-size', 1.2*parseFloat($storyText.css('font-size'), 10));
+    return false;
+  });
+});

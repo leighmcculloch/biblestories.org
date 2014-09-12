@@ -11,6 +11,8 @@ $color-side-menu-search: #6f6f6f;
 $color-side-menu-search-query: #fff;
 $color-side-menu-share-background: #323232;
 $color-side-menu-share-icon: #646464;
+$color-side-menu-stories-story: #777777;
+$color-side-menu-stories-story-current: #dedede;
 
 $width-side-menu: 300px;
 
@@ -34,8 +36,6 @@ $width-side-menu: 300px;
         position: absolute;
         top: 0;
         left: -$width-side-menu;
-        padding: 0;
-        height: 999999px;
       }
     }
   }
@@ -51,6 +51,7 @@ $width-side-menu: 300px;
   /* side menu */
   .side-menu {
     position: relative;
+    overflow: visible;
     background-color: $color-side-menu-background;
     .item {
       padding: 25px;
@@ -106,9 +107,26 @@ $width-side-menu: 300px;
     .search {
       @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 30em);
       padding: 0;
-      margin: 30px auto 20px auto;
+      margin: 40px auto 10px auto;
     }
     .stories {
+      text-align: center;
+      line-height: 2.3em;
+      font-size: 30em;
+      .story {
+        a {
+          color: $color-side-menu-stories-story;
+          text-decoration: none;
+        }
+      }
+      .story.current {
+        a {
+          color: $color-side-menu-stories-story-current;
+        }
+        .marker {
+          color: $color-logo;
+        }
+      }
     }
   }
 
