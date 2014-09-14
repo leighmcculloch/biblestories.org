@@ -15,17 +15,25 @@ $color-side-menu-stories-story: #777777;
 $color-side-menu-stories-story-current: #dedede;
 
 $width-side-menu: 300px;
-
+$width-tease-menu: 70px;
 $width-compact: 580px;
+
+/* hint for hardware acceleration */
+.page.story {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 
 /* off canvas side-menu animation */
 .page.story {
-  -webkit-backface-visibility: hidden;
   .side-menu {
     position: fixed;
     top: 0;
     left: -$width-side-menu;
-    z-index: 1;
+    z-index: 2;
     width: $width-side-menu;
     height: 100%;
     overflow: scroll;
@@ -47,6 +55,12 @@ $width-compact: 580px;
       -webkit-transform: translateX($width-side-menu);
       transform: translateX($width-side-menu);
     }
+    @media screen and (max-width: $width-compact) {
+      .tease-menu {
+        -webkit-transform: translateX(-$width-tease-menu);
+        transform: translateX(-$width-tease-menu);
+      }
+    }
     .content {
       @media screen and (max-width: $width-compact) {
         -webkit-transform: translateX($width-side-menu);
@@ -55,6 +69,34 @@ $width-compact: 580px;
       @media screen and (min-width: $width-compact) {
         margin-left: $width-side-menu;
       }
+    }
+  }
+}
+
+/* thin tease menu */
+.page.story {
+  @media screen and (min-width: $width-compact) {
+    .tease-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: $width-tease-menu;
+      height: 100%;
+      background-color: $color-side-menu-background;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-transition: .3s ease all;
+      transition: .3s ease all;
+    }
+    .content {
+      margin-left: $width-tease-menu;
+    }
+  }
+  @media screen and (max-width: $width-compact) {
+    .tease-menu {
+      -webkit-transform: translateX(-$width-tease-menu);
+      transform: translateX(-$width-tease-menu);
     }
   }
 }
@@ -145,6 +187,33 @@ $width-compact: 580px;
           color: $color-logo;
         }
       }
+    }
+  }
+
+  /* tease menu */
+  .tease-menu {
+    background-color: $color-side-menu-background;
+    .item {
+      padding: 25px;
+    }
+    .close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      color: $color-side-menu-close;
+      font-size: 56em;
+      cursor: pointer;
+      cursor: hand;
+    }
+    .share-pointer {
+      position: absolute;
+      top: 98px;
+      right: 0;
+      width: 0; 
+      height: 0; 
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 12px solid #fff;
     }
   }
 
