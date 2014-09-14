@@ -18,40 +18,30 @@ $width-side-menu: 300px;
 
 /* off canvas side-menu animation */
 .page.story {
-  .wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    .canvas {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      -webkit-transition: .3s ease all;
-      transition: .3s ease all;
-      .side-menu {
-        width: $width-side-menu;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: -$width-side-menu;
-      }
-    }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -$width-side-menu;
+    z-index: 1;
+    width: $width-side-menu;
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
   }
-  .wrapper.show-side-menu {
-    .canvas {
-      -webkit-transform: translateX($width-side-menu);
-      transform: translateX($width-side-menu);
-    }
+  .side-menu.show-side-menu {
+    -webkit-transform: translateX($width-side-menu);
+    transform: translateX($width-side-menu);
   }
 }
 
 .page.story {
   /* side menu */
   .side-menu {
-    position: relative;
-    overflow: visible;
     background-color: $color-side-menu-background;
     .item {
       padding: 25px;
@@ -68,6 +58,8 @@ $width-side-menu: 300px;
       right: 20px;
       color: $color-side-menu-close;
       font-size: 56em;
+      cursor: pointer;
+      cursor: hand;
     }
     .title {
       text-align: center;
@@ -118,6 +110,9 @@ $width-side-menu: 300px;
           color: $color-side-menu-stories-story;
           text-decoration: none;
         }
+        a:hover {
+          color: $color-side-menu-stories-story-current;
+        }
       }
       .story.current {
         a {
@@ -134,7 +129,6 @@ $width-side-menu: 300px;
   .content {
     padding: 20px;
     .header {
-      max-width: $width-mobile;
       margin: 0 auto;
       position: relative;
       height: 56em;
@@ -146,6 +140,8 @@ $width-side-menu: 300px;
         left: 0;
         color: $color-header-menu;
         font-size: 56em;
+        cursor: pointer;
+        cursor: hand;
       }
       .controls {
         text-align: center;
@@ -154,8 +150,18 @@ $width-side-menu: 300px;
           font-size: 28em;
           margin: 0 3px;
         }
+        .zoom-smaller {
+          cursor: pointer;
+          cursor: hand;
+        }
         .zoom-larger {
           font-size: 45em;
+          cursor: pointer;
+          cursor: hand;
+        }
+        .audio {
+          cursor: pointer;
+          cursor: hand;
         }
       }
       .language {
@@ -168,11 +174,13 @@ $width-side-menu: 300px;
         padding: 6px;
         border: 2px solid $color-language-border;
         border-radius: 4px;
+        cursor: pointer;
+        cursor: hand;
       }
     }
 
     .story {
-      max-width: $width-mobile;
+      max-width: $width-max;
       margin: 0 auto;
       text-align: center;
       .title {
@@ -197,6 +205,9 @@ $width-side-menu: 300px;
           p {
             margin: 2em 0;
             line-height: 1.6em;
+          }
+          .block-indent {
+            margin: 0 2em;
           }
         }
       }

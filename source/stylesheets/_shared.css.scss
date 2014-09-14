@@ -4,6 +4,7 @@ $color-logo: #ffcc33;
 $color-footer: #a9a9a9;
 
 $width-mobile: 320px;
+$width-max: 580px;
 
 body {
   font-family: $font-primary;
@@ -54,14 +55,17 @@ body {
 }
 
 .footer {
+  max-width: $width-max;
   font-size: 20em;
   font-weight: 400;
   line-height: 1.2em;
-  max-width: $width-mobile;
   color: $color-footer;
   text-align: center;
   margin: 0 auto;
   div {
     margin: 10px 0;
+  }
+  a {
+    color: $color-footer;
   }
 }

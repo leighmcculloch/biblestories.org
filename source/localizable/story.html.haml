@@ -4,59 +4,62 @@ page_classes: story
 
 - content_for(:title, "Great Stories | #{story.title}")
 
-.wrapper
-  .canvas
-    .side-menu
+.side-menu
+  %i.logo.fa.fa-leaf
+  %i.close.fa.fa-bars.toggle-side-menu
+  .item.title
+    %h1= t(:title)
+  %i.share-pointer.fa.fa-caret-left
+  .item.share
+    .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
+      - case I18n.locale
+      - when :en
+        %a.addthis_button_facebook
+          %i.fa.fa-facebook
+        %a.addthis_button_twitter
+          %i.fa.fa-twitter
+        %a.addthis_button_tumblr
+          %i.fa.fa-tumblr
+        %a.addthis_button_email
+          %i.fa.fa-envelope
+        %a.addthis_button_more
+          %i.fa.fa-share-square
+  .item.search
+    %form
+      %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
+      %i.fa.fa-search
+  .item.stories
+    - Stories.all.each do |_, s|
+      .story{:class => ("current" if s.short_url == story.short_url)}
+        %a{:href=>"../#{s.short_url}/"}= s.title
+        - if s.short_url == story.short_url
+          %i.marker.fa.fa-leaf
+
+.content
+  .header
+    .item.menu
+      %i.fa.fa-bars.toggle-side-menu
+    .item.language
+      = "EN"
+    .item.controls
+      %span.zoom-smaller= t(:story_text_smaller)
+      %span.zoom-larger= t(:story_text_larger)
+      %span.separator= "|"
+      %span.audio
+        %i.fa.fa-volume-up
+
+  .story
+    .title
       %i.logo.fa.fa-leaf
-      %i.close.fa.fa-bars.toggle-side-menu
-      .item.title
-        %h1= t(:title)
-      %i.share-pointer.fa.fa-caret-left
-      .item.share
-        .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
-          - case I18n.locale
-          - when :en
-            %a.addthis_button_facebook
-              %i.fa.fa-facebook
-            %a.addthis_button_twitter
-              %i.fa.fa-twitter
-            %a.addthis_button_tumblr
-              %i.fa.fa-tumblr
-            %a.addthis_button_email
-              %i.fa.fa-envelope
-            %a.addthis_button_more
-              %i.fa.fa-share-square
-      .item.search
-        %form
-          %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-          %i.fa.fa-search
-      .item.stories
-        - Stories.all.each do |_, s|
-          .story{:class => ("current" if s.short_url == story.short_url)}
-            %a{:href=>"../#{s.short_url}/"}= s.title
-            - if s.short_url == story.short_url
-              %i.marker.fa.fa-leaf
+      %h1= story.title
+    - if story.audio_info && story.audio_info.length == 1
+      .audio-player{:style=>"display:none;"}
+        - story.audio_info.each do |audio_info|
+          %audio{:controls=>"controls", :preload=>"none"}
+            %source{:src=>audio_info[:url], :type=>"audio/mpeg"}
+    .text= story.text_html
 
-    .content
-      .header
-        .item.menu
-          %i.fa.fa-bars.toggle-side-menu
-        .item.language
-          = "EN"
-        .item.controls
-          %span.zoom-smaller= t(:story_text_smaller)
-          %span.zoom-larger= t(:story_text_larger)
-          %span.separator= "|"
-          %span.audio
-            %i.fa.fa-volume-up
-
-      .story
-        .title
-          %i.logo.fa.fa-leaf
-          %h1= story.title
-        .text= story.text_html
-
-      .footer
-        %div= story.text_copyright
-        %div= story.audio_copyright
-        %div= t(:created_by)
+  .footer
+    %div= story.text_copyright
+    %div= story.audio_copyright
+    %div= t(:created_by)
