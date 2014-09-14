@@ -48,12 +48,13 @@ $(function() {
 /* audio and audio analytics */
 var audio = $('.audio-player audio').get(0);
 if (typeof audio != 'undefined') {
+  var $control = $('.controls .audio-label, .controls .audio');
   if (!!(audio.canPlayType && audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
     $(audio).gaPlayLength({
       audioTime: true,
       userTiming: true
     });
-    $('.controls .audio').click(function(ev){
+    $control.click(function(ev){
       ev.preventDefault();
       $('.audio-player').show();
       if (typeof audio != 'undefined') {
@@ -64,7 +65,7 @@ if (typeof audio != 'undefined') {
       }
     });
   } else {
-    $('.controls .audio').click(function(ev){
+    $control.click(function(ev){
         ga('send', 'event', 'Listen', 'direct');
     });
   }

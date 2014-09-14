@@ -182,6 +182,13 @@ $width-compact: 580px;
           cursor: pointer;
           cursor: hand;
         }
+        .audio-label {
+          cursor: pointer;
+          cursor: hand;
+          @media screen and (max-width: $width-compact) {
+            display:none;
+          }
+        }
         .audio {
           cursor: pointer;
           cursor: hand;
