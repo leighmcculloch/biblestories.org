@@ -165,33 +165,33 @@ $width-compact: 580px;
         font-size: 56em;
         cursor: pointer;
         cursor: hand;
+        @media screen and (min-width: $width-compact) {
+          display:none;
+        }
       }
       .controls {
-        text-align: center;
+        @media screen and (max-width: $width-compact) {
+          text-align: center;
+        }
+        @media screen and (min-width: $width-compact) {
+          text-align: left;
+        }
         color: $color-header-controls;
         span {
           font-size: 28em;
           margin: 0 3px;
         }
-        .zoom-smaller {
+        .control {
           cursor: pointer;
           cursor: hand;
         }
         .zoom-larger {
           font-size: 45em;
-          cursor: pointer;
-          cursor: hand;
         }
         .audio-label {
-          cursor: pointer;
-          cursor: hand;
           @media screen and (max-width: $width-compact) {
             display:none;
           }
-        }
-        .audio {
-          cursor: pointer;
-          cursor: hand;
         }
       }
       .language {
