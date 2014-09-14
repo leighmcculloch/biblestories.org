@@ -16,8 +16,11 @@ $color-side-menu-stories-story-current: #dedede;
 
 $width-side-menu: 300px;
 
+$width-compact: 580px;
+
 /* off canvas side-menu animation */
 .page.story {
+  -webkit-backface-visibility: hidden;
   .side-menu {
     position: fixed;
     top: 0;
@@ -27,15 +30,32 @@ $width-side-menu: 300px;
     height: 100%;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    -webkit-backface-visibility: hidden;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
   }
-  .side-menu.show-side-menu {
-    -webkit-transform: translateX($width-side-menu);
-    transform: translateX($width-side-menu);
+  .content {
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    @media screen and (min-width: $width-compact) {
+      margin-left: 0;
+    }
+  }
+  &.showing-side-menu {
+    .side-menu {
+      -webkit-transform: translateX($width-side-menu);
+      transform: translateX($width-side-menu);
+    }
+    .content {
+      @media screen and (max-width: $width-compact) {
+        -webkit-transform: translateX($width-side-menu);
+        transform: translateX($width-side-menu);
+      }
+      @media screen and (min-width: $width-compact) {
+        margin-left: $width-side-menu;
+      }
+    }
   }
 }
 
@@ -200,7 +220,12 @@ $width-side-menu: 300px;
         font-weight: normal;
         font-size: 26em;
         color: $color-story-text;
-        text-align: justify;
+        @media screen and (max-width: $width-compact) {
+          text-align: justify;
+        }
+        @media screen and (min-width: $width-compact) {
+          text-align: center;
+        }
         .esv {
           h2, .chapter-num, .verse-num {
             display: none;

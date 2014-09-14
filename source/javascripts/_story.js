@@ -6,12 +6,11 @@ $(function() {
 });
 
 function toggleSideMenu() {
-  if ($('.side-menu').hasClass('show-side-menu')) {
-    $('.side-menu').removeClass('show-side-menu');
+  if ($('.page').hasClass('showing-side-menu')) {
+    $('.page').removeClass('showing-side-menu');
   } else {
-    $('.side-menu')
-      .addClass('show-side-menu')
-      .scrollTop(0);
+    $('.side-menu').scrollTop(0);
+    $('.page').addClass('showing-side-menu');
   }
 }
 
