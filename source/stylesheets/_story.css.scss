@@ -65,9 +65,12 @@ $width-side-menu: 300px;
       text-align: center;
       font-size: 30em;
       background-color: $color-side-menu-title-background;
-      color: $color-side-menu-title;
-      h1 {
-        display:inline;
+      a {
+        color: $color-side-menu-title;
+        text-decoration: none;
+        h1 {
+          display:inline;
+        }
       }
     }
     .share-pointer {
