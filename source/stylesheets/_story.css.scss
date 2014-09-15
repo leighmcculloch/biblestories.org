@@ -16,7 +16,6 @@ $color-side-menu-stories-story-current: #dedede;
 
 $width-side-menu: 300px;
 $width-side-menu-tease: 70px;
-$width-compact: 580px;
 
 /* hint for hardware acceleration */
 .page.story {
@@ -36,31 +35,31 @@ $width-compact: 580px;
     width: $width-side-menu;
     height: 100%;
     overflow: hidden;
-    @media screen and (max-width: $width-compact) {
+    @media (max-width: $width-compact) {
       transform: translateX(0);
     }
-    @media screen and (min-width: $width-compact) {
+    @media (min-width: $width-compact) {
       transform: translateX($width-side-menu-tease);
     }
     transition: .3s ease all;
   }
   .content {
     transition: .3s ease all;
-    @media screen and (max-width: $width-compact) {
+    @media (max-width: $width-compact) {
       margin-left: 0;
     }
-    @media screen and (min-width: $width-compact) {
+    @media (min-width: $width-compact) {
       margin-left: $width-side-menu-tease;
     }
   }
   &.showing-side-menu {
     .side-menu {
       overflow: scroll;
-      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
       transform: translateX($width-side-menu);
     }
     .content {
-      @media screen and (max-width: $width-compact) {
+      @media (max-width: $width-compact) {
         transform: translateX($width-side-menu);
         .header {
           .menu {
@@ -68,7 +67,7 @@ $width-compact: 580px;
           }
         }
       }
-      @media screen and (min-width: $width-compact) {
+      @media (min-width: $width-compact) {
         margin-left: $width-side-menu;
       }
     }
@@ -173,12 +172,14 @@ $width-compact: 580px;
         }
       }
       .search {
-        border: 0;
-        .fa-search {
-          right: -4px;
-          font-size: 44em !important;
-          cursor: pointer;
-          cursor: hand;
+        form {
+          border: 0;
+          .fa-search {
+            right: -4px;
+            font-size: 44em !important;
+            cursor: pointer;
+            cursor: hand;
+          }
         }
       }
       .stories {
@@ -209,10 +210,10 @@ $width-compact: 580px;
         }
       }
       .controls {
-        @media screen and (max-width: $width-compact) {
+        @media (max-width: $width-compact) {
           text-align: center;
         }
-        @media screen and (min-width: $width-compact) {
+        @media (min-width: $width-compact) {
           text-align: left;
         }
         color: $color-header-controls;
@@ -228,7 +229,7 @@ $width-compact: 580px;
           font-size: 45em;
         }
         .audio-label {
-          @media screen and (max-width: $width-compact) {
+          @media (max-width: $width-compact) {
             display:none;
           }
         }
@@ -266,10 +267,10 @@ $width-compact: 580px;
         font-weight: normal;
         font-size: 26em;
         color: $color-story-text;
-        @media screen and (max-width: $width-compact) {
+        @media (max-width: $width-compact) {
           text-align: justify;
         }
-        @media screen and (min-width: $width-compact) {
+        @media (min-width: $width-compact) {
           text-align: center;
         }
         .esv {

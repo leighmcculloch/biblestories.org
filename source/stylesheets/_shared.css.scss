@@ -4,6 +4,7 @@ $color-logo: #ffcc33;
 $color-footer: #a9a9a9;
 
 $width-mobile: 320px;
+$width-compact: 580px;
 $width-max: 580px;
 
 body {
@@ -17,10 +18,10 @@ body {
 }
 
 @mixin search($width, $color, $color-query, $font-size) {
-  border-bottom: 2px solid $color;
-  max-width: $width;
-  margin: 40px auto 50px auto;
   form {
+    border-bottom: 2px solid $color;
+    max-width: $width;
+    margin: 0 auto;
     position: relative;
     .query {
       width: 90%;
