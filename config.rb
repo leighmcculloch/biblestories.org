@@ -44,6 +44,12 @@ after_configuration do
   end
 end
 
+activate :autoprefixer do |config|
+  config.browsers = ['> 0.5%', 'last 2 versions', 'Explorer >= 7']
+  config.cascade  = false
+  config.inline   = true
+end
+
 configure :build do
   activate :minify_html
   activate :minify_css

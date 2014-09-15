@@ -28,7 +28,7 @@ page_classes: story
   .item.search
     %form
       %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-      %i.toggle-side-menu.fa.fa-search
+      %i.toggle-side-menu-and-search.fa.fa-search
   .item.stories
     - Stories.all.each do |_, s|
       .story{:class => ("current" if s.short_url == story.short_url)}

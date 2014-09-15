@@ -1,9 +1,17 @@
 /* side menu */
 $(function() {
+    $('.toggle-side-menu-and-search').click(function() {
+      toggleSideMenuAndSearch();
+    });
     $('.toggle-side-menu').click(function() {
       toggleSideMenu();
     });
 });
+
+function toggleSideMenuAndSearch() {
+  $('.search .query').focus();
+  toggleSideMenu();
+}
 
 function toggleSideMenu() {
   if ($('.page').hasClass('showing-side-menu')) {

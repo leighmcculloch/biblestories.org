@@ -20,11 +20,10 @@ $width-compact: 580px;
 
 /* hint for hardware acceleration */
 .page.story {
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
+  .side-menu, .content {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 }
 
 /* off canvas side-menu animation */
@@ -38,18 +37,14 @@ $width-compact: 580px;
     height: 100%;
     overflow: hidden;
     @media screen and (max-width: $width-compact) {
-      -webkit-transform: translateX(0);
       transform: translateX(0);
     }
     @media screen and (min-width: $width-compact) {
-      -webkit-transform: translateX($width-side-menu-tease);
       transform: translateX($width-side-menu-tease);
     }
-    -webkit-transition: .3s ease all;
     transition: .3s ease all;
   }
   .content {
-    -webkit-transition: .3s ease all;
     transition: .3s ease all;
     @media screen and (max-width: $width-compact) {
       margin-left: 0;
@@ -62,12 +57,10 @@ $width-compact: 580px;
     .side-menu {
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
-      -webkit-transform: translateX($width-side-menu);
       transform: translateX($width-side-menu);
     }
     .content {
       @media screen and (max-width: $width-compact) {
-        -webkit-transform: translateX($width-side-menu);
         transform: translateX($width-side-menu);
       }
       @media screen and (min-width: $width-compact) {

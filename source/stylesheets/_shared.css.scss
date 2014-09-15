@@ -39,16 +39,7 @@ body {
       color: $color;
       line-height: 140%;
     }
-    ::-webkit-input-placeholder {
-       color: $color;
-    }
-    :-moz-placeholder {
-       color: $color;
-    }
-    ::-moz-placeholder {
-       color: $color;
-    }
-    :-ms-input-placeholder {
+    ::placeholder {
        color: $color;
     }
   }
