@@ -3,12 +3,15 @@ require_relative "apis"
 class Story
   attr_reader :short_url, :title, :bible_ref, :bible_ref_english, :author
 
-  def initialize(story_key, book_key, book_ref, author = "Moses")
+  def initialize(story_key, book_key, book_ref)
     @short_url = story_key
     @title = I18n.t("story.title.#{story_key}")
     @bible_ref = "#{I18n.t("bible_book.#{book_key}")} #{book_ref}"
     @bible_ref_english = "#{I18n.t("bible_book.#{book_key}", locale: :en)} #{book_ref}"
-    @author = author
+    begin
+      @author = I18n.translate!("bible_book_author.#{book_key}")
+    rescue I18n::MissingTranslationData
+    end
   end
 
   def load
