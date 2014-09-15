@@ -55,7 +55,7 @@ $width-side-menu-tease: 70px;
   &.showing-side-menu {
     .side-menu {
       overflow: scroll;
-      overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch;
       transform: translateX($width-side-menu);
     }
     .content {
@@ -255,11 +255,18 @@ $width-side-menu-tease: 70px;
       text-align: center;
       .title {
         margin: 27px 0;
-        font-size: 40em;
-        color: $color-story-title;
         .logo {
-          font-size: 0.9em;
+          font-size: 37em;
           margin: 0.4em 0;
+        }
+        h1 {
+          font-size: 40em;
+          color: $color-story-title;
+        }
+        h2 {
+          font-size: 20em;
+          color: $color-story-title;
+          line-height: 1.5em;
         }
       }
       .text {
@@ -284,6 +291,15 @@ $width-side-menu-tease: 70px;
           .block-indent {
             margin: 0 2em;
           }
+        }
+      }
+      .ref {
+        font-size: 26em;
+        font-weight: 400;
+        margin: 2em 0;
+        a {
+          color: $color-footer;
+          text-decoration: none;
         }
       }
     }

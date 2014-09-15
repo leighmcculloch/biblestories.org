@@ -16,6 +16,8 @@ en:
   audio_label: Listen
   audio: Audio
 
+  story_written_by: written by
+
   meta_description: An index of stories in the bible. Read and listen to bible stories.
   meta_bible_story: Bible Story
   meta_bible_ref: Ref

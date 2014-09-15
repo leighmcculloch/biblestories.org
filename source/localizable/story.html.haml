@@ -54,12 +54,18 @@ page_classes: story
     .title
       %i.logo.fa.fa-leaf
       %h1= story.title
+      - if story.author
+        %h2
+          = t(:story_written_by)
+          %span.author=story.author
     - if story.audio_info && story.audio_info.length == 1
       .audio-player{:style=>"display:none;"}
         - story.audio_info.each do |audio_info|
           %audio{:controls=>"controls", :preload=>"none"}
             %source{:src=>audio_info[:url], :type=>"audio/mpeg"}
     .text= story.text_html
+    .ref
+      %a{:href=>story.read_more_url}= story.bible_ref
 
   .footer
     %div= story.text_copyright

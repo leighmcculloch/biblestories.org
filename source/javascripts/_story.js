@@ -24,7 +24,7 @@ function toggleSideMenu() {
 
 /* share buttons */
 var addthis_config = {
-  data_ga_property: 'UA-123456-1',
+  // data_ga_property: 'UA-123456-1',
   data_track_addressbar: false,
   data_track_clickback: false
 };
