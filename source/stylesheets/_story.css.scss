@@ -62,6 +62,11 @@ $width-compact: 580px;
     .content {
       @media screen and (max-width: $width-compact) {
         transform: translateX($width-side-menu);
+        .header {
+          .menu {
+            display: none;
+          }
+        }
       }
       @media screen and (min-width: $width-compact) {
         margin-left: $width-side-menu;
