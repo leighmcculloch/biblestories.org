@@ -113,7 +113,7 @@ activate :imageoptim unless DEV
 
 # Sync with AWS S3
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = config[:base_host]
+  s3_sync.bucket                     = "dev.greatstories.org"#config[:base_host]
   s3_sync.region                     = "us-east-1"
   s3_sync.delete                     = true
   s3_sync.after_build                = true
