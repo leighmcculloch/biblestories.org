@@ -79,4 +79,13 @@ class Story
     load
     @read_more_url
   end
+
+  def as_json
+    {
+      :title => self.title,
+      :bible_ref => self.bible_ref,
+      :bible_ref_english => self.bible_ref_english,
+      :author => self.author
+    }
+  end
 end

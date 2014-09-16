@@ -10,7 +10,12 @@ $(function() {
     $.expr[":"].containsNoCase = function (el, i, m) {
         var search = m[3];
         if (!search) return true;
-        return eval("/" + search + "/i").test($(el).text());
+        var text = $(el).text();
+        var data = $(el).data();
+        for (var key in data) {
+            text += "," + data[key];
+        }
+        return eval("/" + search + "/i").test(text);
     };
 
     $('.search form').submit(function (event) {

@@ -31,7 +31,7 @@ page_classes: story
       %i.toggle-side-menu-and-search.fa.fa-search
   .item.stories
     - Stories.all.each do |_, s|
-      .story{:class => ("current" if s.short_url == story.short_url)}
+      .story{:class => ("current" if s.short_url == story.short_url), :data => s.as_json}
         %a{:href=>"../#{s.short_url}/"}= s.title
         - if s.short_url == story.short_url
           %i.marker.fa.fa-leaf
