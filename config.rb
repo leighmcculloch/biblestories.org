@@ -3,6 +3,20 @@ require 'lib/story'
 
 DEV = !ENV["DEV"].nil?
 
+LANGS = [:en] #, :"zh-Hans"]
+LANG = ENV["LANG"].to_sym || :en
+
+config[:base_zones] = {
+  :en => "greatstories.org",
+  :"zh-Hans" => "greatstories.cn"
+}
+config[:base_hosts] = Hash[config[:base_zones].map { |lang, zone| [lang, "#{DEV ? "dev." : ""}#{zone}"] }]
+config[:base_urls] = Hash[config[:base_hosts].map { |lang, host| [lang, "http://#{host}"] }]
+
+config[:base_zone] = config[:base_zones][LANG]
+config[:base_host] = config[:base_hosts][LANG]
+config[:base_url] = config[:base_urls][LANG]
+
 $cache = Dalli::Client.new(ENV["GSOB_MEMCACHEDCLOUD_SERVERS"].split(','), {
   :username => ENV["GSOB_MEMCACHEDCLOUD_USERNAME"],
   :password => ENV["GSOB_MEMCACHEDCLOUD_PASSWORD"],
@@ -35,12 +49,15 @@ set :images_dir, 'images'
 
 activate :directory_indexes
 
-activate :i18n
+activate :i18n, :langs => LANGS
 
 ignore 'story.html'
 after_configuration do
-  Stories.all.each do |story_short_url, story|
-    page "/#{story_short_url}.html", :proxy => "/localizable/story.html", :locals => { :story => story, :stories => Stories.all }, :ignore => true
+  LANGS.each do |lang|
+    prefix = lang.to_s if lang != :en
+    Stories.all.each do |story_short_url, story|
+      page "#{prefix}/#{story_short_url}.html", :proxy => "/localizable/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang, :ignore => true
+    end
   end
 end
 
@@ -96,7 +113,7 @@ activate :imageoptim unless DEV
 
 # Sync with AWS S3
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = "#{DEV ? "dev." : ""}greatstories.org"
+  s3_sync.bucket                     = config[:base_host]
   s3_sync.region                     = "us-east-1"
   s3_sync.delete                     = true
   s3_sync.after_build                = true
@@ -111,8 +128,8 @@ end
 unless DEV
   activate :cdn do |cdn|
     cdn.cloudflare = {
-      zone: "greatstories.org",
-      base_urls: ["http://greatstories.org"]
+      zone: config[:base_zone],
+      base_urls: [config[:base_url]]
     }
     cdn.filter = /\.html$/
     cdn.after_build = true

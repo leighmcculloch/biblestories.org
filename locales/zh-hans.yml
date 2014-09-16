@@ -1,0 +1,181 @@
+zh-Hans:
+  language: 简化字
+  title: 伟大的圣经故事
+  description: 目录
+  created_by: 由 Leigh McCulloch 制作。
+  tyndale_thanks:
+
+  search_placeholder: 搜索圣经故事…
+  search_placeholder_side_menu: 搜索圣经故事…
+
+  story_text_smaller: 小
+  story_text_larger: 大
+  audio_label: 收听
+
+  story_written_by: 作者
+
+  # Bible book titles
+  bible_book:
+    Genesis:      创世纪
+    Exodus:       出埃及記
+    Numbers:      民數記
+    Joshua:       約書亞記
+    Judges:       士師記
+    Ruth:         路得記
+    1_Samuel:     撒母耳記上
+    2_Samuel:     撒母耳記下
+    1_Kings:      列王紀上
+    2_Kings:      列王紀下
+    1_Chronicles: 歷代志上
+    2_Chronicles: 歷代志下
+    Ezra:         以斯拉記
+    Nehemiah:     尼希米記
+    Esther:       以斯帖記
+    Job:          約伯記
+    Ezekiel:      以西結書
+    Daniel:       但以理書
+    Jonah:        約拿書
+    Matthew:      馬太福音
+    Mark:         馬可福音
+    Luke:         路加福音
+    John:         約翰福音
+    Acts:         使徒行傳
+
+  bible_book_author:
+    Genesis:      Moses
+    Exodus:       Moses
+    Numbers:      Moses
+    1_Chronicles: Ezra the scribe
+    2_Chronicles: Ezra the scribe
+    Ezra:         Ezra the scribe
+    Nehemiah:     Ezra the scribe
+    Esther:       a Persian Jew
+    Ezekiel:      Ezekiel
+    Daniel:       Daniel
+    Jonah:        Jonah the prophet
+    Matthew:      Matthew the tax collector
+    Mark:         Mark
+    Luke:         Luke the physician
+    John:         John the disciple
+    Acts:         Luke the physician
+
+  # Story titles
+  story:
+    title:
+      the_creation:                       创世纪
+      adam_and_eve:                       亚当与夏娃
+      cain_and_abel:                      该隐与亚伯
+      the_great_flood:                    大洪水
+      the_tower_of_babel:                 巴别塔
+      god_calls_abraham:                  神召唤亚伯拉罕
+      sodom_and_gomorrah:                 所多玛与蛾摩拉
+      abrahams_obedience:                 亚伯拉罕的顺服
+      isaac_marries_rebekah:              以撒娶利百加
+      esaus_birthright:                   以扫的长子名分
+      isaac_blesses_jacob:                以撒祝福雅各
+      jacob_and_laban:                    雅各与拉班
+      jacob_wrestles:                     雅各与神摔跤
+      revenge_against_schechem:           报复示剑
+      joseph_in_prison:                   约瑟坐监
+      joseph_as_a_ruler:                  约瑟治理埃及
+      family_reunion:                     家人团聚
+      moses_birth:                        摩西出生
+      the_burning_bush:                   燃烧的荆棘
+      the_ten_plagues:                    十灾
+      the_exodus:                         出埃及
+      the_red_sea:                        过红海
+      the_gold_calf:                      金牛犊
+      exploring_the_land:                 窥探迦南地
+      rebellion_in_the_ranks:             首领的叛变
+      balak_and_balaam:                   巴勒与巴兰
+      rahab_and_the_spies:                喇合与探子
+      jericho_falls:                      耶利哥城塌陷
+      gibeons_con_artists:                基遍人的欺诈
+      deborah_and_barak:                  底波拉与巴拉
+      gideon_as_judge:                    士师基甸
+      abimelechs_ambition:                亚比米勒的野心
+      samson_as_judge:                    士师参孙
+      ruth_naomi_and_boaz:                路得、拿俄米与波阿斯
+      samuel_is_born:                     撒母耳出生
+      samuel_the_prophet:                 先知撒母耳
+      saul_becomes_king:                  扫罗被立为王
+      jonathans_bravery:                  约拿单的勇敢
+      sauls_disobedience:                 扫罗不顺从
+      david_kills_goliath:                大卫杀死歌利亚
+      david_and_jonathan:                 大卫与约拿单
+      nabal_and_abigail:                  拿八与亚比该
+      sauls_death:                        扫罗之死
+      davids_success:                     大卫得胜
+      david_and_bathsheba:                大卫与拔示巴
+      amnon_and_tamar:                    暗嫩与她玛
+      absalom:                            押沙龙
+      solomons_wisdom:                    所罗门的智慧
+      jeroboam_and_rehoboam:              耶罗波安与罗波安
+      elijahs_challenge:                  以利亚的挑战
+      god_speaks_to_elijah:               主对以利亚说
+      micaiah_the_prophet:                先知米该
+      chariot_of_fire:                    火战车
+      elisha_heals_naaman:                以利沙治愈乃缦
+      famine_and_unbelief:                饥荒和逆教
+      joash_and_jehoiada:                 约阿施与耶何耶大
+      hezekiah_trusts_god:                希西家信奉神
+      josiahs_reign:                      约西亚作王
+      fall_of_jerusalem:                  耶路撒冷失陷
+      davids_power:                       大卫的权力
+      davids_census:                      大卫数点兵员之数
+      jehoshaphat_and_ahab:               约沙法与亚哈
+      ezra_rebuilds_the_altar:            以斯拉重建祭坛
+      nehemiah_builds_the_wall:           尼希米建城墙
+      enemy_opposition:                   仇敌阻挠重建工程
+      nehemiahs_justice:                  尼希米的正义
+      esther_saves_the_jews:              以斯帖挽救了犹太人的性命
+      job_is_tested:                      约伯受试炼
+      ezekiels_vision:                    以西结目睹的一切
+      the_fiery_furnace:                  火窑
+      the_lions_den:                      狮子坑
+      jonah:                              约拿
+      jesus_is_born_by_matthew:           耶稣基督降生
+      jesus_is_born_by_luke:              耶稣基督降生
+      wise_men_and_king_herod:            博士和希律王
+      jesus_is_tempted_by_matthew:        耶稣受试探
+      jesus_is_tempted_by_mark:           耶稣受试探
+      jesus_is_tempted_by_luke:           耶稣受试探
+      jesus_feeds_5000_by_matthew:        耶稣让 5000 人吃饱
+      jesus_feeds_5000_by_mark:           耶稣让 5000 人吃饱
+      jesus_feeds_5000_by_luke:           耶稣让 5000 人吃饱
+      jesus_feeds_5000_by_john:           耶稣让 5000 人吃饱
+      the_bread_of_life:                  生命的粮
+      jesus_walks_on_water_by_matthew:    耶稣在海面上行走
+      jesus_walks_on_water_by_mark:       耶稣在海面上行走
+      jesus_walks_on_water_by_john:       耶稣在海面上行走
+      the_good_samaritan:                 好撒玛利亚人
+      the_lost_son:                       浪子
+      jesus_raises_lazarus:               耶稣使拉撒路复活
+      jesus_and_zacchaeus:                耶稣与撒该
+      the_triumphal_entry_by_matthew:     凯旋归来
+      the_triumphal_entry_by_luke:        凯旋归来
+      the_triumphal_entry_by_john:        凯旋归来
+      the_last_supper_by_matthew:         最后的晚餐
+      the_last_supper_by_mark:            最后的晚餐
+      the_last_supper_by_luke:            最后的晚餐
+      the_last_supper_by_john:            最后的晚餐
+      jesus_trial:                        审判耶稣
+      jesus_crucifixion_by_matthew:       耶稣受难
+      jesus_crucifixion_by_mark:          耶稣受难
+      jesus_crucifixion_by_luke:          耶稣受难
+      jesus_crucifixion_by_john:          耶稣受难
+      jesus_resurrection_by_matthew:      耶稣复活
+      jesus_resurrection_by_mark:         耶稣复活
+      jesus_resurrection_by_luke:         耶稣复活
+      jesus_resurrection_by_john:         耶稣复活
+      jesus_ascension_luke:               耶稣升天
+      jesus_ascension_acts:               耶稣升天
+      the_holy_spirit_comes:              圣灵降临
+      the_apostles_courage:               使徒的胆量
+      ananias_and_sapphira:               亚拿尼亚与撒非喇
+      philip_and_the_eunuch:              腓利与太监
+      saul_encounters_jesus:              扫罗遇见耶稣
+      peter_and_cornelius:                彼得与哥尼流
+      paul_in_corinth:                    保罗在哥林多
+      paul_in_ephesus:                    保罗在以弗所
+      paul_goes_to_rome:                  保罗前往罗马

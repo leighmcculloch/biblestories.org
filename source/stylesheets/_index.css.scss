@@ -1,7 +1,5 @@
 $color-title: #383838;
 $color-description: #a9a9a9;
-$color-language-border: #e6e5e6;
-$color-language: #d1cccd;
 $color-search: #d1cccd;
 $color-search-query: #383838;
 $color-story-list: #1b1b1b;
@@ -35,11 +33,7 @@ $color-story-list: #1b1b1b;
       .language {
         margin: 0;
         display:inline-block;
-        color: $color-language;
         font-size: 24em;
-        padding: 6px;
-        border: 2px solid $color-language-border;
-        border-radius: 4px;
       }
     }
     @media (min-width: $width-compact) {
@@ -76,13 +70,8 @@ $color-story-list: #1b1b1b;
         right: 40px;
         display:inline-block;
         height: 40px;
-        .current {
+        .current, .options {
           margin-top: 4px;
-          display:inline-block;
-          color: $color-language;
-          padding: 6px;
-          border: 2px solid $color-language-border;
-          border-radius: 4px;
         }
       }
     }
@@ -100,15 +89,26 @@ $color-story-list: #1b1b1b;
   }
 
   .stories {
-    font-size: 40em;
     text-align: center;
     color: $color-story-list;
     margin: 60px 0;
     .story {
       margin: 30px 0;
       a {
+        font-size: 40em;
         color: $color-story-list;
         text-decoration: none;
+      }
+      .bible_ref {
+        @media (max-width: $width-compact) {
+          display: block;
+        }
+        @media (min-width: $width-compact) {
+          display: inline;
+        }
+        color: $color-story-list;
+        font-size: 18em;
+        padding: 0 0 0 10px;
       }
     }
   }

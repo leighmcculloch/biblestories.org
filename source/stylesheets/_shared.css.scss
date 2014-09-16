@@ -2,6 +2,8 @@ $font-primary: 'Open Sans', sans-serif;
 
 $color-logo: #ffcc33;
 $color-footer: #a9a9a9;
+$color-language-border: #e6e5e6;
+$color-language: #d1cccd;
 
 $width-mobile: 320px;
 $width-compact: 580px;
@@ -42,6 +44,46 @@ body {
     }
     ::placeholder {
        color: $color;
+    }
+  }
+}
+
+.language {
+  position: relative;
+  top: 4px;
+  .current {
+    color: $color-language;
+    padding: 6px;
+    border: 2px solid $color-language-border;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  .options {
+    display: none;
+  }
+  &:hover {
+    .current {
+      display: none;
+    }
+    .options {  
+      display: block;
+      padding: 6px;
+      border: 2px solid $color-language-border;
+      border-radius: 4px;
+      a.option {
+        display: block;
+        text-align: right;
+        color: $color-language;
+        text-decoration: none;
+        margin: 6px 0;
+        &:first-of-type{
+          margin-top: 0;
+        }
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

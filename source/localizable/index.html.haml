@@ -9,7 +9,10 @@ title: Great Stories of the Bible
   .item.description
     %h2= t(:description)
   .item.language
-    .current= "EN"
+    .current= t(:language)
+    .options
+      %a.option{:href=>"#{config[:base_urls][:en]}/"}= "English"
+      %a.option{:href=>"#{config[:base_urls][:"zh-Hans"]}/"}= "简化字"
 
 .search
   %form
@@ -18,8 +21,9 @@ title: Great Stories of the Bible
 
 .stories
   - Stories.all.each do |_, story|
-    .story
+    .story{:data => story.as_json}
       %a{:href=>"#{story.short_url}/"}= story.title
+      .bible_ref= story.bible_ref
 
 .footer
   %div= t(:thanks)
