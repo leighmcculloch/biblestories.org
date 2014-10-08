@@ -3,6 +3,7 @@ $color-description: #a9a9a9;
 $color-search: #d1cccd;
 $color-search-query: #383838;
 $color-story-list: #1b1b1b;
+$color-story-list-bible-ref: #d1cccd;
 
 .page.index {  
   .header {
@@ -106,7 +107,7 @@ $color-story-list: #1b1b1b;
         @media (min-width: $width-compact) {
           display: inline;
         }
-        color: $color-story-list;
+        color: $color-story-list-bible-ref;
         font-size: 18em;
         padding: 0 0 0 10px;
       }

@@ -1,6 +1,7 @@
 $color-header-menu: #9c9c9c;
 $color-header-controls: #bcbcbc;
 $color-story-title: #1b1b1b;
+$color-story-author: #a9a9a9;
 $color-story-text: #1b1b1b;
 
 $color-side-menu-background: #3a3a3a;
@@ -265,8 +266,9 @@ $width-side-menu-tease: 70px;
         }
         h2 {
           font-size: 20em;
-          color: $color-story-title;
-          line-height: 1.5em;
+          color: $color-story-author;
+          font-weight: 400;
+          margin-top: 0.4em;
         }
       }
       .text {

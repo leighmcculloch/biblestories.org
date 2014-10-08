@@ -45,19 +45,19 @@ en:
     Genesis:      Moses
     Exodus:       Moses
     Numbers:      Moses
-    1_Chronicles: Ezra the scribe
-    2_Chronicles: Ezra the scribe
-    Ezra:         Ezra the scribe
-    Nehemiah:     Ezra the scribe
+    1_Chronicles: Ezra (a scribe)
+    2_Chronicles: Ezra (a scribe)
+    Ezra:         Ezra (a scribe)
+    Nehemiah:     Ezra (a scribe)
     Esther:       a Persian Jew
     Ezekiel:      Ezekiel
     Daniel:       Daniel
-    Jonah:        Jonah the prophet
-    Matthew:      Matthew the tax collector
+    Jonah:        Jonah (a prophet)
+    Matthew:      Matthew (a tax collector)
     Mark:         Mark
-    Luke:         Luke the physician
-    John:         John the disciple
-    Acts:         Luke the physician
+    Luke:         Luke (a physician)
+    John:         John (a disciple)
+    Acts:         Luke (a physician)
 
   # Story titles
   story:
