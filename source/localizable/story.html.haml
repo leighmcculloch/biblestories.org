@@ -42,10 +42,11 @@ page_classes: story
     .item.menu
       %i.fa.fa-bars.toggle-side-menu
     .item.language
-      .current= t(:language)
-      .options
-        %a.option{:href=>"#{config[:base_urls][:en]}/#{story.short_url}/"}= t(:language, :locale => :en)
-        %a.option{:href=>"#{config[:base_urls][:"zh-Hans"]}/#{story.short_url}/"}= t(:language, :locale => :"zh-Hans")
+      .language-box
+        .current= t(:language)
+        .options
+          %a.option{:href=>"#{config[:base_urls][:en]}/#{story.short_url}/"}= t(:language, :locale => :en)
+          %a.option{:href=>"#{config[:base_urls][:"zh-Hans"]}/#{story.short_url}/"}= t(:language, :locale => :"zh-Hans")
     .item.controls
       %span.control.zoom-smaller= t(:story_text_smaller)
       %span.control.zoom-larger= t(:story_text_larger)
