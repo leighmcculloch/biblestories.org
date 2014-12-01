@@ -4,49 +4,10 @@ page_classes: story
 
 - content_for(:title, "Great Stories | #{story.title}")
 
-.side-menu
-  %i.logo.fa.fa-leaf
-  %i.close.fa.fa-bars.toggle-side-menu
-  .item.title
-    %a{:href=>"../"}
-      %h1= t(:title)
-  %i.share-pointer.fa.fa-caret-left
-  .item.share
-    .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
-      - case I18n.locale
-      - when :en
-        %a.addthis_button_facebook
-          %i.fa.fa-facebook
-        %a.addthis_button_twitter
-          %i.fa.fa-twitter
-        %a.addthis_button_tumblr
-          %i.fa.fa-tumblr
-        %a.addthis_button_email
-          %i.fa.fa-envelope
-        %a.addthis_button_more
-          %i.fa.fa-share-square
-  .item.search
-    %form
-      %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-      %i.toggle-side-menu-and-search.fa.fa-search
-  .item.stories
-    - Stories.all.each do |_, s|
-      .story{:class => ("current" if s.short_url == story.short_url), :data => s.as_json}
-        %a{:href=>"../#{s.short_url}/"}= s.title
-        - if s.short_url == story.short_url
-          %i.marker.fa.fa-leaf
-        .bible_ref= s.bible_ref
-
 .content
   .header
     .item.menu
       %i.fa.fa-bars.toggle-side-menu
-    .item.language
-      .language-box
-        .current= t(:language)
-        .options
-          %a.option{:href=>"#{config[:base_urls][:en]}/#{story.short_url}/"}= t(:language, :locale => :en)
-          %a.option{:href=>"#{config[:base_urls][:"zh-Hans"]}/#{story.short_url}/"}= t(:language, :locale => :"zh-Hans")
     .item.controls
       %span.control.zoom-smaller= t(:story_text_smaller)
       %span.control.zoom-larger= t(:story_text_larger)

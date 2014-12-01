@@ -8,12 +8,6 @@ title: Great Stories of the Bible
     %h1= t(:title)
   .item.description
     %h2= t(:description)
-  .item.language
-    .language-box
-      .current= t(:language)
-      .options
-        %a.option{:href=>"#{config[:base_urls][:en]}/"}= "English"
-        %a.option{:href=>"#{config[:base_urls][:"zh-Hans"]}/"}= "简化字"
 
 .search
   %form

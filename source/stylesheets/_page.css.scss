@@ -1,4 +1,5 @@
 $font-primary: 'Open Sans', sans-serif;
+$font-text: 'Libre Baskerville', serif;
 
 $color-logo: #ffcc33;
 $color-footer: #a9a9a9;
@@ -11,8 +12,25 @@ $width-max: 580px;
 
 body {
   font-family: $font-primary;
-  font-size: 0.5pt;
+  font-size: 1em;
   font-weight: 600;
+}
+
+.footer {
+  max-width: $width-max;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $color-footer;
+  text-align: center;
+  margin: 0 auto;
+  div {
+    margin: 10px 0;
+  }
+  a {
+    color: $color-footer;
+    text-decoration: none;
+  }
 }
 
 .logo {
@@ -85,22 +103,5 @@ body {
         }
       }
     }
-  }
-}
-
-.footer {
-  max-width: $width-max;
-  font-size: 20em;
-  font-weight: 400;
-  line-height: 1.2em;
-  color: $color-footer;
-  text-align: center;
-  margin: 0 auto;
-  div {
-    margin: 10px 0;
-  }
-  a {
-    color: $color-footer;
-    text-decoration: none;
   }
 }

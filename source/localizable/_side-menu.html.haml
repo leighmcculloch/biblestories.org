@@ -1,0 +1,33 @@
+ = stylesheet_link_tag "side-menu.css"
+.side-menu
+  %i.logo.fa.fa-leaf
+  %i.close.fa.fa-bars.toggle-side-menu
+  .item.title
+    %a{:href=>"../"}
+      %h1= t(:title)
+  %i.share-pointer.fa.fa-caret-left
+  .item.share
+    .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
+      - case I18n.locale
+      - when :en
+        %a.addthis_button_facebook
+          %i.fa.fa-facebook
+        %a.addthis_button_twitter
+          %i.fa.fa-twitter
+        %a.addthis_button_tumblr
+          %i.fa.fa-tumblr
+        %a.addthis_button_email
+          %i.fa.fa-envelope
+        %a.addthis_button_more
+          %i.fa.fa-share-square
+  .item.search
+    %form
+      %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
+      %i.toggle-side-menu-and-search.fa.fa-search
+  .item.stories
+    - Stories.all.each do |_, s|
+      .story{:class => ("current" if s.short_url == story.short_url), :data => s.as_json}
+        %a{:href=>"../#{s.short_url}/"}= s.title
+        - if s.short_url == story.short_url
+          %i.marker.fa.fa-leaf
+        .bible_ref= s.bible_ref

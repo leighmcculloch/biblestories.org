@@ -4,304 +4,112 @@ $color-story-title: #1b1b1b;
 $color-story-author: #a9a9a9;
 $color-story-text: #1b1b1b;
 
-$color-side-menu-background: #3a3a3a;
-$color-side-menu-close: #646464;
-$color-side-menu-title-background: #2a2a2a;
-$color-side-menu-title: #dedede;
-$color-side-menu-search: #6f6f6f;
-$color-side-menu-search-query: #fff;
-$color-side-menu-share-background: #323232;
-$color-side-menu-share-icon: #646464;
-$color-side-menu-stories-story: #777777;
-$color-side-menu-stories-story-current: #dedede;
+/* layout */
+.page.story .content {
+  padding: 20px;
+  .header {
+    position: relative;
+    .menu {
+      position: absolute;
+      left: 0;
+    }
+  }
 
-$width-side-menu: 300px;
-$width-side-menu-tease: 70px;
-
-/* hint for hardware acceleration */
-.page.story {
-  .side-menu, .content {
-    transform: translateZ(0);
-    backface-visibility: hidden;
+  .story {
+    max-width: $width-max;
+    margin: 0 auto;
   }
 }
 
-/* off canvas side-menu animation */
-.page.story {
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: -$width-side-menu;
-    z-index: 2;
-    width: $width-side-menu;
-    height: 100%;
-    overflow: hidden;
-    @media (max-width: $width-compact) {
-      transform: translateX(0);
+/* layout: wide */
+@media (min-width: $width-compact) {
+  .page.story .content .header {
+    .menu {
+      display: none;
     }
-    @media (min-width: $width-compact) {
-      transform: translateX($width-side-menu-tease);
-    }
-    transition: .3s ease all;
-  }
-  .content {
-    transition: .3s ease all;
-    @media (max-width: $width-compact) {
-      margin-left: 0;
-    }
-    @media (min-width: $width-compact) {
-      margin-left: $width-side-menu-tease;
-    }
-  }
-  &.showing-side-menu {
-    .side-menu {
-      overflow: scroll;
-      -webkit-overflow-scrolling: touch;
-      transform: translateX($width-side-menu);
-    }
-    .content {
-      @media (max-width: $width-compact) {
-        transform: translateX($width-side-menu);
-        .header {
-          .menu {
-            display: none;
-          }
-        }
-      }
-      @media (min-width: $width-compact) {
-        margin-left: $width-side-menu;
-      }
+    .controls {
+      text-align: left;
     }
   }
 }
 
-.page.story {
-  /* side menu */
-  .side-menu {
-    background-color: $color-side-menu-background;
-    .item {
-      padding: 25px;
-    }
-    .logo {
-      position: absolute;
-      top: 27px;
-      left: 55px;
-      font-size: 27em;
-    }
-    .close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      color: $color-side-menu-close;
-      font-size: 56em;
-      cursor: pointer;
-      cursor: hand;
-    }
-    .title {
+/* layout: narrow */
+@media (max-width: $width-compact) {
+  .page.story .content .header {
+    .controls {
       text-align: center;
-      font-size: 30em;
-      background-color: $color-side-menu-title-background;
-      a {
-        color: $color-side-menu-title;
-        text-decoration: none;
-        h1 {
-          display:inline;
-        }
-      }
-    }
-    .share-pointer {
-      position: absolute;
-      top: 98px;
-      right: 0;
-      width: 0; 
-      height: 0; 
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-right: 12px solid #fff;
-    }
-    .share {
-      background-color: $color-side-menu-share-background;
-      .addthis_sharing_toolbox {
-        height: 32px;
-        display: block;
-        width: 250px;
-        height: 32px;
-        margin: 0 auto;
-        a {
-          margin: 0 24px 0 0;
-          font-size: 44em;
-          color: $color-side-menu-share-icon;
-          text-decoration: none;
-          outline: none;
-        }
-      }
-    }
-    .search {
-      @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 30em);
-      padding: 0;
-      margin: 40px auto 10px auto;
-    }
-    .stories {
-      text-align: center;
-      .story {
-        margin: 25px 0;
-        a {
-          font-size: 30em;
-          color: $color-side-menu-stories-story;
-          text-decoration: none;
-          &:hover {
-            color: $color-side-menu-stories-story-current;
-          }
-        }
-        .bible_ref {
-          color: $color-side-menu-stories-story;
-          font-size: 18em;
-          margin: 5px 0;
-        }
-      }
-      .story.current {
-        a {
-          color: $color-side-menu-stories-story-current;
-        }
-        .marker {
-          font-size: 30em;
-          color: $color-logo;
-          padding-left: 5px;
-        }
-      }
-    }
-  }
-  &:not(.showing-side-menu) {
-    .side-menu {
-      .share {
-        .addthis_button_more {
-          position: relative;
-          left: 10px;
-        }
-      }
-      .search {
-        form {
-          border: 0;
-          .fa-search {
-            right: -4px;
-            font-size: 44em !important;
-            cursor: pointer;
-            cursor: hand;
-          }
-        }
-      }
-      .stories {
+      .audio-label {
         display: none;
       }
     }
   }
+}
 
-  /* primary content */
-  .content {
-    padding: 20px;
-    .header {
-      margin: 0 auto;
-      position: relative;
-      height: 56em;
-      line-height: 56em;
-      .item {
+/* appearance */
+.page.story .content {
+  .header {
+    .menu {
+      color: $color-header-menu;
+      font-size: 1.40em;
+      cursor: pointer;
+      cursor: hand;
+    }
+    .controls {
+      color: $color-header-controls;
+      span {
+        font-size: 0.875em;
+        margin: 0 3px;
       }
-      .menu {
-        position: absolute;
-        left: 0;
-        color: $color-header-menu;
-        font-size: 56em;
+      .control {
         cursor: pointer;
         cursor: hand;
-        @media (min-width: $width-compact) {
-          display:none;
-        }
       }
-      .controls {
-        @media (max-width: $width-compact) {
-          text-align: center;
-        }
-        @media (min-width: $width-compact) {
-          text-align: left;
-        }
-        color: $color-header-controls;
-        span {
-          font-size: 28em;
-          margin: 0 3px;
-        }
-        .control {
-          cursor: pointer;
-          cursor: hand;
-        }
-        .zoom-larger {
-          font-size: 45em;
-        }
-        .audio-label {
-          @media (max-width: $width-compact) {
-            display:none;
-          }
-        }
-      }
-      .language {
-        position: absolute;
-        right: 0;
-        font-size: 28em;
-        line-height: 1em;
+      .zoom-larger {
+        font-size: 1.40em;
       }
     }
+  }
 
-    .story {
-      max-width: $width-max;
-      margin: 0 auto;
-      text-align: center;
-      .title {
-        margin: 27px 0;
-        .logo {
-          font-size: 37em;
-          margin: 0.4em 0;
-        }
-        h1 {
-          font-size: 40em;
-          color: $color-story-title;
-        }
-        h2 {
-          font-size: 20em;
-          color: $color-story-author;
-          font-weight: 400;
-          margin-top: 0.4em;
-        }
+  .story {
+    text-align: center;
+    .title {
+      margin: 27px 0;
+      .logo {
+        font-size: 1.60em;
+        margin: 0.4em 0;
       }
-      .text {
-        font-family: 'Libre Baskerville', serif;
-        font-weight: normal;
-        font-size: 26em;
-        color: $color-story-text;
-        @media (max-width: $width-compact) {
-          text-align: justify;
-        }
-        @media (min-width: $width-compact) {
-          text-align: center;
-        }
-        .esv {
-          h2, .chapter-num, .verse-num {
-            display: none;
-          }
-          p {
-            margin: 2em 0;
-            line-height: 1.6em;
-          }
-          .block-indent {
-            margin: 0 2em;
-          }
-        }
+      h1 {
+        font-size: 2em;
+        color: $color-story-title;
       }
-      .ref {
-        font-size: 26em;
+      h2 {
+        font-size: 0.8em;
+        color: $color-story-author;
         font-weight: 400;
-        margin: 2em 0;
-        a {
-          color: $color-footer;
-          text-decoration: none;
+        margin-top: 0.4em;
+      }
+    }
+    .text {
+      font-family: $font-text;
+      font-weight: normal;
+      font-size: 1em;
+      color: $color-story-text;
+      @media (max-width: $width-compact) {
+        text-align: justify;
+      }
+      @media (min-width: $width-compact) {
+        text-align: center;
+      }
+      .esv {
+        h2, .chapter-num, .verse-num {
+          display: none;
+        }
+        p {
+          margin: 2em 0;
+          line-height: 1.6em;
+        }
+        .block-indent {
+          margin: 0 2em;
         }
       }
     }
