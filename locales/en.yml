@@ -5,7 +5,7 @@ en:
   created_by: Created by <a href="http://leighmcculloch.com">Leigh McCulloch</a> &amp; <a href="http://jtburkholder.com/">Jason Burkholder</a>.
   thanks: Thanks to Tyndale House Publishing Inc. for permission to use the "Great Stories of the Bible" index, found as an appendix in some publications of the New Living Translation Bibles.
 
-  search_placeholder: story or character
+  search_placeholder: Search by story or author
   search_placeholder_side_menu: Search stories
 
   story_text_smaller: A
@@ -45,10 +45,6 @@ en:
     Genesis:      Moses
     Exodus:       Moses
     Numbers:      Moses
-    1_Chronicles: Ezra (a scribe)
-    2_Chronicles: Ezra (a scribe)
-    Ezra:         Ezra (a scribe)
-    Nehemiah:     Ezra (a scribe)
     Esther:       a Persian Jew
     Ezekiel:      Ezekiel
     Daniel:       Daniel

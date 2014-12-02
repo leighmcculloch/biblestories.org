@@ -30,7 +30,7 @@ $width-search: $width-max - 200;
   @media (min-width: $width-compact) {
     .header {
       position: relative;
-      padding: 20px 40px;
+      margin: 20px 40px;
       .title {
         position: absolute;
       }
