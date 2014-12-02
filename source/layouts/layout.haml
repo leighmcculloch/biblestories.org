@@ -11,5 +11,5 @@
     = stylesheet_link_tag "all.css"
     = yield_content :head
   %body.page{:class => "page #{page_classes} #{current_page.data.page_classes}"}
-    = yield
+    .container= yield
     = javascript_include_tag "all.js"

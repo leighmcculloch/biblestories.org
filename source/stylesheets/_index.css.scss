@@ -7,92 +7,93 @@ $color-story-list-bible-ref: #d1cccd;
 
 $width-search: $width-max - 200;
 
-/* layout: wide */
-@media (min-width: $width-compact) {
-  .page.index .view .header {
-    .item {
-      position: absolute;
-      top: 5px;
-      margin-top: 5px;
-    }
-    .title {
-      left: 40px;
-      h1 {
-        display:inline;
-      }
-      height: 40px;
-      line-height: 40px;
-    }
-    .description {
-      width: 100%;
-      text-align: center;
-      h2 {
-        display:inline;
-      }
-      height: 40px;
-      line-height: 40px;
-    }
-  }
-}
-
-/* layout: narrow */
-@media (max-width: $width-compact) {
-  .page.index .view .header {
-    .item {
-      margin: 27px 0;
-      text-align: center;
-    }
-    .title {
-      h1 {
-        display:inline;
-      }
-    }
-    .description {
-      h2 {
-        display:inline;
-      }
-    }
-  }
-}
-
-/* appearance: wide */
-@media (min-width: $width-compact) {
-  .page.index .view .header {
-    .item {
-      font-size: 1em;
-    }
-    .title {
-      color: $color-title;
-      .logo {
-        font-size: 0.9em;
-        margin-right: 0.2em;
-      }
-    }
-    .description {
-      color: $color-description;
-    }
-  }
-}
-
-/* appearance: narrow */
-@media (max-width: $width-compact) {
-  .page.index .view .header {
-    .title {
-      font-size: 2em;
-      color: $color-title;
-      .logo {
-        font-size: 0.9em;
-        margin-right: 0.2em;
-      }
-    }
-    .description {
-      font-size: 1em;
-      color: $color-description;
-    }
-  }
-}
-
 .page.index .view {
+
+  /* header layout: wide */
+  @media (min-width: $width-compact) {
+    .header {
+      .item {
+        position: absolute;
+        top: 5px;
+        margin-top: 5px;
+      }
+      .title {
+        left: 40px;
+        h1 {
+          display:inline;
+        }
+        height: 40px;
+        line-height: 40px;
+      }
+      .description {
+        width: 100%;
+        text-align: center;
+        h2 {
+          display:inline;
+        }
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  /* header layout: narrow */
+  @media (max-width: $width-compact) {
+    .header {
+      .item {
+        margin: 27px 0;
+        text-align: center;
+      }
+      .title {
+        h1 {
+          display:inline;
+        }
+      }
+      .description {
+        h2 {
+          display:inline;
+        }
+      }
+    }
+  }
+
+  /* header appearance: wide */
+  @media (min-width: $width-compact) {
+    .header {
+      .item {
+        font-size: 1em;
+      }
+      .title {
+        color: $color-title;
+        .logo {
+          font-size: 0.9em;
+          margin-right: 0.2em;
+        }
+      }
+      .description {
+        color: $color-description;
+      }
+    }
+  }
+
+  /* header appearance: narrow */
+  @media (max-width: $width-compact) {
+    .header {
+      .title {
+        font-size: 2em;
+        color: $color-title;
+        .logo {
+          font-size: 0.9em;
+          margin-right: 0.2em;
+        }
+      }
+      .description {
+        font-size: 1em;
+        color: $color-description;
+      }
+    }
+  }
+
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
     padding: 0 40px;
@@ -128,4 +129,5 @@ $width-search: $width-max - 200;
       }
     }
   }
+
 }
