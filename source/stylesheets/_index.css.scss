@@ -60,6 +60,7 @@ $width-search: $width-max - 200;
         }
       }
       .description {
+        font-weight: 300;
         color: $color-description;
       }
     }
@@ -78,6 +79,7 @@ $width-search: $width-max - 200;
       }
       .description {
         font-size: 1.1em;
+        font-weight: 300;
         color: $color-description;
       }
     }
@@ -85,13 +87,17 @@ $width-search: $width-max - 200;
 
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
-    margin: 60px 40px;
+    @media (min-width: $width-compact) {
+      margin: 120px 40px 80px 40px;
+    }
+    @media (max-width: $width-compact) {
+      margin: 40px; 
+    }
   }
 
   .stories {
     text-align: center;
     color: $color-story-list;
-    margin: 60px 0;
     .story {
       margin: 30px 0;
       a {
@@ -109,7 +115,7 @@ $width-search: $width-max - 200;
         color: $color-story-list-bible-ref;
         font-size: 0.8em;
         font-weight: 300;
-        padding: 0 0 0 10px;
+        padding: 5px 0 0 10px;
       }
     }
   }

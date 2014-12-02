@@ -12,6 +12,7 @@
       font-size: $font-size;
       color: $color-query;
       background-color: transparent;
+      line-height: 180%;
     }
     .fa-search {
       position: absolute;
@@ -19,7 +20,7 @@
       right: 0;
       font-size: $font-size;
       color: $color;
-      line-height: 140%;
+      line-height: 180%;
     }
     ::placeholder {
        color: $color;
