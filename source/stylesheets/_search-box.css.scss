@@ -1,0 +1,28 @@
+@mixin search($width, $color, $color-query, $font-size) {
+  form {
+    border-bottom: 2px solid $color;
+    max-width: $width;
+    margin: 0 auto;
+    position: relative;
+    .query {
+      width: 90%;
+      outline: none;
+      border: none;
+      padding: 0;
+      font-size: $font-size;
+      color: $color-query;
+      background-color: transparent;
+    }
+    .fa-search {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: $font-size;
+      color: $color;
+      line-height: 140%;
+    }
+    ::placeholder {
+       color: $color;
+    }
+  }
+}

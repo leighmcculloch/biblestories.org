@@ -2,24 +2,25 @@
 title: Great Stories of the Bible
 ---
 
-.header
-  .item.title
-    %i.logo.fa.fa-leaf
-    %h1= t(:title)
-  .item.description
-    %h2= t(:description)
+.view
+  .header
+    .item.title
+      %i.logo.fa.fa-leaf
+      %h1= t(:title)
+    .item.description
+      %h2= t(:description)
 
-.search
-  %form
-    %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
-    %i.fa.fa-search
+  .search
+    %form
+      %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
+      %i.fa.fa-search
 
-.stories
-  - Stories.all.each do |_, story|
-    .story{:data => story.as_json}
-      %a{:href=>"#{story.short_url}/"}= story.title
-      .bible_ref= story.bible_ref
+  .stories
+    - Stories.all.each do |_, story|
+      .story{:data => story.as_json}
+        %a{:href=>"#{story.short_url}/"}= story.title
+        .bible_ref= story.bible_ref
 
-.footer
-  %div= t(:thanks)
-  %div= t(:created_by)
+  .footer
+    %div= t(:thanks)
+    %div= t(:created_by)

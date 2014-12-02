@@ -1,14 +1,4 @@
-$font-primary: 'Open Sans', sans-serif;
-$font-text: 'Libre Baskerville', serif;
-
-$color-logo: #ffcc33;
 $color-footer: #a9a9a9;
-$color-language-border: #e6e5e6;
-$color-language: #d1cccd;
-
-$width-mobile: 320px;
-$width-compact: 580px;
-$width-max: 580px;
 
 body {
   font-family: $font-primary;
@@ -30,78 +20,5 @@ body {
   a {
     color: $color-footer;
     text-decoration: none;
-  }
-}
-
-.logo {
-  color: $color-logo;
-}
-
-@mixin search($width, $color, $color-query, $font-size) {
-  form {
-    border-bottom: 2px solid $color;
-    max-width: $width;
-    margin: 0 auto;
-    position: relative;
-    .query {
-      width: 90%;
-      outline: none;
-      border: none;
-      padding: 0;
-      font-size: $font-size;
-      color: $color-query;
-      background-color: transparent;
-    }
-    .fa-search {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      font-size: $font-size;
-      color: $color;
-      line-height: 140%;
-    }
-    ::placeholder {
-       color: $color;
-    }
-  }
-}
-
-.language .language-box {
-  position: relative;
-  top: 4px;
-  .current {
-    color: $color-language;
-    padding: 6px;
-    border: 2px solid $color-language-border;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-  }
-  .options {
-    display: none;
-  }
-  &:hover {
-    .current {
-      display: none;
-    }
-    .options {  
-      display: block;
-      padding: 6px;
-      border: 2px solid $color-language-border;
-      border-radius: 4px;
-      a.option {
-        display: block;
-        text-align: right;
-        color: $color-language;
-        text-decoration: none;
-        margin: 6px 0;
-        &:first-of-type{
-          margin-top: 0;
-        }
-        &:last-of-type{
-          margin-bottom: 0;
-        }
-      }
-    }
   }
 }
