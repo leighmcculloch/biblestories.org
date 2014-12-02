@@ -9,30 +9,30 @@ $width-search: $width-max - 200;
 
 .page.index .view {
 
+  /* header layout */
+  .header {
+    .item {
+      text-align: center;
+    }
+    .title {
+      h1 {
+        display:inline;
+      }
+    }
+    .description {
+      h2 {
+        display:inline;
+      }
+    }
+  }
+
   /* header layout: wide */
   @media (min-width: $width-compact) {
     .header {
-      .item {
-        position: absolute;
-        top: 5px;
-        margin-top: 5px;
-      }
+      position: relative;
+      padding: 20px 40px;
       .title {
-        left: 40px;
-        h1 {
-          display:inline;
-        }
-        height: 40px;
-        line-height: 40px;
-      }
-      .description {
-        width: 100%;
-        text-align: center;
-        h2 {
-          display:inline;
-        }
-        height: 40px;
-        line-height: 40px;
+        position: absolute;
       }
     }
   }
@@ -42,17 +42,6 @@ $width-search: $width-max - 200;
     .header {
       .item {
         margin: 27px 0;
-        text-align: center;
-      }
-      .title {
-        h1 {
-          display:inline;
-        }
-      }
-      .description {
-        h2 {
-          display:inline;
-        }
       }
     }
   }
@@ -61,7 +50,7 @@ $width-search: $width-max - 200;
   @media (min-width: $width-compact) {
     .header {
       .item {
-        font-size: 1em;
+        font-size: 1.1em;
       }
       .title {
         color: $color-title;
@@ -88,7 +77,7 @@ $width-search: $width-max - 200;
         }
       }
       .description {
-        font-size: 1em;
+        font-size: 1.1em;
         color: $color-description;
       }
     }
@@ -96,13 +85,7 @@ $width-search: $width-max - 200;
 
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
-    padding: 0 40px;
-    @media (max-width: $width-compact) {
-      margin: 60px 0 60px 0;
-    }
-    @media (min-width: $width-compact) {
-      margin: 80px 0 60px 0;
-    }
+    margin: 60px 40px;
   }
 
   .stories {
@@ -112,7 +95,7 @@ $width-search: $width-max - 200;
     .story {
       margin: 30px 0;
       a {
-        font-size: 1em;
+        font-size: 1.5em;
         color: $color-story-list;
         text-decoration: none;
       }
@@ -125,6 +108,7 @@ $width-search: $width-max - 200;
         }
         color: $color-story-list-bible-ref;
         font-size: 0.8em;
+        font-weight: 300;
         padding: 0 0 0 10px;
       }
     }
