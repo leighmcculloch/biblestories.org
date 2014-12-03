@@ -20,9 +20,10 @@
         %a.addthis_button_more
           %i.icon-export-alt
   .item.search
-    %form
-      %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-      %i.toggle-side-menu-and-search.icon-search
+    .search-box
+      %form
+        %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
+        %i.toggle-side-menu-and-search.icon-search
   .item.stories
     - Stories.all.each do |_, story|
       .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}

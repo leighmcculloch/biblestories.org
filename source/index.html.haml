@@ -11,9 +11,10 @@ title: Great Stories of the Bible
       %h2= t(:description)
 
   .search
-    %form
-      %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
-      %i.icon-search
+    .search-box
+      %form
+        %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
+        %i.icon-search
 
   .stories
     - Stories.all.each do |_, story|
