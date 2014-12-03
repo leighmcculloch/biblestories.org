@@ -4,8 +4,6 @@ page_classes: story side-menu-container
 
 - content_for(:title, "Great Stories | #{story.title}")
 
-= partial "side-menu", :locals => { :active_story => story }
-
 .side-menu-view-container
   .view
     .header
@@ -49,3 +47,5 @@ page_classes: story side-menu-container
       %div= story.text_copyright
       %div= story.audio_copyright
       %div= t(:created_by)
+
+= partial "side-menu", :locals => { :active_story => story }
