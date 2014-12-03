@@ -106,7 +106,10 @@ $color-story-call-to-action: #a9a9a9;
         text-align: center;
       }
       .esv {
-        h2, .chapter-num, .verse-num {
+        h2 {
+          display: none;
+        }
+        .chapter-num, .verse-num {
           display: none;
         }
         p {
@@ -122,6 +125,7 @@ $color-story-call-to-action: #a9a9a9;
       text-align: center;
       font-size: 0.9em;
       color: $color-story-call-to-action;
+      margin: 30px 0;
       a {
         text-decoration: none;
         color: $color-story-call-to-action;
