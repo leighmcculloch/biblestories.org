@@ -92,7 +92,7 @@ $width-side-menu-tease: 60px;
         font-size: 0.9em;
       }
       .close {
-        font-size: 1.3em;
+        font-size: 1.2em;
         float: right;
         color: $color-side-menu-close;
         cursor: pointer;
@@ -117,8 +117,8 @@ $width-side-menu-tease: 60px;
         width: 250px;
         margin: 0 auto;
         a {
-          margin: 0 32px 0 0;
-          font-size: 1.3em;
+          margin: 0 27px 0 0;
+          font-size: 1.2em;
           color: $color-side-menu-share-icon;
           text-decoration: none;
           outline: none;
@@ -164,15 +164,14 @@ $width-side-menu-tease: 60px;
       .share {
         .addthis_button_more {
           position: relative;
-          left: 13px;
+          left: 20px;
         }
       }
       .search {
         form {
           border: 0;
-          .fa-search {
+          .icon-search {
             right: -4px;
-            // font-size: 1.375em !important;
             cursor: pointer;
             cursor: hand;
           }

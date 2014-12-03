@@ -1,7 +1,7 @@
 .side-menu
   .item.title
-    %i.close.fa.fa-bars.toggle-side-menu
-    %i.logo.fa.fa-leaf
+    %i.close.toggle-side-menu.icon-menu
+    %i.logo.icon-leaf
     %a{:href=>"../"}
       %h1= t(:title)
   %i.share-pointer.fa.fa-caret-left
@@ -10,19 +10,19 @@
       - case I18n.locale
       - when :en
         %a.addthis_button_facebook
-          %i.fa.fa-facebook
+          %i.icon-facebook
         %a.addthis_button_twitter
-          %i.fa.fa-twitter
+          %i.icon-twitter
         %a.addthis_button_tumblr
-          %i.fa.fa-tumblr
+          %i.icon-tumblr
         %a.addthis_button_email
-          %i.fa.fa-envelope
+          %i.icon-mail-alt
         %a.addthis_button_more
-          %i.fa.fa-share-square
+          %i.icon-export-alt
   .item.search
     %form
       %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-      %i.toggle-side-menu-and-search.fa.fa-search
+      %i.toggle-side-menu-and-search.icon-search
   .item.stories
     - Stories.all.each do |_, story|
       .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}

@@ -5,7 +5,7 @@ title: Great Stories of the Bible
 .view
   .header
     .item.title
-      %i.logo.fa.fa-leaf
+      %i.logo.icon-leaf
       %h1= t(:title)
     .item.description
       %h2= t(:description)
@@ -13,7 +13,7 @@ title: Great Stories of the Bible
   .search
     %form
       %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
-      %i.fa.fa-search
+      %i.icon-search
 
   .stories
     - Stories.all.each do |_, story|

@@ -10,18 +10,18 @@ page_classes: story side-menu-container
   .view
     .header
       .item.menu
-        %i.fa.fa-bars.toggle-side-menu
+        %i.icon-menu.toggle-side-menu
       .item.controls
         %span.control.zoom-smaller= t(:story_text_smaller)
         %span.control.zoom-larger= t(:story_text_larger)
         %span.separator= "|"
         %span.control.audio-label= t(:audio_label)
         %span.control.audio
-          %i.fa.fa-volume-up
+          %i.icon-volume-up
 
     .story
       .title
-        %i.logo.fa.fa-leaf
+        %i.logo.icon-leaf
         %h1= story.title
         %h2
           - if story.author
