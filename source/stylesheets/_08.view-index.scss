@@ -26,6 +26,15 @@ $width-search: $width-max - 200;
     }
   }
 
+  /* header layout: narrow */
+  @media (max-width: $width-compact) {
+    .header {
+      .item {
+        margin: 20px 0;
+      }
+    }
+  }
+
   /* header layout: wide */
   @media (min-width: $width-compact) {
     .header {
@@ -37,11 +46,21 @@ $width-search: $width-max - 200;
     }
   }
 
-  /* header layout: narrow */
+  /* header appearance: narrow */
   @media (max-width: $width-compact) {
     .header {
-      .item {
-        margin: 27px 0;
+      .title {
+        font-size: 2em;
+        color: $color-title;
+        .logo {
+          font-size: 0.9em;
+          margin-right: 0.2em;
+        }
+      }
+      .description {
+        font-size: 1.1em;
+        font-weight: 300;
+        color: $color-description;
       }
     }
   }
@@ -66,40 +85,27 @@ $width-search: $width-max - 200;
     }
   }
 
-  /* header appearance: narrow */
-  @media (max-width: $width-compact) {
-    .header {
-      .title {
-        font-size: 2em;
-        color: $color-title;
-        .logo {
-          font-size: 0.9em;
-          margin-right: 0.2em;
-        }
-      }
-      .description {
-        font-size: 1.1em;
-        font-weight: 300;
-        color: $color-description;
-      }
-    }
-  }
-
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
     @media (min-width: $width-compact) {
       margin: 120px 40px 80px 40px;
     }
     @media (max-width: $width-compact) {
-      margin: 40px; 
+      margin: 20px 40px; 
     }
   }
 
   .stories {
-    text-align: center;
+    @media (max-width: $width-compact) {
+      text-align: left;
+    }
+    @media (min-width: $width-compact) {
+      text-align: center;
+    }
     color: $color-story-list;
     .story {
-      margin: 30px 0;
+      margin: 20px 40px;
+      clear:both;
       a {
         font-size: 1.5em;
         color: $color-story-list;
@@ -107,11 +113,12 @@ $width-search: $width-max - 200;
       }
       .bible_ref {
         @media (max-width: $width-compact) {
-          display: block;
+          float: right;
         }
         @media (min-width: $width-compact) {
           display: inline;
         }
+        white-space: nowrap;
         color: $color-story-list-bible-ref;
         font-size: 0.8em;
         font-weight: 300;
