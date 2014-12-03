@@ -39,6 +39,9 @@ page_classes: story side-menu-container
         .item.read-more
           %a{:href=>story.read_more_url}
             = t(:story_read_more, :bible_ref=>story.bible_ref)
+        .item.more-stories
+          %a{:href=>"../"}
+            = t(:story_find_other_great_stories_in_the_bible)
 
     .footer
       %div
