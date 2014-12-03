@@ -60,6 +60,9 @@ $width-side-menu-tease: 60px;
     .side-menu-view-container {
       @media (max-width: $width-compact) {
         transform: translateX($width-side-menu);
+
+        /* fix with view container and make it unscrollable */
+        position: fixed;
       }
       @media (min-width: $width-compact) {
         margin-left: $width-side-menu;
@@ -97,7 +100,7 @@ $width-side-menu-tease: 60px;
     }
     .share-pointer {
       position: absolute;
-      top: 79px;
+      top: 77px;
       right: 0;
       width: 0; 
       height: 0; 
@@ -122,12 +125,12 @@ $width-side-menu-tease: 60px;
       }
     }
     .search {
-      @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 1.1em);
+      @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 1em);
     }
     .stories {
       text-align: center;
       .story {
-        margin: 0 0 25px 0;
+        margin: 20px 0;
         a {
           font-size: 0.94em;
           color: $color-side-menu-stories-story;
@@ -137,9 +140,10 @@ $width-side-menu-tease: 60px;
           }
         }
         .bible_ref {
+          display: inline;
           color: $color-side-menu-stories-story;
           font-size: 0.56em;
-          margin: 5px 0;
+          whitespace: nowrap;
         }
       }
       .story.current {

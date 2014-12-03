@@ -19,15 +19,16 @@
           %i.icon-mail-alt
         %a.addthis_button_more
           %i.icon-export-alt
-  .item.search
-    .search-box
-      %form
-        %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-        %i.toggle-side-menu-and-search.icon-search
-  .item.stories
-    - Stories.all.each do |_, story|
-      .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}
-        %a{:href=>"../#{story.short_url}/"}= story.title
-        - if story.short_url == active_story.short_url
-          %i.marker.fa.fa-leaf
-        .bible_ref= story.bible_ref
+  .item
+    .search
+      .search-box
+        %form
+          %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
+          %i.toggle-side-menu-and-search.icon-search
+    .stories
+      - Stories.all.each do |_, story|
+        .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}
+          %a{:href=>"../#{story.short_url}/"}= story.title
+          - if story.short_url == active_story.short_url
+            %i.marker.fa.fa-leaf
+          .bible_ref= story.bible_ref

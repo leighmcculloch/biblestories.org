@@ -2,9 +2,9 @@
   .search-box {
     padding-bottom: 5px;
     border-bottom: 2px solid $color;
+    max-width: $width;
+    margin: 0 auto;
     form {
-      max-width: $width;
-      margin: 0 auto;
       position: relative;
       .query {
         width: 90%;
