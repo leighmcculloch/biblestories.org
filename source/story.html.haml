@@ -36,6 +36,11 @@ page_classes: story side-menu-container
             %audio{:controls=>"controls", :preload=>"none"}
               %source{:src=>audio_info[:url], :type=>"audio/mpeg"}
       .text= story.text_html
+      .call-to-action
+        .item.share= partial "share-bar"
+        .item.read-more
+          %a{:href=>story.read_more_url}
+            = t(:story_read_more, :bible_ref=>story.bible_ref)
 
     .footer
       %div

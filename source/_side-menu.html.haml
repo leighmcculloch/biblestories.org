@@ -6,19 +6,7 @@
       %h1= t(:title)
   %i.share-pointer.fa.fa-caret-left
   .item.share
-    .addthis_sharing_toolbox.addthis_default_style.addthis_32x32_style
-      - case I18n.locale
-      - when :en
-        %a.addthis_button_facebook
-          %i.icon-facebook
-        %a.addthis_button_twitter
-          %i.icon-twitter
-        %a.addthis_button_tumblr
-          %i.icon-tumblr
-        %a.addthis_button_email
-          %i.icon-mail-alt
-        %a.addthis_button_more
-          %i.icon-export-alt
+    = partial "share-bar"
   .item
     .search
       .search-box

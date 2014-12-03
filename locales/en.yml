@@ -14,6 +14,7 @@ en:
 
   story_written_by: written by
   story_in: in
+  story_read_more: Read the surrounding text of %{bible_ref}
   story_author_disclaimer: Some scholars believe %{title} to be written by %{author}.
 
   # Bible book titles
