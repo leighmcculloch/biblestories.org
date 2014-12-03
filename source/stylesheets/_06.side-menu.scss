@@ -14,10 +14,6 @@ $width-side-menu-tease: 60px;
 
 .side-menu-container {
 
-  .side-menu {
-    display: block;
-  }
-
   /* hint for hardware acceleration */
   .side-menu, .side-menu-view-container {
     transform: translateZ(0);
