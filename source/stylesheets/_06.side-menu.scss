@@ -141,9 +141,9 @@ $width-side-menu-tease: 60px;
         }
         .bible_ref {
           display: inline;
+          white-space: nowrap;
           color: $color-side-menu-stories-story;
           font-size: 0.56em;
-          whitespace: nowrap;
         }
       }
       .story.current {
@@ -168,16 +168,18 @@ $width-side-menu-tease: 60px;
         }
       }
       .search {
-        form {
+        .search-box {
           border: 0;
-          .query {
-            line-height: 100%;
-          }
-          .icon-search {
-            right: -5px;
-            cursor: pointer;
-            cursor: hand;
-            line-height: 100%;
+          form {
+            .query {
+              line-height: 100%;
+            }
+            .icon-search {
+              right: -5px;
+              cursor: pointer;
+              cursor: hand;
+              line-height: 100%;
+            }
           }
         }
       }

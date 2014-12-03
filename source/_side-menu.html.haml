@@ -28,7 +28,7 @@
     .stories
       - Stories.all.each do |_, story|
         .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}
-          %a{:href=>"../#{story.short_url}/"}= story.title
           - if story.short_url == active_story.short_url
-            %i.marker.fa.fa-leaf
+            %i.marker.icon-leaf
+          %a{:href=>"../#{story.short_url}/"}= story.title
           .bible_ref= story.bible_ref
