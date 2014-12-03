@@ -164,16 +164,20 @@ $width-side-menu-tease: 60px;
       .share {
         .addthis_button_more {
           position: relative;
-          left: 21px;
+          left: 18px;
         }
       }
       .search {
         form {
           border: 0;
+          .query {
+            line-height: 100%;
+          }
           .icon-search {
-            right: -4px;
+            right: -5px;
             cursor: pointer;
             cursor: hand;
+            line-height: 100%;
           }
         }
       }
