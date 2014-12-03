@@ -17,12 +17,8 @@ config[:base_zone] = config[:base_zones][LANG]
 config[:base_host] = config[:base_hosts][LANG]
 config[:base_url] = config[:base_urls][LANG]
 
-$cache = Dalli::Client.new(ENV["GSOB_MEMCACHEDCLOUD_SERVERS"].split(','), {
-  :username => ENV["GSOB_MEMCACHEDCLOUD_USERNAME"],
-  :password => ENV["GSOB_MEMCACHEDCLOUD_PASSWORD"],
-  :socket_timeout => 10
-})
-module DalliGetOrSet
+$cache = FileCache.new("api-cache", "caches")
+module GetOrSet
   def get_or_set(key)
     value = self.get(key)
     return value if value
@@ -31,7 +27,7 @@ module DalliGetOrSet
     value
   end
 end
-$cache.extend(DalliGetOrSet)
+$cache.extend(GetOrSet)
 
 compass_config do |config|
   config.output_style = :compact
@@ -55,8 +51,11 @@ ignore 'story.html'
 after_configuration do
   LANGS.each do |lang|
     prefix = lang.to_s if lang != :en
+
+    page "#{prefix}/index.html", :locale => lang
+
     Stories.all.each do |story_short_url, story|
-      page "#{prefix}/#{story_short_url}.html", :proxy => "/localizable/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang, :ignore => true
+      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang, :ignore => true
     end
   end
 end
@@ -131,7 +130,7 @@ unless DEV
       zone: config[:base_zone],
       base_urls: [config[:base_url]]
     }
-    cdn.filter = /\.html$/
+    cdn.filter = /.*/
     cdn.after_build = true
   end
 end
