@@ -28,7 +28,8 @@ page_classes: story side-menu-container
             = t(:story_written_by)
             %span.author= story.author + "*"
             = t(:story_in)
-          %span.bible_ref= story.bible_ref
+          %a.bible_ref{:href=>story.read_more_url}
+            = story.bible_ref
       - if story.audio_info && story.audio_info.length == 1
         .audio-player{:style=>"display:none;"}
           - story.audio_info.each do |audio_info|

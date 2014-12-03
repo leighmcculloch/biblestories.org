@@ -87,6 +87,10 @@ $color-story-text: #1b1b1b;
         color: $color-story-author;
         font-weight: 400;
         margin-top: 0.4em;
+        a {
+          text-decoration: none;
+          color: $color-story-author;
+        }
       }
     }
     .text {
