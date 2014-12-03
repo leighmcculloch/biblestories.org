@@ -7,6 +7,7 @@ en:
 
   search_placeholder: Search by story or author
   search_placeholder_side_menu: Search stories
+  search_no_results: No results
 
   story_text_smaller: A
   story_text_larger: A

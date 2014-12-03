@@ -95,6 +95,13 @@ $width-search: $width-max - 200;
     }
   }
 
+  .search-no-results {
+    text-align: center;
+    font-size: 1.5em;
+    color: $color-search-query;
+    margin: 20px 0 70px 0;
+  }
+
   .stories {
     text-align: center;
     color: $color-story-list;

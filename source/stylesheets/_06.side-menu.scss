@@ -127,6 +127,12 @@ $width-side-menu-tease: 60px;
     .search {
       @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 1em);
     }
+    .search-no-results {
+      text-align: center;
+      font-size: 0.94em;
+      margin: 20px 0;
+      color: $color-side-menu-stories-story;
+    }
     .stories {
       text-align: center;
       .story {

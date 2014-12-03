@@ -54,10 +54,10 @@ $(function() {
         rows_disabled.hide();
 
         if (rows_enabled.length == 0) {
-            $('.index-searchnoresults').show();
+            $('.search-no-results').show();
         }
         else {
-            $('.index-searchnoresults').hide();
+            $('.search-no-results').hide();
         }
     });
 });
