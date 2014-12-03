@@ -96,15 +96,10 @@ $width-search: $width-max - 200;
   }
 
   .stories {
-    @media (max-width: $width-compact) {
-      text-align: left;
-    }
-    @media (min-width: $width-compact) {
-      text-align: center;
-    }
+    text-align: center;
     color: $color-story-list;
     .story {
-      margin: 20px 40px;
+      margin: 20px auto;
       clear:both;
       a {
         font-size: 1.5em;
@@ -112,17 +107,14 @@ $width-search: $width-max - 200;
         text-decoration: none;
       }
       .bible_ref {
-        @media (max-width: $width-compact) {
-          float: right;
-        }
-        @media (min-width: $width-compact) {
-          display: inline;
-        }
+        display: inline;
         white-space: nowrap;
         color: $color-story-list-bible-ref;
         font-size: 0.8em;
         font-weight: 300;
-        padding: 5px 0 0 10px;
+        @media (min-width: $width-compact) {
+          padding-left: 10px;
+        }
       }
     }
   }
