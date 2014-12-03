@@ -133,6 +133,7 @@ $width-side-menu-tease: 60px;
         margin: 20px 0;
         a {
           font-size: 0.94em;
+          font-weight: 300;
           color: $color-side-menu-stories-story;
           text-decoration: none;
           &:hover {
@@ -175,7 +176,7 @@ $width-side-menu-tease: 60px;
               line-height: 100%;
             }
             .icon-search {
-              right: -5px;
+              right: -4px;
               cursor: pointer;
               cursor: hand;
               line-height: 100%;
