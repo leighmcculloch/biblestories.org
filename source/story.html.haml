@@ -26,8 +26,8 @@ page_classes: story side-menu-container
         %h2
           - if story.author
             = t(:story_written_by)
-            %span.author=story.author
-            = "in"
+            %span.author= story.author + "*"
+            = t(:story_in)
           %span.bible_ref= story.bible_ref
       - if story.audio_info && story.audio_info.length == 1
         .audio-player{:style=>"display:none;"}
@@ -37,6 +37,9 @@ page_classes: story side-menu-container
       .text= story.text_html
 
     .footer
+      %div
+        = "*"
+        = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
       %div= story.text_copyright
       %div= story.audio_copyright
       %div= t(:created_by)

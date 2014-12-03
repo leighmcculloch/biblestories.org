@@ -13,6 +13,8 @@ en:
   audio_label: Listen
 
   story_written_by: written by
+  story_in: in
+  story_author_disclaimer: Some scholars believe %{title} to be written by %{author}.
 
   # Bible book titles
   bible_book:
