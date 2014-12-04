@@ -13,6 +13,9 @@ page_classes: story side-menu-container
         %span.control.zoom-smaller= t(:story_text_smaller)
         %span.control.zoom-larger= t(:story_text_larger)
         %span.separator= "|"
+        %span.control.toggle-verses.verses-short= t(:story_verses_short)
+        %span.control.toggle-verses.verses-long= t(:story_verses_long)
+        %span.separator= "|"
         %span.control.audio-label= t(:audio_label)
         %span.control.audio
           %i.icon-volume-up
@@ -44,9 +47,10 @@ page_classes: story side-menu-container
             = t(:story_find_other_great_stories_in_the_bible)
 
     .footer
-      %div
-        = "*"
-        = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
+      - if story.author
+        %div
+          = "*"
+          = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
       %div= story.text_copyright
       %div= story.audio_copyright
       %div= t(:created_by)

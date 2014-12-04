@@ -6,6 +6,9 @@ $(function() {
     $('.toggle-side-menu').click(function() {
       toggleSideMenu();
     });
+    $('.toggle-verses').click(function() {
+      $('.text').toggleClass('show-verses');
+    });
 });
 
 function toggleSideMenuAndSearch() {

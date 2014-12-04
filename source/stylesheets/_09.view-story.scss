@@ -3,6 +3,7 @@ $color-header-controls: #bcbcbc;
 $color-story-title: #1b1b1b;
 $color-story-author: #a9a9a9;
 $color-story-text: #1b1b1b;
+$color-story-verses: #a9a9a9;
 $color-story-call-to-action: #a9a9a9;
 
 .page.story .view {
@@ -32,6 +33,9 @@ $color-story-call-to-action: #a9a9a9;
       .controls {
         text-align: left;
       }
+      .verses-short {
+        display: none;
+      }
     }
   }
 
@@ -40,6 +44,9 @@ $color-story-call-to-action: #a9a9a9;
     .header {
       .controls {
         text-align: center;
+        .verses-long {
+          display: none;
+        }
         .audio-label {
           display: none;
         }
@@ -118,6 +125,16 @@ $color-story-call-to-action: #a9a9a9;
         }
         .block-indent {
           margin: 0 2em;
+        }
+      }
+      &.show-verses {
+        .esv {
+          .chapter-num, .verse-num {
+            display: inline;
+            font-weight: 300;
+            font-size: smaller;
+            color: $color-story-verses;
+          }
         }
       }
     }
