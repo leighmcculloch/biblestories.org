@@ -20,4 +20,5 @@
             %i.marker.icon-leaf
           %a{:href=>"../#{story.short_url}/"}= story.title
           .bible_ref= story.bible_ref
-    .search-no-results= t(:search_no_results)
+    .search-no-results{:style=>"display:none"}
+      = t(:search_no_results)
