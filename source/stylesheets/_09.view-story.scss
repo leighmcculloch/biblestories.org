@@ -105,6 +105,7 @@ $color-story-call-to-action: #a9a9a9;
       font-family: $font-text;
       font-weight: normal;
       font-size: 1em;
+      line-height: 2em;
       color: $color-story-text;
       @media (max-width: $width-compact) {
         text-align: justify;
@@ -121,7 +122,6 @@ $color-story-call-to-action: #a9a9a9;
         }
         p {
           margin: 2em 0;
-          line-height: 1.6em;
         }
         .block-indent {
           margin: 0 2em;
