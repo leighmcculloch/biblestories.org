@@ -11,3 +11,24 @@ $width-max: 580px;
 .logo {
   color: $color-logo;
 }
+
+/* pads elements so that clicking the element is easier on touch devics */
+@mixin padded-click($padding) {
+  position: relative;
+  &:after{
+    padding: $padding;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.padded-click-square-buttons {
+  @include padded-click(30px);
+}
+
+.padded-click-controls {
+  @include padded-click(15px);
+}

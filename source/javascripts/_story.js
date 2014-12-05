@@ -6,15 +6,18 @@ $(function() {
     $('.toggle-side-menu').click(function() {
       toggleSideMenu();
     });
-    $('.side-menu').hover(function() {
-      timeoutId = setTimeout(showSideMenu, 150);
-      window.sideMenuTimeoutIds = (window.sideMenuTimeoutIds||[]).concat(timeoutId);
-    }, function() {
-      $.each(window.sideMenuTimeoutIds, function(index, timeoutId) {
-        clearTimeout(timeoutId);
-      });
-      hideSideMenu();
-    });
+    $('.side-menu').hover(
+      function() {
+        timeoutId = setTimeout(showSideMenu, 150);
+        window.sideMenuTimeoutIds = (window.sideMenuTimeoutIds||[]).concat(timeoutId);
+      },
+      function() {
+        $.each(window.sideMenuTimeoutIds, function(index, timeoutId) {
+          clearTimeout(timeoutId);
+        });
+        hideSideMenu();
+      }
+    );
     $('.toggle-verses').click(function() {
       $('.text').toggleClass('show-verses');
     });

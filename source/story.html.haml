@@ -8,16 +8,16 @@ page_classes: story side-menu-container
   .view
     .header
       .item.menu
-        %i.icon-menu.toggle-side-menu
+        %i.icon-menu.toggle-side-menu.padded-click-square-buttons
       .item.controls
-        %span.control.zoom-smaller= t(:story_text_smaller)
-        %span.control.zoom-larger= t(:story_text_larger)
+        %span.control.zoom-smaller.padded-click-controls= t(:story_text_smaller)
+        %span.control.zoom-larger.padded-click-controls= t(:story_text_larger)
         %span.separator= "|"
-        %span.control.toggle-verses.verses-short= t(:story_verses_short)
-        %span.control.toggle-verses.verses-long= t(:story_verses_long)
+        %span.control.toggle-verses.verses-short.padded-click-controls= t(:story_verses_short)
+        %span.control.toggle-verses.verses-long.padded-click-controls= t(:story_verses_long)
         %span.separator= "|"
-        %span.control.audio-label= t(:audio_label)
-        %span.control.audio
+        %span.control.audio-label.padded-click-controls= t(:audio_label)
+        %span.control.audio.padded-click-controls
           %i.icon-volume-up
 
     .story
