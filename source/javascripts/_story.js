@@ -6,6 +6,15 @@ $(function() {
     $('.toggle-side-menu').click(function() {
       toggleSideMenu();
     });
+    $('.side-menu').hover(function() {
+      timeoutId = setTimeout(showSideMenu, 150);
+      window.sideMenuTimeoutIds = (window.sideMenuTimeoutIds||[]).concat(timeoutId);
+    }, function() {
+      $.each(window.sideMenuTimeoutIds, function(index, timeoutId) {
+        clearTimeout(timeoutId);
+      });
+      hideSideMenu();
+    });
     $('.toggle-verses').click(function() {
       $('.text').toggleClass('show-verses');
     });
@@ -17,12 +26,24 @@ function toggleSideMenuAndSearch() {
 }
 
 function toggleSideMenu() {
-  if ($('.page').hasClass('showing-side-menu')) {
-    $('.page').removeClass('showing-side-menu');
+  if (isShowingSideMenu()) {
+    hideSideMenu();
   } else {
-    $('.side-menu').scrollTop(0);
-    $('.page').addClass('showing-side-menu');
+    showSideMenu();
   }
+}
+
+function isShowingSideMenu() {
+  return $('.page').hasClass('showing-side-menu');
+}
+
+function showSideMenu() {
+  $('.side-menu').scrollTop(0);
+  $('.page').addClass('showing-side-menu');
+}
+
+function hideSideMenu() {
+  $('.page').removeClass('showing-side-menu');
 }
 
 /* share buttons */
