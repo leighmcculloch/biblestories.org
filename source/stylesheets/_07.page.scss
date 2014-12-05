@@ -4,6 +4,9 @@ body {
   font-family: $font-primary;
   font-size: 1em;
   font-weight: 600;
+
+  /* disable auto scaling of text */
+  -webkit-text-size-adjust: 100%;
 }
 
 .footer {
