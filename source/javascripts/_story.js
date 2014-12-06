@@ -1,5 +1,6 @@
 /* side menu */
 $(function() {
+    $('.side-menu-container').addClass('side-menu-container-activated');
     $('.toggle-side-menu-and-search').click(function() {
       toggleSideMenuAndSearch();
     });
@@ -18,9 +19,6 @@ $(function() {
         hideSideMenu();
       }
     );
-    $('.toggle-verses').click(function() {
-      $('.text').toggleClass('show-verses');
-    });
 });
 
 function toggleSideMenuAndSearch() {
@@ -77,6 +75,13 @@ $(function() {
   $('.zoom-larger').click(function () {
     $storyText.css('font-size', 1.2*parseFloat($storyText.css('font-size'), 10));
     return false;
+  });
+});
+
+/* verses */
+$(function() {
+  $('.toggle-verses').click(function() {
+    $('.text').toggleClass('show-verses');
   });
 });
 

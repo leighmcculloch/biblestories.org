@@ -12,6 +12,12 @@ $color-side-menu-stories-story-current: #dedede;
 $width-side-menu: 300px;
 $width-side-menu-tease: 60px;
 
+.side-menu-container.side-menu-container-activated {
+  .side-menu, .side-menu-view-container {
+    transition: .3s ease all;
+  }
+}
+
 .side-menu-container {
 
   /* hint for hardware acceleration */
@@ -29,7 +35,6 @@ $width-side-menu-tease: 60px;
     width: $width-side-menu;
     height: 100%;
     overflow: hidden;
-    transition: .3s ease all;
     @media (max-width: $width-compact) {
       transform: translateX(0);
     }
@@ -38,7 +43,6 @@ $width-side-menu-tease: 60px;
     }
   }
   .side-menu-view-container {
-    transition: .3s ease all;
     @media (max-width: $width-compact) {
       margin-left: 0;
     }
