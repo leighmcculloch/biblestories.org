@@ -19,6 +19,10 @@ $(function() {
       hideSideMenu();
     }
   );
+  $('.side-menu-container').on('click', '.side-menu-container.showing-side-menu .side-menu-view-container', function() {
+    hideSideMenu();
+    return false;
+  });
 });
 
 function toggleSideMenuAndSearch() {
@@ -40,11 +44,11 @@ function isShowingSideMenu() {
 
 function showSideMenu() {
   $('.side-menu').scrollTop(0);
-  $('.page').addClass('showing-side-menu');
+  $('.side-menu-container').addClass('showing-side-menu');
 }
 
 function hideSideMenu() {
-  $('.page').removeClass('showing-side-menu');
+  $('.side-menu-container').removeClass('showing-side-menu');
 }
 
 /* share buttons */
@@ -54,7 +58,8 @@ var addthis_config = {
   data_track_clickback: false
 };
 var addthis_share = {
-  url: window.location.href
+  url: window.location.href,
+  title: window.document.title
 };
 $(window).ready(function() {
   $.ajax({
