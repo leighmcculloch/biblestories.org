@@ -101,6 +101,8 @@ if (typeof audio != 'undefined') {
     });
     $control.click(function(ev){
       ev.preventDefault();
+      var $source = $(audio).find('source');
+      $source.attr('src', $source.data('src'));
       $('.audio-player').show();
       if (typeof audio != 'undefined') {
         audio.addEventListener('canplay', function(e) {

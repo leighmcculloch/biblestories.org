@@ -35,7 +35,7 @@ page_classes: story side-menu-container
         .audio-player{:style=>"display:none;"}
           - story.audio_info.each do |audio_info|
             %audio{:controls=>"controls", :preload=>"none"}
-              %source{:src=>audio_info[:url], :type=>"audio/mpeg"}
+              %source{:data => { :src=>audio_info[:url] }, :type=>"audio/mpeg"}
       .text= story.text_html
       .call-to-action
         .item.share= partial "share-bar"
