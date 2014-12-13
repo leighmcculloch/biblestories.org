@@ -152,10 +152,13 @@ $color-story-call-to-action: #a9a9a9;
       }
       .item {
         margin: 20px 0;
+        clear: both;
       }
       .share {
         font-size: 1.2em;
         .addthis_sharing_toolbox {
+          width: 143px;
+          margin: 0 auto;
           a {
             margin: 0 5px;
           }

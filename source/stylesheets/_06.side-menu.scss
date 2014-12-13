@@ -35,17 +35,11 @@ $width-side-menu-tease: 60px;
     width: $width-side-menu;
     height: 100%;
     overflow: hidden;
-    @media (max-width: $width-compact) {
-      transform: translateX(0);
-    }
     @media (min-width: $width-compact) {
       transform: translateX($width-side-menu-tease);
     }
   }
   .side-menu-view-container {
-    @media (max-width: $width-compact) {
-      margin-left: 0;
-    }
     @media (min-width: $width-compact) {
       margin-left: $width-side-menu-tease;
     }
@@ -63,10 +57,8 @@ $width-side-menu-tease: 60px;
     }
     .side-menu-view-container {
       @media (max-width: $width-compact) {
-        transform: translateX($width-side-menu);
-
-        /* fix with view container and make it unscrollable */
         position: fixed;
+        transform: translateX($width-side-menu);
       }
       @media (min-width: $width-compact) {
         margin-left: $width-side-menu;
@@ -121,7 +113,7 @@ $width-side-menu-tease: 60px;
         margin: 0 auto;
         a {
           margin: 0 27px 0 0;
-          font-size: 1.2em;
+          font-size: 21px;
           color: $color-side-menu-share-icon;
           text-decoration: none;
           outline: none;

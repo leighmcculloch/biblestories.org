@@ -9,7 +9,7 @@
     %link{:rel=>"icon", :type=>"image/ico", :href=>"/favicon.ico"}
     %link{:rel=>"stylesheet", :type=>"text/css", :href=>"//fonts.googleapis.com/css?family=Open+Sans:300,600|Libre+Baskerville:400"}
     = stylesheet_link_tag "all.css"
-    /[if lte IE 7]
+    /[if lte IE 8]
       = stylesheet_link_tag "ie.css"
     = yield_content :head
     = javascript_include_tag("all.js", :async=>"async")

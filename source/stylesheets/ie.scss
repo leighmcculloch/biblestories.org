@@ -5,17 +5,16 @@ $width-side-menu: 300px;
 @import '../fonts/fontello/stylesheet-ie';
 @import '_04.common';
 
-.page.story {
-
-  .view {
-
-    /* share pointer doesn't display properly */
-    .side-menu {
-      .share-pointer {
-        display: none;
-      }
+.search-box {
+  form {
+    .query {
+      background-color: #eee;
     }
+  }
+}
 
+.page.story {
+  .view {
     /* audio doens't work */
     .header {
       .controls {
@@ -24,10 +23,9 @@ $width-side-menu: 300px;
         }
       }
     }
-
     .story {
       /* sets max-width */
-      *width:expression(document.body.clientWidth > #{strip-units($width-max)} ? "#{$width-max}" : "auto");
+      width:expression(document.body.clientWidth > #{strip-units($width-max)} ? "#{$width-max}" : "auto");
 
       /* defaults to narrow style but looks funny justified on larger screens, so set to centered */
       .text {
@@ -39,22 +37,7 @@ $width-side-menu: 300px;
 
 /* simplifying the side menu */
 .side-menu-container {
-
   .side-menu {
-    position: absolute;
-    top: 0;
-    left: -#{$width-side-menu};
-    
-    /* share pointer doesn't display properly */
-    .share-pointer {
-      display: none;
-    }
-  }
-
-  &.showing-side-menu {
-    .side-menu {
-      left: 0;
-      overflow: hidden;
-    }
+    display: none;
   }
 }
