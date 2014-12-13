@@ -20,8 +20,22 @@ $color-story-call-to-action: #a9a9a9;
   }
 
   .story {
-    max-width: $width-max;
     margin: 0 auto;
+    max-width: $width-max;
+    *width:expression(document.body.clientWidth > #{strip-units($width-max)} ? "#{$width-max}" : "auto"); /* sets max-width for IE6 & IE7 */
+  }
+
+  /* layout: narrow */
+  .header {
+    .controls {
+      text-align: center;
+      .verses-long {
+        display: none;
+      }
+      .audio-label {
+        display: none;
+      }
+    }
   }
 
   /* layout: wide */
@@ -32,23 +46,14 @@ $color-story-call-to-action: #a9a9a9;
       }
       .controls {
         text-align: left;
-      }
-      .verses-short {
-        display: none;
-      }
-    }
-  }
-
-  /* layout: narrow */
-  @media (max-width: $width-compact) {
-    .header {
-      .controls {
-        text-align: center;
-        .verses-long {
+        .verses-short {
           display: none;
         }
+        .verses-long {
+          display: inline;
+        }
         .audio-label {
-          display: none;
+          display: inline;
         }
       }
     }
@@ -107,9 +112,7 @@ $color-story-call-to-action: #a9a9a9;
       font-size: 1em;
       line-height: 2em;
       color: $color-story-text;
-      @media (max-width: $width-compact) {
-        text-align: justify;
-      }
+      text-align: justify;
       @media (min-width: $width-compact) {
         text-align: center;
       }

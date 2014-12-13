@@ -32,3 +32,7 @@ $width-max: 580px;
 .padded-click-controls {
   @include padded-click(15px);
 }
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}

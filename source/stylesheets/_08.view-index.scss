@@ -27,11 +27,9 @@ $width-search: $width-max - 200;
   }
 
   /* header layout: narrow */
-  @media (max-width: $width-compact) {
-    .header {
-      .item {
-        margin: 20px 0;
-      }
+  .header {
+    .item {
+      margin: 20px 0;
     }
   }
 
@@ -40,6 +38,9 @@ $width-search: $width-max - 200;
     .header {
       position: relative;
       margin: 20px 40px;
+      .item {
+        margin: 0;
+      }
       .title {
         position: absolute;
       }
@@ -47,21 +48,19 @@ $width-search: $width-max - 200;
   }
 
   /* header appearance: narrow */
-  @media (max-width: $width-compact) {
-    .header {
-      .title {
-        font-size: 2em;
-        color: $color-title;
-        .logo {
-          font-size: 0.9em;
-          margin-right: 0.2em;
-        }
+  .header {
+    .title {
+      font-size: 2em;
+      color: $color-title;
+      .logo {
+        font-size: 0.9em;
+        margin-right: 0.2em;
       }
-      .description {
-        font-size: 1.1em;
-        font-weight: 300;
-        color: $color-description;
-      }
+    }
+    .description {
+      font-size: 1.1em;
+      font-weight: 300;
+      color: $color-description;
     }
   }
 
@@ -72,6 +71,7 @@ $width-search: $width-max - 200;
         font-size: 1.1em;
       }
       .title {
+        font-size: 1em;
         color: $color-title;
         .logo {
           font-size: 0.9em;
@@ -87,11 +87,9 @@ $width-search: $width-max - 200;
 
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
+    margin: 20px 40px;
     @media (min-width: $width-compact) {
       margin: 120px 40px 80px 40px;
-    }
-    @media (max-width: $width-compact) {
-      margin: 20px 40px; 
     }
   }
 
