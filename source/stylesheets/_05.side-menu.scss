@@ -46,7 +46,8 @@ $width-side-menu-tease: 60px;
   }
   &.showing-side-menu {
     .side-menu {
-      overflow: scroll;
+      overflow: auto;
+      overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       transform: translateX($width-side-menu);
       .close {
@@ -191,4 +192,16 @@ $width-side-menu-tease: 60px;
     }
   }
 
+}
+
+/* transforms or media queries not available, disable the side menu */
+html.no-csstransforms, html.no-mediaqueries {
+  .side-menu-container {
+    .side-menu {
+      display: none;
+    }
+    .side-menu-view-container {
+      margin-left: 0;
+    }
+  }
 }

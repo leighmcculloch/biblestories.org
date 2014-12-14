@@ -1,4 +1,5 @@
 /*
+ *= require vendor/_modernizr.custom
  *= require vendor/_jquery-1.11.1.min
  *= require vendor/_fastclick.js
  *= require vendor/_jquery.ga-playlength

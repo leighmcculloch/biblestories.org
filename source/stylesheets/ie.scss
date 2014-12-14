@@ -3,7 +3,7 @@
 $width-side-menu: 300px;
 
 @import '../fonts/fontello/stylesheet-ie';
-@import '_04.common';
+@import '_03.common';
 
 .search-box {
   form {
@@ -15,14 +15,6 @@ $width-side-menu: 300px;
 
 .page.story {
   .view {
-    /* audio doens't work */
-    .header {
-      .controls {
-        .audio-controls {
-          display: none;
-        }
-      }
-    }
     .story {
       /* sets max-width */
       width:expression(document.body.clientWidth > #{strip-units($width-max)} ? "#{$width-max}" : "auto");
@@ -32,12 +24,5 @@ $width-side-menu: 300px;
         text-align: center;
       }
     }
-  }
-}
-
-/* simplifying the side menu */
-.side-menu-container {
-  .side-menu {
-    display: none;
   }
 }

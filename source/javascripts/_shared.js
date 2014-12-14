@@ -1,3 +1,9 @@
+/* custom modernizr tests */
+$(function() {
+  Modernizr.addTest('mediaqueries', function(){ return !!Modernizr.mq('only all'); });
+  Modernizr.addTest('audio-mp3', function(){ return !!Modernizr.audio.mp3; });
+});
+
 /* fast click for mobile */
 $(function() {
   FastClick.attach(document.body);

@@ -1,9 +1,5 @@
 /* side menu */
 $(function() {
-  if (!supportsMediaQueries() || getWindowWidth() < 320) {
-    $('.side-menu').css('display', 'none');
-  }
-
   $('.side-menu-container').addClass('side-menu-container-activated');
   $('.toggle-side-menu-and-search').click(function() {
     toggleSideMenuAndSearch();
@@ -33,14 +29,6 @@ $(function() {
     return false;
   });
 });
-
-function supportsMediaQueries() {
-  return (typeof window.matchMedia != "undefined") || (typeof window.msMatchMedia != "undefined");
-}
-
-function getWindowWidth() {
-  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-}
 
 function toggleSideMenuAndSearch() {
   $('.search .query').focus();
@@ -108,6 +96,10 @@ $(function() {
 });
 
 /* audio and audio analytics */
+
+
+
+
 var audio = $('.audio-player audio').get(0);
 if (typeof audio != 'undefined') {
   var $control = $('.controls .audio-label, .controls .audio');
