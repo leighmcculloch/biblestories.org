@@ -49,6 +49,7 @@ $width-super-compact: 320px;
     .side-menu {
       overflow: scroll;
       overflow-x: hidden;
+      overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
       transform: translateX($width-side-menu);
       .close {
