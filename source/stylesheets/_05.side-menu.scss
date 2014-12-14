@@ -47,7 +47,7 @@ $width-super-compact: 320px;
   }
   &.showing-side-menu {
     .side-menu {
-      overflow: auto;
+      overflow: scroll;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       transform: translateX($width-side-menu);
@@ -112,7 +112,7 @@ $width-super-compact: 320px;
       .addthis_sharing_toolbox {
         text-align: center;
         a {
-          margin: 0 12px;
+          margin: 0 10px;
           font-size: 21px;
           color: $color-side-menu-share-icon;
           text-decoration: none;
