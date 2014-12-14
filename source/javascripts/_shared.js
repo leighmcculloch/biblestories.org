@@ -2,9 +2,19 @@
 $(function() {
   Modernizr.addTest('mediaqueries', function(){ return !!Modernizr.mq('only all'); });
   Modernizr.addTest('audio-mp3', function(){ return !!Modernizr.audio.mp3; });
-  Modernizr.addTest('brokenbrowser', function(){ return navigator.userAgent.indexOf('Opera Mini') > -1; });
+  Modernizr.addTest('brokenbrowser', function() {
+    var browsers = ['Opera Mini', 'Opera Mobi'];
+    var isBroken = false;
+    $.each(browsers, function(index, browser) {
+      if (navigator.userAgent.indexOf(browser) != -1) {
+        isBroken = true;
+      }
+    });
+    return isBroken;
+  });
   if (location.search.indexOf('debug') != -1) {
     alert($('html').get(0).className);
+    alert(navigator.userAgent);
   }
 });
 
