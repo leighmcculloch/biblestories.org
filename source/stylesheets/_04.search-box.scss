@@ -7,6 +7,9 @@
     form {
       position: relative;
       .query {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 90%;
         outline: none;
         border: none;
