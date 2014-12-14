@@ -1,0 +1,7 @@
+.language-selector
+  %select
+    %option{:value=>"en"}
+      = t(:language, locale: :en)
+    %option{:value=>"zh-Hans"}
+      = t(:language, locale: :"zh-Hans")
+  %i.icon-globe

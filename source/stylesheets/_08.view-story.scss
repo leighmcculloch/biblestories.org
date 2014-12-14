@@ -17,7 +17,7 @@ $color-story-call-to-action: #a9a9a9;
       position: absolute;
       left: 0;
     }
-    .language-chooser {
+    .language {
       position: absolute;
       right: 0;
     }
@@ -88,11 +88,13 @@ $color-story-call-to-action: #a9a9a9;
 
   /* appearance */
   .header {
+    .item {
+      cursor: pointer;
+      cursor: hand;
+    }
     .menu {
       color: $color-header-menu;
       font-size: 1.40em;
-      cursor: pointer;
-      cursor: hand;
     }
     .controls {
       color: $color-header-controls;
@@ -108,8 +110,12 @@ $color-story-call-to-action: #a9a9a9;
         font-size: 1.40em;
       }
     }
-    .language-chooser {
+    .language {
       color: $color-language;
+      .language-selector {
+        line-height: 2.0em;
+        font-size: 0.875em;
+      }
     }
   }
 
