@@ -110,17 +110,16 @@ $width-super-compact: 320px;
     .share {
       background-color: $color-side-menu-share-background;
       .addthis_sharing_toolbox {
-        display: block;
-        width: 250px;
-        margin: 0 auto;
+        text-align: center;
         a {
-          margin: 0 27px 0 0;
+          margin: 0 12px;
           font-size: 21px;
           color: $color-side-menu-share-icon;
           text-decoration: none;
           outline: none;
         }
       }
+
     }
     .search {
       @include search($width-side-menu - 50px, $color-side-menu-search, $color-side-menu-search, 1em);
@@ -166,9 +165,11 @@ $width-super-compact: 320px;
   &:not(.showing-side-menu) {
     .side-menu {
       .share {
-        .addthis_button_more {
-          position: relative;
-          left: 21px;
+        .addthis_sharing_toolbox {
+          text-align: right;
+          .addthis_button_more {
+            margin-right: 0;
+          }
         }
       }
       .search {
