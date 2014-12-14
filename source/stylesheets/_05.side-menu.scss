@@ -84,9 +84,6 @@ $width-super-compact: 320px;
       a {
         color: $color-side-menu-title;
         text-decoration: none;
-        h1 {
-          display:inline;
-        }
       }
       .logo {
         font-size: 0.9em;
@@ -171,7 +168,7 @@ $width-super-compact: 320px;
       .share {
         .addthis_button_more {
           position: relative;
-          left: 22px;
+          left: 21px;
         }
       }
       .search {
