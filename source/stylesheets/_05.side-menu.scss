@@ -11,6 +11,7 @@ $color-side-menu-stories-story-current: #dedede;
 
 $width-side-menu: 300px;
 $width-side-menu-tease: 60px;
+$width-super-compact: 320px;
 
 .side-menu-container.side-menu-container-activated {
   .side-menu, .side-menu-view-container {
@@ -53,6 +54,9 @@ $width-side-menu-tease: 60px;
       .close {
         @media (max-width: $width-compact) {
           display: none;
+        }
+        @media (max-width: $width-super-compact) {
+          display: block;
         }
       }
     }
@@ -195,7 +199,7 @@ $width-side-menu-tease: 60px;
 }
 
 /* transforms or media queries not available, disable the side menu */
-html.no-csstransforms, html.no-mediaqueries {
+html.brokenbrowser, html.no-csstransforms, html.no-mediaqueries {
   .side-menu-container {
     .side-menu {
       display: none;

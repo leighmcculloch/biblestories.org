@@ -2,6 +2,10 @@
 $(function() {
   Modernizr.addTest('mediaqueries', function(){ return !!Modernizr.mq('only all'); });
   Modernizr.addTest('audio-mp3', function(){ return !!Modernizr.audio.mp3; });
+  Modernizr.addTest('brokenbrowser', function(){ return navigator.userAgent.indexOf('Opera Mini') > -1; });
+  if (location.search.indexOf('debug') != -1) {
+    alert($('html').get(0).className);
+  }
 });
 
 /* fast click for mobile */

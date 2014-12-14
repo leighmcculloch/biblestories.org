@@ -25,7 +25,7 @@ $color-story-call-to-action: #a9a9a9;
   }
 
   /* layout: narrow */
-  .header, html.no-csstransforms & .header, html.no-mediaqueries & .header {
+  .header {
     .menu {
       display: block;
     }
@@ -60,6 +60,24 @@ $color-story-call-to-action: #a9a9a9;
         .audio-label {
           display: inline;
         }
+      }
+    }
+  }
+
+  html.brokenbrowser & .header, html.no-csstransforms & .header, html.no-mediaqueries & .header {
+    .menu {
+      display: block;
+    }
+    .controls {
+      text-align: center;
+      .verses-long {
+        display: none;
+      }
+      .verses-short {
+        display: inline;
+      }
+      .audio-label {
+        display: none;
       }
     }
   }

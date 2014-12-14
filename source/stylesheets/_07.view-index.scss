@@ -110,14 +110,18 @@ $width-search: $width-max - 200;
         font-size: 1.5em;
         color: $color-story-list;
         text-decoration: none;
+        @media (min-width: $width-compact) {
+          position: relative;
+        }
       }
       .bible_ref {
-        display: inline;
         white-space: nowrap;
         color: $color-story-list-bible-ref;
         font-size: 0.8em;
         font-weight: 300;
         @media (min-width: $width-compact) {
+          position: absolute;
+          display: inline;
           padding-left: 10px;
         }
       }
