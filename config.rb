@@ -61,7 +61,7 @@ after_configuration do
 end
 
 activate :autoprefixer do |config|
-  config.browsers = ['> 0.5%', 'last 2 versions', 'Explorer >= 7']
+  config.browsers = ['> 0.1%', 'last 2 versions', 'Explorer >= 6']
   config.cascade  = false
   config.inline   = true
 end
@@ -71,7 +71,7 @@ configure :build do
   # activate :minify_css
   # activate :minify_javascript
   activate :gzip
-  activate :asset_hash, :ignore => [/^images\//]
+  activate :asset_hash, :ignore => [/^(images|fonts)\//]
   activate :relative_assets
   activate :favicon_maker, :icons => {
     "_favicon.png" => [
