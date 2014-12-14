@@ -36,6 +36,8 @@ $width-super-compact: 320px;
     width: $width-side-menu;
     height: 100%;
     overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     @media (min-width: $width-compact) {
       transform: translateX($width-side-menu-tease);
     }
@@ -163,7 +165,8 @@ $width-super-compact: 320px;
     }
   }
 
-  &:not(.showing-side-menu) {
+  /* side menu when hidden and shown */
+  &.not-showing-side-menu {
     .side-menu {
       .share {
         .addthis_sharing_toolbox {

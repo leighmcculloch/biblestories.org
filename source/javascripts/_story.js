@@ -49,11 +49,13 @@ function isShowingSideMenu() {
 
 function showSideMenu() {
   $('.side-menu').scrollTop(0);
+  $('.side-menu-container').removeClass('not-showing-side-menu');
   $('.side-menu-container').addClass('showing-side-menu');
 }
 
 function hideSideMenu() {
   $('.side-menu-container').removeClass('showing-side-menu');
+  $('.side-menu-container').addClass('not-showing-side-menu');
 }
 
 /* share buttons */
