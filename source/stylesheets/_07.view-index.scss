@@ -1,5 +1,6 @@
 $color-title: #383838;
 $color-description: #a9a9a9;
+$color-language: #d1cccd;
 $color-search: #d1cccd;
 $color-search-query: #383838;
 $color-story-list: #1b1b1b;
@@ -31,6 +32,9 @@ $width-search: $width-max - 200;
     .item {
       margin: 20px 0;
     }
+    .language-chooser {
+      display: none;
+    }
   }
 
   /* header layout: wide */
@@ -43,6 +47,13 @@ $width-search: $width-max - 200;
       }
       .title {
         position: absolute;
+      }
+      .language-chooser {
+        display: block;
+        float: right;
+      }
+      .language-list {
+        display: none;
       }
     }
   }
@@ -61,6 +72,14 @@ $width-search: $width-max - 200;
       font-size: 1.1em;
       font-weight: 300;
       color: $color-description;
+    }
+    .language-chooser {
+      color: $color-language;
+    }
+    .language-list {
+      font-size: 0.95em;
+      font-weight: 300;
+      color: $color-language;
     }
   }
 

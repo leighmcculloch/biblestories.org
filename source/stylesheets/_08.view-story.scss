@@ -17,6 +17,10 @@ $color-story-call-to-action: #a9a9a9;
       position: absolute;
       left: 0;
     }
+    .language-chooser {
+      position: absolute;
+      right: 0;
+    }
   }
 
   .story {
@@ -103,6 +107,9 @@ $color-story-call-to-action: #a9a9a9;
       .zoom-larger {
         font-size: 1.40em;
       }
+    }
+    .language-chooser {
+      color: $color-language;
     }
   }
 

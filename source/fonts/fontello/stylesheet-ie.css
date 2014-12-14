@@ -6,7 +6,8 @@
 .icon-twitter,
 .icon-tumblr,
 .icon-mail-alt,
-.icon-export-alt {
+.icon-export-alt,
+.icon-globe {
   font-family: 'fontello';
   font-style: normal;
   font-weight: normal;
@@ -24,3 +25,4 @@
 .icon-tumblr { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe806;'); }
 .icon-mail-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe807;'); }
 .icon-export-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe808;'); }
+.icon-globe { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe809;'); }

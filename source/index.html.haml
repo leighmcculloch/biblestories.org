@@ -7,8 +7,13 @@ title: Great Stories of the Bible
     .item.title
       %i.logo.icon-leaf
       %h1= t(:title)
+    .item.language-chooser
+      %i.icon-globe
     .item.description
       %h2= t(:description)
+    .item.language-list
+      = t(:language, locale: :en)
+      = t(:language, locale: :"zh-Hans")
 
   .search
     .search-box
