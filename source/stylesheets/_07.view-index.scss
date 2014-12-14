@@ -87,7 +87,7 @@ $width-search: $width-max - 200;
 
   .search {
     @include search($width-search, $color-search, $color-search-query, 1.1em);
-    margin: 20px 40px;
+    margin: 30px 40px;
     @media (min-width: $width-compact) {
       margin: 120px 40px 80px 40px;
     }
