@@ -1,66 +1,31 @@
 require 'lib/stories'
 require 'lib/story'
+require 'deployment'
+require 'deployments'
+require 'cache'
 
-DEV = true unless ENV['DEV'].nil?
+DEV = !!ENV['DEV']
+set :development, DEV
 
-class Deployment
-  attr_accessor :locales, :zone, :zone_short
-  def initialize(locales:, zone:, zone_short:)
-    @locales = locales
-    @zone = zone
-    @zone_short = zone_short
-  end
-
-  def host
-    "#{DEV ? "dev." : ""}#{self.zone}"
-  end
-
-  def host_short
-    "#{DEV ? "dev." : ""}#{self.zone_short}"
-  end
-
-  def base_url(locale: nil)
-    url = "http://#{self.host}"
-    url << "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
-    url
-  end
-
-  def base_url_short(locale: nil)
-    url = "http://#{self.host_short}"
-    url << "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
-    url
-  end
-end
-
-DEPLOYMENTS = [
+DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
     locales: [:en, :es],
     zone: "greatstoriesofthebible.org",
-    zone_short: "greatstories.org"
+    zone_short: "greatstories.org",
+    development: DEV
   ),
   Deployment.new(
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
-    zone_short: "greatstories.cn"
+    zone_short: "greatstories.cn",
+    development: DEV
   )
-]
+])
+set :deployments, DEPLOYMENTS
 
 DEPLOYMENT_ID = ENV['DEPLOYMENT'].to_i
 DEPLOYMENT = DEPLOYMENTS[DEPLOYMENT_ID]
 set :deployment, DEPLOYMENT
-
-# local api cache
-$cache = FileCache.new("api-cache", "caches")
-module GetOrSet
-  def get_or_set(key)
-    value = self.get(key)
-    return value if value
-    value = yield
-    self.set(key, value)
-    value
-  end
-end
-$cache.extend(GetOrSet)
 
 # dev
 if DEV
@@ -75,14 +40,12 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 # i18n
-LOCALES = DEPLOYMENTS.inject([]) { |locales, deployment| locales.concat(deployment.locales) }
-activate :i18n, :langs => LOCALES
-set :locales, LOCALES
+activate :i18n, :langs => DEPLOYMENTS.locales
+set :locales, DEPLOYMENTS.locales
 
 activate :directory_indexes
 
 # pages
-# ignore 'index.html'
 ignore 'story.html'
 after_configuration do
   DEPLOYMENT.locales.each_with_index do |lang, index|

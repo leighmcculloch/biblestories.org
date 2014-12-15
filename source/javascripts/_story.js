@@ -131,5 +131,7 @@ if (typeof audio != 'undefined') {
 
 /* scroll depth analytics */
 $(function() {
-  $.scrollDepth();
+  if ($('body').hasClass('story')) {
+    $.scrollDepth();
+  }
 });

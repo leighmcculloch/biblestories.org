@@ -5,12 +5,16 @@
 
     - title = current_page.data.title || yield_content(:title)
     - description = current_page.data.description || yield_content(:description)
-    - social_description = current_page.data.description || yield_content(:social_description)
+    - social_description = current_page.data.description || yield_content(:social_description) || description
     - url = current_page.data.url || settings.deployment.base_url(locale: I18n.locale)
 
     %title= title
     
     %meta{:name=>"description", :content=>description}
+
+    - settings.deployments.each do |deployment|
+      - deployment.locales.each do |locale|
+        %link{:rel=>"alternate", :hreflang=>locale.to_s, :href=>"#{deployment.base_url(locale: locale)}#{current_page.url}"}
 
     %meta{:property=>"og:type", :content=>"website"}
     %meta{:property=>"og:url", :content=>url}

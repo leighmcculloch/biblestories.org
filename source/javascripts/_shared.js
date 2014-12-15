@@ -26,7 +26,7 @@ $(function() {
 /* language selector */
 $(function() {
   $('.language-selector').change(function() {
-    
+    url = $('link[hreflang=""]').attr('')
   });
 });
 
