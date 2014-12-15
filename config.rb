@@ -21,13 +21,13 @@ class Deployment
 
   def base_url(locale: nil)
     url = "http://#{self.host}"
-    url << locale.to_s if locale
+    url << "/#{locale.to_s}" if locale
     url
   end
 
   def base_url_short(locale: nil)
     url = "http://#{self.host_short}"
-    url << locale.to_s if locale
+    url << "/#{locale.to_s}" if locale
     url
   end
 end
@@ -86,6 +86,8 @@ activate :directory_indexes
 ignore 'story.html'
 after_configuration do
   DEPLOYMENT.locales.each_with_index do |lang, index|
+    I18n.locale = lang
+    
     prefix = lang.to_s if index > 0
 
     if prefix
@@ -99,10 +101,12 @@ after_configuration do
     end
 
     Stories.all.each do |story_short_url, story|
-      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang do
+      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story }, :locale => lang do
         I18n.locale = lang
       end
     end
+
+    I18n.locale = I18n.default_locale
   end
 end
 

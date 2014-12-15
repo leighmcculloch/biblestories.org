@@ -2,7 +2,9 @@
 page_classes: story side-menu-container not-showing-side-menu
 ---
 
-- content_for(:title, "#{story.title} | Great Stories")
+- content_for(:title, "#{story.title} | #{t(:title)}")
+- content_for(:description, "Bible Story: #{story.title}; Ref: #{story.bible_ref}.")
+- content_for(:social_description, story.text_plain_short)
 
 .side-menu-view-container
   .view

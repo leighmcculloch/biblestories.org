@@ -1,9 +1,11 @@
 en:
   language: English
-  title: Great Stories
+  title: Great Stories of the Bible
   description: A story index of the Bible
   created_by: Created by <a href="http://leighmcculloch.com">Leigh McCulloch</a> &amp; <a href="http://jtburkholder.com/">Jason Burkholder</a>.
   thanks: Thanks to Tyndale House Publishing Inc. for permission to use the "Great Stories of the Bible" index, found as an appendix in some publications of the New Living Translation Bibles.
+
+  meta_description: An index of stories in the bible. Read and listen to bible stories.
 
   search_placeholder: Search by story or author
   search_placeholder_side_menu: Search stories
