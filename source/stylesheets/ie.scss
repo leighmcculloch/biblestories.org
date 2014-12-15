@@ -9,8 +9,10 @@ $width-side-menu: 300px;
 .page.index {
   .view {
     .search {
-      /* sets max-width */
-      width: expression(document.body.clientWidth > #{strip-units($width-search)} ? "#{$width-max}" : "auto");
+      .search-box {
+        /* sets max-width */
+        width: expression((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) > #{strip-units($width-search)} ? "#{$width-max}" : "auto");
+      }
     }
   }
 }
@@ -19,11 +21,11 @@ $width-side-menu: 300px;
   .view {
     .story {
       /* sets max-width */
-      width: expression(document.body.clientWidth > #{strip-units($width-max)} ? "#{$width-max}" : "auto");
+      width: expression((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) > #{strip-units($width-max)} ? "#{$width-max}" : "auto");
 
       /* defaults to narrow style but looks funny justified on larger screens, so set to centered */
       .text {
-        text-align: expression(document.body.clientWidth > #{strip-units($width-max)} ? "center" : "justify");
+        text-align: expression((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) > #{strip-units($width-max)} ? "center" : "justify");
       }
     }
   }
