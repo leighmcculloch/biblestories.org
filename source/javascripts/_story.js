@@ -69,7 +69,7 @@ $(function() {
     data_track_clickback: false
   };
   var addthis_share = {
-    url: window.location.href,
+    url: $('html').data('share-url'),
     title: window.document.title
   };
   $(window).ready(function() {

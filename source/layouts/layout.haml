@@ -1,5 +1,5 @@
 <!doctype html>
-%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :page=>settings.deployment.page_from(url: current_page.url, locale: I18n.locale) }}
+%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :page=>settings.deployment.page_from(url: current_page.url, locale: I18n.locale), :share_url=>"#{settings.deployment.base_url_short(locale: I18n.locale)}#{current_page.url}" }}
   %head
     %meta{:content=>"IE=edge,chrome=1", :"http-equiv"=>"X-UA-Compatible"}
 
