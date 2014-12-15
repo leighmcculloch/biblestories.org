@@ -12,7 +12,7 @@ page_classes: story side-menu-container not-showing-side-menu
   .view
     .header
       .item.menu
-        %i.icon-menu.toggle-side-menu.padded-click-square-buttons
+        %i.icon-menu.toggle-side-menu.padded-click-square-buttons= icon(:menu)
       .item.language
         = partial "language-selector"
       .item.controls
@@ -26,11 +26,11 @@ page_classes: story side-menu-container not-showing-side-menu
             %span.separator= "|"
             %span.control.audio-label.padded-click-controls= t(:audio_label)
             %span.control.audio.padded-click-controls
-              %i.icon-volume-up
+              %i.icon-volume-up= icon(:volume_up)
 
     .story
       .title
-        %i.logo.icon-leaf
+        %i.logo.icon-leaf= icon(:leaf)
         %h1= story.title
         %h2
           - if story.author

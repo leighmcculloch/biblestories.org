@@ -3,4 +3,4 @@
     - settings.locales.each do |locale|
       %option{:value=>locale.to_s, :selected=>locale==I18n.locale}
         = t(:language, locale: locale)
-  %i.icon-globe
+  %i.icon-globe= icon(:globe)

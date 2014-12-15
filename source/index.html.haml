@@ -8,7 +8,7 @@ page_classes: index
 .view
   .header
     .item.title
-      %i.logo.icon-leaf
+      %i.logo.icon-leaf= icon(:leaf)
       %h1= t(:title_short)
     .item.language.language-1
       = partial "language-selector"
@@ -21,7 +21,7 @@ page_classes: index
     .search-box
       %form
         %input.query{:type=>"text", :placeholder=>t(:search_placeholder)}
-        %i.icon-search
+        %i.icon-search= icon(:search)
 
   .stories
     - Stories.all.each do |_, story|

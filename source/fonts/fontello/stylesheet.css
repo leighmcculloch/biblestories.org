@@ -19,7 +19,16 @@
 }
 */
  
- [class^="icon-"]:before, [class*=" icon-"]:before {
+.icon-leaf,
+.icon-search,
+.icon-volume-up,
+.icon-menu,
+.icon-facebook,
+.icon-twitter,
+.icon-tumblr,
+.icon-mail-alt,
+.icon-export-alt,
+.icon-globe {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -41,14 +50,3 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
- 
-.icon-leaf:before { content: '\e800'; } /* '' */
-.icon-search:before { content: '\e801'; } /* '' */
-.icon-volume-up:before { content: '\e802'; } /* '' */
-.icon-menu:before { content: '\e803'; } /* '' */
-.icon-facebook:before { content: '\e804'; } /* '' */
-.icon-twitter:before { content: '\e805'; } /* '' */
-.icon-tumblr:before { content: '\e806'; } /* '' */
-.icon-mail-alt:before { content: '\e807'; } /* '' */
-.icon-export-alt:before { content: '\e808'; } /* '' */
-.icon-globe:before { content: '\e809'; } /* '' */

@@ -1,7 +1,7 @@
 .side-menu
   .item.title
-    %i.close.toggle-side-menu.icon-menu.padded-click-square-buttons
-    %i.logo.icon-leaf
+    %i.close.toggle-side-menu.icon-menu.padded-click-square-buttons= icon(:menu)
+    %i.logo.icon-leaf= icon(:leaf)
     %a{:href=>"../"}
       = t(:title_short)
   %i.share-pointer.fa.fa-caret-left
@@ -12,12 +12,12 @@
       .search-box
         %form
           %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
-          %i.toggle-side-menu-and-search.icon-search
+          %i.toggle-side-menu-and-search.icon-search= icon(:search)
     .stories
       - Stories.all.each do |_, story|
         .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}
           - if story.short_url == active_story.short_url
-            %i.marker.icon-leaf
+            %i.marker.icon-leaf= icon(:leaf)
           %a{:href=>"../#{story.short_url}/"}= story.title
           .bible_ref= story.bible_ref
     .search-no-results{:style=>"display:none"}
