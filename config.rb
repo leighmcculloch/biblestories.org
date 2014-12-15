@@ -3,26 +3,51 @@ require 'lib/story'
 
 DEV = true unless ENV['DEV'].nil?
 
+class Deployment
+  attr_accessor :locales, :zone, :zone_short
+  def initialize(locales:, zone:, zone_short:)
+    @locales = locales
+    @zone = zone
+    @zone_short = zone_short
+  end
+
+  def host
+    "#{DEV ? "dev." : ""}#{self.zone}"
+  end
+
+  def host_short
+    "#{DEV ? "dev." : ""}#{self.zone_short}"
+  end
+
+  def base_url(locale: nil)
+    url = "http://#{self.host}"
+    url << locale.to_s if locale
+    url
+  end
+
+  def base_url_short(locale: nil)
+    url = "http://#{self.host_short}"
+    url << locale.to_s if locale
+    url
+  end
+end
+
 DEPLOYMENTS = [
-  {
+  Deployment.new(
     locales: [:en, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org"
-  },
-  {
+  ),
+  Deployment.new(
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
     zone_short: "greatstories.cn"
-  }
-].map do |deployment|
-  deployment[:host] = "#{DEV ? "dev." : ""}#{deployment[:zone]}"
-  deployment[:host_short] = "#{DEV ? "dev." : ""}#{deployment[:zone_short]}"
-  deployment[:base_url] = "http://#{deployment[:host]}"
-  deployment[:base_url_short] = "http://#{deployment[:host_short]}"
-  deployment
-end
+  )
+]
+
 DEPLOYMENT_ID = ENV['DEPLOYMENT'].to_i
 DEPLOYMENT = DEPLOYMENTS[DEPLOYMENT_ID]
+set :deployment, DEPLOYMENT
 
 # local api cache
 $cache = FileCache.new("api-cache", "caches")
@@ -50,9 +75,9 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 # i18n
-LOCALES = DEPLOYMENTS.inject([]) { |locales, deployment| locales.concat(deployment[:locales]) }
+LOCALES = DEPLOYMENTS.inject([]) { |locales, deployment| locales.concat(deployment.locales) }
 activate :i18n, :langs => LOCALES
-set :LOCALES, LOCALES
+set :locales, LOCALES
 
 activate :directory_indexes
 
@@ -60,7 +85,7 @@ activate :directory_indexes
 # ignore 'index.html'
 ignore 'story.html'
 after_configuration do
-  DEPLOYMENT[:locales].each_with_index do |lang, index|
+  DEPLOYMENT.locales.each_with_index do |lang, index|
     prefix = lang.to_s if index > 0
 
     if prefix
@@ -138,7 +163,7 @@ activate :imageoptim
 
 # deploy to aws s3
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = DEPLOYMENT[:base_host]
+  s3_sync.bucket                     = DEPLOYMENT.host
   s3_sync.region                     = "us-east-1"
   s3_sync.delete                     = true
   s3_sync.after_build                = true

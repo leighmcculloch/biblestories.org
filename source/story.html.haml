@@ -17,11 +17,12 @@ page_classes: story side-menu-container not-showing-side-menu
         %span.separator= "|"
         %span.control.toggle-verses.verses-short.padded-click-controls= t(:story_verses_short)
         %span.control.toggle-verses.verses-long.padded-click-controls= t(:story_verses_long)
-        %span.audio-controls
-          %span.separator= "|"
-          %span.control.audio-label.padded-click-controls= t(:audio_label)
-          %span.control.audio.padded-click-controls
-            %i.icon-volume-up
+        - if story.audio_info && story.audio_info.length == 1
+          %span.audio-controls
+            %span.separator= "|"
+            %span.control.audio-label.padded-click-controls= t(:audio_label)
+            %span.control.audio.padded-click-controls
+              %i.icon-volume-up
 
     .story
       .title
