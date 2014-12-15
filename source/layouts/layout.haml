@@ -1,5 +1,6 @@
 <!doctype html>
-%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :page=>settings.deployment.page_from(url: current_page.url, locale: I18n.locale), :share_url=>"#{settings.deployment.base_url_short(locale: I18n.locale)}#{current_page.url}" }}
+- page = settings.deployment.page_from(url: current_page.url, locale: I18n.locale)
+%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :page=>page, :share_url=>"#{settings.deployment.base_url_short(locale: I18n.locale)}#{page}" }}
   %head
     %meta{:charset=>"UTF-8"}
     %meta{:content=>"IE=edge,chrome=1", :"http-equiv"=>"X-UA-Compatible"}
@@ -15,7 +16,7 @@
 
     - settings.deployments.each do |deployment|
       - deployment.locales.each do |locale|
-        %link{:rel=>"alternate", :hreflang=>locale.to_s, :href=>"#{deployment.base_url(locale: locale)}#{current_page.url}"}
+        %link{:rel=>"alternate", :hreflang=>locale.to_s, :href=>"#{deployment.base_url(locale: locale)}#{page}"}
 
     %meta{:property=>"og:type", :content=>"website"}
     %meta{:property=>"og:url", :content=>url}
