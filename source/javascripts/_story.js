@@ -63,12 +63,12 @@ $(function() {
   }
 
   /* share buttons */
-  var addthis_config = {
+  window.addthis_config = {
     // data_ga_property: 'UA-123456-1',
     data_track_addressbar: false,
     data_track_clickback: false
   };
-  var addthis_share = {
+  window.addthis_share = {
     url: $('html').data('share-url'),
     title: window.document.title
   };
@@ -97,6 +97,9 @@ $(function() {
     $('.text').toggleClass('show-verses');
   });
 
+  /* scroll depth analytics */
+  $.scrollDepth();
+
   /* audio and audio analytics */
   var audio = $('.audio-player audio').get(0);
   if (typeof audio != 'undefined') {
@@ -124,7 +127,4 @@ $(function() {
       });
     }
   }
-
-  /* scroll depth analytics */
-  $.scrollDepth();
 });
