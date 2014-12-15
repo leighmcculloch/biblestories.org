@@ -1,9 +1,19 @@
 /* CSS for IE 6 & IE 7 */
 
+$width-search: $width-max - 200;
 $width-side-menu: 300px;
 
 @import '../fonts/fontello/stylesheet-ie';
 @import '_02.common';
+
+.page.index {
+  .view {
+    .search {
+      /* sets max-width */
+      width:expression(document.body.clientWidth > #{strip-units($width-search)} ? "#{$width-max}" : "auto");
+    }
+  }
+}
 
 .page.story {
   .view {
