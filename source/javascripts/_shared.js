@@ -23,6 +23,13 @@ $(function() {
   FastClick.attach(document.body);
 });
 
+/* language selector */
+$(function() {
+  $('.language-selector').change(function() {
+    
+  });
+});
+
 /* search story list filtering */
 $(function() {
     $('.index-searchnoresults').hide();

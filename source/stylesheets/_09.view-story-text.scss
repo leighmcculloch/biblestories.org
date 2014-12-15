@@ -1,0 +1,42 @@
+.page.story .view .story .text {
+
+  /* esvapi */
+  .esv {
+    h2 {
+      display: none;
+    }
+    .chapter-num, .verse-num {
+      display: none;
+    }
+    p {
+      margin: 2em 0;
+    }
+    .block-indent {
+      margin: 0 2em;
+    }
+  }
+  &.show-verses {
+    .esv {
+      .chapter-num, .verse-num {
+        display: inline;
+        font-weight: 300;
+        font-size: smaller;
+        color: $color-story-verses;
+      }
+    }
+  }
+
+  /* bibleapi */
+  .v {
+    display: none;
+  }
+  &.show-verses {
+    .v {
+      display: inline;
+      font-weight: 300;
+      font-size: smaller;
+      color: $color-story-verses;
+    }
+  }
+
+}

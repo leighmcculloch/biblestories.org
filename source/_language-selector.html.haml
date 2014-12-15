@@ -1,7 +1,6 @@
 .language-selector
   %select
-    %option{:value=>"en"}
-      = t(:language, locale: :en)
-    %option{:value=>"zh-Hans"}
-      = t(:language, locale: :"zh-Hans")
+    - settings.LOCALES.each do |locale|
+      %option{:value=>locale.to_s, :selected=>locale==I18n.locale}
+        = t(:language, locale: locale)
   %i.icon-globe

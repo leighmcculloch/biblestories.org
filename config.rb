@@ -1,22 +1,30 @@
 require 'lib/stories'
 require 'lib/story'
 
-DEV = !ENV["DEV"].nil?
+DEV = true unless ENV['DEV'].nil?
 
-LANGS = [:en] #, :"zh-Hans"]
-LANG = ENV["LANG"].to_sym || :en
+DEPLOYMENTS = [
+  {
+    locales: [:en, :es],
+    zone: "greatstoriesofthebible.org",
+    zone_short: "greatstories.org"
+  },
+  {
+    locales: [:"zh-Hans"],
+    zone: "greatstoriesofthebible.cn",
+    zone_short: "greatstories.cn"
+  }
+].map do |deployment|
+  deployment[:host] = "#{DEV ? "dev." : ""}#{deployment[:zone]}"
+  deployment[:host_short] = "#{DEV ? "dev." : ""}#{deployment[:zone_short]}"
+  deployment[:base_url] = "http://#{deployment[:host]}"
+  deployment[:base_url_short] = "http://#{deployment[:host_short]}"
+  deployment
+end
+DEPLOYMENT_ID = ENV['DEPLOYMENT'].to_i
+DEPLOYMENT = DEPLOYMENTS[DEPLOYMENT_ID]
 
-config[:base_zones] = {
-  :en => "greatstories.org",
-  :"zh-Hans" => "greatstories.cn"
-}
-config[:base_hosts] = Hash[config[:base_zones].map { |lang, zone| [lang, "#{DEV ? "dev." : ""}#{zone}"] }]
-config[:base_urls] = Hash[config[:base_hosts].map { |lang, host| [lang, "http://#{host}"] }]
-
-config[:base_zone] = config[:base_zones][LANG]
-config[:base_host] = config[:base_hosts][LANG]
-config[:base_url] = config[:base_urls][LANG]
-
+# local api cache
 $cache = FileCache.new("api-cache", "caches")
 module GetOrSet
   def get_or_set(key)
@@ -29,35 +37,53 @@ module GetOrSet
 end
 $cache.extend(GetOrSet)
 
-compass_config do |config|
-  config.output_style = :compressed
+# dev
+if DEV
+  configure :development do
+    activate :livereload
+  end
 end
 
-configure :development do
-  activate :livereload
-end
-
+# dir setup
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
+
+# i18n
+LOCALES = DEPLOYMENTS.inject([]) { |locales, deployment| locales.concat(deployment[:locales]) }
+activate :i18n, :langs => LOCALES
+set :LOCALES, LOCALES
 
 activate :directory_indexes
 
-activate :i18n, :langs => LANGS
-
+# pages
+# ignore 'index.html'
 ignore 'story.html'
 after_configuration do
-  LANGS.each do |lang|
-    prefix = lang.to_s if lang != :en
+  DEPLOYMENT[:locales].each_with_index do |lang, index|
+    prefix = lang.to_s if index > 0
 
-    page "#{prefix}/index.html", :locale => lang
+    if prefix
+      page "#{prefix}/index.html", :proxy => "/index.html", :locale => lang do
+        I18n.locale = lang
+      end
+    else
+      page "/index.html", :locale => lang do
+        I18n.locale = lang
+      end
+    end
 
     Stories.all.each do |story_short_url, story|
-      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang, :ignore => true
+      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story, :stories => Stories.all }, :locale => lang do
+        I18n.locale = lang
+      end
     end
   end
+end
+
+# building
+compass_config do |config|
+  config.output_style = :compressed
 end
 
 activate :autoprefixer do |config|
@@ -108,11 +134,11 @@ end
 # 3) `cp pngout /usr/local/bin/pngout`
 # Also, must be placed outside :build to ensure it occurs prior to other
 # extensions below that are also triggered after build.
-activate :imageoptim unless DEV
+activate :imageoptim
 
-# Sync with AWS S3
+# deploy to aws s3
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = "dev.greatstories.org"#config[:base_host]
+  s3_sync.bucket                     = DEPLOYMENT[:base_host]
   s3_sync.region                     = "us-east-1"
   s3_sync.delete                     = true
   s3_sync.after_build                = true
@@ -124,13 +150,13 @@ activate :s3_sync do |s3_sync|
   s3_sync.version_bucket             = false
 end
 
-unless DEV
-  activate :cdn do |cdn|
-    cdn.cloudflare = {
-      zone: config[:base_zone],
-      base_urls: [config[:base_url]]
-    }
-    cdn.filter = /.*/
-    cdn.after_build = true
-  end
-end
+# unless DEV
+#   activate :cdn do |cdn|
+#     cdn.cloudflare = {
+#       zone: config[:base_zone],
+#       base_urls: [config[:base_url]]
+#     }
+#     cdn.filter = /.*/
+#     cdn.after_build = true
+#   end
+# end
