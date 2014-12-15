@@ -16,15 +16,26 @@ class Deployment
     "#{@development ? "dev." : ""}#{self.zone_short}"
   end
 
+  def base_url_suffix(locale: nil)
+    return "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
+    ""
+  end
+
   def base_url(locale: nil)
     url = "http://#{self.host}"
-    url << "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
+    url << base_url_suffix(locale: locale)
     url
   end
 
   def base_url_short(locale: nil)
     url = "http://#{self.host_short}"
-    url << "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
+    url << base_url_suffix(locale: locale)
+    url
+  end
+
+  def page_from(url:, locale: nil)
+    url = url.sub(self.base_url(locale: locale), '')
+    url = url.sub(self.base_url_suffix(locale: locale), '')
     url
   end
 end
