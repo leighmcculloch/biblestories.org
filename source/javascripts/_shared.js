@@ -25,8 +25,9 @@ $(function() {
 
 /* language selector */
 $(function() {
-  $('.language-selector').change(function() {
-    url = $('link[hreflang=""]').attr('')
+  $('.language-selector select').change(function() {
+    url = $('link[hreflang="' + $(this).val() + '"]').attr('href');
+    window.location.href = url;
   });
 });
 
