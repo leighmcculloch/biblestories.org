@@ -98,15 +98,15 @@ $color-story-call-to-action: #a9a9a9;
     }
     .controls {
       color: $color-header-controls;
-      span {
+      span.control, span.separator {
         font-size: 0.875em;
         margin: 0 3px;
       }
-      .control {
+      span.control {
         cursor: pointer;
         cursor: hand;
       }
-      .zoom-larger {
+      span.control.zoom-larger {
         font-size: 1.40em;
       }
     }
