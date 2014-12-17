@@ -10,7 +10,7 @@
     - social_description = current_page.data.social_description || yield_content(:social_description) || description
     - url = current_page.data.url || yield_content(:url) || settings.deployment.base_url(locale: I18n.locale)
 
-    %title= title
+    %title= title ? "#{title} | " : "" + t(:title)
     
     %meta{:name=>"description", :content=>description}
 

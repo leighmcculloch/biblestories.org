@@ -36,7 +36,7 @@ class Story
   end
 
   def text_plain
-    Sanitize.clean(self.text_html)
+    Sanitize.clean(self.text_html).strip
   end
 
   def text_plain_short

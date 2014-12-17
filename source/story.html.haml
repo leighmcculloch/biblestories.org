@@ -2,7 +2,7 @@
 page_classes: story side-menu-container not-showing-side-menu
 ---
 
-- content_for(:title, "#{story.title} | #{t(:title)}")
+- content_for(:title, "#{story.title}")
 - content_for(:description, "Bible Story: #{story.title}; Ref: #{story.bible_ref}.")
 - content_for(:social_description, story.text_plain_short)
 - url = "#{settings.deployment.base_url_short(locale: I18n.locale)}/#{story.short_url}"
