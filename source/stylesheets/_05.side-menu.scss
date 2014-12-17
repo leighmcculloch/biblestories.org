@@ -41,6 +41,15 @@ $width-super-compact: 320px;
     @media (min-width: $width-compact) {
       transform: translateX($width-side-menu-tease);
     }
+
+    .background {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: $width-side-menu;
+      height: 200%;
+    }
   }
   .side-menu-view-container {
     @media (min-width: $width-compact) {
@@ -77,6 +86,9 @@ $width-super-compact: 320px;
   /* side menu */
   .side-menu {
     background-color: $color-side-menu-background;
+    .background {
+      background-color: $color-side-menu-background;
+    }
     .item {
       padding: 20px;
       font-size: 1.1em;
