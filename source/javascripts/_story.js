@@ -29,10 +29,6 @@ $(function() {
       hideSideMenu();
     }
   );
-  $('.side-menu-container').on('click', '.side-menu-container.showing-side-menu .side-menu-view-container', function() {
-    hideSideMenu();
-    return false;
-  });
 
   function toggleSideMenuAndSearch() {
     $('.search .query').focus();
