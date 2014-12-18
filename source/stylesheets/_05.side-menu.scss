@@ -28,8 +28,15 @@ $width-super-compact: 320px;
   }
 
   /* off canvas side-menu animation */
-  .side-menu {
+  .side-menu-fixed {
     position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: visible;
+  }
+  .side-menu {
+    position: absolute;
     top: 0;
     left: -$width-side-menu;
     z-index: 2;
@@ -66,8 +73,10 @@ $width-super-compact: 320px;
     }
     .side-menu-view-container {
       @media (max-width: $width-compact) {
-        position: fixed;
         transform: translateX($width-side-menu);
+        position: absolute;
+        height: 100%;
+        overflow: hidden;
       }
       @media (min-width: $width-compact) {
         transform: translateX($width-side-menu);
