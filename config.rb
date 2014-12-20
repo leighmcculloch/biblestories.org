@@ -28,11 +28,11 @@ DEPLOYMENT = DEPLOYMENTS[DEPLOYMENT_ID]
 set :deployment, DEPLOYMENT
 
 # dev
-if DEV
-  configure :development do
-    activate :livereload
-  end
-end
+# if DEV
+#   configure :development do
+#     activate :livereload
+#   end
+# end
 
 # dir setup
 set :css_dir, 'stylesheets'
@@ -134,7 +134,7 @@ configure :build do
       { icon: "mstile-310x310.png", size: "310x310" },
       { icon: "mstile-310x150.png", size: "310x150" }
     ]
-  }
+  } unless DEV
 end
 
 # Requires installing image_optim extensions.
@@ -144,7 +144,7 @@ end
 # 3) `cp pngout /usr/local/bin/pngout`
 # Also, must be placed outside :build to ensure it occurs prior to other
 # extensions below that are also triggered after build.
-activate :imageoptim
+activate :imageoptim unless DEV
 
 # deploy to aws s3
 activate :s3_sync do |s3_sync|
@@ -154,7 +154,7 @@ activate :s3_sync do |s3_sync|
   s3_sync.after_build                = true
   s3_sync.prefer_gzip                = true
   s3_sync.path_style                 = true
-  s3_sync.reduced_redundancy_storage = false
+  s3_sync.reduced_redundancy_storage = DEV
   s3_sync.acl                        = "public-read"
   s3_sync.encryption                 = false
   s3_sync.version_bucket             = false
