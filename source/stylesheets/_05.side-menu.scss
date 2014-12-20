@@ -72,20 +72,20 @@ $width-super-compact: 320px;
       }
     }
     .side-menu-view-container {
+      transform: translateX($width-side-menu);
       @media (max-width: $width-compact) {
-        transform: translateX($width-side-menu);
-        position: absolute;
-        height: 100%;
-        overflow: hidden;
+        position: fixed;
       }
       @media (min-width: $width-compact) {
-        transform: translateX($width-side-menu);
         margin-right: $width-side-menu;
       }
     }
   }
 
   /* side menu */
+  .side-menu-fixed {
+    background-color: $color-side-menu-background;
+  }
   .side-menu {
     background-color: $color-side-menu-background;
     .item {
