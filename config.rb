@@ -12,12 +12,14 @@ DEPLOYMENTS = Deployments.new(deployments: [
     locales: [:en, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
+    font_host: "fonts.googleapis.com",
     development: DEV
   ),
   Deployment.new(
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
     zone_short: "greatstories.cn",
+    font_host: "fonts.useso.com",
     development: DEV
   )
 ])

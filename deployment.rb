@@ -1,11 +1,12 @@
 class Deployment
-  attr_accessor :locales, :zone, :zone_short
+  attr_accessor :locales, :zone, :zone_short, :font_host
 
-  def initialize(development: false, locales:, zone:, zone_short:)
+  def initialize(development: false, locales:, zone:, zone_short:, font_host:)
     @development = development
     @locales = locales
     @zone = zone
     @zone_short = zone_short
+    @font_host = font_host
   end
 
   def host
