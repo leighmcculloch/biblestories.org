@@ -1,6 +1,6 @@
 
 $(function() {
-  if (!$('body').hasClass('story')) {
+  if ($('body').attr('class').indexOf('story') == -1) {
     return;
   }
 
