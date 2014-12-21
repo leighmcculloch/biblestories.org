@@ -45,7 +45,14 @@ set :images_dir, 'images'
 activate :i18n, :langs => DEPLOYMENTS.locales
 set :locales, DEPLOYMENTS.locales
 
-activate :directory_indexes
+# hacking the html mime type
+#  • pages without the html extension have their filename added to the `text/html` mime type as
+#    an extension so that they will be associated with that mimetype in the s3_sync gem
+#  • the story pages do not have extensions, so they are all added
+#  • re-index the extensions for the `text/html` mime type now that we've hacked it
+mime_type_html = MIME::Types["text/html"].first
+mime_type_html.add_extensions(Stories.all_short_urls)
+MIME::Types.index_extensions(mime_type_html)
 
 # pages
 ignore 'story.html'
@@ -55,18 +62,21 @@ after_configuration do
 
     prefix = lang.to_s if index > 0
 
+    # index page
     if prefix
-      page "#{prefix}/index.html", :proxy => "/index.html", :locale => lang do
-        I18n.locale = lang
-      end
+      page_path = "#{prefix}/index.html"
+      page_proxy = "/index.html"
     else
-      page "/index.html", :locale => lang do
-        I18n.locale = lang
-      end
+      page_path = "/index.html"
+    end
+    page page_path, :proxy => page_proxy, :content_type => "text/html; charset=utf-8", :locale => lang do
+      I18n.locale = lang
     end
 
+    # each story page
     Stories.all.each do |story_short_url, story|
-      page "#{prefix}/#{story_short_url}.html", :proxy => "/story.html", :locals => { :story => story }, :locale => lang do
+      page_path = "#{prefix}/#{story_short_url}"
+      page page_path, :proxy => "/story.html", :content_type => "text/html; charset=utf-8", :locals => { :story => story }, :locale => lang do
         I18n.locale = lang
       end
     end
@@ -108,7 +118,7 @@ configure :build do
   activate :minify_html
   activate :minify_css
   activate :minify_javascript
-  activate :gzip
+  activate :gzip, :exts => [".js", ".css", ".html", ""]
   activate :asset_hash, :ignore => [/^(images|fonts)\//]
   activate :relative_assets
   activate :favicon_maker, :icons => {

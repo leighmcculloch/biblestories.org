@@ -25,7 +25,7 @@ page_classes: index
   .stories
     - Stories.all.each do |_, story|
       .story{:data => story.as_json}
-        %a{:href=>"#{story.short_url}/"}= story.title
+        %a{:href=>"#{story.short_url}"}= story.title
         .bible_ref= story.bible_ref
 
   .search-no-results{:style=>"display:none"}
