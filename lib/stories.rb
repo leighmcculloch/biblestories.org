@@ -2,7 +2,6 @@ require "csv"
 require_relative "story"
 
 class Stories
-  @short_urls = []
   @stories = {}
 
   def self.all_short_urls
@@ -13,6 +12,7 @@ class Stories
     @short_urls = stories_csv.map do |story_csv_line|
       story_csv_line[0].strip
     end
+    @short_urls
   end
   
   def self.all
