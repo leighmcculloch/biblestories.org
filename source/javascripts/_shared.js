@@ -3,7 +3,7 @@ $(function() {
   Modernizr.addTest('mediaqueries', function(){ return !!Modernizr.mq('only all'); });
   Modernizr.addTest('audio-mp3', function(){ return !!Modernizr.audio.mp3; });
   Modernizr.addTest('brokenbrowser', function() {
-    var browsers = ['Opera Mini', 'Opera Mobi'];
+    var browsers = ['Opera Mini', 'Opera Mobi', 'Opera Tablet'];
     var isBroken = false;
     $.each(browsers, function(index, browser) {
       if (navigator.userAgent.indexOf(browser) != -1) {
