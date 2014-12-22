@@ -2,7 +2,9 @@ $color-popup-text: #fff;
 $color-popup-background: #111;
 
 .text-highlighted-container {
-  display: none;
+  position: absolute;
+  top: -400px;
+  left: -400px;
   .text-highlighted-shell {
     position: relative;
     margin-bottom: 10px;
