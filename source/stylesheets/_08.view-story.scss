@@ -167,12 +167,22 @@ $color-story-call-to-action: #a9a9a9;
         clear: both;
       }
       .share {
-        font-size: 1.2em;
         .addthis_sharing_toolbox {
-          width: 145px;
+          width: 275px;
           margin: 0 auto;
+          text-align: center;
           a {
-            margin: 0 5px;
+            margin: 0 10px;
+            font-size: 1.6em;
+            i {
+              vertical-align: baseline;
+            }
+          }
+          &.addthis_default_style .at300b {
+
+          }
+          &.addthis_default_style .at300b .at300bs {
+
           }
         }
       }
