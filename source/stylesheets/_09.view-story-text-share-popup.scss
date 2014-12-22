@@ -2,6 +2,7 @@ $color-popup-text: #fff;
 $color-popup-background: #111;
 
 .text-highlighted-container {
+  display: none;
   .text-highlighted-shell {
     position: relative;
     margin-bottom: 10px;
@@ -17,7 +18,7 @@ $color-popup-background: #111;
       }
     }
     .text-highlighted-arrow {
-      width: 12px;
+      width: 8px;
       margin: 0 auto;
       width: 0;
       height: 0;

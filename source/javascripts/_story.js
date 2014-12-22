@@ -125,16 +125,23 @@ $(function() {
   }
 
   /* highlighting */
-  $('.text').highlightAndPopup({
-    selector: '.text-highlighted-container',
-    minChars: 3,
-    highlighted: function(text) {
-      var shareTail = " from '" + $('.story .title h1').text() + "'";
-      var shareText = "\"" + text.trim().substring(0,140-shareTail.length-28).trim() + "..\"" + shareTail;
-      addthis.update('share', 'title', shareText);
-    },
-    unhighlighted: function() {
-      addthis.update('share', 'title', window.document.title);
+  if (document.documentElement) {
+    var isTouchDevice = 'ontouchstart' in document.documentElement;
+    if (!isTouchDevice) {
+      if ($('.text-highlighted-container').length > 0) {
+        $('.text').highlightAndPopup({
+          selector: '.text-highlighted-container',
+          minChars: 3,
+          highlighted: function(text) {
+            var shareTail = " from '" + $('.story .title h1').text() + "'";
+            var shareText = "\"" + text.trim().substring(0,140-shareTail.length-28).trim() + "..\"" + shareTail;
+            addthis.update('share', 'title', shareText);
+          },
+          unhighlighted: function() {
+            addthis.update('share', 'title', window.document.title);
+          }
+        });
+      }
     }
-  });
+  }
 });

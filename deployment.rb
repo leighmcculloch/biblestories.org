@@ -1,12 +1,13 @@
 class Deployment
-  attr_accessor :locales, :zone, :zone_short, :font_host
+  attr_accessor :locales, :zone, :zone_short, :font_host, :features
 
-  def initialize(development: false, locales:, zone:, zone_short:, font_host:)
+  def initialize(development: false, locales:, zone:, zone_short:, font_host:, features: {})
     @development = development
     @locales = locales
     @zone = zone
     @zone_short = zone_short
     @font_host = font_host
+    @features = features
   end
 
   def host
@@ -38,5 +39,9 @@ class Deployment
     url = url.sub(self.base_url(locale: locale), '')
     url = url.sub(self.base_url_suffix(locale: locale), '')
     url
+  end
+
+  def has_feature?(feature)
+    self.features.key?(feature) && self.features[feature]
   end
 end

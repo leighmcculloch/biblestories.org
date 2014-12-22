@@ -9,18 +9,24 @@ set :development, DEV
 
 DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
-    locales: [:en, :es],
+    locales: [:en], #, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
     font_host: "fonts.googleapis.com",
-    development: DEV
+    development: DEV,
+    features: {
+      select_and_share: true
+    }
   ),
   Deployment.new(
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
     zone_short: "greatstories.cn",
     font_host: "fonts.useso.com",
-    development: DEV
+    development: DEV,
+    features: {
+      select_and_share: false
+    }
   )
 ])
 set :deployments, DEPLOYMENTS

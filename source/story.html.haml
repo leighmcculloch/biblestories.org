@@ -67,10 +67,11 @@ page_classes: story side-menu-container not-showing-side-menu
       %div= story.audio_copyright
       %div= t(:created_by)
 
-.text-highlighted-container
-  .text-highlighted-shell
-    .text-highlighted-bubble
-      = partial "share-bar"
-    .text-highlighted-arrow
+- if settings.deployment.has_feature?(:select_and_share)
+  .text-highlighted-container
+    .text-highlighted-shell
+      .text-highlighted-bubble
+        = partial "share-bar"
+      .text-highlighted-arrow
 
 = partial "side-menu", :locals => { :active_story => story }
