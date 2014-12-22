@@ -1,6 +1,5 @@
 $color-popup-text: #fff;
 $color-popup-background: #111;
-$color-popup-border: #a9a9a9;
 
 .text-highlighted-container {
   .text-highlighted-shell {
@@ -10,13 +9,22 @@ $color-popup-border: #a9a9a9;
       background-color: $color-popup-background;
       padding: 10px 5px;
       border-radius: 5px;
-      border: 1px solid $color-popup-border;
       color: $color-popup-text;
       a {
         color: $color-popup-text;
         text-decoration: none;
         padding: 10px;
       }
+    }
+    .text-highlighted-arrow {
+      width: 12px;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid $color-popup-background;
+      text-indent: -9999px;
     }
   }
 }
