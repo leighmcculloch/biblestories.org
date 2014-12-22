@@ -105,7 +105,7 @@ $(function() {
         audioTime: true,
         userTiming: true
       });
-      $control.click(function(ev){
+      $control.click(function(ev) {
         ev.preventDefault();
         var $source = $(audio).find('source');
         $source.attr('src', $source.data('src'));
