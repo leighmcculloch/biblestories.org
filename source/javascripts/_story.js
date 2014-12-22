@@ -128,8 +128,13 @@ $(function() {
   $('.text').highlightAndPopup({
     selector: '.text-highlighted-container',
     minChars: 3,
-    complete: function(text) {
-      // todo save text somewhere for share
+    highlighted: function(text) {
+      var shareTail = " from '" + $('.story .title h1').text() + "'";
+      var shareText = "\"" + text.trim().substring(0,140-shareTail.length-28).trim() + "..\"" + shareTail;
+      addthis.update('share', 'title', shareText);
+    },
+    unhighlighted: function() {
+      addthis.update('share', 'title', window.document.title);
     }
   });
 });

@@ -17,7 +17,8 @@
       var settings = $.extend({
         selector: '.highlighter-container',
         minChars: 0,
-        complete: function() {}
+        highlighted: function() {},
+        unhighlighted: function() {}
       }, options);
       var isDown = false;
       var selectionCheckTimerId = null;
@@ -47,7 +48,6 @@
         }
         function getPageOffset() {
           var top, left;
-          
           if (typeof window.pageYOffset === 'number') {
             top = window.pageYOffset;
             left = window.pageXOffset;
@@ -85,6 +85,12 @@
           return { top: top, left: left, width: width, height: height };
         }
 
+        function deactivatePopup() {
+          $(settings.selector).hide(0, function() {
+            settings.unhighlighted();
+          });
+        }
+
         function activatePopup() {
           var $popup = $(settings.selector);
           var selection = getSelectionDimensions();
@@ -94,7 +100,7 @@
             $(settings.selector).css('top', top + 'px');
             $(settings.selector).css('left', left + 'px');
             $(settings.selector).show(0, function() {
-              settings.complete(getSelectionText());
+              settings.highlighted(getSelectionText());
             });
           });
         }
@@ -104,7 +110,7 @@
         setInterval(function() {
           var selectionText = getSelectionText();
           if (isDown || selectionText.length < settings.minChars) {
-            $(settings.selector).hide();
+            deactivatePopup();
           } else {
             activatePopup();
           }
