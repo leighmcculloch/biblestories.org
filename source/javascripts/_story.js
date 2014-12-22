@@ -119,7 +119,7 @@ $(function() {
       });
     } else {
       $control.click(function(ev){
-          ga('send', 'event', 'Listen', 'direct');
+        ga('send', 'event', 'Listen', 'direct');
       });
     }
   }

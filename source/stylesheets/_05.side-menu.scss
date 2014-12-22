@@ -126,7 +126,7 @@ $width-super-compact: 320px;
       .addthis_sharing_toolbox {
         text-align: center;
         a {
-          margin: 0 10px;
+          padding: 0 10px;
           font-size: 21px;
           color: $color-side-menu-share-icon;
           text-decoration: none;
@@ -183,7 +183,7 @@ $width-super-compact: 320px;
         .addthis_sharing_toolbox {
           text-align: right;
           .addthis_button_more {
-            margin-right: 0;
+            padding-right: 0;
           }
         }
       }
