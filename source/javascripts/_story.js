@@ -123,4 +123,13 @@ $(function() {
       });
     }
   }
+
+  /* highlighting */
+  $('.text').highlightAndPopup({
+    selector: '.text-highlighted-container',
+    minChars: 3,
+    complete: function(text) {
+      // todo save text somewhere for share
+    }
+  });
 });

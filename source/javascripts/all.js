@@ -4,6 +4,7 @@
  *= require vendor/_fastclick
  *= require vendor/_jquery.ga-playlength
  *= require vendor/_jquery.ga-scrolldepth
+ *= require vendor/_jquery.medium-highlight-and-popup
  *= require _ga
  *= require _iscompact
  *= require _shared

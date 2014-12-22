@@ -1,0 +1,22 @@
+$color-popup-text: #fff;
+$color-popup-background: #111;
+$color-popup-border: #a9a9a9;
+
+.text-highlighted-container {
+  .text-highlighted-shell {
+    position: relative;
+    margin-bottom: 10px;
+    .text-highlighted-bubble {
+      background-color: $color-popup-background;
+      padding: 10px 5px;
+      border-radius: 5px;
+      border: 1px solid $color-popup-border;
+      color: $color-popup-text;
+      a {
+        color: $color-popup-text;
+        text-decoration: none;
+        padding: 10px;
+      }
+    }
+  }
+}
