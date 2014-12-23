@@ -35,6 +35,8 @@ DEPLOYMENT_ID = ENV['DEPLOYMENT'].to_i
 DEPLOYMENT = DEPLOYMENTS[DEPLOYMENT_ID]
 set :deployment, DEPLOYMENT
 
+set :ga_id, "UA-1756782-37"
+
 # dev
 # if DEV
 #   configure :development do

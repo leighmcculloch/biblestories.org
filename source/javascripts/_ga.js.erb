@@ -18,7 +18,7 @@ $(function() {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   <% end %>
 
-  ga('create', 'UA-1756782-37', {
+  ga('create', '<%= settings.ga_id %>', {
     'cookieDomain': '<%= settings.deployment.host %>'
   });
   ga('require', 'displayfeatures');
