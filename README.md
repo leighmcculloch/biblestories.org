@@ -4,7 +4,10 @@ Have you seen someone share a Bible verse? Probably. Have you seen someone share
 
 [Great Stories](http://greatstories.org) presents the bible as short stories. Jump in, read a story and share it.
 
-## Code for the Kingdom
+![](README-1.png)
+![](README-2.png)
+
+#### Code for the Kingdom
 
 Great Stories was an entry at the [Code for the Kingdom](http://codeforthekingdom.org/) Hackathon, 2014 in Redwood City, that won a runner up prize.
 
