@@ -4,6 +4,11 @@ Have you seen someone share a Bible verse? Probably. Have you seen someone share
 
 [Great Stories](http://greatstories.org) presents the bible as short stories. Jump in, read a story and share it.
 
+Live at:
+
+* http://greatstoriesofthebible.org/
+* http://greatstoriesofthebible.cn/
+
 ![](README-1.png)
 ![](README-2.png)
 
