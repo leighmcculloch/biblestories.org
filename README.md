@@ -14,11 +14,9 @@ Live at:
 
 #### Code for the Kingdom
 
-Great Stories was an entry at the [Code for the Kingdom](http://codeforthekingdom.org/) Hackathon, 2014 in Redwood City, that won a runner up prize.
+Great Stories was an entry at the [Code for the Kingdom](http://codeforthekingdom.org/) Hackathon, 2014 in Redwood City, that won a runner up prize. See the pitch at [youtube.com/watch?v=rbaMSLCMbrg](https://www.youtube.com/watch?v=rbaMSLCMbrg).
 
-See the pitch at [youtube.com/watch?v=rbaMSLCMbrg](https://www.youtube.com/watch?v=rbaMSLCMbrg).
-
-------
+#### Credits and Thanks
 
 Created by [Leigh McCulloch](https://leighmcculloch.com). Design by [Jason Burkholder](http://jtburkholder.com/).
 
