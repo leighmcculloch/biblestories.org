@@ -89,6 +89,11 @@ after_configuration do
       end
     end
 
+    # each moved story page
+    data.redirects.each do |from, to|
+      redirect "#{prefix}/#{from}", "#{prefix}/#{to}"
+    end
+
     I18n.locale = I18n.default_locale
   end
 end
@@ -178,6 +183,13 @@ activate :s3_sync do |s3_sync|
   s3_sync.acl                        = "public-read"
   s3_sync.encryption                 = false
   s3_sync.version_bucket             = false
+end
+
+# redirects on s3
+activate :s3_redirect do |config|
+  config.bucket                = DEPLOYMENT.host
+  config.region                = "us-east-1"
+  config.after_build           = true
 end
 
 # unless DEV
