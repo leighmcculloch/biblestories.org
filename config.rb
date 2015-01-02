@@ -9,7 +9,7 @@ set :development, DEV
 
 DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
-    locales: [:en], #, :es],
+    locales: DEV ? [:en, :es] : [:en],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
     font_host: "fonts.googleapis.com",
@@ -53,22 +53,21 @@ set :images_dir, 'images'
 activate :i18n, :langs => DEPLOYMENTS.locales
 set :locales, DEPLOYMENTS.locales
 
-# hacking the html mime type
+# hacking the html mime type in the pages section below
 #  • pages without the html extension have their filename added to the `text/html` mime type as
 #    an extension so that they will be associated with that mimetype in the s3_sync gem
 #  • the story pages do not have extensions, so they are all added
 #  • re-index the extensions for the `text/html` mime type now that we've hacked it
-mime_type_html = MIME::Types["text/html"].first
-mime_type_html.add_extensions(Stories.all_short_urls)
-MIME::Types.index_extensions(mime_type_html)
 
 # pages
 ignore 'story.html'
 after_configuration do
+  mime_type_html = MIME::Types["text/html"].first
+
   DEPLOYMENT.locales.each_with_index do |lang, index|
     I18n.locale = lang
 
-    prefix = lang.to_s if index > 0
+    prefix = "/#{lang.to_s}" if index > 0
 
     # index page
     if prefix
@@ -82,12 +81,16 @@ after_configuration do
     end
 
     # each story page
+    page_paths = []
     Stories.all.each do |story_short_url, story|
       page_path = "#{prefix}/#{story_short_url}"
+      page_paths << page_path
       page page_path, :proxy => "/story.html", :content_type => "text/html; charset=utf-8", :locals => { :story => story }, :locale => lang do
         I18n.locale = lang
       end
     end
+
+    mime_type_html.add_extensions(page_paths.map { |page_path| page_path.sub(/^\//, "") })
 
     # each moved story page
     data.redirects.each do |from, to|
@@ -96,6 +99,8 @@ after_configuration do
 
     I18n.locale = I18n.default_locale
   end
+
+  MIME::Types.index_extensions(mime_type_html)
 end
 
 # icons
