@@ -29,9 +29,9 @@ es:
     Genesis:      Génesis
     Exodus:       Éxodo
     Numbers:      Números
-    Joshua:       Joshua
+    Joshua:       Josué
     Judges:       Jueces
-    Ruth:         Ruth
+    Ruth:         Rut
     1_Samuel:     1 Samuel
     2_Samuel:     2 Samuel
     1_Kings:      1 Reyes
@@ -40,15 +40,15 @@ es:
     2_Chronicles: 2 Crónicas
     Ezra:         Esdras
     Nehemiah:     Nehemías
-    Esther:       Esther
-    Job:          Trabajo
+    Esther:       Ester
+    Job:          Job
     Ezekiel:      Ezequiel
     Daniel:       Daniel
     Jonah:        Jonás
     Matthew:      Mateo
     Mark:         Marcos
     Luke:         Lucas
-    John:         John
+    John:         Juan
     Acts:         Hechos
 
   bible_book_author:
@@ -62,7 +62,7 @@ es:
     Matthew:      Mateo (recaudador de impuestos)
     Mark:         Marcos
     Luke:         Lucas (un médico)
-    John:         John (un discípulo)
+    John:         Juan (un discípulo)
     Acts:         Lucas (un médico)
 
   # Títulos Story

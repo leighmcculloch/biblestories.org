@@ -1,19 +1,28 @@
 zh-Hans:
-  language: 简化字
-  title: 伟大的圣经故事
-  title_short: 伟大的圣经故事
-  description: 目录
-  created_by: 由 Leigh McCulloch 制作。
-  tyndale_thanks:
+  language                     : 简化字
+  title                        : 伟大的圣经故事
+  title_short                  : 伟大的圣经故事
+  description                  : 目录
+  created_by                   : 由 Leigh McCulloch 制作。
+  thanks                       : Thanks to Tyndale House Publishing Inc. for permission to use the "Great Stories of the Bible" index, found as an appendix in some publications of the New Living Translation Bibles.
 
-  search_placeholder: 搜索圣经故事…
-  search_placeholder_side_menu: 搜索圣经故事…
+  meta_description             : 目录
 
-  story_text_smaller: 小
-  story_text_larger: 大
-  audio_label: 收听
+  search_placeholder           : 搜索圣经故事…
+  search_placeholder_side_menu : 搜索圣经故事…
+  search_no_results            : No results
+
+  story_text_smaller           : 小
+  story_text_larger            : 大
+  audio_label                  : 收听
+  story_verses_long            : Verses
+  story_verses_short           : V
 
   story_written_by: 作者
+  story_in                     : in
+  story_read_more              : Read the surrounding text of %{bible_ref}
+  story_find_other             : Find other great stories in the Bible
+  story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
 
   # Bible book titles
   bible_book:
@@ -46,19 +55,15 @@ zh-Hans:
     Genesis:      Moses
     Exodus:       Moses
     Numbers:      Moses
-    1_Chronicles: Ezra the scribe
-    2_Chronicles: Ezra the scribe
-    Ezra:         Ezra the scribe
-    Nehemiah:     Ezra the scribe
     Esther:       a Persian Jew
     Ezekiel:      Ezekiel
     Daniel:       Daniel
-    Jonah:        Jonah the prophet
-    Matthew:      Matthew the tax collector
+    Jonah:        Jonah (a prophet)
+    Matthew:      Matthew (a tax collector)
     Mark:         Mark
-    Luke:         Luke the physician
-    John:         John the disciple
-    Acts:         Luke the physician
+    Luke:         Luke (a physician)
+    John:         John (a disciple)
+    Acts:         Luke (a physician)
 
   # Story titles
   story:
