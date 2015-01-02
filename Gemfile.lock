@@ -1,5 +1,7 @@
-PATH
-  remote: ../middleman-s3_redirect
+GIT
+  remote: git@github.com:leighmcculloch/middleman-s3_redirect.git
+  revision: 1f58f2530793ffbd81e90d5bbfc741fb1560a507
+  branch: directoryless-redirect
   specs:
     middleman-s3_redirect (3.0.6)
       fog (>= 1.25.0)
