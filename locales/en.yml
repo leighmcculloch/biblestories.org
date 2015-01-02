@@ -1,28 +1,28 @@
 en:
-  language: English
-  title: Great Stories of the Bible
-  title_short: Great Stories
-  description: A story index of the Bible
-  created_by: Created by <a href="http://leighmcculloch.com">Leigh McCulloch</a> &amp; <a href="http://jtburkholder.com/">Jason Burkholder</a>.
-  thanks: Thanks to Tyndale House Publishing Inc. for permission to use the "Great Stories of the Bible" index, found as an appendix in some publications of the New Living Translation Bibles.
+  language                     : English
+  title                        : Great Stories of the Bible
+  title_short                  : Great Stories
+  description                  : A story index of the Bible
+  created_by                   : Created by <a href="http://leighmcculloch.com">Leigh McCulloch</a> &amp; <a href="http://jtburkholder.com/">Jason Burkholder</a>.
+  thanks                       : Thanks to Tyndale House Publishing Inc. for permission to use the "Great Stories of the Bible" index, found as an appendix in some publications of the New Living Translation Bibles.
 
-  meta_description: An index of stories in the bible. Read and listen to bible stories.
+  meta_description             : An index of stories in the bible. Read and listen to bible stories.
 
-  search_placeholder: Search by story or author
-  search_placeholder_side_menu: Search stories
-  search_no_results: No results
+  search_placeholder           : Search by story or author
+  search_placeholder_side_menu : Search stories
+  search_no_results            : No results
 
-  story_text_smaller: A
-  story_text_larger: A
-  audio_label: Listen
-  story_verses_long: Verses
-  story_verses_short: V
+  story_text_smaller           : A
+  story_text_larger            : A
+  audio_label                  : Listen
+  story_verses_long            : Verses
+  story_verses_short           : V
 
-  story_written_by: written by
-  story_in: in
-  story_read_more: Read the surrounding text of %{bible_ref}
-  story_find_other_great_stories_in_the_bible: Find other great stories in the Bible
-  story_author_disclaimer: Some scholars believe %{title} to be written by %{author}.
+  story_written_by             : written by
+  story_in                     : in
+  story_read_more              : Read the surrounding text of %{bible_ref}
+  story_find_other             : Find other great stories in the Bible
+  story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
 
   # Bible book titles
   bible_book:
