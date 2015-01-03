@@ -197,13 +197,13 @@ activate :s3_redirect do |config|
   config.after_build           = true
 end
 
-# unless DEV
-#   activate :cdn do |cdn|
-#     cdn.cloudflare = {
-#       zone: config[:base_zone],
-#       base_urls: [config[:base_url]]
-#     }
-#     cdn.filter = /.*/
-#     cdn.after_build = true
-#   end
-# end
+unless DEV
+  activate :cdn do |cdn|
+    cdn.cloudflare = {
+      zone: DEPLOYMENT.zone,
+      base_urls: DEPLOYMENT.base_url
+    }
+    cdn.filter = /.*/
+    cdn.after_build = true
+  end
+end
