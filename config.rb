@@ -3,6 +3,7 @@ require 'lib/story'
 require 'deployment'
 require 'deployments'
 require 'cache'
+require 'builder'
 
 DEV = !!ENV['DEV']
 set :development, DEV
@@ -15,7 +16,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     font_host: "fonts.googleapis.com",
     development: DEV,
     features: {
-      select_and_share: true
+      select_and_share: true,
+      sitemap: true
     }
   ),
   Deployment.new(
@@ -25,7 +27,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     font_host: "fonts.useso.com",
     development: DEV,
     features: {
-      select_and_share: false
+      select_and_share: false,
+      sitemap: true
     }
   )
 ])
@@ -76,7 +79,7 @@ after_configuration do
     else
       page_path = "/index.html"
     end
-    page page_path, :proxy => page_proxy, :content_type => "text/html; charset=utf-8", :locale => lang do
+    page page_path, :proxy => page_proxy, :content_type => "text/html", :locale => lang do
       I18n.locale = lang
     end
 
@@ -85,7 +88,7 @@ after_configuration do
     Stories.all.each do |story_short_url, story|
       page_path = "#{prefix}/#{story_short_url}"
       page_paths << page_path
-      page page_path, :proxy => "/story.html", :content_type => "text/html; charset=utf-8", :locals => { :story => story }, :locale => lang do
+      page page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang do
         I18n.locale = lang
       end
     end
@@ -101,6 +104,15 @@ after_configuration do
   end
 
   MIME::Types.index_extensions(mime_type_html)
+end
+
+# sitemap
+ready do
+  if settings.deployment.has_feature?(:sitemap)
+    page "/sitemap.xml", :layout => false
+  else
+    ignore "/sitemap.xml"
+  end
 end
 
 # icons

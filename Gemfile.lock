@@ -302,6 +302,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   filecache
   middleman (~> 3.3.3)
   middleman-autoprefixer

@@ -31,12 +31,12 @@ class Deployments
 
   def base_url(locale:)
     deployment = deployment_for(locale: locale)
-    deployment.base_url if deployment
+    deployment.base_url(locale: locale) if deployment
   end
 
   def base_url_short(locale:)
     deployment = deployment_for(locale: locale)
-    deployment.base_url_short if deployment
+    deployment.base_url_short(locale: locale) if deployment
   end
 
   private
