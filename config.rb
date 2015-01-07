@@ -73,32 +73,22 @@ after_configuration do
     prefix = "/#{lang.to_s}" if index > 0
 
     # index page
-    if prefix
-      page_path = "#{prefix}/index.html"
-      page_proxy = "/index.html"
-    else
-      page_path = "/index.html"
-    end
-    page page_path, :proxy => page_proxy, :content_type => "text/html", :locale => lang do
-      I18n.locale = lang
-    end
+    page_proxy = "/index.html" if prefix
+    page("#{prefix}/index.html", :proxy => page_proxy, :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    page("#{prefix}/404.html", :proxy => "/index.html", :content_type => "text/html", :locale => lang) { I18n.locale = lang }
 
     # each story page
     page_paths = []
     Stories.all.each do |story_short_url, story|
       page_path = "#{prefix}/#{story_short_url}"
       page_paths << page_path
-      page page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang do
-        I18n.locale = lang
-      end
+      page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang) { I18n.locale = lang }
     end
 
     mime_type_html.add_extensions(page_paths.map { |page_path| page_path.sub(/^\//, "") })
 
     # each moved story page
-    data.redirects.each do |from, to|
-      redirect "#{prefix}/#{from}", "#{prefix}/#{to}"
-    end
+    data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
 
     I18n.locale = I18n.default_locale
   end
@@ -150,7 +140,6 @@ configure :build do
   activate :minify_javascript
   activate :gzip, :exts => [".js", ".css", ".html", ""]
   activate :asset_hash, :ignore => [/^(images|fonts)\//]
-  activate :relative_assets
   activate :favicon_maker, :icons => {
     "_favicon.png" => [
       { icon: "favicon-196x196.png" },                                  # For Android Chrome M31+.
