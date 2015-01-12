@@ -1,5 +1,7 @@
 # Great Stories of the Bible
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/leighmcculloch/greatstoriesofthebible.org?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Have you seen someone share a Bible verse? Probably. Have you seen someone share an entire Bible story? Probably not. Why is this? We share links to long form articles everyday. It’s the relationship we have to linking to a chunk of text vs linking to a story. We share verses as an intellectual exercise, but the Bible is about people and God, characters and their relationships.
 
 [Great Stories](http://greatstories.org) presents the bible as short stories. Jump in, read and share.
