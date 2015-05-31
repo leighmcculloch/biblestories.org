@@ -9,7 +9,7 @@ xml.urlset(
 
   # home page
   xml.url do
-    xml.loc(settings.deployments.base_url(locale: :en))
+    xml.loc(settings.deployment.base_url)
     xml.lastmod(Time.now.strftime("%Y-%m-%d"))
     settings.deployments.locales.each do |locale|
       xml.xhtml(:link, :rel=>"alternate", :hreflang=>locale, :href=>settings.deployments.base_url(locale: locale))
@@ -19,7 +19,7 @@ xml.urlset(
   # stories
   Stories.all.each do |story_short_url, story|
     xml.url do
-      xml.loc("#{settings.deployments.base_url(locale: :en)}/#{story_short_url}")
+      xml.loc("#{settings.deployment.base_url}/#{story_short_url}")
       xml.lastmod(Time.now.strftime("%Y-%m-%d"))
       settings.deployments.locales.each do |locale|
         xml.xhtml(:link, :rel=>"alternate", :hreflang=>locale, :href=>"#{settings.deployments.base_url(locale: locale)}/#{story_short_url}")
