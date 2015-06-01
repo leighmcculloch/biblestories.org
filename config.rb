@@ -73,9 +73,8 @@ after_configuration do
     prefix = "/#{lang.to_s}" if index > 0
 
     # index page
-    page_proxy = "/index.html" if prefix
-    page("#{prefix}/index.html", :proxy => page_proxy, :content_type => "text/html", :locale => lang) { I18n.locale = lang }
-    page("#{prefix}/404.html", :proxy => "/index.html", :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    page("#{prefix}/index.html", :proxy => ("/index.html" if prefix), :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    page("#{prefix}/404.html", :proxy => ("/404.html" if prefix), :content_type => "text/html", :locale => lang, :locals => { :error => 404 }) { I18n.locale = lang }
 
     # each story page
     page_paths = []

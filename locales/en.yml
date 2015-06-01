@@ -24,6 +24,9 @@ en:
   story_find_other             : Find other great stories in the Bible
   story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
 
+  page_not_found               : Page not found.
+  page_not_found_description   : The page you were looking for doesn't exist.<br/>Not to worry, head over to the <a href="/">homepage</a> to find what you're looking for.
+
   # Bible book titles
   bible_book:
     Genesis:      Genesis

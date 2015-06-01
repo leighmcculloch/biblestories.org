@@ -16,6 +16,8 @@ page_classes: index
     .item.language.language-2
       = partial "language-selector"
 
+  = partial "404" if defined?(error) && error == 404
+
   .search
     .search-box
       %form
