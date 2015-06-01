@@ -4,14 +4,18 @@ require_relative "apis/digital_bible_platform_api"
 
 class Apis
   LOCALE_TO_API_TEXT_MAP = {
-      :en => CrosswayApi,
-      :es => BiblesorgApi,
-      :"zh-Hans" => BiblesorgApi,
+      :"en" => CrosswayApi, # English
+      :"zh-Hans" => BiblesorgApi, # Chinese Simplified
+      :"es" => BiblesorgApi, # Spanish (Spain)
+      # :"es-419" => BiblesorgApi, # Spanish (Latin America)
+      :"fr" => BiblesorgApi, # French
+      :"pt" => BiblesorgApi, # Portuguese
+      :"pt-BR" => BiblesorgApi, # Portuguese (Brazil)
   }
   LOCALE_TO_API_AUDIO_MAP = {
-      :en => CrosswayApi,
-      :es => DigitalBiblePlatformApi,
+      :"en" => CrosswayApi,
       :"zh-Hans" => DigitalBiblePlatformApi,
+      # :"es" => DigitalBiblePlatformApi,
   }
 
   def self.get_text(bible_ref)

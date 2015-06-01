@@ -34,5 +34,5 @@ page_classes: index
     = t(:search_no_results)
 
   .footer
-    %div= t(:thanks)
-    %div= t(:created_by)
+    %div= t(:thanks) if I18n.locale == :en
+    %div= t(:created_by) if I18n.locale == :en

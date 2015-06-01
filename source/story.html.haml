@@ -34,12 +34,11 @@ page_classes: story side-menu-container not-showing-side-menu
         %i.logo.icon-leaf= icon(:leaf)
         %h1= story.title
         %h2
+          - bible_ref_link = %(<a class="bible_ref" href="#{story.read_more_url}">#{story.bible_ref}</a>)
           - if story.author
-            = t(:story_written_by)
-            %span.author= story.author + "*"
-            = t(:story_in)
-          %a.bible_ref{:href=>story.read_more_url}
-            = story.bible_ref
+            = t(:story_written_by, :author=>story.author, :bible_ref=>bible_ref_link)
+          - else
+            = bible_ref_link
       - if story.audio_info && story.audio_info.length == 1
         .audio-player{:style=>"display:none;"}
           - story.audio_info.each do |audio_info|
@@ -65,7 +64,7 @@ page_classes: story side-menu-container not-showing-side-menu
           = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
       %div= story.text_copyright
       %div= story.audio_copyright
-      %div= t(:created_by)
+      %div= t(:created_by) if I18n.locale == :en
 
 - if settings.deployment.has_feature?(:select_and_share)
   .text-highlighted-container

@@ -1,5 +1,6 @@
 es:
   language                     : Español
+
   title                        : Grandes Historias de la Biblia
   title_short                  : Grandes Historias
   description                  : Un índice de la historia de la Biblia
@@ -16,13 +17,11 @@ es:
   story_verses_long            : Versos
   story_verses_short           : V
 
-  story_written_by             : escrito por
-  story_in                     : en
   story_read_more              : Leer el texto de alrededor de% {bible_ref}
   story_find_other             : Encuentra otras grandes historias de la Biblia
   story_author_disclaimer      : Algunos eruditos creen% {title} a ser escrita por% {author}.
 
-  # Títulos de los libros de la Biblia
+  # Bible book titles
   bible_book:
     Genesis:      Génesis
     Exodus:       Éxodo
@@ -63,7 +62,7 @@ es:
     John:         Juan (un discípulo)
     Acts:         Lucas (un médico)
 
-  # Títulos Story
+  # Story titles
   story:
     title:
       the_creation:                     La Creación

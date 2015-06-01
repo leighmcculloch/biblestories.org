@@ -1,5 +1,6 @@
 zh-Hans:
   language                     : 简化字
+
   title                        : 伟大的圣经故事
   title_short                  : 伟大的圣经故事
   description                  : 目录
@@ -8,19 +9,10 @@ zh-Hans:
 
   search_placeholder           : 搜索圣经故事…
   search_placeholder_side_menu : 搜索圣经故事…
-  search_no_results            : No results
 
   story_text_smaller           : 小
   story_text_larger            : 大
   audio_label                  : 收听
-  story_verses_long            : Verses
-  story_verses_short           : V
-
-  story_written_by: 作者
-  story_in                     : in
-  story_read_more              : Read the surrounding text of %{bible_ref}
-  story_find_other             : Find other great stories in the Bible
-  story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
 
   # Bible book titles
   bible_book:

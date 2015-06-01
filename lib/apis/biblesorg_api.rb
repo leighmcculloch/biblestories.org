@@ -3,9 +3,12 @@ class BiblesorgApi
   API_URL_TEXT = "https://bibles.org/v2/passages.js"
 
   LOCALE_TO_VERSION_MAP = {
-    :en => "eng-MSG",
-    :es => "spa-DHH",
+    :"en" => "eng-MSG",
+    :"es" => "spa-DHH",
     :"zh-Hans" => "zho-RCUVSS",
+    :"fr" => "fra-NBS",
+    :"pt" => "por-BPT09",
+    :"pt-BR" => "por-NTLH",
   }
 
   def self.get_version_for_locale
