@@ -22,6 +22,8 @@ zh-Hans:
   story_find_other             : 发现《圣经》中其它精彩的故事
   story_author_disclaimer      : 一些学者认为 %{title} 是由 %{author} 撰写的。
 
+  copyright_audio_preix        : 声音
+
   page_not_found               : 未找到页面。
   page_not_found_description   : 你所查询的页面不存在。别担心，请前往 <a href="/">主页</a>  找寻你所需要的内容。
 

@@ -104,7 +104,7 @@ class DigitalBiblePlatformApi
     audio_info = self.get_audio_info(bible_ref)
     audio = {
       :audio_info => audio_info,
-      :copyright => "Audio: #{self.get_copyright}",
+      :copyright => "#{I18n.t(:audio)}: #{self.get_copyright}",
     }
     audio
   end

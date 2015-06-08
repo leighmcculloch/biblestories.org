@@ -22,9 +22,11 @@ es:
   story_find_other             : Encuentre otros grandes relatos de la Biblia
   story_author_disclaimer      : Algunos estudiosos creen que %{title} fue escrito por %{author}.
 
+  copyright_audio_preix        : Audio
+
   page_not_found               : No se ha encontrado la página.
   page_not_found_description   : La página que estaba buscando no existe.<br/>No se preocupe, diríjase a la <a href="/">página de inicio</a> para encontrar lo que busca.
-
+  
   # Bible book titles
   bible_book:
     Genesis:      Génesis
