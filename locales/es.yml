@@ -1,29 +1,29 @@
 es:
   language                     : Español
 
-  title                        : Great Stories of the Bible
-  title_short                  : Great Stories
-  description                  : A story index of the Bible
+  title                        : Grandes relatos de la Biblia
+  title_short                  : Grandes relatos
+  description                  : Un índice de relatos de la Biblia
 
-  meta_description             : An index of stories in the bible. Read and listen to bible stories.
+  meta_description             : Un índice de relatos de la biblia. Lea y escuche relatos bíblicos.
 
-  search_placeholder           : Search by story or author
-  search_placeholder_side_menu : Search stories
-  search_no_results            : No results
+  search_placeholder           : Buscar por relato o autor
+  search_placeholder_side_menu : Buscar relatos
+  search_no_results            : Sin resultados
 
   story_text_smaller           : A
   story_text_larger            : A
-  audio_label                  : Listen
-  story_verses_long            : Verses
+  audio_label                  : Escuchar
+  story_verses_long            : Versos
   story_verses_short           : V
 
-  story_written_by             : written by %{author}* in %{bible_ref}
-  story_read_more              : Read the surrounding text of %{bible_ref}
-  story_find_other             : Find other great stories in the Bible
-  story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
+  story_written_by             : escrito por %{author}* en %{bible_ref}
+  story_read_more              : Lea el texto circundante de %{bible_ref}
+  story_find_other             : Encuentre otros grandes relatos de la Biblia
+  story_author_disclaimer      : Algunos estudiosos creen que %{title} fue escrito por %{author}.
 
-  page_not_found               : Page not found.
-  page_not_found_description   : The page you were looking for doesn't exist.<br/>Not to worry, head over to the <a href="/">homepage</a> to find what you're looking for.
+  page_not_found               : No se ha encontrado la página.
+  page_not_found_description   : La página que estaba buscando no existe.<br/>No se preocupe, diríjase a la <a href="/">página de inicio</a> para encontrar lo que busca.
 
   # Bible book titles
   bible_book:
@@ -53,136 +53,136 @@ es:
     Acts:         Hechos
 
   bible_book_author:
-    Genesis:      Moses
-    Exodus:       Moses
-    Numbers:      Moses
-    Esther:       a Persian Jew
-    Ezekiel:      Ezekiel
+    Genesis:      Moisés
+    Exodus:       Moisés
+    Numbers:      Moisés
+    Esther:       un judío persa
+    Ezekiel:      Ezequiel
     Daniel:       Daniel
-    Jonah:        Jonah (a prophet)
-    Matthew:      Matthew (a tax collector)
-    Mark:         Mark
-    Luke:         Luke (a physician)
-    John:         John (a disciple)
-    Acts:         Luke (a physician)
+    Jonah:        Jonás (un profeta)
+    Matthew:      Mateo (un recaudador de impuestos)
+    Mark:         Marcos
+    Luke:         Lucas (un médico)
+    John:         Juan (un discípulo)
+    Acts:         Lucas (un médico)
 
   # Story titles
   story:
     title:
-      the_creation:                     The Creation
-      adam_and_eve:                     Adam and Eve
-      cain_and_abel:                    Cain and Abel
-      the_great_flood:                  The Great Flood
-      the_tower_of_babel:               The Tower of Babel
-      god_calls_abraham:                God Calls Abraham
-      sodom_and_gomorrah:               Sodom and Gomorrah
-      abrahams_obedience:               Abraham's Obedience
-      isaac_marries_rebekah:            Isaac Marries Rebekah
-      esaus_birthright:                 Esau's Birthright
-      isaac_blesses_jacob:              Isaac Blesses Jacob
-      jacob_and_laban:                  Jacob and Laban
-      jacob_wrestles:                   Jacob Wrestles
-      revenge_against_schechem:         Revenge against Shechem
-      joseph_in_prison:                 Joseph in Prison
-      joseph_as_a_ruler:                Joseph as a Ruler
-      family_reunion:                   Family Reunion
-      moses_birth:                      Moses' Birth
-      the_burning_bush:                 The Burning Bush
-      the_ten_plagues:                  The Ten Plagues
-      the_exodus:                       The Exodus
-      the_red_sea:                      The Red Sea
-      the_gold_calf:                    The Gold Calf
-      exploring_the_land:               Exploring the Land
-      rebellion_in_the_ranks:           Rebellion in the Ranks
-      balak_and_balaam:                 Balak and Balaam
-      rahab_and_the_spies:              Rahab and the Spies
-      jericho_falls:                    Jericho Falls
-      gibeons_con_artists:              Gibeon's Con Artists
-      deborah_and_barak:                Deborah and Barak
-      gideon_as_judge:                  Gideon as Judge
-      abimelechs_ambition:              Abimelech's Ambition
-      samson_as_judge:                  Samson as Judge
-      ruth_naomi_and_boaz:              Ruth, Naomi and Boaz
-      samuel_is_born:                   Samuel is Born
-      samuel_the_prophet:               Samuel the Prophet
-      saul_becomes_king:                Saul Becomes King
-      jonathans_bravery:                Jonathan's Bravery
-      sauls_disobedience:               Saul's Disobedience
-      david_kills_goliath:              David Kills Goliath
-      david_and_jonathan:               David and Jonathan
-      nabal_and_abigail:                Nabal and Abigail
-      sauls_death:                      Saul's Death
-      davids_success:                   David's Success
-      david_and_bathsheba:              David and Bathsheba
-      amnon_and_tamar:                  Amnon and Tamar
-      absalom:                          Absalom
-      solomons_wisdom:                  Solomon's Wisdom
-      jeroboam_and_rehoboam:            Jeroboam and Rehoboam
-      elijahs_challenge:                Elijah's Challenge
-      god_speaks_to_elijah:             God Speaks to Elijah
-      micaiah_the_prophet:              Micaiah the Prophet
-      chariot_of_fire:                  Chariot of Fire
-      elisha_heals_naaman:              Elisha Heals Naaman
-      famine_and_unbelief:              Famine and Unbelief
-      joash_and_jehoiada:               Joash and Jehoiada
-      hezekiah_trusts_god:              Hezekiah Trusts God
-      josiahs_reign:                    Josiah's Reign
-      fall_of_jerusalem:                Fall of Jerusalem
-      davids_power:                     David's Power
-      davids_census:                    David's Census
-      jehoshaphat_and_ahab:             Jehoshaphat and Ahab
-      ezra_rebuilds_the_altar:          Ezra Rebuilds the Altar
-      nehemiah_builds_the_wall:         Nehemiah Builds the Wall
-      enemy_opposition:                 Enemy Opposition
-      nehemiahs_justice:                Nehemiah's Justice
-      esther_saves_the_jews:            Esther Saves the Jews
-      job_is_tested:                    Job is Tested
-      ezekiels_vision:                  Ezekiel's Vision
-      the_fiery_furnace:                The Fiery Furnace
-      the_lions_den:                    The Lions' Den
-      jonah:                            Jonah
-      jesus_is_born_by_matthew:         Jesus is Born
-      jesus_is_born_by_luke:            Jesus is Born
-      wise_men_and_king_herod:          Wise Men and King Herod
-      jesus_is_tempted_by_matthew:      Jesus is Tempted
-      jesus_is_tempted_by_mark:         Jesus is Tempted
-      jesus_is_tempted_by_luke:         Jesus is Tempted
-      jesus_feeds_5000_by_matthew:      Jesus Feeds 5,000
-      jesus_feeds_5000_by_mark:         Jesus Feeds 5,000
-      jesus_feeds_5000_by_luke:         Jesus Feeds 5,000
-      jesus_feeds_5000_by_john:         Jesus Feeds 5,000
-      the_bread_of_life:                The Bread of Life
-      jesus_walks_on_water_by_matthew:  Jesus Walks on Water
-      jesus_walks_on_water_by_mark:     Jesus Walks on Water
-      jesus_walks_on_water_by_john:     Jesus Walks on Water
-      the_good_samaritan:               The Good Samaritan
-      the_lost_son:                     The Lost Son
-      jesus_raises_lazarus:             Jesus Raises Lazarus
-      jesus_and_zacchaeus:              Jesus and Zacchaeus
-      the_triumphal_entry_by_matthew:   The Triumphal Entry
-      the_triumphal_entry_by_luke:      The Triumphal Entry
-      the_triumphal_entry_by_john:      The Triumphal Entry
-      the_last_supper_by_matthew:       The Last Supper
-      the_last_supper_by_mark:          The Last Supper
-      the_last_supper_by_luke:          The Last Supper
-      the_last_supper_by_john:          The Last Supper
-      jesus_trial:                      Jesus' Trial
-      jesus_crucifixion_by_matthew:     Jesus' Crucifixion
-      jesus_crucifixion_by_mark:        Jesus' Crucifixion
-      jesus_crucifixion_by_luke:        Jesus' Crucifixion
-      jesus_crucifixion_by_john:        Jesus' Crucifixion
-      jesus_resurrection_by_matthew:    Jesus' Resurrection
-      jesus_resurrection_by_mark:       Jesus' Resurrection
-      jesus_resurrection_by_luke:       Jesus' Resurrection
-      jesus_resurrection_by_john:       Jesus' Resurrection
-      jesus_ascension_luke:             Jesus' Ascension
-      jesus_ascension_acts:             Jesus' Ascension
-      the_holy_spirit_comes:            The Holy Spirit Comes
-      the_apostles_courage:             The Apostles' Courage
-      ananias_and_sapphira:             Ananias and Sapphira
-      philip_and_the_eunuch:            Philip and the Eunuch
-      saul_encounters_jesus:            Saul Encounters Jesus
-      peter_and_cornelius:              Peter and Cornelius
-      paul_in_corinth:                  Paul in Corinth
-      paul_in_ephesus:                  Paul in Ephesus
-      paul_goes_to_rome:                Paul Goes to Rome
+      the_creation:                     La creación
+      adam_and_eve:                     Adán y Eva
+      cain_and_abel:                    Caín y Abel
+      the_great_flood:                  El diluvio universal
+      the_tower_of_babel:               La torre de Babel
+      god_calls_abraham:                Dios llama a Abraham
+      sodom_and_gomorrah:               Sodoma y Gomorra
+      abrahams_obedience:               La obediencia de Abraham
+      isaac_marries_rebekah:            Isaac se casa con Rebeca
+      esaus_birthright:                 El derecho de primogenitura de Esaú
+      isaac_blesses_jacob:              Isaac bendice a Jacob
+      jacob_and_laban:                  Jacob y Labán
+      jacob_wrestles:                   La lucha de Jacob
+      revenge_against_schechem:         Venganza contra Siquem
+      joseph_in_prison:                 José en la prisión
+      joseph_as_a_ruler:                José, el gobernador
+      family_reunion:                   Los hermanos de José van a Egipto
+      moses_birth:                      El nacimiento de Moisés
+      the_burning_bush:                 La zarza ardiente
+      the_ten_plagues:                  Las diez plagas
+      the_exodus:                       Éxodo
+      the_red_sea:                      El mar Rojo
+      the_gold_calf:                    El becerro de oro
+      exploring_the_land:               La exploración de Canaán
+      rebellion_in_the_ranks:           La rebelión de Coré
+      balak_and_balaam:                 Balac y Balaam
+      rahab_and_the_spies:              Raab y los espías
+      jericho_falls:                    La caída de Jericó
+      gibeons_con_artists:              Astucia de los gabaonitas
+      deborah_and_barak:                Débora y Barac
+      gideon_as_judge:                  Gedeón, juez de Israel
+      abimelechs_ambition:              La ambición de Abimelec
+      samson_as_judge:                  Sansón, juez de Israel
+      ruth_naomi_and_boaz:              Rut, Noemí y Boaz
+      samuel_is_born:                   Nacimiento de Samuel
+      samuel_the_prophet:               Samuel, el profeta
+      saul_becomes_king:                Saúl se convierte en rey
+      jonathans_bravery:                La pelea de Jonatán
+      sauls_disobedience:               La desobediencia de Saúl
+      david_kills_goliath:              David y Goliat
+      david_and_jonathan:               David y Jonatán
+      nabal_and_abigail:                Nabal y Abigaíl
+      sauls_death:                      La muerte de Saúl
+      davids_success:                   David tenía éxito
+      david_and_bathsheba:              David y Betsabé
+      amnon_and_tamar:                  Amnón y Tamar
+      absalom:                          Absalón
+      solomons_wisdom:                  La sabiduría de Salomón
+      jeroboam_and_rehoboam:            Jeroboam y Roboam
+      elijahs_challenge:                El desafío de Elías
+      god_speaks_to_elijah:             El Señor le habla a Elías
+      micaiah_the_prophet:              Micaías, el profeta
+      chariot_of_fire:                  El carro de fuego
+      elisha_heals_naaman:              Eliseo sana a Naamán
+      famine_and_unbelief:              Eliseo y el sitio de Samaria
+      joash_and_jehoiada:               Atalía usurpa el trono
+      hezekiah_trusts_god:              Asiria invade a Judá
+      josiahs_reign:                    La reforma de Josías
+      fall_of_jerusalem:                El sitio de Jerusalén
+      davids_power:                     David es proclamado rey de Israel
+      davids_census:                    David censa al pueblo
+      jehoshaphat_and_ahab:             Josafat y Acab
+      ezra_rebuilds_the_altar:          Restauración del culto
+      nehemiah_builds_the_wall:         Nehemías examina los muros de Jerusalén
+      enemy_opposition:                 Precauciones contra los enemigos
+      nehemiahs_justice:                Abolición de la usura
+      esther_saves_the_jews:            Ester salva a los judíos
+      job_is_tested:                    Job sometido a prueba
+      ezekiels_vision:                  El valle de los huesos secos
+      the_fiery_furnace:                Rescatados del horno de fuego
+      the_lions_den:                    Daniel en el foso de los leones
+      jonah:                            Jonás
+      jesus_is_born_by_matthew:         Nacimiento de Jesús
+      jesus_is_born_by_luke:            Nacimiento de Jesús
+      wise_men_and_king_herod:          El rey Herodes y los reyes magos
+      jesus_is_tempted_by_matthew:      La tentación de Jesús
+      jesus_is_tempted_by_mark:         La tentación de Jesús
+      jesus_is_tempted_by_luke:         La tentación de Jesús
+      jesus_feeds_5000_by_matthew:      Jesús alimenta a cinco mil
+      jesus_feeds_5000_by_mark:         Jesús alimenta a cinco mil
+      jesus_feeds_5000_by_luke:         Jesús alimenta a cinco mil
+      jesus_feeds_5000_by_john:         Jesús alimenta a cinco mil
+      the_bread_of_life:                La multiplicación de los panes
+      jesus_walks_on_water_by_matthew:  Jesús camina sobre el agua
+      jesus_walks_on_water_by_mark:     Jesús camina sobre el agua
+      jesus_walks_on_water_by_john:     Jesús camina sobre el agua
+      the_good_samaritan:               El buen samaritano
+      the_lost_son:                     La parábola de la oveja perdida
+      jesus_raises_lazarus:             La resurrección de Lázaro
+      jesus_and_zacchaeus:              Jesús y Zaqueo
+      the_triumphal_entry_by_matthew:   La entrada triunfal
+      the_triumphal_entry_by_luke:      La entrada triunfal
+      the_triumphal_entry_by_john:      La entrada triunfal
+      the_last_supper_by_matthew:       La última cena
+      the_last_supper_by_mark:          La última cena
+      the_last_supper_by_luke:          La última cena
+      the_last_supper_by_john:          La última cena
+      jesus_trial:                      El arresto de Jesús
+      jesus_crucifixion_by_matthew:     La crucifixión de Jesús
+      jesus_crucifixion_by_mark:        La crucifixión de Jesús
+      jesus_crucifixion_by_luke:        La crucifixión de Jesús
+      jesus_crucifixion_by_john:        La crucifixión de Jesús
+      jesus_resurrection_by_matthew:    La resurrección de Jesús
+      jesus_resurrection_by_mark:       La resurrección de Jesús
+      jesus_resurrection_by_luke:       La resurrección de Jesús
+      jesus_resurrection_by_john:       La resurrección de Jesús
+      jesus_ascension_luke:             La ascensión de Jesús
+      jesus_ascension_acts:             La ascensión de Jesús
+      the_holy_spirit_comes:            Venida del Espíritu Santo
+      the_apostles_courage:             Pedro y Juan ante el concilio
+      ananias_and_sapphira:             Ananías y Safira
+      philip_and_the_eunuch:            Felipe y el etíope
+      saul_encounters_jesus:            La conversión de Saulo
+      peter_and_cornelius:              Pedro y Cornelio
+      paul_in_corinth:                  Pablo en Corinto
+      paul_in_ephesus:                  Pablo en Éfeso
+      paul_goes_to_rome:                Pablo es enviado a Roma

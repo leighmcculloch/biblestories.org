@@ -6,7 +6,7 @@ class Apis
   LOCALE_TO_API_TEXT_MAP = {
       :"en" => CrosswayApi, # English
       :"zh-Hans" => BiblesorgApi, # Chinese Simplified
-      :"es" => BiblesorgApi, # Spanish (Spain)
+      :"es" => BiblesorgApi, # Spanish (Latin America)
       # :"es-419" => BiblesorgApi, # Spanish (Latin America)
       :"fr" => BiblesorgApi, # French
       :"pt" => BiblesorgApi, # Portuguese
@@ -15,7 +15,7 @@ class Apis
   LOCALE_TO_API_AUDIO_MAP = {
       :"en" => CrosswayApi,
       :"zh-Hans" => DigitalBiblePlatformApi,
-      # :"es" => DigitalBiblePlatformApi,
+      :"es" => DigitalBiblePlatformApi,
   }
 
   def self.get_text(bible_ref)

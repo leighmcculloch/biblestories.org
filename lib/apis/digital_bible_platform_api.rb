@@ -6,9 +6,8 @@ class DigitalBiblePlatformApi
   API_URL_COPYRIGHT = "http://dbt.io/library/metadata?key=#{API_KEY}&reply=json&v=2"
   LOCALE_TO_DAMID_MAP = {
       :"en" => "ENGESVN2DA", # English ESV New Testament
-      # :"en" => "ENGWEBN2DA", # English WEB New Testament
       :"zh-Hans" => "CHNUN1N2DA", # Chinese (Simplified) New Testament
-      # :"es" => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
+      :"es" => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
   }
 
   def self.get_damid_for_locale
