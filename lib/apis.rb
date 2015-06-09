@@ -22,7 +22,7 @@ class Apis
     if LOCALE_TO_API_TEXT_MAP.key?(I18n.locale)
       locale = I18n.locale
     else
-      locale = I18n.default_locale
+      raise "No platform defined for locale #{I18n.locale}"
     end
     api = LOCALE_TO_API_TEXT_MAP[locale]
     return nil if api.nil?
@@ -35,7 +35,7 @@ class Apis
     if LOCALE_TO_API_AUDIO_MAP.key?(I18n.locale)
       locale = I18n.locale
     else
-      locale = I18n.default_locale
+      raise "No platform defined for locale #{I18n.locale}"
     end
     api = LOCALE_TO_API_AUDIO_MAP[locale]
     return nil if api.nil?
