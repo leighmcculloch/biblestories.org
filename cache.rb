@@ -10,12 +10,6 @@ end
 
 def get_cache(locale, platform)
   root = "caches"
-  domain =
-    case locale
-    when :en, :es, :"zh-Hans"
-      "api-cache"
-    else
-      "api-cache-#{locale}-#{platform}"
-    end
+  domain = "api-cache-#{locale}-#{platform}"
   FileCache.new(domain, root).extend(GetOrSet)
 end
