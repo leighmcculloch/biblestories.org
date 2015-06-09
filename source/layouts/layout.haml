@@ -20,11 +20,11 @@
 
     %meta{:property=>"og:type", :content=>"website"}
     %meta{:property=>"og:url", :content=>url}
-    %meta{:property=>"og:title", :content=>title}
+    %meta{:property=>"og:title", :content=>(title || t(:title))}
     %meta{:property=>"og:description", :content=>social_description}
     
     %meta{:name=>"twitter:card", :content=>"summary"}
-    %meta{:name=>"twitter:title", :content=>title}
+    %meta{:name=>"twitter:title", :content=>(title || t(:title))}
     %meta{:name=>"twitter:description", :content=>social_description}
 
     %meta{:name=>"viewport", :content=>"width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,    maximum-scale=1"}
