@@ -24,13 +24,13 @@ class Deployment
   end
 
   def base_url(locale: nil)
-    url = "http://#{self.host}"
+    url = "#{protocol}://#{self.host}"
     url << base_url_suffix(locale: locale)
     url
   end
 
   def base_url_short(locale: nil)
-    url = "http://#{self.host_short}"
+    url = "#{protocol}://#{self.host_short}"
     url << base_url_suffix(locale: locale)
     url
   end
@@ -43,5 +43,9 @@ class Deployment
 
   def has_feature?(feature)
     self.features.key?(feature) && self.features[feature]
+  end
+
+  def protocol
+    @development ? "http" : "https"
   end
 end
