@@ -1,4 +1,3 @@
-$cache = FileCache.new("api-cache", "caches")
 module GetOrSet
   def get_or_set(key)
     value = self.get(key)
@@ -8,4 +7,15 @@ module GetOrSet
     value
   end
 end
-$cache.extend(GetOrSet)
+
+def get_cache(locale, platform)
+  root = "caches"
+  domain =
+    case locale
+    when :en, :es, :"zh-Hans"
+      "api-cache"
+    else
+      "api-cache-#{locale}-#{platform}"
+    end
+  FileCache.new(domain, root).extend(GetOrSet)
+end

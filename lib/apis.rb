@@ -26,7 +26,7 @@ class Apis
     end
     api = LOCALE_TO_API_TEXT_MAP[locale]
     return nil if api.nil?
-    $cache.get_or_set("#{locale}_#{api.class.name}_#{bible_ref}_text") do
+    get_cache(locale, api.name).get_or_set("#{locale}_#{api.class.name}_#{bible_ref}_text") do
       api.get_text(bible_ref)
     end
   end
@@ -39,7 +39,7 @@ class Apis
     end
     api = LOCALE_TO_API_AUDIO_MAP[locale]
     return nil if api.nil?
-    $cache.get_or_set("#{locale}_#{api.class.name}_#{bible_ref}_audio") do
+    get_cache(locale, api.name).get_or_set("#{locale}_#{api.class.name}_#{bible_ref}_audio") do
       api.get_audio(bible_ref)
     end
   end
