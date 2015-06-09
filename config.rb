@@ -10,7 +10,7 @@ set :development, DEV
 
 DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
-    locales: DEV ? [:en, :es] : [:en],
+    locales: DEV ? [:en, :es] : [:en, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
     font_host: "fonts.googleapis.com",
