@@ -22,6 +22,7 @@ class CrosswayApi
   def self.get_text(bible_ref)
     url = "#{API_URL_TEXT}#{URI::encode(bible_ref)}"
     response = HTTParty.get(url)
+    raise "Crossway did not return a passage for #{bible_ref}" if response.body =~ /no results/i
     {
         :text => response.body,
         :copyright => %(Scripture taken from The Holy Bible, English Standard Version and Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.),

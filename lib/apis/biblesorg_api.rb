@@ -25,6 +25,7 @@ class BiblesorgApi
     response = HTTParty.get(url, :basic_auth => creds)
     response_json = JSON.parse(response.body)
     passage_info = response_json["response"]["search"]["result"]["passages"][0]
+    raise "Bibles.org did not provide a passage for #{bible_ref}" if passage_info.blank?
     passage_info.merge!({
       "tracking" => response_json["response"]["meta"]["fums"]
     })
