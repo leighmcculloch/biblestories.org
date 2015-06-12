@@ -23,7 +23,8 @@ class Apis
     if LOCALE_TO_API_TEXT_MAP.key?(I18n.locale)
       locale = I18n.locale
     else
-      raise "No platform defined for locale #{I18n.locale}"
+      warn "APIs `get_text`: No platform defined for locale #{I18n.locale}"
+      return nil
     end
     api = LOCALE_TO_API_TEXT_MAP[locale]
     return nil if api.nil?
@@ -36,7 +37,8 @@ class Apis
     if LOCALE_TO_API_AUDIO_MAP.key?(I18n.locale)
       locale = I18n.locale
     else
-      raise "No platform defined for locale #{I18n.locale}"
+      warn "APIs `get_audio`: No platform defined for locale #{I18n.locale}"
+      return nil
     end
     api = LOCALE_TO_API_AUDIO_MAP[locale]
     return nil if api.nil?
