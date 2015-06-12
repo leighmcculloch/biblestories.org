@@ -1,6 +1,32 @@
 pt-BR:
   language                     : Português brasileiro
 
+  title                        : Grandes Histórias da Bíblia
+  title_short                  : Grandes Histórias
+  description                  : Um índice de histórias da Bíblia
+
+  meta_description             : Um índice de histórias da Bíblia. Leia e ouça histórias da Bíblia.
+
+  search_placeholder           : Buscar por história ou autor
+  search_placeholder_side_menu : Buscar histórias
+  search_no_results            : Sem resultados
+
+  story_text_smaller           : A
+  story_text_larger            : A
+  audio_label                  : Ouvir
+  story_verses_long            : Versículos
+  story_verses_short           : V
+
+  story_written_by             : escrito por %{author}* em %{bible_ref}
+  story_read_more              : Leia o contexto em %{bible_ref}
+  story_find_other             : Encontre outras grandes histórias da Bíblia
+  story_author_disclaimer      : Alguns estudiosos acreditam que %{title} foi escrito por %{author}.
+
+  copyright_audio_preix        : Áudio
+
+  page_not_found               : Página não encontrada.
+  page_not_found_description   : A página que você estava procurando não existe.<br/>Não se preocupe, vá para a <a href="/">página inicial</a> para encontrar o que você procura.
+
   # Bible book titles
   bible_book:
     Genesis:      Gênesis
@@ -27,3 +53,141 @@ pt-BR:
     Luke:         Lucas
     John:         João
     Acts:         Atos
+
+  bible_book_author:
+    Genesis:      Moisés
+    Exodus:       Moisés
+    Numbers:      Moisés
+    Esther:       um judeu persa
+    Ezekiel:      Ezequiel
+    Daniel:       Daniel
+    Jonah:        Jonas (um profeta)
+    Matthew:      Mateus (um cobrador de impostos)
+    Mark:         Marcos
+    Luke:         Lucas (um médico)
+    John:         João (um discípulo)
+    Acts:         Lucas (um médico)
+
+  # Story titles
+  story:
+    title:
+      the_creation:                     A Criação
+      adam_and_eve:                     Adão e Eva
+      cain_and_abel:                    Caim e Abel
+      the_great_flood:                  O Grande Dilúvio
+      the_tower_of_babel:               A Torre de Babel
+      god_calls_abraham:                Deus Chama Abraão
+      sodom_and_gomorrah:               Sodoma e Gomorra
+      abrahams_obedience:               A Obediência de Abraão
+      isaac_marries_rebekah:            Isaque se Casa com Rebeca
+      esaus_birthright:                 Os Direitos de Esaú
+      isaac_blesses_jacob:              Isaque Abençoa Jacó
+      jacob_and_laban:                  Jacó e Labão
+      jacob_wrestles:                   Jacó Luta
+      revenge_against_schechem:         Vingança contra Siquém
+      joseph_in_prison:                 José na Prisão
+      joseph_as_a_ruler:                José como Governador
+      family_reunion:                   Reencontro de Família
+      moses_birth:                      O Nascimento de Moisés
+      the_burning_bush:                 O Espinheiro em Chamas
+      the_ten_plagues:                  As Dez Pragas
+      the_exodus:                       O Êxodo
+      the_red_sea:                      O Mar Vermelho
+      the_gold_calf:                    O Bezerro de Ouro
+      exploring_the_land:               Explorando a Terra
+      rebellion_in_the_ranks:           A Rebelião de Corá
+      balak_and_balaam:                 Balaque e Balaão
+      rahab_and_the_spies:              Raabe e os Espiões
+      jericho_falls:                    A Queda de Jericó
+      gibeons_con_artists:              O Disfarce dos Gibeonitas
+      deborah_and_barak:                Débora e Baraque
+      gideon_as_judge:                  Gideão como Juiz
+      abimelechs_ambition:              A Ambição de Abimeleque
+      samson_as_judge:                  Sansão como Juiz
+      ruth_naomi_and_boaz:              Rute, Noemi e Boaz
+      samuel_is_born:                   Nasce Samuel
+      samuel_the_prophet:               Samuel, o Profeta
+      saul_becomes_king:                Saul se Torna Rei
+      jonathans_bravery:                A Bravura de Jônatas
+      sauls_disobedience:               A Desobediência de Saul
+      david_kills_goliath:              Davi Mata Golias
+      david_and_jonathan:               Davi e Jônatas
+      nabal_and_abigail:                Nabal e Abigail
+      sauls_death:                      A Morte de Saul
+      davids_success:                   O Sucesso de Davi
+      david_and_bathsheba:              Davi e Bate-Seba
+      amnon_and_tamar:                  Amnon e Tamar
+      absalom:                          Absalão
+      solomons_wisdom:                  A Sabedoria de Salomão
+      jeroboam_and_rehoboam:            Jeroboão e Roboão
+      elijahs_challenge:                O Desafio de Elias
+      god_speaks_to_elijah:             Deus Fala com Elias
+      micaiah_the_prophet:              Micaías, o Profeta
+      chariot_of_fire:                  Carruagem de Fogo
+      elisha_heals_naaman:              Eliseu Cura Naamã
+      famine_and_unbelief:              Fome e Descrença
+      joash_and_jehoiada:               Joás e Joiada
+      hezekiah_trusts_god:              Ezequias Confia em Deus
+      josiahs_reign:                    O Reino de Josias
+      fall_of_jerusalem:                A Queda de Jerusalém
+      davids_power:                     O Poder de Davi
+      davids_census:                    O Censo de Davi
+      jehoshaphat_and_ahab:             Josafá e Acabe
+      ezra_rebuilds_the_altar:          Esdras Reconstrói o Altar
+      nehemiah_builds_the_wall:         Neemias Constrói a Muralha
+      enemy_opposition:                 Oposição Inimiga
+      nehemiahs_justice:                A Justiça de Neemias
+      esther_saves_the_jews:            Ester Salva os Judeus
+      job_is_tested:                    Jó é Testado
+      ezekiels_vision:                  A Visão de Ezequiel
+      the_fiery_furnace:                A Fornalha Acesa
+      the_lions_den:                    A Cova dos Leões
+      jonah:                            Jonas
+      jesus_is_born_by_matthew:         Nasce Jesus
+      jesus_is_born_by_luke:            Nasce Jesus
+      wise_men_and_king_herod:          Os Reis Magos e o Rei Herodes
+      jesus_is_tempted_by_matthew:      Jesus é Tentado
+      jesus_is_tempted_by_mark:         Jesus é Tentado
+      jesus_is_tempted_by_luke:         Jesus é Tentado
+      jesus_feeds_5000_by_matthew:      Jesus Alimenta 5 Mil
+      jesus_feeds_5000_by_mark:         Jesus Alimenta 5 Mil
+      jesus_feeds_5000_by_luke:         Jesus Alimenta 5 Mil
+      jesus_feeds_5000_by_john:         Jesus Alimenta 5 Mil
+      the_bread_of_life:                O Pão da Vida
+      jesus_walks_on_water_by_matthew:  Jesus Caminha nas Águas
+      jesus_walks_on_water_by_mark:     Jesus Caminha nas Águas
+      jesus_walks_on_water_by_john:     Jesus Caminha nas Águas
+      the_good_samaritan:               O Bom Samaritano
+      the_lost_son:                     O Filho Perdido
+      jesus_raises_lazarus:             Jesus Ressuscita Lázaro
+      jesus_and_zacchaeus:              Jesus e Zaqueu
+      the_triumphal_entry_by_matthew:   A Entrada Triunfal
+      the_triumphal_entry_by_luke:      A Entrada Triunfal
+      the_triumphal_entry_by_john:      A Entrada Triunfal
+      the_last_supper_by_matthew:       A Última Ceia
+      the_last_supper_by_mark:          A Última Ceia
+      the_last_supper_by_luke:          A Última Ceia
+      the_last_supper_by_john:          A Última Ceia
+      jesus_trial:                      O Julgamento de Jesus
+      jesus_crucifixion_by_matthew:     A Crucificação de Jesus
+      jesus_crucifixion_by_mark:        A Crucificação de Jesus
+      jesus_crucifixion_by_luke:        A Crucificação de Jesus
+      jesus_crucifixion_by_john:        A Crucificação de Jesus
+      jesus_resurrection_by_matthew:    A Ressurreição de Jesus
+      jesus_resurrection_by_mark:       A Ressurreição de Jesus
+      jesus_resurrection_by_luke:       A Ressurreição de Jesus
+      jesus_resurrection_by_john:       A Ressurreição de Jesus
+      jesus_ascension_luke:             A Ascensão de Jesus
+      jesus_ascension_acts:             A Ascensão de Jesus
+      the_holy_spirit_comes:            Vem o Espírito Santo
+      the_apostles_courage:             A Coragem dos Apóstolos
+      ananias_and_sapphira:             Ananias e Safira
+      philip_and_the_eunuch:            Felipe e o Eunuco
+      saul_encounters_jesus:            Saul Encontra Jesus
+      peter_and_cornelius:              Pedro e Cornélio
+      paul_in_corinth:                  Paulo em Corinto
+      paul_in_ephesus:                  Paulo em Éfeso
+      paul_goes_to_rome:                Paulo Vai para Roma
+
+  created_by                   : Criado por <a href="http://leighmcculloch.com">Leigh McCulloch</a> e <a href="http://jtburkholder.com/">Jason Burkholder</a>. Agradecemos a <a href="http://http://popcoding.com/">Antônio Rodrigues</a> pela ajuda registrando o domínio no Brasil.
+  thanks                       : Agradecemos a Tyndale House Publishing Inc. pela permissão para usar o índice de "Grandes Histórias da Bíblia", encontrado como apêndice em algumas publicações da Nova Tradução Viva das Bíblias.
