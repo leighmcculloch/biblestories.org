@@ -7,7 +7,7 @@ class BiblesorgApi
     :"es" => "spa-DHH", # 1994 Biblia Dios Habla Hoy (sin notas ni ayudas)
     :"zh-Hans" => "zho-RCUVSS", # 2010 Revised Chinese Union Version
     # :"fr" => "fra-NBS", # 2002 Nouvelle Bible Segond
-    :"fr" => "fra-PDV", # 2000 Parole de Vie
+    # :"fr" => "fra-PDV", # 2000 Parole de Vie
     # :"pt" => "por-BPT09",
     # :"pt-BR" => "por-NTLH",
   }

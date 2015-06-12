@@ -8,14 +8,15 @@ class Apis
       :"zh-Hans" => BiblesorgApi, # Chinese Simplified
       :"es" => BiblesorgApi, # Spanish (Latin America)
       # :"es-419" => BiblesorgApi, # Spanish (Latin America)
-      :"fr" => BiblesorgApi, # French
-      :"pt" => BiblesorgApi, # Portuguese
+      # :"fr" => BiblesorgApi, # French
+      # :"pt" => BiblesorgApi, # Portuguese
       :"pt-BR" => BiblesorgApi, # Portuguese (Brazil)
   }
   LOCALE_TO_API_AUDIO_MAP = {
       :"en" => CrosswayApi,
       :"zh-Hans" => DigitalBiblePlatformApi,
       :"es" => DigitalBiblePlatformApi,
+      # :"fr" => DigitalBiblePlatformApi,
   }
 
   def self.get_text(bible_ref)
