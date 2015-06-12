@@ -4,6 +4,8 @@ require 'deployment'
 require 'deployments'
 require 'cache'
 require 'builder'
+require 'helpers/icon_helper'
+helpers IconHelper
 
 DEV = !!ENV['DEV']
 set :development, DEV
@@ -56,69 +58,12 @@ set :images_dir, 'images'
 activate :i18n, :langs => DEPLOYMENTS.locales
 set :locales, DEPLOYMENTS.locales
 
-# hacking the html mime type in the pages section below
-#  • pages without the html extension have their filename added to the `text/html` mime type as
-#    an extension so that they will be associated with that mimetype in the s3_sync gem
-#  • the story pages do not have extensions, so they are all added
-#  • re-index the extensions for the `text/html` mime type now that we've hacked it
-
-# pages
-ignore 'story.html'
-after_configuration do
-  mime_type_html = MIME::Types["text/html"].first
-
-  DEPLOYMENT.locales.each_with_index do |lang, index|
-    I18n.locale = lang
-
-    prefix = "/#{lang.to_s}" if index > 0
-
-    # index page
-    page("#{prefix}/index.html", :proxy => ("/index.html" if prefix), :content_type => "text/html", :locale => lang) { I18n.locale = lang }
-    page("#{prefix}/404.html", :proxy => ("/404.html" if prefix), :content_type => "text/html", :locale => lang, :locals => { :error => 404 }) { I18n.locale = lang }
-
-    # each story page
-    page_paths = []
-    Stories.all.each do |story_short_url, story|
-      page_path = "#{prefix}/#{story_short_url}"
-      page_paths << page_path
-      page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang) { I18n.locale = lang }
-    end
-
-    mime_type_html.add_extensions(page_paths.map { |page_path| page_path.sub(/^\//, "") })
-
-    # each moved story page
-    data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
-
-    I18n.locale = I18n.default_locale
-  end
-
-  MIME::Types.index_extensions(mime_type_html)
-end
-
 # sitemap
 ready do
   if settings.deployment.has_feature?(:sitemap)
     page "/sitemap.xml", :layout => false
   else
     ignore "/sitemap.xml"
-  end
-end
-
-# icons
-helpers do
-  def icon(name)
-    case name
-    when :leaf; return '&#xe800;'
-    when :search; return '&#xe801;'
-    when :volume_up; return '&#xe802;'
-    when :menu; return '&#xe803;'
-    when :facebook; return '&#xe804;'
-    when :twitter; return '&#xe805;'
-    when :tumblr; return '&#xe806;'
-    when :mail_alt; return '&#xe807;'
-    when :export_alt; return '&#xe808;'
-    when :globe; return '&#xe809;'
-    end
   end
 end
 
@@ -178,18 +123,60 @@ end
 # extensions below that are also triggered after build.
 activate :imageoptim unless DEV
 
-# deploy to aws s3
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = DEPLOYMENT.host
-  s3_sync.region                     = "us-east-1"
-  s3_sync.delete                     = DEV
-  s3_sync.after_build                = true
-  s3_sync.prefer_gzip                = true
-  s3_sync.path_style                 = true
-  s3_sync.reduced_redundancy_storage = DEV
-  s3_sync.acl                        = "public-read"
-  s3_sync.encryption                 = false
-  s3_sync.version_bucket             = false
+# These configurations need to be in an after_configuration to allow i18n to be setup
+# fully before generating the story pages, etc.
+ignore 'story.html'
+after_configuration do
+  # pages
+  page_content_types = {}
+  page_redirects = {}
+  DEPLOYMENT.locales.each_with_index do |lang, index|
+    I18n.locale = lang
+
+    prefix = "/#{lang.to_s}" if index > 0
+
+    # index page
+    page("#{prefix}/index.html", :proxy => ("/index.html" if prefix), :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    page("#{prefix}/404.html", :proxy => ("/404.html" if prefix), :content_type => "text/html", :locale => lang, :locals => { :error => 404 }) { I18n.locale = lang }
+
+    # each story page
+    Stories.all.each do |story_short_url, story|
+      page_path = "#{prefix}/#{story_short_url}"
+      page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang) { I18n.locale = lang }
+      page_content_types[page_path.sub(/^\//, "")] = "text/html"
+    end
+
+    # redirects for moved story pages
+    data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
+
+    I18n.locale = I18n.default_locale
+  end
+
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket                     = DEPLOYMENT.host
+    s3_sync.region                     = "us-east-1"
+    s3_sync.delete                     = DEV
+    s3_sync.after_build                = true
+    s3_sync.prefer_gzip                = true
+    s3_sync.path_style                 = true
+    s3_sync.reduced_redundancy_storage = DEV
+    s3_sync.acl                        = "public-read"
+    s3_sync.encryption                 = false
+    s3_sync.version_bucket             = false
+    s3_sync.content_types              = page_content_types
+  end
+
+  unless DEV
+    activate :cdn do |cdn|
+      cdn.cloudflare = {
+        zone: DEPLOYMENT.zone,
+        base_urls: DEPLOYMENT.base_url
+      }
+      cdn.filter = /.*/
+      cdn.after_build = true
+    end
+  end
+
 end
 
 # redirects on s3
@@ -199,13 +186,3 @@ activate :s3_redirect do |config|
   config.after_build           = true
 end
 
-unless DEV
-  activate :cdn do |cdn|
-    cdn.cloudflare = {
-      zone: DEPLOYMENT.zone,
-      base_urls: DEPLOYMENT.base_url
-    }
-    cdn.filter = /.*/
-    cdn.after_build = true
-  end
-end
