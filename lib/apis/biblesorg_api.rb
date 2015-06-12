@@ -9,7 +9,7 @@ class BiblesorgApi
     # :"fr" => "fra-NBS", # 2002 Nouvelle Bible Segond
     # :"fr" => "fra-PDV", # 2000 Parole de Vie
     # :"pt" => "por-BPT09",
-    # :"pt-BR" => "por-NTLH",
+    :"pt-BR" => "por-NTLH", # 2000 Nova Tradução na Linguagem de Hoje
   }
 
   def self.get_version_for_locale

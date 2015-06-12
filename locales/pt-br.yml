@@ -1,0 +1,29 @@
+pt-BR:
+  language                     : Português brasileiro
+
+  # Bible book titles
+  bible_book:
+    Genesis:      Gênesis
+    Exodus:       Êxodo
+    Numbers:      Números
+    Joshua:       Josué
+    Judges:       Juízes
+    Ruth:         Rute
+    1_Samuel:     1 Samuel
+    2_Samuel:     2 Samuel
+    1_Kings:      1 Reis
+    2_Kings:      2 Reis
+    1_Chronicles: 1 Crônicas
+    2_Chronicles: 2 Crônicas
+    Ezra:         Esdras
+    Nehemiah:     Neemias
+    Esther:       Ester
+    Job:          Jó
+    Ezekiel:      Ezequiel
+    Daniel:       Daniel
+    Jonah:        Jonas
+    Matthew:      Mateus
+    Mark:         Marcos
+    Luke:         Lucas
+    John:         João
+    Acts:         Atos
