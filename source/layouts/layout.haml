@@ -11,22 +11,21 @@
     %meta{:content=>"IE=edge,chrome=1", :"http-equiv"=>"X-UA-Compatible"}
 
     %title= title ? "#{title} | #{t(:title)}" : "#{t(:title)}"
-    
-    %meta{:name=>"description", :content=>description}
 
     - hreflangs = yield_content(:hreflangs)
     - if hreflangs
       - JSON.parse(hreflangs).each do |locale, url|
         %link{:rel=>"alternate", :hreflang=>locale, :href=>url}
 
-    %meta{:property=>"og:type", :content=>"website"}
-    %meta{:property=>"og:url", :content=>url}
-    %meta{:property=>"og:title", :content=>(title || t(:title))}
-    %meta{:property=>"og:description", :content=>social_description}
-    
-    %meta{:name=>"twitter:card", :content=>"summary"}
-    %meta{:name=>"twitter:title", :content=>(title || t(:title))}
-    %meta{:name=>"twitter:description", :content=>social_description}
+    - if description
+      %meta{:name=>"description", :content=>description}
+      %meta{:property=>"og:type", :content=>"website"}
+      %meta{:property=>"og:url", :content=>url}
+      %meta{:property=>"og:title", :content=>(title || t(:title))}
+      %meta{:property=>"og:description", :content=>social_description}
+      %meta{:name=>"twitter:card", :content=>"summary"}
+      %meta{:name=>"twitter:title", :content=>(title || t(:title))}
+      %meta{:name=>"twitter:description", :content=>social_description}
 
     %meta{:name=>"viewport", :content=>"width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,    maximum-scale=1"}
     %meta{:name=>"apple-mobile-web-app-capable", :content=>"yes"}
