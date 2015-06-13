@@ -11,7 +11,7 @@ page_classes: story side-menu-container not-showing-side-menu
 - content_for(:url, url)
 - content_for(:short_url, short_url)
 
-- content_for(:ga_page, story.short_url)
+- content_for(:ga_page, "/#{story.short_url}")
 
 - hreflangs = {}
 - settings.deployments.each do |deployment|
