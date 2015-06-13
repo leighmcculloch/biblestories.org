@@ -1,22 +1,21 @@
 <!doctype html>
-- page = settings.deployment.page_from(url: current_page.url, locale: I18n.locale)
-%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :page=>page, :share_url=>"#{settings.deployment.base_url_short(locale: I18n.locale)}#{page}" }}
+- title = current_page.data.title || yield_content(:title)
+- description = current_page.data.description || yield_content(:description)
+- social_description = current_page.data.social_description || yield_content(:social_description) || description
+- url = yield_content(:url)
+- short_url = yield_content(:short_url)
+- ga_page = yield_content(:ga_page)
+%html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :ga_page=>ga_page, :share_url=>short_url }}
   %head
     %meta{:charset=>"UTF-8"}
     %meta{:content=>"IE=edge,chrome=1", :"http-equiv"=>"X-UA-Compatible"}
-
-    - title = current_page.data.title || yield_content(:title)
-    - description = current_page.data.description || yield_content(:description)
-    - social_description = current_page.data.social_description || yield_content(:social_description) || description
-    - url = current_page.data.url || yield_content(:url) || settings.deployment.base_url(locale: I18n.locale)
 
     %title= title ? "#{title} | #{t(:title)}" : "#{t(:title)}"
     
     %meta{:name=>"description", :content=>description}
 
-    - settings.deployments.each do |deployment|
-      - deployment.locales.each do |locale|
-        %link{:rel=>"alternate", :hreflang=>locale.to_s, :href=>"#{deployment.base_url(locale: locale)}#{page}"}
+    - JSON.parse(yield_content(:hreflangs)).each do |locale, url|
+      %link{:rel=>"alternate", :hreflang=>locale, :href=>url}
 
     %meta{:property=>"og:type", :content=>"website"}
     %meta{:property=>"og:url", :content=>url}

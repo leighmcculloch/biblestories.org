@@ -23,7 +23,7 @@ $(function() {
   });
   ga('require', 'displayfeatures');
   ga('set', {
-    'page': $('html').data('page'),
+    'page': $('html').data('ga-page'),
     'dimension1': $('html').attr('lang')
   });
   ga('send', 'pageview');

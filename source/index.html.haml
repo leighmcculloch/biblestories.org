@@ -3,6 +3,15 @@ page_classes: index
 ---
 
 - content_for(:description, t(:meta_description))
+- content_for(:url, "#{settings.deployment.base_url(locale: I18n.locale)}/")
+- content_for(:short_url, "#{settings.deployment.base_url_short(locale: I18n.locale)}/")
+- content_for(:ga_page, "/")
+
+- hreflangs = {}
+- settings.deployments.each do |deployment|
+  - deployment.locales.each do |locale|
+    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/"
+- content_for(:hreflangs, hreflangs.to_json)
 
 .view
   .header
@@ -27,7 +36,7 @@ page_classes: index
   .stories
     - Stories.all.each do |_, story|
       .story{:data => story.as_json}
-        %a{:href=>"#{story.short_url}"}= story.title
+        %a{:href=>"#{story.short_url_native}"}= story.title
         .bible_ref= story.bible_ref
 
   .search-no-results{:style=>"display:none"}

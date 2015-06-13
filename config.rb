@@ -141,7 +141,7 @@ after_configuration do
 
     # each story page
     Stories.all.each do |story_short_url, story|
-      page_path = "#{prefix}/#{story_short_url}"
+      page_path = "#{prefix}/#{story.short_url_native(locale: lang)}"
       page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang) { I18n.locale = lang }
       page_content_types[page_path.sub(/^\//, "")] = "text/html"
     end
