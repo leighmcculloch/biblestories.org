@@ -146,9 +146,6 @@ after_configuration do
       page_content_types[page_path.sub(/^\//, "")] = "text/html"
     end
 
-    # redirects for moved story pages
-    data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
-
     I18n.locale = I18n.default_locale
   end
 
@@ -178,6 +175,9 @@ after_configuration do
   end
 
 end
+
+# redirects for moved english story pages
+data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
 
 # redirects on s3
 activate :s3_redirect do |config|
