@@ -14,8 +14,10 @@
     
     %meta{:name=>"description", :content=>description}
 
-    - JSON.parse(yield_content(:hreflangs)).each do |locale, url|
-      %link{:rel=>"alternate", :hreflang=>locale, :href=>url}
+    - hreflangs = yield_content(:hreflangs)
+    - if hreflangs
+      - JSON.parse(hreflangs).each do |locale, url|
+        %link{:rel=>"alternate", :hreflang=>locale, :href=>url}
 
     %meta{:property=>"og:type", :content=>"website"}
     %meta{:property=>"og:url", :content=>url}
