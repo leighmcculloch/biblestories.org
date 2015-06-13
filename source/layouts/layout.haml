@@ -4,7 +4,7 @@
 - social_description = current_page.data.social_description || yield_content(:social_description) || description
 - url = yield_content(:url)
 - short_url = yield_content(:short_url)
-- ga_page = yield_content(:ga_page)
+- ga_page = yield_content(:ga_page) || current_page.url
 %html{:lang=>I18n.locale, :prefix=>"og: http://ogp.me/ns#", :data=>{ :ga_page=>ga_page, :share_url=>short_url }}
   %head
     %meta{:charset=>"UTF-8"}
