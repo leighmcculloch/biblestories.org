@@ -36,7 +36,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
       sitemap: true
     }
   ),
-  Deployment.new(
+  (Deployment.new(
     locales: [:"pt-BR"],
     zone: "grandeshistoriasdabiblia.com.br",
     zone_short: "grandeshistorias.com.br",
@@ -47,8 +47,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
       select_and_share: true,
       sitemap: true
     }
-  )
-])
+  ) if DEV)
+].compact)
 set :deployments, DEPLOYMENTS
 
 DEPLOYMENT_ID = ENV['DEPLOYMENT'].to_i
