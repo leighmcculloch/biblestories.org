@@ -146,6 +146,9 @@ after_configuration do
       page_content_types[page_path.sub(/^\//, "")] = "text/html"
     end
 
+    # redirects for moved story pages
+    data.redirects[I18n.locale].try(:each) { |from, to| redirect "/#{from}", "/#{to}" }
+
     I18n.locale = I18n.default_locale
   end
 
@@ -173,13 +176,8 @@ after_configuration do
       cdn.after_build = true
     end
   end
-
 end
 
-# redirects for moved english story pages
-data.redirects.each { |from, to| redirect "#{prefix}/#{from}", "#{prefix}/#{to}" }
-
-# redirects on s3
 activate :s3_redirect do |config|
   config.bucket                = DEPLOYMENT.host
   config.region                = "us-east-1"
