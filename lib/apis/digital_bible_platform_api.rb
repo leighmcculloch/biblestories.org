@@ -7,7 +7,7 @@ class DigitalBiblePlatformApi
   LOCALE_TO_DAMID_MAP = {
       :"en" => "ENGESVN2DA", # English ESV New Testament
       :"zh-Hans" => "CHNUN1N2DA", # Chinese (Simplified) New Testament
-      :"es" => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
+      :"es-419" => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
       # :"fr" => "FRNPDFO2ET", # French 2000 Parole de Vie (European) Version
   }
 

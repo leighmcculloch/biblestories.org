@@ -12,7 +12,8 @@ set :development, DEV
 
 DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
-    locales: DEV ? [:en, :es] : [:en, :es],
+    locales: [:en, :"es-419"],
+    locale_paths: { :"es-419" => "es" },
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
     aws_region: "us-east-1",
@@ -147,7 +148,7 @@ after_configuration do
   DEPLOYMENT.locales.each_with_index do |lang, index|
     I18n.locale = lang
 
-    prefix = "/#{lang.to_s}" if index > 0
+    prefix = DEPLOYMENT.base_url_suffix(locale: lang) if index > 0
 
     # index page
     page("#{prefix}/index.html", :proxy => ("/index.html" if prefix), :content_type => "text/html", :locale => lang) { I18n.locale = lang }
