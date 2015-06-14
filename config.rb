@@ -12,7 +12,7 @@ set :development, DEV
 
 DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
-    locales: DEV ? [:en, :es, :"pt-BR"] : [:en, :es],
+    locales: DEV ? [:en, :es] : [:en, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
     font_host: "fonts.googleapis.com",
@@ -30,6 +30,17 @@ DEPLOYMENTS = Deployments.new(deployments: [
     development: DEV,
     features: {
       select_and_share: false,
+      sitemap: true
+    }
+  ),
+  Deployment.new(
+    locales: [:"pt-BR"],
+    zone: "grandeshistoriasdabiblia.com.br",
+    zone_short: "grandeshistorias.com.br",
+    font_host: "fonts.googleapis.com",
+    development: DEV,
+    features: {
+      select_and_share: true,
       sitemap: true
     }
   )
