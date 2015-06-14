@@ -1,9 +1,10 @@
 class Deployment
-  attr_accessor :locales, :zone, :zone_short, :aws_region, :font_host, :features
+  attr_accessor :locales, :locale_paths, :zone, :zone_short, :aws_region, :font_host, :features
 
-  def initialize(development: false, locales:, zone:, zone_short:, aws_region:, font_host:, features: {})
+  def initialize(development: false, locales:, locale_paths: {}, zone:, zone_short:, aws_region:, font_host:, features: {})
     @development = development
     @locales = locales
+    @locale_paths = locale_paths
     @zone = zone
     @zone_short = zone_short
     @aws_region = aws_region
@@ -20,7 +21,7 @@ class Deployment
   end
 
   def base_url_suffix(locale: nil)
-    return "/#{locale.to_s}" if locale && self.locales.find_index(locale) > 0
+    return "/#{self.locale_paths[locale] || locale}" if locale && self.locales.find_index(locale) > 0
     ""
   end
 
