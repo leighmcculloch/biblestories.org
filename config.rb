@@ -15,6 +15,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
     locales: DEV ? [:en, :es] : [:en, :es],
     zone: "greatstoriesofthebible.org",
     zone_short: "greatstories.org",
+    aws_region: "us-east-1",
     font_host: "fonts.googleapis.com",
     development: DEV,
     features: {
@@ -26,6 +27,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
     zone_short: "greatstories.cn",
+    aws_region: "us-east-1",
     font_host: "fonts.useso.com",
     development: DEV,
     features: {
@@ -37,6 +39,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
     locales: [:"pt-BR"],
     zone: "grandeshistoriasdabiblia.com.br",
     zone_short: "grandeshistorias.com.br",
+    aws_region: "sa-east-1",
     font_host: "fonts.googleapis.com",
     development: DEV,
     features: {
@@ -165,7 +168,7 @@ after_configuration do
 
   activate :s3_sync do |s3_sync|
     s3_sync.bucket                     = DEPLOYMENT.host
-    s3_sync.region                     = "us-east-1"
+    s3_sync.region                     = DEPLOYMENT.aws_region
     s3_sync.delete                     = DEV
     s3_sync.after_build                = true
     s3_sync.prefer_gzip                = true
@@ -191,7 +194,7 @@ end
 
 activate :s3_redirect do |config|
   config.bucket                = DEPLOYMENT.host
-  config.region                = "us-east-1"
+  config.region                = DEPLOYMENT.aws_region
   config.after_build           = true
 end
 
