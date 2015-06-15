@@ -93,6 +93,8 @@ activate :autoprefixer do |config|
   config.inline   = true
 end
 
+activate :inliner
+
 configure :build do
   activate :minify_html
   activate :minify_css
