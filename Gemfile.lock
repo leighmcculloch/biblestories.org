@@ -1,15 +1,17 @@
 GIT
-  remote: git@github.com:leighmcculloch/middleman-s3_redirect.git
-  revision: 1f58f2530793ffbd81e90d5bbfc741fb1560a507
-  branch: directoryless-redirect
+  remote: git://github.com/fredjean/middleman-s3_redirect.git
+  revision: 97e33c14f696e555e1958a941d3f1dd6e701c72b
+  ref: 97e33c14f696e555e1958a941d3f1dd6e701c72b
   specs:
     middleman-s3_redirect (3.0.6)
       fog (>= 1.25.0)
       middleman-core (>= 3.0.0)
       parallel
 
-PATH
-  remote: ../../middleman-s3_sync
+GIT
+  remote: git://github.com/fredjean/middleman-s3_sync.git
+  revision: 92cff50b8a8bf28d90f7b841a08e019c276de5cd
+  ref: 92cff50b8a8bf28d90f7b841a08e019c276de5cd
   specs:
     middleman-s3_sync (3.0.46)
       ansi (~> 1.5.0)
