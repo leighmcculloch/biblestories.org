@@ -192,7 +192,7 @@ after_configuration do
         base_urls: DEPLOYMENT.base_url
       }
       cdn.filter = /.*/
-      cdn.after_build = true
+      cdn.after_build = false
     end
   end
 end
