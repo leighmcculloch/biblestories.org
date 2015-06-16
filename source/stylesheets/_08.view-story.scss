@@ -138,7 +138,7 @@ $color-story-call-to-action: #a9a9a9;
         margin-top: 0.4em;
         a {
           text-decoration: none;
-          color: $color-story-author;
+          color: inherit;
         }
       }
     }
@@ -160,7 +160,7 @@ $color-story-call-to-action: #a9a9a9;
       margin: 30px 0;
       a {
         text-decoration: none;
-        color: $color-story-call-to-action;
+        color: inherit;
       }
       .item {
         margin: 20px 0;

@@ -148,6 +148,7 @@ activate :imageoptim unless DEV
 # These configurations need to be in an after_configuration to allow i18n to be setup
 # fully before generating the story pages, etc.
 ignore 'story.html'
+ignore 'about.html'
 after_configuration do
   # pages
   page_content_types = {}
@@ -159,7 +160,14 @@ after_configuration do
 
     # index page
     page("#{prefix}/index.html", :proxy => ("/index.html" if prefix), :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+
+    # 404 page
     page("#{prefix}/404.html", :proxy => ("/404.html" if prefix), :content_type => "text/html", :locale => lang, :locals => { :error => 404 }) { I18n.locale = lang }
+
+    # about page
+    about_page_path = "#{prefix}/#{I18n.t(:"about.url")}"
+    page(about_page_path, :proxy => "/about.html", :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    page_content_types[about_page_path.sub(/^\//, "")] = "text/html"
 
     # each story page
     Stories.all.each do |story_short_url, story|

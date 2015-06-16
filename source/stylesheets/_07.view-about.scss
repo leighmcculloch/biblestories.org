@@ -1,0 +1,65 @@
+$color-header-menu: #9c9c9c;
+$color-header-controls: #bcbcbc;
+$color-about-title: #1b1b1b;
+$color-about-domain: #a9a9a9;
+$color-about-text: #1b1b1b;
+$color-about-call-to-action: #a9a9a9;
+
+.page.about .view {
+  margin: 0 auto;
+  padding: 0 20px 0;
+  max-width: $width-max;
+  color: $color-about-text;
+  line-height: 1.5em;
+
+  .title {
+    margin: 27px 0;
+    text-align: center;
+    .logo {
+      font-size: 1.60em;
+      margin: 0.4em 0;
+    }
+    h1 {
+      font-size: 2em;
+      color: $color-about-title;
+    }
+    h2 {
+      font-size: 0.8em;
+      color: $color-about-domain;
+      font-weight: 400;
+      margin-top: 0.4em;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  .about-great-stories {
+    p {
+      text-align: justify;
+      font-size: 1em;
+      font-weight: 300;
+      margin: 10px 0;
+    }
+  }
+
+  .call-to-action {
+    text-align: center;
+    font-size: 1em;
+    color: $color-about-call-to-action;
+    margin: 30px 0;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .language {
+    margin: 27px 0 0;
+    font-size: 1em;
+    color: $color-language;
+    text-align: center;
+  }
+
+}
