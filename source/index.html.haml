@@ -44,4 +44,5 @@ page_classes: index
 
   .footer
     %div= t(:thanks) if I18n.locale == :en || I18n.locale == :"pt-BR"
-    %div= t(:created_by) if I18n.locale == :en || I18n.locale == :"pt-BR"
+    - if I18n.locale == :en || I18n.locale == :"pt-BR"
+      %div <!--sse-->#{t(:created_by)}<!--/sse-->

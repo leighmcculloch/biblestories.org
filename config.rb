@@ -98,7 +98,10 @@ end
 activate :inliner
 
 configure :build do
-  activate :minify_html
+  activate :minify_html do |html|
+    html.remove_comments = false
+    html.remove_http_protocol = false
+  end
   activate :minify_css
   activate :minify_javascript
   activate :gzip, :exts => [".js", ".css", ".html", ""]

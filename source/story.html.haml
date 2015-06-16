@@ -74,7 +74,8 @@ page_classes: story side-menu-container not-showing-side-menu
           = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
       %div= story.text_copyright
       %div= story.audio_copyright
-      %div= t(:created_by) if I18n.locale == :en || I18n.locale == :"pt-BR"
+      - if I18n.locale == :en || I18n.locale == :"pt-BR"
+        %div <!--sse-->#{t(:created_by)}<!--/sse-->
 
 - if settings.deployment.has_feature?(:select_and_share)
   .text-highlighted-container
