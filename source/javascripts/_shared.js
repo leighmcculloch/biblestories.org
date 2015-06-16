@@ -31,6 +31,12 @@ $(function() {
   });
 });
 
+$(window).load(function() {
+  $('.language-selector select').autowidth({
+    padding: 0
+  });
+});
+
 /* search story list filtering */
 $(function() {
     $('.index-searchnoresults').hide();
