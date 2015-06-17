@@ -1,0 +1,32 @@
+---
+page_classes: why
+---
+
+- content_for(:description, t(:meta_description))
+- content_for(:url, "#{settings.deployment.base_url(locale: I18n.locale)}/#{t(:"why.url")}")
+- content_for(:short_url, "#{settings.deployment.base_url_short(locale: I18n.locale)}/#{t(:"why.url")}")
+- content_for(:ga_page, "/why")
+
+- hreflangs = {}
+- settings.deployments.each do |deployment|
+  - deployment.locales.each do |locale|
+    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{t(:"why.url")}"
+- content_for(:hreflangs, hreflangs.to_json)
+
+.view
+  .why
+    .title
+      %i.logo.icon-leaf= icon(:leaf)
+      %h1= t(:"why.heading")
+      %h2
+        %a{:href=>deployment.base_url(locale: I18n.locale)}= deployment.zone
+
+    .why-great-stories
+      - t(:"why.why_great_stories").split("\n").each do |line|
+        %p= line
+
+    .call-to-action
+      %a{:href=>deployment.base_url(locale: I18n.locale)}= t(:"why.read_a_story")
+
+    .language
+      = partial "language-selector"

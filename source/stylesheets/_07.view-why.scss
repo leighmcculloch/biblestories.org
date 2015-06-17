@@ -1,15 +1,13 @@
-$color-header-menu: #9c9c9c;
-$color-header-controls: #bcbcbc;
-$color-about-title: #1b1b1b;
-$color-about-domain: #a9a9a9;
-$color-about-text: #1b1b1b;
-$color-about-call-to-action: #a9a9a9;
+$color-why-title: #1b1b1b;
+$color-why-domain: #a9a9a9;
+$color-why-text: #1b1b1b;
+$color-why-call-to-action: #a9a9a9;
 
-.page.about .view {
+.page.why .view {
   margin: 0 auto;
   padding: 0 20px 0;
   max-width: $width-max;
-  color: $color-about-text;
+  color: $color-why-text;
   line-height: 1.5em;
 
   .title {
@@ -21,11 +19,11 @@ $color-about-call-to-action: #a9a9a9;
     }
     h1 {
       font-size: 2em;
-      color: $color-about-title;
+      color: $color-why-title;
     }
     h2 {
       font-size: 0.8em;
-      color: $color-about-domain;
+      color: $color-why-domain;
       font-weight: 400;
       margin-top: 0.4em;
       a {
@@ -35,7 +33,7 @@ $color-about-call-to-action: #a9a9a9;
     }
   }
 
-  .about-great-stories {
+  .why-great-stories {
     p {
       text-align: justify;
       font-size: 1em;
@@ -47,7 +45,7 @@ $color-about-call-to-action: #a9a9a9;
   .call-to-action {
     text-align: center;
     font-size: 1em;
-    color: $color-about-call-to-action;
+    color: $color-why-call-to-action;
     margin: 30px 0;
     a {
       text-decoration: none;

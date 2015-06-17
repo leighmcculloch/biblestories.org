@@ -27,16 +27,16 @@ en:
   page_not_found               : Page not found.
   page_not_found_description   : The page you were looking for doesn't exist.<br/>Not to worry, head over to the <a href="/">homepage</a> to find what you're looking for.
 
-  about:
-    heading                    : About
-    url                        : about
-    about_great_stories        : |
+  why:
+    heading                    : Why
+    url                        : why
+    why_great_stories          : |
       Have you seen a bible verse shared on social media? Probably.
       Have you seen a bible story shared on social media? Unlikely.
       We share verses to share insights, but the bible is more than insights. The bible is about God and his relationship with people.
       We share links to articles everyday, why don't we share stories from the bible? I think it's because bible stories aren't well defined outside of childrens books. It's difficult to share a chunk of text but much easier to share something when it's presented in a conceptually tangible form, like an article or story.
       Great Stories presents the bible as short stories, easy to read and share.
-    read_a_story               : Read a story in a few minutes
+    read_a_story               : Give it a go, read a story in a few minutes
 
   # Bible book titles
   bible_book:
