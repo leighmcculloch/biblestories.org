@@ -27,6 +27,17 @@ pt-BR:
   page_not_found               : Página não encontrada.
   page_not_found_description   : A página que você estava procurando não existe.<br/>Não se preocupe, vá para a <a href="/">página inicial</a> para encontrar o que você procura.
 
+  why:
+    heading                    : Por que
+    url                        : por_que
+    why_great_stories          : |
+      Você já viu um verso bíblico compartilhado em uma rede social? Provavelmente.
+      Você já viu uma história bíblica compartilhada em uma rede social? Improvável.
+      Nós compartilhamos versos para compartilhar ideias, mas a Bíblia é mais do que introspecções. A Bíblia é sobre Deus e seu relacionamento com as pessoas.
+      Nós compartilhamos links para artigos todos os dias, por que não compartilhar histórias da bíblia? Eu acho que é porque as histórias da bíblia não são muito bem definidas fora dos livros infantis. É difícil compartilhar um grande pedaço de texto, mas é muito mais fácil compartilhar algo que está presente de uma forma conceitualmente tangível, como um artigo ou história.
+      Grandes Historias apresenta a bíblia em pequenas histórias, fáceis de ler e compartilhar.
+    read_a_story               : Faça uma tentativa, leia uma história em poucos minutos
+
   # Bible book titles
   bible_book:
     Genesis:      Gênesis

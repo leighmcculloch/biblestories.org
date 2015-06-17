@@ -10,7 +10,7 @@ page_classes: why
 - hreflangs = {}
 - settings.deployments.each do |deployment|
   - deployment.locales.each do |locale|
-    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{t(:"why.url")}"
+    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{t(:"why.url", locale: locale)}"
 - content_for(:hreflangs, hreflangs.to_json)
 
 .view

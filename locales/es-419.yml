@@ -26,7 +26,17 @@ es-419:
 
   page_not_found               : No se ha encontrado la página.
   page_not_found_description   : La página que estaba buscando no existe.<br/>No se preocupe, diríjase a la <a href="/">página de inicio</a> para encontrar lo que busca.
-  
+
+  why:
+    heading                    : Por qué
+    why_great_stories          : |
+      ¿Has visto un versículo de la biblia compartido en las redes sociales?<br/>Probablemente.
+      ¿Has visto una historia de la biblia compartida en las redes sociales?<br/>No es muy probable.
+      Compartimos versículos para compartir ideas, pero la Biblia es más que ideas. La Biblia se trata de Dios y de su relación con la gente.
+      Todos los días compartimos enlaces de artículos, ¿por qué no compartimos historias de la Biblia? Creo que es porque las historias de la Biblia no están bien definidas fuera de los libros para niños. Es difícil compartir un bloque de texto pero es mucho más fácil compartir algo cuando está presentado en forma conceptualmente tangible, como un artículo o una historia.
+      Grandes Relatos presenta la biblia como historias cortas, fáciles de leer y de compartir.
+    read_a_story               : Haz la prueba, lee una historia en unos cuantos minutos
+
   # Bible book titles
   bible_book:
     Genesis:      Génesis
