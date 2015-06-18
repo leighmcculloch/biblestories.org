@@ -352,4 +352,5 @@ DEPENDENCIES
   middleman-minify-html
   middleman-s3_redirect!
   middleman-s3_sync!
+  parallel
   sanitize
