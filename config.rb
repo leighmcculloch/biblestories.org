@@ -85,6 +85,8 @@ ready do
 end
 
 # building
+sprockets.append_path File.join "#{root}", "bower_components"
+
 compass_config do |config|
   config.output_style = :compressed
 end

@@ -15,7 +15,7 @@
     - hreflangs = yield_content(:hreflangs)
     - if hreflangs
       - JSON.parse(hreflangs).each do |locale, url|
-        %link{:rel=>"alternate", :hreflang=>locale, :href=>url}
+        %link{:rel=>"alternate", :hreflang=>locale, :href=>url, :data=>{ :message=>t(:switch_to, :locale=>locale), :yes=>t(:switch_to_yes, :locale=>locale), :no=>t(:switch_to_no, :locale=>locale) } }
 
     - if description
       %meta{:name=>"description", :content=>description}
@@ -39,6 +39,7 @@
       = stylesheet_link_tag "ie.css"
     = yield_content :head
     = javascript_inline_tag("_ga")
-    = javascript_include_tag("all.js", :async=>"async")
+    = javascript_include_tag("primary.js", :async=>"async")
+    = javascript_include_tag("secondary.js", :async=>"defer")
   %body.page{:class => "page #{page_classes} #{current_page.data.page_classes}"}
     .container= yield

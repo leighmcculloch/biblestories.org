@@ -1,5 +1,8 @@
 en:
   language                     : English
+  switch_to                    : Read in English?
+  switch_to_yes                : "Yes"
+  switch_to_no                 : "No"
 
   title                        : Great Stories of the Bible
   title_short                  : Great Stories

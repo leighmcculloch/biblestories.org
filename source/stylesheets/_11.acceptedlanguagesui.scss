@@ -1,0 +1,58 @@
+$color-background: rgba(black, 0.8);
+$color-background-shadow: rgba(black, 0.25);
+$color-foreground: white;
+$color-foreground-shadow: rgba(black, 0.25);
+$color-no: #bdc3c7;
+$color-yes: #27ae60;
+
+.page.story .acceptedlanguagesui {
+  position: absolute;
+  top: 55px;
+  right: 9px;
+  z-index: 99999;
+  font-size: 1em;
+  text-align: center;
+  background-color: $color-background;
+  box-shadow: 2px 2px 5px $color-background-shadow;
+  font-weight: normal;
+
+  span {
+    color: $color-foreground;
+    padding: 8px;
+  }
+
+  button {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    color: $color-foreground;
+    padding: 8px;
+    text-shadow: 0 1px 1px $color-foreground-shadow;
+    font-weight: normal;
+    font-size: inherit;
+
+    &.no {
+      background-color: $color-no;
+    }
+
+    &.yes {
+      background-color: $color-yes;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: -7px;
+    right: 11px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid $color-yes;
+    content: '';
+  }
+
+  &.hide {
+    display: none;
+  }
+}

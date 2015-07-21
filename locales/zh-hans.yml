@@ -1,5 +1,8 @@
 zh-Hans:
   language                     : 简化字
+  switch_to                    : 用中文浏览？
+  switch_to_yes                : 是
+  switch_to_no                 : 否
 
   title                        : 伟大的圣经故事
   title_short                  : 伟大的圣经故事

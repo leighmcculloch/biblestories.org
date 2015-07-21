@@ -1,0 +1,6 @@
+{
+  "name": "greatstoriesofthebible.org",
+  "dependencies": {
+    "acceptedlanguagesui": "~0.0.9"
+  }
+}

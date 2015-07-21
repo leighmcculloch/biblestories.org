@@ -1,5 +1,8 @@
 pt-BR:
   language                     : Português brasileiro
+  switch_to                    : Gostaria de ler em português brasileiro?
+  switch_to_yes                : "Sim"
+  switch_to_no                 : "Não"
 
   title                        : Grandes Histórias da Bíblia
   title_short                  : Grandes Histórias

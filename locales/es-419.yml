@@ -1,5 +1,8 @@
 es-419:
   language                     : Español (Latinoamérica)
+  switch_to                    : ¿Leer en español?
+  switch_to_yes                : "Sí"
+  switch_to_no                 : "No"
 
   title                        : Grandes relatos de la Biblia
   title_short                  : Grandes relatos
