@@ -6,7 +6,6 @@
  *= require vendor/_jquery.ga-scrolldepth
  *= require vendor/_jquery.medium-highlight-and-popup
  *= require vendor/_jquery.autowidth
- *= require _ga
  *= require _iscompact
  *= require _shared
  *= require _story
