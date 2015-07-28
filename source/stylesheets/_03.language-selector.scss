@@ -10,9 +10,6 @@
       margin: 0;
       border: 0;
       border-radius: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
       color: inherit;
       outline: none;
       overflow: visible;
@@ -20,5 +17,10 @@
       option {
          overflow: visible;
       }
+
+      /* hide the browsers default styling of the select drop down */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
    }
 }
