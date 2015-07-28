@@ -101,10 +101,7 @@ $(function() {
   if (typeof audio != 'undefined') {
     var $control = $('.controls .audio-label, .controls .audio');
     if (!!(audio.canPlayType && audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
-      $(audio).gaPlayLength({
-        audioTime: true,
-        userTiming: true
-      });
+      gaplaylength.init(audio);
       $control.click(function(ev) {
         ev.preventDefault();
         var $source = $(audio).find('source');
