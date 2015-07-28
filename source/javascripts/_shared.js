@@ -33,7 +33,8 @@ $(function() {
 
 $(window).load(function() {
   $('.language-selector select').autowidth({
-    padding: 0
+    padding: 0,
+    maxWidth: 80
   });
 });
 
