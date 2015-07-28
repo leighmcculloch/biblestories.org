@@ -36,6 +36,7 @@ $(window).load(function() {
     padding: 0,
     maxWidth: 80
   });
+  $('.language-selector').css('visibility', 'visible');
 });
 
 /* search story list filtering */
