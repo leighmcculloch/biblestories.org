@@ -32,8 +32,9 @@
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.png"}
     %link{:rel=>"icon", :type=>"image/ico", :href=>"/favicon.ico"}
-    
-    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"//#{settings.deployment.font_host}/css?family=Open+Sans:300,600|Libre+Baskerville:400"}
+
+    - if settings.deployment.font_host
+      %link{:rel=>"stylesheet", :type=>"text/css", :href=>"//#{settings.deployment.font_host}/css?family=Open+Sans:300,600|Libre+Baskerville:400"}
     = stylesheet_link_tag "all.css"
     /[if lte IE 8]
       = stylesheet_link_tag "ie.css"

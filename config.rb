@@ -29,7 +29,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
     zone: "greatstoriesofthebible.cn",
     zone_short: "greatstories.cn",
     aws_region: "us-east-1",
-    font_host: "fonts.useso.com",
+    font_host: nil,
     development: DEV,
     features: {
       select_and_share: false,
