@@ -42,5 +42,6 @@
     = javascript_inline_tag("_ga")
     = javascript_include_tag("01/main.js", :async=>"async")
     = javascript_include_tag("02-acceptedlanguagesui/main.js", :async=>"defer")
+    = javascript_include_tag("02-gaplaylength/main.js", :async=>"defer")
   %body.page{:class => "page #{page_classes} #{current_page.data.page_classes}"}
     .container= yield

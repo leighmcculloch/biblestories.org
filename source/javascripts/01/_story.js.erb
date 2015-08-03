@@ -96,12 +96,11 @@ $(function() {
   /* scroll depth analytics */
   $.scrollDepth();
 
-  /* audio and audio analytics */
+  /* audio */
   var audio = $('.audio-player audio').get(0);
   if (typeof audio != 'undefined') {
     var $control = $('.controls .audio-label, .controls .audio');
     if (!!(audio.canPlayType && audio.canPlayType('audio/mpeg;').replace(/no/, ''))) {
-      gaplaylength.init(audio);
       $control.click(function(ev) {
         ev.preventDefault();
         var $source = $(audio).find('source');
