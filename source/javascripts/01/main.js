@@ -6,7 +6,7 @@
  *= require vendor/_jquery.medium-highlight-and-popup
  *= require vendor/_jquery.autowidth
  *= require gaplaylength/dist/gaplaylength.min
- *= require _iscompact
- *= require _shared
- *= require _story
+ *= require 01/_iscompact
+ *= require 01/_shared
+ *= require 01/_story
  */

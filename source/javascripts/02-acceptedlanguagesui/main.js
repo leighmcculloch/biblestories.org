@@ -1,3 +1,8 @@
+/*
+ *= require acceptedlanguages/dist/acceptedlanguages.min
+ *= require acceptedlanguagesui/dist/acceptedlanguagesui.min
+ */
+
 (function() {
   if (!window.addEventListener) {
     return;

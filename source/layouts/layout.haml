@@ -29,7 +29,7 @@
 
     %meta{:name=>"viewport", :content=>"width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,    maximum-scale=1"}
     %meta{:name=>"apple-mobile-web-app-capable", :content=>"yes"}
-    
+
     %link{:rel=>"shortcut icon", :href=>"/favicon.png"}
     %link{:rel=>"icon", :type=>"image/ico", :href=>"/favicon.ico"}
 
@@ -40,7 +40,7 @@
       = stylesheet_link_tag "ie.css"
     = yield_content :head
     = javascript_inline_tag("_ga")
-    = javascript_include_tag("primary.js", :async=>"async")
-    = javascript_include_tag("secondary.js", :async=>"defer")
+    = javascript_include_tag("01/main.js", :async=>"async")
+    = javascript_include_tag("02-acceptedlanguagesui/main.js", :async=>"defer")
   %body.page{:class => "page #{page_classes} #{current_page.data.page_classes}"}
     .container= yield
