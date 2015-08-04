@@ -19,9 +19,11 @@ $(function() {
 });
 
 /* fast click for mobile */
-$(function() {
-  FastClick.attach(document.body);
-});
+if (document.addEventListener) {
+  document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body);
+  }, false);
+}
 
 /* language selector */
 $(function() {
