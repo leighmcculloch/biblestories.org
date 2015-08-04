@@ -28,7 +28,7 @@
       });
 
       /* scroll depth analytics */
-      scrolldepth.init();
+      scrollDepth.init();
 
       /* audio play analytics */
       var audio = document.querySelector('.audio-player audio');
