@@ -1,6 +1,8 @@
 /*
  *= require acceptedlanguages/dist/acceptedlanguages.min
  *= require acceptedlanguagesui/dist/acceptedlanguagesui.min
+ *= require vendor/_scrolldepth
+ *= require gaplaylength/dist/gaplaylength.min
  */
 
 (function() {
@@ -8,9 +10,10 @@
     return;
   }
 
-  function load(event){
-    window.removeEventListener("load", load, false);
+  window.addEventListener("load", function() {
     if (document.body.className.indexOf('story') != -1) {
+
+      /* acceptedlanguagesui */
       acceptedlanguagesui.init({
         insertElementIntoSelector: '.side-menu-view-container',
         onShow: function(element, currentLanguage, relevantLanguage) {
@@ -23,55 +26,17 @@
           ga('send', 'event', 'acceptedlanguagesui', 'no', currentLanguage + '→' + relevantLanguage);
         },
       });
+
+      /* scroll depth analytics */
+      scrolldepth.init();
+
+      /* audio play analytics */
+      var audio = document.querySelector('.audio-player audio');
+      if (audio) {
+        gaplaylength.init(audio);
+      }
+
     }
-  }
+  }, false);
 
-  window.addEventListener("load", load, false);
-}());
-
-/*
- *= require vendor/_scrolldepth
- */
-
-(function() {
-  if (!window.addEventListener) {
-    return;
-  }
-
-  function load(event){
-    window.removeEventListener('load', load, false);
-
-    if (document.body.className.indexOf('story') === -1) {
-      return;
-    }
-
-    scrolldepth.init();
-  }
-
-  window.addEventListener('load', load, false);
-}());
-
-/*
- *= require gaplaylength/dist/gaplaylength.min
- */
-
-(function() {
-  if (!window.addEventListener) {
-    return;
-  }
-
-  function load(event){
-    window.removeEventListener('load', load, false);
-
-    if (document.body.className.indexOf('story') === -1) {
-      return;
-    }
-
-    var audio = document.querySelector('.audio-player audio');
-    if (audio) {
-      gaplaylength.init(audio);
-    }
-  }
-
-  window.addEventListener('load', load, false);
 }());
