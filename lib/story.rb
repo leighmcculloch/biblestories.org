@@ -1,95 +1,26 @@
-require_relative "apis"
-
 class Story
-  attr_reader :short_url, :short_url_native, :title, :bible_ref, :bible_ref_english, :author
+  attr_reader :id, :accounts
 
-  def initialize(story_key, book_key, book_ref)
-    @short_url = story_key
-    @title = I18n.t("story.title.#{story_key}")
-    @bible_ref = "#{I18n.t("bible_book.#{book_key}")} #{book_ref}"
-    @bible_ref_english = "#{I18n.t("bible_book.#{book_key}", locale: :en)} #{book_ref}"
-    begin
-      @author = I18n.translate!("bible_book_author.#{book_key}")
-    rescue I18n::MissingTranslationData
-    end
+  def initialize(id, accounts = [])
+    @id = id
+    @accounts = accounts
   end
 
-  def short_url_native(locale: I18n.locale)
-    I18n.t("story.url.#{self.short_url}", :locale => locale, :default => self.short_url)
+  def title
+    I18n.t("story.title.#{id}")
   end
 
-  def load
-    return if @loaded
-    @loaded = true
-
-    text = Apis.get_text(self.bible_ref_english)
-    if text
-      @text_html = text[:text]
-      @text_copyright = text[:copyright]
-      @text_css = text[:css]
-    end
-
-    audio = Apis.get_audio(self.bible_ref_english)
-    if audio
-      @audio_url = audio[:audio_url]
-      @audio_info = audio[:audio_info]
-      @audio_copyright = audio[:copyright]
-    end
-
-    @read_more_url = Apis.get_read_more(self.bible_ref_english)
+  def default_account
+    @accounts.first
   end
 
-  def text_plain
-    Sanitize.clean(self.text_html).strip
-  end
-
-  def text_plain_short
-    "#{self.text_plain[0..197]}..."
-  end
-
-  def text_html
-    load
-    @text_html
-  end
-
-  def text_copyright
-    load
-    @text_copyright
-  end
-
-  def text_css
-    load
-    @text_css
-  end
-
-  def audio_url
-    load
-    @audio_url
-  end
-
-  def audio_info
-    load
-    return @audio_info if @audio_info
-    return [ { :bible_ref => self.bible_ref, :url => @audio_url } ] if @audio_url
-    nil
-  end
-
-  def audio_copyright
-    load
-    @audio_copyright
-  end
-
-  def read_more_url
-    load
-    @read_more_url
-  end
-
-  def as_json
+  def as_json(options)
     {
+      :id => self.id,
+      :type => self.class.name.downcase,
       :title => self.title,
-      :bible_ref => self.bible_ref,
-      :bible_ref_english => self.bible_ref_english,
-      :author => self.author
+      :accounts => self.accounts.map { |account| account.as_json(options) }
     }
   end
 end
+

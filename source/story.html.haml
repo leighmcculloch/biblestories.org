@@ -6,17 +6,17 @@ page_classes: story side-menu-container not-showing-side-menu
 - content_for(:description, "Bible Story: #{story.title}; Ref: #{story.bible_ref}.")
 - content_for(:social_description, story.text_plain_short)
 
-- url = "#{settings.deployment.base_url(locale: I18n.locale)}/#{story.short_url_native}"
-- short_url = "#{settings.deployment.base_url_short(locale: I18n.locale)}/#{story.short_url_native}"
+- url = "#{settings.deployment.base_url(locale: I18n.locale)}/#{story.short_url}"
+- short_url = "#{settings.deployment.base_url_short(locale: I18n.locale)}/#{story.short_url}"
 - content_for(:url, url)
 - content_for(:short_url, short_url)
 
-- content_for(:ga_page, "/#{story.short_url}")
+- content_for(:ga_page, "/#{story.id}")
 
 - hreflangs = {}
 - settings.deployments.each do |deployment|
   - deployment.locales.each do |locale|
-    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{story.short_url_native(locale: locale)}"
+    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{story.short_url(locale: locale)}"
 - content_for(:hreflangs, hreflangs.to_json)
 
 .side-menu-view-container

@@ -34,9 +34,9 @@ page_classes: index
         %i.icon-search= icon(:search)
 
   .stories
-    - Stories.all.each do |_, story|
+    - Stories.all_accounts.each do |_, story|
       .story{:data => story.as_json}
-        %a{:href=>"#{story.short_url_native}"}= story.title
+        %a{:href=>"#{story.short_url}"}= story.title
         .bible_ref= story.bible_ref
 
   .search-no-results{:style=>"display:none"}

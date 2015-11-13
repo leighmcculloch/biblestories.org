@@ -172,8 +172,8 @@ after_configuration do
     page_content_types[why_page_path.sub(/^\//, "")] = "text/html"
 
     # each story page
-    Stories.all.each do |story_short_url, story|
-      page_path = "#{prefix}/#{story.short_url_native(locale: lang)}"
+    Stories.all_accounts.each do |story_account_id, story|
+      page_path = "#{prefix}/#{story.short_url(locale: lang)}"
       page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => story }, :locale => lang) { I18n.locale = lang }
       page_content_types[page_path.sub(/^\//, "")] = "text/html"
     end

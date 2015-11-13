@@ -157,42 +157,22 @@ en:
       the_fiery_furnace:                The Fiery Furnace
       the_lions_den:                    The Lions' Den
       jonah:                            Jonah
-      jesus_is_born_by_matthew:         Jesus is Born
-      jesus_is_born_by_luke:            Jesus is Born
+      jesus_is_born:                    Jesus is Born
       wise_men_and_king_herod:          Wise Men and King Herod
-      jesus_is_tempted_by_matthew:      Jesus is Tempted
-      jesus_is_tempted_by_mark:         Jesus is Tempted
-      jesus_is_tempted_by_luke:         Jesus is Tempted
-      jesus_feeds_5000_by_matthew:      Jesus Feeds 5,000
-      jesus_feeds_5000_by_mark:         Jesus Feeds 5,000
-      jesus_feeds_5000_by_luke:         Jesus Feeds 5,000
-      jesus_feeds_5000_by_john:         Jesus Feeds 5,000
+      jesus_is_tempted:                 Jesus is Tempted
+      jesus_feeds_5000:                 Jesus Feeds 5,000
       the_bread_of_life:                The Bread of Life
-      jesus_walks_on_water_by_matthew:  Jesus Walks on Water
-      jesus_walks_on_water_by_mark:     Jesus Walks on Water
-      jesus_walks_on_water_by_john:     Jesus Walks on Water
+      jesus_walks_on_water:             Jesus Walks on Water
       the_good_samaritan:               The Good Samaritan
       the_lost_son:                     The Lost Son
       jesus_raises_lazarus:             Jesus Raises Lazarus
       jesus_and_zacchaeus:              Jesus and Zacchaeus
-      the_triumphal_entry_by_matthew:   The Triumphal Entry
-      the_triumphal_entry_by_luke:      The Triumphal Entry
-      the_triumphal_entry_by_john:      The Triumphal Entry
-      the_last_supper_by_matthew:       The Last Supper
-      the_last_supper_by_mark:          The Last Supper
-      the_last_supper_by_luke:          The Last Supper
-      the_last_supper_by_john:          The Last Supper
+      the_triumphal_entry:              The Triumphal Entry
+      the_last_supper:                  The Last Supper
       jesus_trial:                      Jesus' Trial
-      jesus_crucifixion_by_matthew:     Jesus' Crucifixion
-      jesus_crucifixion_by_mark:        Jesus' Crucifixion
-      jesus_crucifixion_by_luke:        Jesus' Crucifixion
-      jesus_crucifixion_by_john:        Jesus' Crucifixion
-      jesus_resurrection_by_matthew:    Jesus' Resurrection
-      jesus_resurrection_by_mark:       Jesus' Resurrection
-      jesus_resurrection_by_luke:       Jesus' Resurrection
-      jesus_resurrection_by_john:       Jesus' Resurrection
-      jesus_ascension_luke:             Jesus' Ascension
-      jesus_ascension_acts:             Jesus' Ascension
+      jesus_crucifixion:                Jesus' Crucifixion
+      jesus_resurrection:               Jesus' Resurrection
+      jesus_ascension:                  Jesus' Ascension
       the_holy_spirit_comes:            The Holy Spirit Comes
       the_apostles_courage:             The Apostles' Courage
       ananias_and_sapphira:             Ananias and Sapphira

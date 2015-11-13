@@ -156,42 +156,22 @@ zh-Hans:
       the_fiery_furnace:                  火窑
       the_lions_den:                      狮子坑
       jonah:                              约拿
-      jesus_is_born_by_matthew:           耶稣基督降生
-      jesus_is_born_by_luke:              耶稣基督降生
+      jesus_is_born:                      耶稣基督降生
       wise_men_and_king_herod:            博士和希律王
-      jesus_is_tempted_by_matthew:        耶稣受试探
-      jesus_is_tempted_by_mark:           耶稣受试探
-      jesus_is_tempted_by_luke:           耶稣受试探
-      jesus_feeds_5000_by_matthew:        耶稣让 5000 人吃饱
-      jesus_feeds_5000_by_mark:           耶稣让 5000 人吃饱
-      jesus_feeds_5000_by_luke:           耶稣让 5000 人吃饱
-      jesus_feeds_5000_by_john:           耶稣让 5000 人吃饱
+      jesus_is_tempted:                   耶稣受试探
+      jesus_feeds_5000:                   耶稣让 5000 人吃饱
       the_bread_of_life:                  生命的粮
-      jesus_walks_on_water_by_matthew:    耶稣在海面上行走
-      jesus_walks_on_water_by_mark:       耶稣在海面上行走
-      jesus_walks_on_water_by_john:       耶稣在海面上行走
+      jesus_walks_on_water:               耶稣在海面上行走
       the_good_samaritan:                 好撒玛利亚人
       the_lost_son:                       浪子
       jesus_raises_lazarus:               耶稣使拉撒路复活
       jesus_and_zacchaeus:                耶稣与撒该
-      the_triumphal_entry_by_matthew:     凯旋归来
-      the_triumphal_entry_by_luke:        凯旋归来
-      the_triumphal_entry_by_john:        凯旋归来
-      the_last_supper_by_matthew:         最后的晚餐
-      the_last_supper_by_mark:            最后的晚餐
-      the_last_supper_by_luke:            最后的晚餐
-      the_last_supper_by_john:            最后的晚餐
+      the_triumphal_entry:                凯旋归来
+      the_last_supper:                    最后的晚餐
       jesus_trial:                        审判耶稣
-      jesus_crucifixion_by_matthew:       耶稣受难
-      jesus_crucifixion_by_mark:          耶稣受难
-      jesus_crucifixion_by_luke:          耶稣受难
-      jesus_crucifixion_by_john:          耶稣受难
-      jesus_resurrection_by_matthew:      耶稣复活
-      jesus_resurrection_by_mark:         耶稣复活
-      jesus_resurrection_by_luke:         耶稣复活
-      jesus_resurrection_by_john:         耶稣复活
-      jesus_ascension_luke:               耶稣升天
-      jesus_ascension_acts:               耶稣升天
+      jesus_crucifixion:                  耶稣受难
+      jesus_resurrection:                 耶稣复活
+      jesus_ascension:                    耶稣升天
       the_holy_spirit_comes:              圣灵降临
       the_apostles_courage:               使徒的胆量
       ananias_and_sapphira:               亚拿尼亚与撒非喇

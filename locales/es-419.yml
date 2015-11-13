@@ -156,42 +156,22 @@ es-419:
       the_fiery_furnace:                Rescatados del horno de fuego
       the_lions_den:                    Daniel en el foso de los leones
       jonah:                            Jonás
-      jesus_is_born_by_matthew:         Nacimiento de Jesús
-      jesus_is_born_by_luke:            Nacimiento de Jesús
+      jesus_is_born:                    Nacimiento de Jesús
       wise_men_and_king_herod:          El rey Herodes y los reyes magos
-      jesus_is_tempted_by_matthew:      La tentación de Jesús
-      jesus_is_tempted_by_mark:         La tentación de Jesús
-      jesus_is_tempted_by_luke:         La tentación de Jesús
-      jesus_feeds_5000_by_matthew:      Jesús alimenta a cinco mil
-      jesus_feeds_5000_by_mark:         Jesús alimenta a cinco mil
-      jesus_feeds_5000_by_luke:         Jesús alimenta a cinco mil
-      jesus_feeds_5000_by_john:         Jesús alimenta a cinco mil
+      jesus_is_tempted:                 La tentación de Jesús
+      jesus_feeds_5000:                 Jesús alimenta a cinco mil
       the_bread_of_life:                La multiplicación de los panes
-      jesus_walks_on_water_by_matthew:  Jesús camina sobre el agua
-      jesus_walks_on_water_by_mark:     Jesús camina sobre el agua
-      jesus_walks_on_water_by_john:     Jesús camina sobre el agua
+      jesus_walks_on_water:             Jesús camina sobre el agua
       the_good_samaritan:               El buen samaritano
       the_lost_son:                     La parábola de la oveja perdida
       jesus_raises_lazarus:             La resurrección de Lázaro
       jesus_and_zacchaeus:              Jesús y Zaqueo
-      the_triumphal_entry_by_matthew:   La entrada triunfal
-      the_triumphal_entry_by_luke:      La entrada triunfal
-      the_triumphal_entry_by_john:      La entrada triunfal
-      the_last_supper_by_matthew:       La última cena
-      the_last_supper_by_mark:          La última cena
-      the_last_supper_by_luke:          La última cena
-      the_last_supper_by_john:          La última cena
+      the_triumphal_entry:              La entrada triunfal
+      the_last_supper:                  La última cena
       jesus_trial:                      El arresto de Jesús
-      jesus_crucifixion_by_matthew:     La crucifixión de Jesús
-      jesus_crucifixion_by_mark:        La crucifixión de Jesús
-      jesus_crucifixion_by_luke:        La crucifixión de Jesús
-      jesus_crucifixion_by_john:        La crucifixión de Jesús
-      jesus_resurrection_by_matthew:    La resurrección de Jesús
-      jesus_resurrection_by_mark:       La resurrección de Jesús
-      jesus_resurrection_by_luke:       La resurrección de Jesús
-      jesus_resurrection_by_john:       La resurrección de Jesús
-      jesus_ascension_luke:             La ascensión de Jesús
-      jesus_ascension_acts:             La ascensión de Jesús
+      jesus_crucifixion:                La crucifixión de Jesús
+      jesus_resurrection:               La resurrección de Jesús
+      jesus_ascension:                  La ascensión de Jesús
       the_holy_spirit_comes:            Venida del Espíritu Santo
       the_apostles_courage:             Pedro y Juan ante el concilio
       ananias_and_sapphira:             Ananías y Safira

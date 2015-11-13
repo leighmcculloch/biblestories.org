@@ -16,11 +16,11 @@
             %input.query{:type=>"text", :placeholder=>t(:search_placeholder_side_menu)}
             %i.toggle-side-menu-and-search.icon-search= icon(:search)
       .stories
-        - Stories.all.each do |_, story|
-          .story{:class => ("current" if story.short_url == active_story.short_url), :data => story.as_json}
-            - if story.short_url == active_story.short_url
+        - Stories.all_accounts.each do |_, story|
+          .story{:class => ("current" if story.id == active_story.id), :data => story.as_json}
+            - if story.id == active_story.id
               %i.marker.icon-leaf= icon(:leaf)
-            %a{:href=>"./#{story.short_url_native(locale: I18n.locale)}"}= story.title
+            %a{:href=>"./#{story.short_url(locale: I18n.locale)}"}= story.title
             .bible_ref= story.bible_ref
       .search-no-results{:style=>"display:none"}
         = t(:search_no_results)
