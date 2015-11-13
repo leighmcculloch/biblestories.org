@@ -4,17 +4,6 @@ require_relative "story"
 class Stories
   @stories = {}
 
-  def self.all_short_urls
-    return @short_urls if @short_urls
-
-    stories_csv = CSV.read("data/stories.csv", { :col_sep => "," })
-    stories_csv = stories_csv.map { |story| story.map { |story_property| story_property.strip } }
-    @short_urls = stories_csv.map do |story_csv_line|
-      story_csv_line[0].strip
-    end
-    @short_urls
-  end
-  
   def self.all
     return @stories[I18n.locale] if @stories[I18n.locale]
 
@@ -31,9 +20,4 @@ class Stories
 
     @stories[I18n.locale] = Hash[stories_pair_array]
   end
-
-  def self.find(story_key)
-    self.all[story_key]
-  end
-  
 end
