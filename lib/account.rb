@@ -10,6 +10,10 @@ class Account
     @book_ref = book_ref
   end
 
+  def other_accounts
+    self.story.accounts.select { |account| account.id != @id }
+  end
+
   def title
     self.story.title
   end

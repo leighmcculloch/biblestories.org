@@ -22,6 +22,7 @@ en:
 
   story_written_by             : written by %{author}* in %{bible_ref}
   story_read_more              : Read the surrounding text of %{bible_ref}
+  story_read_other_accounts    : "Read other accounts of this story:"
   story_find_other             : Find other great stories in the Bible
   story_author_disclaimer      : Some scholars believe %{title} to be written by %{author}.
 

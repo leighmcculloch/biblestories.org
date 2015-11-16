@@ -22,6 +22,7 @@ zh-Hans:
 
   story_written_by             : 在 %{bible_ref}中由 %{author}* 撰写
   story_read_more              : 阅读与 %{bible_ref} 相关的文本
+  story_read_other_accounts    : 查看其他讲过这个故事的人：
   story_find_other             : 发现《圣经》中其它精彩的故事
   story_author_disclaimer      : 一些学者认为 %{title} 是由 %{author} 撰写的。
 

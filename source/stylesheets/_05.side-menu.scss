@@ -148,7 +148,7 @@ $width-super-compact: 320px;
       text-align: center;
       .story {
         margin: 20px 0;
-        a {
+        a.story-link {
           font-size: 0.94em;
           color: $color-side-menu-stories-story;
           text-decoration: none;
@@ -156,11 +156,22 @@ $width-super-compact: 320px;
             color: $color-side-menu-stories-story-current;
           }
         }
-        .bible_ref {
+        .account {
           display: inline;
           white-space: nowrap;
           color: $color-side-menu-stories-story;
           font-size: 0.56em;
+
+          a.account-link {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          &.current {
+            a.account-link {
+              color: $color-side-menu-stories-story-current;
+            }
+          }
         }
       }
       .story.current {

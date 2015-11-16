@@ -35,10 +35,12 @@ page_classes: index
         %i.icon-search= icon(:search)
 
   .stories
-    - Stories.all_accounts.each do |_, story|
-      .story{:data => story.as_json}
-        %a{:href=>"#{story.short_url}"}= story.title
-        .bible_ref= story.bible_ref
+    - Stories.all.each do |_, story|
+      .story{:data => story.default_account.as_json}
+        %a.story-link{:href=>"#{story.default_account.short_url}"}= story.title
+        - story.accounts.each do |account|
+          .account
+            %a.account-link{:href=>"#{account.short_url}"}= account.bible_ref
 
   .search-no-results{:style=>"display:none"}
     = t(:search_no_results)

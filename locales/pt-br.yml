@@ -22,6 +22,7 @@ pt-BR:
 
   story_written_by             : escrito por %{author}* em %{bible_ref}
   story_read_more              : Leia o contexto em %{bible_ref}
+  story_read_other_accounts    : "Leia outros relatos dessa história:"
   story_find_other             : Encontre outras grandes histórias da Bíblia
   story_author_disclaimer      : Alguns estudiosos acreditam que %{title} foi escrito por %{author}.
 

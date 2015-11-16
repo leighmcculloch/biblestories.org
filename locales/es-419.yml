@@ -22,6 +22,7 @@ es-419:
 
   story_written_by             : escrito por %{author}* en %{bible_ref}
   story_read_more              : Lea el texto circundante de %{bible_ref}
+  story_read_other_accounts    : "Leer otras versiones de esta historia:"
   story_find_other             : Encuentre otros grandes relatos de la Biblia
   story_author_disclaimer      : Algunos estudiosos creen que %{title} fue escrito por %{author}.
 

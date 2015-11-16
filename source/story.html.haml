@@ -19,6 +19,8 @@ page_classes: story side-menu-container not-showing-side-menu
     - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{story.short_url(locale: locale)}"
 - content_for(:hreflangs, hreflangs.to_json)
 
+- other_accounts = story.other_accounts
+
 .side-menu-view-container
   .view
     .header
@@ -63,6 +65,13 @@ page_classes: story side-menu-container not-showing-side-menu
         .item.read-more
           %a{:href=>story.read_more_url}
             = t(:story_read_more, :bible_ref=>story.bible_ref)
+        - if other_accounts.present?
+          .item.read-other-accounts
+            = t(:story_read_other_accounts)
+            .other-accounts
+              - other_accounts.each_with_index do |account, index|
+                %a{:href=>account.short_url}>= account.bible_ref
+                = ",&nbsp;" if index != (other_accounts.count - 1)
         .item.more-stories
           %a{:href=>"../"}
             = t(:story_find_other)
