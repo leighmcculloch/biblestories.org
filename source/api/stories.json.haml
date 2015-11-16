@@ -1,0 +1,10 @@
+:ruby
+  response = {
+    :data => Stories.all
+  }
+  response_json = response.to_json({
+    locale: I18n.locale, 
+    base_url: settings.deployment.base_url(locale: I18n.locale),
+    base_url_short: settings.deployment.base_url_short(locale: I18n.locale)
+  })
+= JSON.pretty_generate(JSON.parse(response_json))

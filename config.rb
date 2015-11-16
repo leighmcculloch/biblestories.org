@@ -151,6 +151,7 @@ activate :imageoptim unless DEV
 # fully before generating the story pages, etc.
 ignore 'story.html'
 ignore 'why.html'
+ignore 'api/stories.json'
 after_configuration do
   # pages
   page_content_types = {}
@@ -180,6 +181,11 @@ after_configuration do
 
     # redirects for moved story pages
     data.redirects[I18n.locale].try(:each) { |from, to| redirect "/#{from}", "/#{to}" }
+
+    # api
+    page_path = "#{prefix}/api/stories"
+    page(page_path, :proxy => "/api/stories.json", :content_type => "application/json", :locale => lang, :layout => false) { I18n.locale = lang }
+    page_content_types[page_path.sub(/^\//, "")] = "application/json"
 
     I18n.locale = I18n.default_locale
   end
