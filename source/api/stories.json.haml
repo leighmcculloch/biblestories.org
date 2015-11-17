@@ -1,5 +1,13 @@
 :ruby
+  alternate = {}
+  settings.deployments.each do |deployment|
+    deployment.locales.each do |locale|
+      alternate[locale] = "#{deployment.base_url(locale: locale)}/api/stories"
+    end
+  end
+
   response = {
+    :alternate => alternate,
     :data => Stories.all
   }
   response_json = response.to_json({
