@@ -3,7 +3,8 @@ page_classes: index
 ---
 
 - content_for(:description, t(:meta_description))
-- content_for(:url, "#{settings.deployment.base_url(locale: I18n.locale)}/")
+- base_url = settings.deployment.base_url(locale: I18n.locale)
+- content_for(:url, "#{base_url}/")
 - content_for(:short_url, "#{settings.deployment.base_url_short(locale: I18n.locale)}/")
 - content_for(:ga_page, "/")
 
@@ -43,6 +44,8 @@ page_classes: index
     = t(:search_no_results)
 
   .footer
-    %div= t(:thanks) if I18n.locale == :en || I18n.locale == :"pt-BR"
     - if I18n.locale == :en || I18n.locale == :"pt-BR"
+      %div= t(:thanks)
       %div <!--sse-->#{t(:created_by)}<!--/sse-->
+      %div
+        %a{:href=>"#{base_url}/api/stories", :rel=>"nofollow"}= t(:api)
