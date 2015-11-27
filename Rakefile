@@ -5,6 +5,14 @@ DEV = !!ENV["DEV"]
 
 desc "Build and deploy the website from source"
 task :deploy_all do
+  DEPLOYMENTS.each do |deployment|
+    system("DEPLOYMENT=#{deployment} bundle exec middleman build")
+    # system("DEPLOYMENT=#{deployment} bundle exec middleman cdn") if !DEV
+  end
+end
+
+desc "Build and deploy the website from source in parallel"
+task :deploy_all_parallel do
   Parallel.each(DEPLOYMENTS) do |deployment|
     system("DEPLOYMENT=#{deployment} bundle exec middleman build")
     # system("DEPLOYMENT=#{deployment} bundle exec middleman cdn") if !DEV
