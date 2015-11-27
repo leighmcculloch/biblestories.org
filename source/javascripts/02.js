@@ -1,7 +1,7 @@
 /*
  *= require acceptedlanguages/dist/acceptedlanguages.min
  *= require acceptedlanguagesui/dist/acceptedlanguagesui.min
- *= require vendor/_scrolldepth
+ *= require gascrolldepth/gascrolldepth.min
  *= require gaplaylength/dist/gaplaylength.min
  */
 
@@ -28,7 +28,7 @@
       });
 
       /* scroll depth analytics */
-      scrollDepth.init();
+      gascrolldepth.init();
 
       /* audio play analytics */
       var audio = document.querySelector('.audio-player audio');

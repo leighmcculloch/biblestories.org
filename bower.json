@@ -3,6 +3,7 @@
   "dependencies": {
     "acceptedlanguagesui": "~0.0.9",
     "gaplaylength": "~0.3.0",
+    "gascrolldepth": "~0.8.0",
     "fastclick": "~1.0.6"
   }
 }
