@@ -25,14 +25,14 @@ DEPLOYMENTS = Deployments.new(deployments: [
     }
   ),
   Deployment.new(
-    locales: [:"zh-Hans"],
-    zone: "greatstoriesofthebible.cn",
-    zone_short: "greatstories.cn",
-    aws_region: "us-east-1",
-    font_host: nil,
+    locales: [:fr],
+    zone: "recitsbibliques.com",
+    zone_short: "recitsbibliques.com",
+    aws_region: "eu-central-1",
+    font_host: "fonts.googleapis.com",
     development: DEV,
     features: {
-      select_and_share: false,
+      select_and_share: true,
       sitemap: true
     }
   ),
@@ -45,6 +45,18 @@ DEPLOYMENTS = Deployments.new(deployments: [
     development: DEV,
     features: {
       select_and_share: true,
+      sitemap: true
+    }
+  ),
+  Deployment.new(
+    locales: [:"zh-Hans"],
+    zone: "greatstoriesofthebible.cn",
+    zone_short: "greatstories.cn",
+    aws_region: "us-east-1",
+    font_host: nil,
+    development: DEV,
+    features: {
+      select_and_share: false,
       sitemap: true
     }
   )

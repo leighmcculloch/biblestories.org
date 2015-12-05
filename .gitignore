@@ -1,3 +1,7 @@
 build
 caches
 bower_components
+
+# Segond 21, OSIS data file from Société Biblique de Genève.
+# Not committed as distribution contract allows publishing on the website only.
+data/bible.fr.segond-21.osis.xml

@@ -1,7 +1,7 @@
 .page.story .view .story .text {
 
-  /* esvapi */
-  .esv {
+  /* esvapi / osisapi */
+  .esv, .osis {
     h2 {
       display: none;
     }
@@ -16,13 +16,20 @@
     }
   }
   &.show-verses {
-    .esv {
+    .esv, .osis {
       .chapter-num, .verse-num {
         display: inline;
         font-weight: 300;
         font-size: smaller;
         color: $color-story-verses;
       }
+    }
+  }
+
+  /* osisapi */
+  .osis {
+    .reference {
+      font-style: italic;
     }
   }
 

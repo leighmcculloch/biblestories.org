@@ -1,6 +1,6 @@
 require "parallel"
 
-DEPLOYMENTS = (0..2).to_a
+DEPLOYMENTS = (0..3).to_a
 DEV = !!ENV["DEV"]
 
 desc "Build and deploy the website from source"
