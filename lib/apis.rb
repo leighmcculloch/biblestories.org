@@ -7,7 +7,6 @@ class Apis
       :"en" => CrosswayApi, # English
       :"zh-Hans" => BiblesorgApi, # Chinese Simplified
       :"es-419" => BiblesorgApi, # Spanish (Latin America)
-      # :"es-419" => BiblesorgApi, # Spanish (Latin America)
       # :"fr" => BiblesorgApi, # French
       # :"pt" => BiblesorgApi, # Portuguese
       :"pt-BR" => BiblesorgApi, # Portuguese (Brazil)
