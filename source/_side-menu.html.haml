@@ -1,10 +1,13 @@
+- base_url = settings.deployment.base_url(locale: I18n.locale)
+- base_url_short = settings.deployment.base_url_short(locale: I18n.locale)
+
 .side-menu-fixed
   .side-menu
     .background
     .item.title
       %i.close.toggle-side-menu.icon-menu.padded-click-square-buttons= icon(:menu)
       %i.logo.icon-leaf= icon(:leaf)
-      %a{:href=>"./"}
+      %a{:href=>base_url}
         = t(:title_short)
     %i.share-pointer.fa.fa-caret-left
     .item.share
@@ -21,9 +24,9 @@
           .story{:class => ("current" if is_active), :data => story.default_account.as_json}
             - if is_active
               %i.marker.icon-leaf= icon(:leaf)
-            %a.story-link{:href=>"./#{story.default_account.short_url(locale: I18n.locale)}"}= story.title
+            %a.story-link{:href=>"#{base_url}/#{story.default_account.short_url(locale: I18n.locale)}"}= story.title
             - story.accounts.each do |account|
               .account{:class => ("current" if account.id == active_story.id)}
-                %a.account-link{:href=>"#{account.short_url}"}= account.bible_ref
+                %a.account-link{:href=>"#{base_url}/#{account.short_url}"}= account.bible_ref
       .search-no-results{:style=>"display:none"}
         = t(:search_no_results)

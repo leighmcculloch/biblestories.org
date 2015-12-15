@@ -6,8 +6,10 @@ page_classes: story side-menu-container not-showing-side-menu
 - content_for(:description, "Bible Story: #{story.title}; Ref: #{story.bible_ref}.")
 - content_for(:social_description, story.text_plain_short)
 
-- url = "#{settings.deployment.base_url(locale: I18n.locale)}/#{story.short_url}"
-- short_url = "#{settings.deployment.base_url_short(locale: I18n.locale)}/#{story.short_url}"
+- base_url = settings.deployment.base_url(locale: I18n.locale)
+- base_url_short = settings.deployment.base_url_short(locale: I18n.locale)
+- url = "#{base_url}/#{story.short_url}"
+- short_url = "#{base_url_short}/#{story.short_url}"
 - content_for(:url, url)
 - content_for(:short_url, short_url)
 
@@ -70,10 +72,10 @@ page_classes: story side-menu-container not-showing-side-menu
             = t(:story_read_other_accounts)
             .other-accounts
               - other_accounts.each_with_index do |account, index|
-                %a{:href=>account.short_url}>= account.bible_ref
+                %a{:href=>"#{base_url}/#{account.short_url}"}>= account.bible_ref
                 = ",&nbsp;" if index != (other_accounts.count - 1)
         .item.more-stories
-          %a{:href=>"../"}
+          %a{:href=>base_url}
             = t(:story_find_other)
 
     .footer
