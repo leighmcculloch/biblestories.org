@@ -2,14 +2,15 @@
 
 Have you seen someone share a Bible verse? Probably. Have you seen someone share an entire Bible story? Probably not. Why is this? We share links to long form articles everyday. It’s the relationship we have to linking to a chunk of text vs linking to a story. We share verses as an intellectual exercise, but the Bible is about people and God, characters and their relationships.
 
-[Great Stories](http://greatstories.org) presents the bible as short stories. Jump in, read and share.
+[Great Stories](https://biblestories.org) presents the bible as short stories. Jump in, read and share.
 
 URL | Locale | Locale Name
 :-- |:------ |:-----------
-https://greatstoriesofthebible.org/ | en | English
-https://greatstoriesofthebible.org/es/ | es-419 | Spanish (Latin)
-https://greatstoriesofthebible.cn/ | zh-Hans | Chinese (Simplified)
+https://biblestories.org/ | en | English
+https://biblestories.org/es/ | es-419 | Spanish (Latin)
+https://recitsbibliques.com/ | fr | French
 https://grandeshistoriasdabiblia.com.br/ | pt-br | Portguese (Brazillian)
+https://greatstoriesofthebible.cn/ | zh-Hans | Chinese (Simplified)
 
 ![](README-1.png)
 ![](README-2.png)
