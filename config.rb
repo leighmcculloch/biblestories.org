@@ -71,13 +71,6 @@ set :build_dir, "build/#{DEPLOYMENT_ID}"
 
 set :ga_id, "UA-1756782-37"
 
-# dev
-# if DEV
-#   configure :development do
-#     activate :livereload
-#   end
-# end
-
 # dir setup
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
