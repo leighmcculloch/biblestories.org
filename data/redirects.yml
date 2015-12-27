@@ -9,3 +9,5 @@ en:
   jesus_is_tempted_by_mathew: jesus_is_tempted_by_matthew
   the_triumphal_entry_by_mathew: the_triumphal_entry_by_matthew
   jesus_feeds_5000_by_mathew: jesus_feeds_5000_by_matthew
+  # redirects for special stories
+  jesus_is_born: jesus_is_born_by_luke
