@@ -19,7 +19,7 @@ xml.urlset(
   # stories
   Stories.all_accounts.each do |story_id, story|
     xml.url do
-      xml.loc("#{settings.deployment.base_url}/#{story.short_url}")
+      xml.loc("#{settings.deployment.base_url}/#{story.short_url(locale: settings.deployment.locales.first)}")
       xml.lastmod(Time.now.strftime("%Y-%m-%d"))
       settings.deployments.locales.each do |locale|
         xml.xhtml(:link, :rel=>"alternate", :hreflang=>locale, :href=>"#{settings.deployments.base_url(locale: locale)}/#{story.short_url(locale: locale)}")
