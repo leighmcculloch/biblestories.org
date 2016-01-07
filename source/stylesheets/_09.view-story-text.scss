@@ -34,10 +34,18 @@
   }
 
   /* bibleapi */
-  p.p {
-    margin: 2em 0;
+  p {
+    &.p {
+      margin: 2em 0;
+    }
+    &.q, &.q1 {
+      text-indent: 1em;
+    }
+    &.q2, &.q3 {
+      text-indent: 2em;
+    }
   }
-  .s1, .s2, .v, .r {
+  .s, .s1, .s2, .v, .r {
     display: none;
   }
   &.show-verses {

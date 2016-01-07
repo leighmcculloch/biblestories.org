@@ -5,7 +5,8 @@ require_relative "apis/segond_21_osis_file_api"
 
 class Apis
   LOCALE_TO_API_TEXT_MAP = {
-      :"en" => CrosswayApi, # English
+      :"en" => BiblesorgApi, # English
+      # :"en" => CrosswayApi, # English
       :"zh-Hans" => BiblesorgApi, # Chinese Simplified
       :"es-419" => BiblesorgApi, # Spanish (Latin America)
       :"fr" => Segond21OsisFileApi.new("data/bible.fr.segond-21.osis.xml"), # French
@@ -13,9 +14,9 @@ class Apis
       :"pt-BR" => BiblesorgApi, # Portuguese (Brazil)
   }
   LOCALE_TO_API_AUDIO_MAP = {
-      :"en" => CrosswayApi,
-      :"zh-Hans" => DigitalBiblePlatformApi,
-      :"es-419" => DigitalBiblePlatformApi,
+      # :"en" => CrosswayApi,
+      # :"zh-Hans" => DigitalBiblePlatformApi,
+      # :"es-419" => DigitalBiblePlatformApi,
   }
 
   def self.get_text(bible_ref)

@@ -3,7 +3,11 @@ class BiblesorgApi
   API_URL_TEXT = "https://bibles.org/v2/passages.js"
 
   LOCALE_TO_VERSION_MAP = {
-    :"en" => "eng-MSG", # The Message
+    :"en" => "eng-CEVD", # 2006 Contemporary English Version, Second Edition (US Version)
+    # :"en" => "eng-CEV", # 1995 Contemporary English Version (US Version)
+    # :"en" => "eng-GNTD", # 1992 Good News Translation (US Version) (with Deuterocanonicals/Apocrypha)
+    # :"en-gb" => "eng-CEVUK", # 1995 Contemporary English Version (Anglicised Version)
+    # :"en-gb" => "eng-GNBDC", # 1992 Good News Bible (Anglicised) (with Deuterocanonicals/Apocrypha)
     :"es-419" => "spa-DHH", # 1994 Biblia Dios Habla Hoy (sin notas ni ayudas)
     :"zh-Hans" => "zho-RCUVSS", # 2010 Revised Chinese Union Version
     # :"fr" => "fra-NBS", # 2002 Nouvelle Bible Segond
@@ -34,9 +38,11 @@ class BiblesorgApi
 
   def self.get_text(bible_ref)
     passage = lookup(bible_ref)
+    text = _transpose_text(passage["text"]) + passage["tracking"]
+    copyright = _transpose_copyright(passage["copyright"])
     {
-      :text => "#{passage["text"]}#{passage["tracking"]}",
-      :copyright => passage["copyright"],
+      :text => text,
+      :copyright => copyright,
       :css => "biblesorg",
     }
   end
@@ -49,4 +55,15 @@ class BiblesorgApi
     "http://bibles.org/search/#{bible_ref}/#{get_version_for_locale}"
   end
 
+  def self._transpose_text(text)
+    text
+      .gsub("<sup", " <sup")
+      .gsub("</sup>", "</sup> ")
+      .gsub("[Lord]", "<span class=\"lord\">Lord</span>")
+  end
+
+  def self._transpose_copyright(copyright)
+    copyright
+      .gsub(" &#169;", "<br/>&#169;")
+  end
 end
