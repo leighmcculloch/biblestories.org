@@ -1,13 +1,12 @@
-require_relative "apis"
+require_relative "bible/passage"
 
 class Account
-  attr_reader :story, :id
+  attr_reader :story, :id, :passage
 
   def initialize(story, id, book_key, book_ref)
     @story = story
     @id = id
-    @book_key = book_key
-    @book_ref = book_ref
+    @passage = Passage.new(book_key, book_ref)
   end
 
   def other_accounts
@@ -19,17 +18,15 @@ class Account
   end
 
   def author
-    I18n.translate!("bible_book_author.#{@book_key}")
-  rescue I18n::MissingTranslationData
-    nil
+    self.passage.author
   end
 
   def bible_ref
-    "#{I18n.t("bible_book.#{@book_key}")} #{@book_ref}"
+    self.passage.bible_ref
   end
 
   def bible_ref_english
-    "#{I18n.t("bible_book.#{@book_key}", locale: :en)} #{@book_ref}"
+    self.passage.bible_ref_english
   end
 
   def url(locale: I18n.locale, base_url: nil)
@@ -44,70 +41,40 @@ class Account
     short_url
   end
 
-  def load
-    return if @loaded
-    @loaded = true
-
-    text = Apis.get_text(self.bible_ref_english)
-    if text
-      @text_html = text[:text]
-      @text_copyright = text[:copyright]
-      @text_css = text[:css]
-    end
-
-    audio = Apis.get_audio(self.bible_ref_english)
-    if audio
-      @audio_url = audio[:audio_url]
-      @audio_info = audio[:audio_info]
-      @audio_copyright = audio[:copyright]
-    end
-
-    @read_more_url = Apis.get_read_more(self.bible_ref_english)
-  end
-
   def text_plain
-    Sanitize.clean(self.text_html).strip
+    self.passage.text_plain
   end
 
   def text_plain_short
-    "#{self.text_plain[0..197]}..."
+    self.passage.text_plain_short
   end
 
   def text_html
-    load
-    @text_html
+    self.passage.text_html
   end
 
   def text_copyright
-    load
-    @text_copyright
+    self.passage.text_copyright
   end
 
   def text_css
-    load
-    @text_css
+    self.passage.text_css
   end
 
   def audio_url
-    load
-    @audio_url
+    self.passage.audio_url
   end
 
   def audio_info
-    load
-    return @audio_info if @audio_info
-    return [ { :bible_ref => self.bible_ref, :url => @audio_url } ] if @audio_url
-    nil
+    self.passage.audio_info
   end
 
   def audio_copyright
-    load
-    @audio_copyright
+    self.passage.audio_copyright
   end
 
   def read_more_url
-    load
-    @read_more_url
+    self.passage.read_more_url
   end
 
   def as_json(options = {})
