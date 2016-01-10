@@ -1,0 +1,50 @@
+(function() {
+  function getScript(src, callback) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onreadystatechange = s.onload = function() {
+      if (!callback.done && (!s.readyState || /loaded|complete/.test(s.readyState))) {
+        callback.done = true;
+        callback();
+      }
+    };
+    document.querySelector('head').appendChild(s);
+  }
+
+  function showElement(element) {
+    switch (element.tagName.toLowerCase()) {
+    case 'span':
+      element.style.display = "inline";
+      break;
+    case 'div':
+    default:
+      element.style.display = "block";
+      break;
+    }
+  }
+
+  function hideElement(element) {
+    element.style.display = "none";
+  }
+
+  var googleExperimentId = '_47Yx-h3Q8yPw3Y1nBpZtw';
+
+  getScript('https://www.google-analytics.com/cx/api.js?experiment=' + googleExperimentId, function () {
+    var version = cxApi.chooseVariation();
+
+    if (version > 0) {
+      var elements = document.querySelectorAll('.version-' + version);
+      for (var i = 0; i < elements.length; i++) {
+        showElement(elements[i]);
+      }
+
+      var originalElements = document.querySelectorAll('.version-0');
+      for (var i = 0; i < originalElements.length; i++) {
+        hideElement(originalElements[i]);
+      }
+    }
+
+    ga('send', 'event', 'experiments', 'esv-vs-cev', 'version', version, {'nonInteraction': 1})
+  });
+}());

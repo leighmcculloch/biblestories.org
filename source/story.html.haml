@@ -2,26 +2,34 @@
 page_classes: story side-menu-container not-showing-side-menu
 ---
 
+- passage = account.passage
+
+- if passage.versions.count > 1
+  - content_for(:head, javascript_include_tag("gacx", :async=>"async"))
+  - (1...passage.versions.count).each do |version|
+    :css
+      .version-#{version} { display: none; }
+
 - content_for(:title, "#{story.title}")
-- content_for(:description, "Bible Story: #{story.title}; Ref: #{story.bible_ref}.")
-- content_for(:social_description, story.text_plain_short)
+- content_for(:description, "Bible Story: #{story.title}; Ref: #{passage.bible_ref}.")
+- content_for(:social_description, passage.versions.first.text_plain_short)
 
 - base_url = settings.deployment.base_url(locale: I18n.locale)
 - base_url_short = settings.deployment.base_url_short(locale: I18n.locale)
-- url = "#{base_url}/#{story.short_url}"
-- short_url = "#{base_url_short}/#{story.short_url}"
+- url = "#{base_url}/#{account.short_url}"
+- short_url = "#{base_url_short}/#{account.short_url}"
 - content_for(:url, url)
 - content_for(:short_url, short_url)
 
-- content_for(:ga_page, "/#{story.id}")
+- content_for(:ga_page, "/#{account.id}")
 
 - hreflangs = {}
 - settings.deployments.each do |deployment|
   - deployment.locales.each do |locale|
-    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{story.short_url(locale: locale)}"
+    - hreflangs[locale.to_s] = "#{deployment.base_url(locale: locale)}/#{account.short_url(locale: locale)}"
 - content_for(:hreflangs, hreflangs.to_json)
 
-- other_accounts = story.other_accounts
+- other_accounts = account.other_accounts
 
 .side-menu-view-container
   .view
@@ -36,55 +44,68 @@ page_classes: story side-menu-container not-showing-side-menu
         %span.separator= "|"
         %span.control.toggle-verses.verses-short.padded-click-controls= t(:story_verses_short)
         %span.control.toggle-verses.verses-long.padded-click-controls= t(:story_verses_long)
-        - if story.audio_info && story.audio_info.length == 1
-          %span.audio-controls
-            %span.separator= "|"
-            %span.control.audio-label.padded-click-controls= t(:audio_label)
-            %span.control.audio.padded-click-controls
-              %i.icon-volume-up= icon(:volume_up)
+        - passage.versions.each_with_index do |version, index|
+          %span{ :class => "version-#{index}" }
+            - if version.audio_info && version.audio_info.length == 1
+              %span.audio-controls
+                %span.separator= "|"
+                %span.control.audio-label.padded-click-controls= t(:audio_label)
+                %span.control.audio.padded-click-controls
+                  %i.icon-volume-up= icon(:volume_up)
 
     .story
       .title
         %i.logo.icon-leaf= icon(:leaf)
         %h1= story.title
         %h2
-          - bible_ref_link = %(<a class="bible_ref" href="#{story.read_more_url}">#{story.bible_ref}</a>)
-          - if story.author
-            = t(:story_written_by, :author=>story.author, :bible_ref=>bible_ref_link)
-          - else
-            = bible_ref_link
-      - if story.audio_info && story.audio_info.length == 1
-        .audio-player{:style=>"display:none;"}
-          - story.audio_info.each do |audio_info|
-            %audio{:controls=>"controls", :preload=>"none"}
-              %source{:data => { :src=>audio_info[:url] }, :type=>"audio/mpeg"}
-      .text= story.text_html
+          - passage.versions.each_with_index do |version, index|
+            %div{ :class => "version-#{index}" }
+              - bible_ref_link = %(<a class="bible_ref" href="#{version.read_more_url}">#{passage.bible_ref}</a>)
+              - if passage.author
+                = t(:story_written_by, :author=>passage.author, :bible_ref=>bible_ref_link)
+              - else
+                = passage.bible_ref
+      - passage.versions.each_with_index do |version, index|
+        %div{ :class => "version-#{index}" }
+          - if version.audio_info && version.audio_info.length == 1
+            .audio-player{:style=>"display:none;"}
+              - version.audio_info.each do |audio_info|
+                %audio{:controls=>"controls", :preload=>"none"}
+                  %source{:data => { :src=>audio_info[:url] }, :type=>"audio/mpeg"}
+      .text
+        - passage.versions.each_with_index do |version, index|
+          %div{ :class => "version-#{index}" }
+            = version.text_html
       .call-to-action
         .item.share= partial "share-bar"
         .item.url
           %a{:href=>short_url}
             = short_url.sub(/^https?\:\/\//, '')
         .item.read-more
-          %a{:href=>story.read_more_url}
-            = t(:story_read_more, :bible_ref=>story.bible_ref)
+          - passage.versions.each_with_index do |version, index|
+            %div{ :class => "version-#{index}" }
+              %a{:href=>version.read_more_url}
+                = t(:story_read_more, :bible_ref=>passage.bible_ref)
         - if other_accounts.present?
           .item.read-other-accounts
             = t(:story_read_other_accounts)
             .other-accounts
               - other_accounts.each_with_index do |account, index|
-                %a{:href=>"#{base_url}/#{account.short_url}"}>= account.bible_ref
+                %a{:href=>"#{base_url}/#{account.short_url}"}>= passage.bible_ref
                 = ",&nbsp;" if index != (other_accounts.count - 1)
         .item.more-stories
           %a{:href=>base_url}
             = t(:story_find_other)
 
     .footer
-      - if story.author
+      - if passage.author
         %div
           = "*"
-          = t(:story_author_disclaimer, :title=>story.title, :author=>story.author)
-      %div= story.text_copyright
-      %div= story.audio_copyright
+          = t(:story_author_disclaimer, :title=>story.title, :author=>passage.author)
+      - passage.versions.each_with_index do |version, index|
+        %div{ :class => "version-#{index}" }
+          %div= version.text_copyright
+          %div= version.audio_copyright
       - if I18n.locale == :en || I18n.locale == :"pt-BR"
         %div <!--sse-->#{t(:created_by)}<!--/sse-->
 
@@ -95,4 +116,4 @@ page_classes: story side-menu-container not-showing-side-menu
         = partial "share-bar"
       .text-highlighted-arrow
 
-= partial "side-menu", :locals => { :active_story => story }
+= partial "side-menu", :locals => { :active_story => account }

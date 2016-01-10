@@ -27,6 +27,6 @@
             %a.story-link{:href=>"#{base_url}/#{story.default_account.short_url(locale: I18n.locale)}"}= story.title
             - story.accounts.each do |account|
               .account{:class => ("current" if account.id == active_story.id)}
-                %a.account-link{:href=>"#{base_url}/#{account.short_url}"}= account.bible_ref
+                %a.account-link{:href=>"#{base_url}/#{account.short_url}"}= account.passage.bible_ref
       .search-no-results{:style=>"display:none"}
         = t(:search_no_results)

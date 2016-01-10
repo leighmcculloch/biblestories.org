@@ -40,7 +40,7 @@ page_classes: index
         %a.story-link{:href=>"#{story.default_account.short_url}"}= story.title
         - story.accounts.each do |account|
           .account
-            %a.account-link{:href=>"#{account.short_url}"}= account.bible_ref
+            %a.account-link{:href=>"#{account.short_url}"}= account.passage.bible_ref
 
   .search-no-results{:style=>"display:none"}
     = t(:search_no_results)
