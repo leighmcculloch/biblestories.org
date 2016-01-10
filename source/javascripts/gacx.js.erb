@@ -28,23 +28,45 @@
     element.style.display = "none";
   }
 
+  function showVersion(version) {
+    var elements = document.querySelectorAll('.version-' + version);
+    for (var i = 0; i < elements.length; i++) {
+      showElement(elements[i]);
+    }
+  }
+
+  function hideVersion(version) {
+    var elements = document.querySelectorAll('.version-' + version);
+    for (var i = 0; i < elements.length; i++) {
+      hideElement(elements[i]);
+    }
+  }
+
   var googleExperimentId = '_47Yx-h3Q8yPw3Y1nBpZtw';
 
   getScript('https://www.google-analytics.com/cx/api.js?experiment=' + googleExperimentId, function () {
     var version = cxApi.chooseVariation();
 
+    var switchVersions;
     if (version > 0) {
-      var elements = document.querySelectorAll('.version-' + version);
-      for (var i = 0; i < elements.length; i++) {
-        showElement(elements[i]);
-      }
-
-      var originalElements = document.querySelectorAll('.version-0');
-      for (var i = 0; i < originalElements.length; i++) {
-        hideElement(originalElements[i]);
-      }
+      switchVersions = function () {
+        showVersion(version);
+        hideVersion(0);
+      };
+      switchVersions();
     }
 
-    ga('send', 'event', 'experiments', 'esv-vs-cev', 'version', version, {'nonInteraction': 1})
+    var complete = function () {
+      if (switchVersions) {
+        switchVersions();
+      }
+      ga('send', 'event', 'experiments', 'esv-vs-cev', 'version', version, {'nonInteraction': 1})
+    };
+
+    if (window.addEventListener) {
+      window.addEventListener('load', complete, false);
+    } else if (window.attachEvent)  {
+      window.attachEvent('onclick', complete);
+    }
   });
 }());
