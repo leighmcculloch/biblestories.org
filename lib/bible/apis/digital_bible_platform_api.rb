@@ -4,28 +4,25 @@ class DigitalBiblePlatformApi
   API_URL_AUDIO_PATH = "http://dbt.io/audio/path?key=#{API_KEY}&encoding=mp3&reply=json&v=2"
   API_URL_AUDIO_VERSE_TIMECODE = "http://dbt.io/audio/versestart?key=#{API_KEY}&reply=json&v=2"
   API_URL_COPYRIGHT = "http://dbt.io/library/metadata?key=#{API_KEY}&reply=json&v=2"
-  LOCALE_TO_DAMID_MAP = {
-      :"en" => "ENGESVN2DA", # English ESV New Testament
-      :"zh-Hans" => "CHNUN1N2DA", # Chinese (Simplified) New Testament
-      :"es-419" => "SPNBDAN2DA", # Spanish 2010 Biblia de América New Testament
-      # :"fr" => "FRNPDFO2ET", # French 2000 Parole de Vie (European) Version
-  }
 
-  def self.get_damid_for_locale
-    version = LOCALE_TO_DAMID_MAP[I18n.locale]
-    raise "No DAMID defined for locale #{I18n.locale}" if version.nil?
-    version
+  # en      - ENGESVN2DA - English ESV New Testament
+  # zh-Hans - CHNUN1N2DA - Chinese (Simplified) New Testament
+  # es-419  - SPNBDAN2DA - Spanish 2010 Biblia de América New Testament
+  # fr      - FRNPDFO2ET - French 2000 Parole de Vie (European) Version
+
+  def initialize(version)
+    @version = version
   end
 
-  def self.get_copyright
-    response = HTTParty.get("#{API_URL_COPYRIGHT}&dam_id=#{self.get_damid_for_locale}")
+  def get_copyright
+    response = HTTParty.get("#{API_URL_COPYRIGHT}&dam_id=#{@version}")
     response_json = JSON.parse(response.body)
     meta_info = response_json[0]
     return meta_info["mark"] if meta_info
     nil
   end
 
-  def self.get_base_url
+  def get_base_url
     response = HTTParty.get(API_URL_AUDIO_SERVERS)
     response_json = JSON.parse(response.body)
     server_index = 0
@@ -35,7 +32,7 @@ class DigitalBiblePlatformApi
     "#{protocol}://#{host}#{path}"
   end
 
-  def self.get_audio_info(bible_ref)
+  def get_audio_info(bible_ref)
     base_url = self.get_base_url
 
     parts = bible_ref.split(/[\ \-]/)
@@ -69,7 +66,7 @@ class DigitalBiblePlatformApi
       start_verse = chapter == start_chapter ? start_verse : 1
       end_verse = chapter == end_chapter ? end_verse : nil
 
-      response = HTTParty.get("#{API_URL_AUDIO_VERSE_TIMECODE}&dam_id=#{self.get_damid_for_locale}&book_id=#{book_id}&chapter_id=#{chapter}")
+      response = HTTParty.get("#{API_URL_AUDIO_VERSE_TIMECODE}&dam_id=#{@version}&book_id=#{book_id}&chapter_id=#{chapter}")
       response_json = JSON.parse(response.body)
       if start_chapter == start_chapter
         start_time_info = response_json.find { |v| v["verse_id"] == start_verse }
@@ -83,7 +80,7 @@ class DigitalBiblePlatformApi
         end_time = end_time_info["verse_start"] if end_time_info
       end
 
-      response = HTTParty.get("#{API_URL_AUDIO_PATH}&dam_id=#{self.get_damid_for_locale}&book_id=#{book_id}&chapter_id=#{chapter}")
+      response = HTTParty.get("#{API_URL_AUDIO_PATH}&dam_id=#{@version}&book_id=#{book_id}&chapter_id=#{chapter}")
       response_json = JSON.parse(response.body)
       path = response_json[0]["path"]
       if path
@@ -101,7 +98,7 @@ class DigitalBiblePlatformApi
     chapters
   end
 
-  def self.get_audio(bible_ref)
+  def get_audio(bible_ref)
     audio_info = self.get_audio_info(bible_ref)
     audio = {
       :audio_info => audio_info,
@@ -110,11 +107,11 @@ class DigitalBiblePlatformApi
     audio
   end
 
-  def self.get_text(bible_ref)
+  def get_text(bible_ref)
     nil
   end
 
-  def self.get_read_more(bible_ref)
+  def get_read_more(bible_ref)
     nil
   end
 end

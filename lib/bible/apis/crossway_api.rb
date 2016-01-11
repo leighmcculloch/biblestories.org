@@ -19,7 +19,7 @@ class CrosswayApi
       "&audio-format=flash" <<
       "&passage="
 
-  def self.get_text(bible_ref)
+  def get_text(bible_ref)
     url = "#{API_URL_TEXT}#{URI::encode(bible_ref)}"
     response = HTTParty.get(url)
     raise "Crossway did not return a passage for #{bible_ref}" if response.body =~ /no results/i
@@ -30,7 +30,7 @@ class CrosswayApi
     }
   end
 
-  def self.get_audio(bible_ref)
+  def get_audio(bible_ref)
     url = "#{API_URL_AUDIO}#{URI::encode(bible_ref)}"
     response = HTTParty.head(url, { :maintain_method_across_redirects => true })
     url = response.request.last_uri.to_s
@@ -40,7 +40,7 @@ class CrosswayApi
     }
   end
 
-  def self.get_read_more(bible_ref)
+  def get_read_more(bible_ref)
     "http://www.gnpcb.org/esv/search/?q=#{bible_ref}"
   end
 end
