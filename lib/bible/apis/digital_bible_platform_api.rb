@@ -14,6 +14,10 @@ class DigitalBiblePlatformApi
     @version = version
   end
 
+  def version
+    @version
+  end
+
   def get_copyright
     response = HTTParty.get("#{API_URL_COPYRIGHT}&dam_id=#{@version}")
     response_json = JSON.parse(response.body)

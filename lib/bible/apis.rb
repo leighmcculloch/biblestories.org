@@ -1,5 +1,6 @@
 require_relative "apis/biblesorg_api"
 require_relative "apis/crossway_api"
+require_relative "apis/net_bible_web_service_api"
 require_relative "apis/digital_bible_platform_api"
 require_relative "apis/segond_21_osis_file_api"
 
@@ -8,7 +9,9 @@ class Apis
     # English
     :"en" => [
       CrosswayApi.new,
-      BiblesorgApi.new("eng-CEVD")
+      BiblesorgApi.new("eng-CEVD"),
+      BiblesorgApi.new("eng-GNTD"),
+      NetBibleWebServiceApi.new
     ],
     # Spanish (Latin America)
     :"es-419" => [
@@ -45,7 +48,7 @@ class Apis
     apis = LOCALE_TO_API_TEXT_MAP.fetch(locale)
     api = apis[version]
     return nil if api.nil?
-    get_cache(locale, api.class.name).get_or_set("#{locale}_#{api.class.name}_#{version}_#{bible_ref}_text") do
+    get_cache(locale, "#{api.class.name}-#{api.version}").get_or_set("#{bible_ref}_text") do
       puts "Get text for #{bible_ref} from #{api.class.name} (version #{version})"
       api.get_text(bible_ref)
     end
@@ -57,7 +60,7 @@ class Apis
     return nil if apis.nil?
     api = apis[version]
     return nil if api.nil?
-    get_cache(locale, api.class.name).get_or_set("#{locale}_#{api.class.name}_#{version}_#{bible_ref}_audio") do
+    get_cache(locale, "#{api.class.name}-#{api.version}").get_or_set("#{bible_ref}_audio") do
       api.get_audio(bible_ref)
     end
   end

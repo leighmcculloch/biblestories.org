@@ -3,8 +3,8 @@ class Segond21OsisFileApi
     @osis_xml = Nokogiri::XML(File.open(file_path))
   end
 
-  def name
-    self.class.name
+  def version
+    "SG21"
   end
 
   def get_audio(bible_ref)

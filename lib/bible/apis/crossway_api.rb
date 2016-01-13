@@ -19,6 +19,10 @@ class CrosswayApi
       "&audio-format=flash" <<
       "&passage="
 
+  def version
+    "ESV"
+  end
+
   def get_text(bible_ref)
     url = "#{API_URL_TEXT}#{URI::encode(bible_ref)}"
     response = HTTParty.get(url)

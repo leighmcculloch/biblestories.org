@@ -34,26 +34,56 @@
   }
 
   /* bibleapi */
-  p {
-    &.p {
-      margin: 2em 0;
+  .biblesorg-api {
+    p {
+      &.p {
+        margin: 2em 0;
+      }
+      &.q, &.q1 {
+        text-indent: 1em;
+      }
+      &.q2, &.q3 {
+        text-indent: 2em;
+      }
     }
-    &.q, &.q1 {
-      text-indent: 1em;
+    .s, .s1, .s2, .v, .r {
+      display: none;
     }
-    &.q2, &.q3 {
-      text-indent: 2em;
-    }
-  }
-  .s, .s1, .s2, .v, .r {
-    display: none;
   }
   &.show-verses {
-    .v {
-      display: inline;
-      font-weight: 300;
-      font-size: smaller;
-      color: $color-story-verses;
+    .biblesorg-api {
+      .v {
+        display: inline;
+        font-weight: 300;
+        font-size: smaller;
+        color: $color-story-verses;
+      }
+    }
+  }
+
+  /* net-bible-web-service-api */
+  .net-bible-web-service-api {
+    h3, .vref {
+      display: none;
+    }
+    p {
+      margin: 2em 0;
+      &.poetry {
+        text-indent: 1em;
+      }
+    }
+    i {
+      font-style: italic;
+    }
+  }
+  &.show-verses {
+    .net-bible-web-service-api {
+      .vref {
+        display: inline;
+        font-weight: 300;
+        font-size: smaller;
+        color: $color-story-verses;
+      }
     }
   }
 

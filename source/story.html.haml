@@ -6,9 +6,10 @@ page_classes: story side-menu-container not-showing-side-menu
 
 - if passage.versions.count > 1
   - content_for(:head, javascript_include_tag("gacx", :async=>"async"))
-  - (1...passage.versions.count).each do |version|
-    :css
-      .version-#{version} { display: none; }
+  :css
+    #{passage.versions[1..-1].each_with_index.map { |version, index| ".version-#{index + 1}" }.join(", ")} {
+      display: none;
+    }
 
 - content_for(:title, "#{story.title}")
 - content_for(:description, "Bible Story: #{story.title}; Ref: #{passage.bible_ref}.")
@@ -72,10 +73,12 @@ page_classes: story side-menu-container not-showing-side-menu
               - version.audio_info.each do |audio_info|
                 %audio{:controls=>"controls", :preload=>"none"}
                   %source{:data => { :src=>audio_info[:url] }, :type=>"audio/mpeg"}
+
       .text
         - passage.versions.each_with_index do |version, index|
-          %div{ :class => "version-#{index}" }
+          %div{ :class => ["version-#{index}", version.text_css] }
             = version.text_html
+
       .call-to-action
         .item.share= partial "share-bar"
         .item.url
@@ -117,3 +120,9 @@ page_classes: story side-menu-container not-showing-side-menu
       .text-highlighted-arrow
 
 = partial "side-menu", :locals => { :active_story => account }
+
+- if passage.versions.count > 1
+  :javascript
+    window.trackingCodes = [
+      #{passage.versions.map { |version| %("#{js_escape_html(version.text_tracking_code)}") }.join(", ")}
+    ];

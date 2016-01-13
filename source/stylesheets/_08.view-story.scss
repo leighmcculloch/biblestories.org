@@ -190,6 +190,11 @@ $color-story-call-to-action: #a9a9a9;
 
 }
 
+/* tracking code on story pages */
+.tracking-code {
+  display: none;
+}
+
 /* no audio */
 html.no-audio {
   .page.story .view .header .controls .audio-controls {

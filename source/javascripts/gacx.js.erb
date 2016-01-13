@@ -12,6 +12,13 @@
     document.querySelector('head').appendChild(s);
   }
 
+  function getParam(param, url) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp('[?&]' + param + '=([^&#]*)', 'i');
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+  }
+
   function showElement(element) {
     switch (element.tagName.toLowerCase()) {
     case 'span':
@@ -42,31 +49,41 @@
     }
   }
 
-  var googleExperimentId = '_47Yx-h3Q8yPw3Y1nBpZtw';
-
-  getScript('https://www.google-analytics.com/cx/api.js?experiment=' + googleExperimentId, function () {
-    var version = cxApi.chooseVariation();
-
-    var switchVersions;
+  function displayVersion(version) {
+    showVersion(version);
     if (version > 0) {
-      switchVersions = function () {
-        showVersion(version);
-        hideVersion(0);
+      hideVersion(0);
+    }
+  };
+
+  function injectTrackingCode(version) {
+    var body = document.querySelector('body');
+    var element = document.createElement('div');
+    element.className = 'tracking-code';
+    body.appendChild(element);
+    element.innerHTML = window.trackingCodes[version];
+  }
+
+  var googleExperimentId = 'lAsm-hOtQLS8giex_pOkjA';
+
+  getScript(
+    'https://www.google-analytics.com/cx/api.js?experiment=' + googleExperimentId,
+    function () {
+      var version = getParam('v') || cxApi.chooseVariation();
+
+      displayVersion(version);
+
+      var onLoad = function () {
+        displayVersion(version);
+        ga('send', 'event', 'experiments', 'version', 'version', version, {'nonInteraction': 1});
+        injectTrackingCode(version);
       };
-      switchVersions();
-    }
 
-    var complete = function () {
-      if (switchVersions) {
-        switchVersions();
+      if (window.addEventListener) {
+        window.addEventListener('load', onLoad, false);
+      } else if (window.attachEvent)  {
+        window.attachEvent('onload', onLoad);
       }
-      ga('send', 'event', 'experiments', 'esv-vs-cev', 'version', version, {'nonInteraction': 1})
-    };
-
-    if (window.addEventListener) {
-      window.addEventListener('load', complete, false);
-    } else if (window.attachEvent)  {
-      window.attachEvent('onclick', complete);
     }
-  });
+  );
 }());
