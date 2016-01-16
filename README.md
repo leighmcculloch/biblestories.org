@@ -1,8 +1,8 @@
-# Great Stories of the Bible
+# Bible Stories
 
 Have you seen someone share a Bible verse? Probably. Have you seen someone share an entire Bible story? Probably not. Why is this? We share links to long form articles everyday. It’s the relationship we have to linking to a chunk of text vs linking to a story. We share verses as an intellectual exercise, but the Bible is about people and God, characters and their relationships.
 
-[Great Stories](https://biblestories.org) presents the bible as short stories. Jump in, read and share.
+[Bible Stories](https://biblestories.org) presents the bible as short stories. Jump in, read and share.
 
 URL | Locale | Locale Name
 :-- |:------ |:-----------
@@ -17,7 +17,7 @@ https://greatstoriesofthebible.cn/ | zh-Hans | Chinese (Simplified)
 
 #### Code for the Kingdom
 
-Great Stories was an entry at the [Code for the Kingdom](http://codeforthekingdom.org/bayarea2014.html) Hackathon, 2014 in Redwood City, that won a runner up prize. See the pitch at [youtube.com/watch?v=rbaMSLCMbrg](https://www.youtube.com/watch?v=rbaMSLCMbrg).
+Bible Stories (known then as Great Stories) was an entry at the [Code for the Kingdom](http://codeforthekingdom.org/bayarea2014.html) Hackathon, 2014 in Redwood City, that won a runner up prize. See the pitch at [youtube.com/watch?v=rbaMSLCMbrg](https://www.youtube.com/watch?v=rbaMSLCMbrg).
 
 #### Credits and Thanks
 
