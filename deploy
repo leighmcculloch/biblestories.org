@@ -1,2 +1,0 @@
-DEPLOYMENT=0 bundle exec middleman build
-DEPLOYMENT=1 bundle exec middleman build
