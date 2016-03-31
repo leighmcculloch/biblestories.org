@@ -221,17 +221,6 @@ after_configuration do
     s3_sync.version_bucket             = false
     s3_sync.content_types              = page_content_types
   end
-
-  unless DEV
-    activate :cdn do |cdn|
-      cdn.cloudflare = {
-        zone: DEPLOYMENT.zone,
-        base_urls: DEPLOYMENT.base_url
-      }
-      cdn.filter = /.*/
-      cdn.after_build = false
-    end
-  end
 end
 
 activate :s3_redirect do |config|
