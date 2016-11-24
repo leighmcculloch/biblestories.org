@@ -1,4 +1,4 @@
-Raw Transcript of the Pitch at Code for The Kingdom, 2015, Bay Area
+Raw Transcript of the Pitch at Code for The Kingdom, 2014, Bay Area
 ===
 
 I'm addressing the challenge, to make the bible more accessible and shareable in China.
