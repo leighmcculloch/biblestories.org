@@ -15,7 +15,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
     locales: [:en, :"es-419"],
     locale_paths: { :"es-419" => "es" },
     zone: "biblestories.org",
-    zone_short: "greatstories.org",
+    zone_short: "biblestories.org",
     aws_region: "us-east-1",
     font_host: "fonts.googleapis.com",
     development: DEV,
@@ -51,7 +51,7 @@ DEPLOYMENTS = Deployments.new(deployments: [
   Deployment.new(
     locales: [:"zh-Hans"],
     zone: "greatstoriesofthebible.cn",
-    zone_short: "greatstories.cn",
+    zone_short: "greatstoriesofthebible.cn",
     aws_region: "us-east-1",
     font_host: nil,
     development: DEV,
