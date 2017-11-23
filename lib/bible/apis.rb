@@ -8,10 +8,10 @@ class Apis
   LOCALE_TO_API_TEXT_MAP = {
     # English
     :"en" => [
-      CrosswayApi.new,
-      BiblesorgApi.new("eng-CEVD"),
+      # CrosswayApi.new,
+      # BiblesorgApi.new("eng-CEVD"),
       BiblesorgApi.new("eng-GNTD"),
-      NetBibleWebServiceApi.new
+      # NetBibleWebServiceApi.new
     ],
     # Spanish (Latin America)
     :"es-419" => [
@@ -31,10 +31,10 @@ class Apis
     ]
   }
   LOCALE_TO_API_AUDIO_MAP = {
-    :"en" => [
-      CrosswayApi.new,
-      nil
-    ]
+    #:"en" => [
+    #  CrosswayApi.new,
+    #  nil
+    #]
   }
 
   def self.get_version_count
