@@ -15,7 +15,8 @@ class Apis
     ],
     # Spanish (Latin America)
     :"es-419" => [
-      BiblesorgApi.new("spa-DHH")
+      # BiblesorgApi.new("spa-DHH")
+      BiblesorgApi.new("spa-RVR1960")
     ],
     # French
     :"fr" => [
