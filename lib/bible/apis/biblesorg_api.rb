@@ -27,6 +27,7 @@ class BiblesorgApi
     url = "#{API_URL_TEXT}?version=#{@version}&q[]=#{URI::encode(bible_ref)}"
     creds = { :username => API_KEY, :password => "X" }
     response = HTTParty.get(url, :basic_auth => creds)
+    raise "Bibles.org did not provide a passage for #{bible_ref}: #{response.response.code}" if response.body.blank?
     response_json = JSON.parse(response.body)
     passage_info = response_json["response"]["search"]["result"]["passages"][0]
     raise "Bibles.org did not provide a passage for #{bible_ref}" if passage_info.blank?
