@@ -21,7 +21,7 @@ cdn-fr:
 	$(call cdn_invalidate,8cb4d535732e676704b61f6dcb0ac6e1)
 
 cdn-ptBR:
-	$(call cdn_invalidate,41d72404f504e0852f7db0111ce88db9)
+	$(call cdn_invalidate,dd1490a0f957f39e5cb2e16336a19c68)
 
 cdn-zhHans:
 	$(call cdn_invalidate,46d1fe70eafcd3a2c08fab7096464d1e)

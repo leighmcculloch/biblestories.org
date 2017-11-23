@@ -38,8 +38,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
   ),
   Deployment.new(
     locales: [:"pt-BR"],
-    zone: "grandeshistoriasdabiblia.com.br",
-    zone_short: "grandeshistorias.com.br",
+    zone: "historiasdabiblia.com.br",
+    zone_short: "historiasdabiblia.com.br",
     aws_region: "sa-east-1",
     font_host: "fonts.googleapis.com",
     development: DEV,
