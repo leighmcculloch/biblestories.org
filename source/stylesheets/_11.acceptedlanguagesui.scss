@@ -24,6 +24,7 @@ $color-yes: #27ae60;
   button {
     display: inline-block;
     border: 0;
+    border-radius: 0;
     cursor: pointer;
     color: $color-foreground;
     padding: 8px;
