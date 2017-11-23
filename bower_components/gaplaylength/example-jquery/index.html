@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>gaplaylength.js example</title>
+
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    video {
+      width: 100%;
+      background-color: black;
+    }
+    #console {
+      background-color: lightgray;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function ga() {
+      args = Array.prototype.slice.call(arguments);
+      for (i = 0; i < args.length; i++) {
+        args[i] = JSON.stringify(args[i]);
+      }
+      var console = document.querySelector('#console');
+      console.innerText += 'ga(' + args.join() + ')\n';
+    }
+  </script>
+
+  <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../dist/jquery.gaplaylength.js"></script>
+</head>
+<body>
+
+  <p>The gaplaylength library can be attached to an audio or video component. It will report to Google Analytics when play is started and when the the 10%, 25%, 75% and 100% marks are reached.</p>
+
+  <p>Play the video below and watch below it to see the events sent to Google Analytics.</p>
+
+  <video controls="controls" preload="none">
+    <!-- Video borrowed from https://github.com/johndyer/mediaelement, license: MIT -->
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <p id="console"></p>
+
+  <script type="text/javascript">
+    $('audio,video').gaPlayLength();
+  </script>
+
+</body>
+</html>

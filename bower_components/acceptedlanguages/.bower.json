@@ -1,0 +1,45 @@
+{
+  "name": "acceptedlanguages",
+  "version": "0.0.2",
+  "homepage": "https://github.com/leighmcculloch/acceptedlanguages.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leighmcculloch/acceptedlanguages.js.git"
+  },
+  "authors": [
+    {
+      "name": "Leigh McCulloch",
+      "homepage": "https://leighmcculloch.com"
+    }
+  ],
+  "description": "A JavaScript library exposing the accepted and relevant languages of the visitor.",
+  "main": "dist/acceptedlanguages.js",
+  "moduleType": [
+    "globals",
+    "amd"
+  ],
+  "keywords": [
+    "language",
+    "i18n",
+    "hreflang",
+    "alternate"
+  ],
+  "license": "ICS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ],
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "ae9ade72a8eef42da7ded6903589499beb5d9895"
+  },
+  "_source": "https://github.com/leighmcculloch/acceptedlanguages.js.git",
+  "_target": "~0.0.2",
+  "_originalSource": "acceptedlanguages"
+}

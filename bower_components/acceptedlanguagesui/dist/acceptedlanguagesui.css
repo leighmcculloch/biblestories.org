@@ -1,0 +1,98 @@
+.acceptedlanguagesui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+.acceptedlanguagesui button {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: inherit;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.acceptedlanguagesui button.no {
+  background-color: #bdc3c7;
+}
+.acceptedlanguagesui button.yes {
+  background-color: #27ae60;
+}
+
+/* animation: slideIn */
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+.animation-slide-in, .acceptedlanguagesui.show {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: slideIn ease-in 1;
+          animation: slideIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+/* animation: slideOut */
+@-webkit-keyframes slideOut {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+@keyframes slideOut {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+.animation-slide-out, .acceptedlanguagesui.hide {
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-animation: slideOut ease-in 1;
+          animation: slideOut ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}

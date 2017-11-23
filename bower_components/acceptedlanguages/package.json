@@ -1,0 +1,32 @@
+{
+  "name": "acceptedlanguages",
+  "version": "0.0.2",
+  "description": "A simple JavaScript library that tells you the accepted languages of the visitor configured in their browser, and the languages relevant given the languages that the current page is alternatively available in.",
+  "main": "dist/acceptedlanguages.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leighmcculloch/acceptedlanguages.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leighmcculloch/acceptedlanguages.js/issues"
+  },
+  "homepage": "https://github.com/leighmcculloch/acceptedlanguages.js#readme",
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.2.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-webpack": "^1.5.1",
+    "node-libs-browser": "^0.5.2",
+    "phantomjs": "^1.9.17",
+    "webpack": "^1.10.0"
+  }
+}

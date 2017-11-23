@@ -1,0 +1,36 @@
+{
+  "name": "acceptedlanguagesui",
+  "version": "0.0.9",
+  "homepage": "https://github.com/leighmcculloch/acceptedlanguagesui.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leighmcculloch/acceptedlanguagesui.js.git"
+  },
+  "authors": [
+    { "name": "Leigh McCulloch", "homepage": "https://leighmcculloch.com" }
+  ],
+  "description": "A simple UI that offers your website to your visitor in its alternate languages.",
+  "main": "dist/acceptedlanguagesui.js",
+  "moduleType": [
+    "globals",
+    "amd"
+  ],
+  "dependencies": {
+    "acceptedlanguages": "~0.0.2"
+  },
+  "keywords": [
+    "language",
+    "i18n",
+    "hreflang",
+    "alternate"
+  ],
+  "license": "ICS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ]
+}

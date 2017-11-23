@@ -1,0 +1,25 @@
+{
+  "name": "gascrolldepth",
+  "main": "gascrolldepth.js",
+  "version": "0.8.0",
+  "homepage": "http://github.com/leighmcculloch/gascrolldepth.js",
+  "authors": [
+    { "name": "Rob Flaherty" },
+    { "name": "Leigh McCulloch", "homepage": "https://leighmcculloch.com" }
+  ],
+  "description": "A Google Analytics plugin for measuring page scrolling.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "analytics",
+    "google-analytics",
+    "tracking"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "test",
+    "build.sh",
+    "contributing.md"
+  ]
+}
