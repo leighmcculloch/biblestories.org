@@ -126,3 +126,5 @@ page_classes: story side-menu-container not-showing-side-menu
     window.trackingCodes = [
       #{passage.versions.map { |version| %("#{js_escape_html(version.text_tracking_code)}") }.join(", ")}
     ];
+- else
+  = passage.versions.first.text_tracking_code.html_safe
