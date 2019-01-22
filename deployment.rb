@@ -1,7 +1,7 @@
 class Deployment
-  attr_accessor :locales, :locale_paths, :zone, :zone_short, :aws_region, :font_host, :features
+  attr_accessor :locales, :locale_paths, :zone, :zone_short, :aws_region, :font_host, :features, :deploys_to
 
-  def initialize(development: false, locales:, locale_paths: {}, zone:, zone_short:, aws_region:, font_host:, features: {})
+  def initialize(development: false, locales:, locale_paths: {}, zone:, zone_short:, aws_region:, font_host:, features: {}, deploys_to:)
     @development = development
     @locales = locales
     @locale_paths = locale_paths
@@ -10,6 +10,7 @@ class Deployment
     @aws_region = aws_region
     @font_host = font_host
     @features = features
+    @deploys_to = deploys_to
   end
 
   def host
@@ -49,5 +50,13 @@ class Deployment
 
   def protocol
     @development ? "http" : "https"
+  end
+
+  def html_page_ext
+    return ".html" if @deploys_to == :firebase
+  end
+
+  def gzip
+    @deploys_to == :s3
   end
 end

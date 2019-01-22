@@ -5,6 +5,9 @@ deploy: deploy-en-es419 deploy-fr deploy-ptBR deploy-zhHans
 
 deploy-en-es419:
 	DEPLOYMENT=0 bundle exec middleman build
+	firebase login --no-localhost
+	firebase target:apply hosting 0 biblestories-org
+	firebase deploy --only hosting:0
 
 deploy-fr:
 	DEPLOYMENT=1 bundle exec middleman build

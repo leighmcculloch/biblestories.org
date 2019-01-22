@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "biblestories-org": "biblestories-org"
+  },
+  "targets": {
+    "biblestories-org": {
+      "hosting": [
+        [
+          "biblestories-org"
+        ]
+      ]
+    }
+  }
+}

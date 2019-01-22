@@ -1,0 +1,35 @@
+{
+  "hosting": [
+    {
+      "target": "0",
+      "public": "build/0",
+      "ignore": [
+        "**/.*"
+      ],
+      "cleanUrls": true,
+      "headers": [
+        {
+          "source": "**/api/stories",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        { "source": "/jesus_is_born_by_mathew",        "destination": "/jesus_is_born_by_matthew",        "type": 301 },
+        { "source": "/jesus_resurrection_by_mathew",   "destination": "/jesus_resurrection_by_matthew",   "type": 301 },
+        { "source": "/jesus_walks_on_water_by_mathew", "destination": "/jesus_walks_on_water_by_matthew", "type": 301 },
+        { "source": "/philip_and_th_eunuch",           "destination": "/philip_and_the_eunuch",           "type": 301 },
+        { "source": "/jesus_crucifixion_by_mathew",    "destination": "/jesus_crucifixion_by_matthew",    "type": 301 },
+        { "source": "/the_last_supper_by_mathew",      "destination": "/the_last_supper_by_matthew",      "type": 301 },
+        { "source": "/jesus_is_tempted_by_mathew",     "destination": "/jesus_is_tempted_by_matthew",     "type": 301 },
+        { "source": "/the_triumphal_entry_by_mathew",  "destination": "/the_triumphal_entry_by_matthew",  "type": 301 },
+        { "source": "/jesus_feeds_5000_by_mathew",     "destination": "/jesus_feeds_5000_by_matthew",     "type": 301 },
+        { "source": "/jesus_is_born",                  "destination": "/jesus_is_born_by_luke",           "type": 301 }
+      ]
+    }
+  ]
+}

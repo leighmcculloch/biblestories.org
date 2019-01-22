@@ -22,7 +22,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     features: {
       select_and_share: true,
       sitemap: true
-    }
+    },
+    deploys_to: :firebase,
   ),
   Deployment.new(
     locales: [:fr],
@@ -34,7 +35,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     features: {
       select_and_share: true,
       sitemap: true
-    }
+    },
+    deploys_to: :s3,
   ),
   Deployment.new(
     locales: [:"pt-BR"],
@@ -46,7 +48,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     features: {
       select_and_share: true,
       sitemap: true
-    }
+    },
+    deploys_to: :s3,
   ),
   Deployment.new(
     locales: [:"zh-Hans"],
@@ -58,7 +61,8 @@ DEPLOYMENTS = Deployments.new(deployments: [
     features: {
       select_and_share: false,
       sitemap: true
-    }
+    },
+    deploys_to: :s3,
   )
 ].compact)
 set :deployments, DEPLOYMENTS
@@ -151,7 +155,9 @@ configure :build do
   end
   activate :minify_css
   activate :minify_javascript
-  activate :gzip, :exts => [".js", ".css", ".html", ""]
+  if DEPLOYMENT.gzip
+    activate :gzip, :exts => [".js", ".css", ".html", ""]
+  end
   activate :asset_hash, :ignore => [/^(images|fonts)\//]
   activate :favicon_maker, :icons => favicons
 end
@@ -186,13 +192,15 @@ after_configuration do
     page("#{prefix}/404.html", :proxy => ("/404.html" if prefix), :content_type => "text/html", :locale => lang, :locals => { :error => 404 }) { I18n.locale = lang }
 
     # why page
-    why_page_path = "#{prefix}/#{I18n.t(:"why.url")}"
-    page(why_page_path, :proxy => "/why.html", :content_type => "text/html", :locale => lang) { I18n.locale = lang }
+    why_proxy_path = "/why.html"
+    why_page_path = "#{prefix}/#{I18n.t(:"why.url")}#{DEPLOYMENT.html_page_ext}"
+    why_proxy_path = nil if why_proxy_path == why_page_path
+    page(why_page_path, :proxy => why_proxy_path, :content_type => "text/html", :locale => lang) { I18n.locale = lang }
     page_content_types[why_page_path.sub(/^\//, "")] = "text/html"
 
     # each story page
     Stories.all_accounts.each do |story_account_id, account|
-      page_path = "#{prefix}/#{account.short_url(locale: lang)}"
+      page_path = "#{prefix}/#{account.short_url(locale: lang)}#{DEPLOYMENT.html_page_ext}"
       page(page_path, :proxy => "/story.html", :content_type => "text/html", :locals => { :story => account.story, :account => account }, :locale => lang) { I18n.locale = lang }
       page_content_types[page_path.sub(/^\//, "")] = "text/html"
     end
@@ -212,7 +220,7 @@ after_configuration do
     s3_sync.bucket                     = DEPLOYMENT.host
     s3_sync.region                     = DEPLOYMENT.aws_region
     s3_sync.delete                     = DEV
-    s3_sync.after_build                = true
+    s3_sync.after_build                = DEPLOYMENT.deploys_to == :s3
     s3_sync.prefer_gzip                = true
     s3_sync.path_style                 = true
     s3_sync.reduced_redundancy_storage = DEV
@@ -226,6 +234,7 @@ end
 activate :s3_redirect do |config|
   config.bucket                = DEPLOYMENT.host
   config.region                = DEPLOYMENT.aws_region
-  config.after_build           = true
+  config.after_build           = DEPLOYMENT.deploys_to == :s3
+
 end
 
