@@ -4,11 +4,11 @@ en:
   switch_to_yes                : "Yes"
   switch_to_no                 : "No"
 
-  title                        : Great Stories of the Bible
-  title_short                  : Great Stories
-  description                  : A story index of the Bible
+  title                        : Bible Stories
+  title_short                  : Bible Stories
+  description                  : Read the stories in the Bible
 
-  meta_description             : An index of stories in the bible. Read and listen to bible stories.
+  meta_description             : Read bible stories. A list of stories in the Bible.
 
   search_placeholder           : Search by story or author
   search_placeholder_side_menu : Search stories
