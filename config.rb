@@ -163,7 +163,7 @@ end
 # 3) `cp pngout /usr/local/bin/pngout`
 # Also, must be placed outside :build to ensure it occurs prior to other
 # extensions below that are also triggered after build.
-activate :imageoptim unless DEV
+# activate :imageoptim unless DEV
 
 # These configurations need to be in an after_configuration to allow i18n to be setup
 # fully before generating the story pages, etc.
