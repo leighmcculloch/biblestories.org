@@ -1,3 +1,6 @@
+clean:
+	rm -fr build
+
 deploy: deploy-en-es419 deploy-fr deploy-ptBR deploy-zhHans
 
 deploy-en-es419:
