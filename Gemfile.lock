@@ -276,7 +276,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
-    rack (1.6.1)
+    rack (1.6.13)
     rack-livereload (0.3.15)
       rack
     rack-test (0.6.3)
