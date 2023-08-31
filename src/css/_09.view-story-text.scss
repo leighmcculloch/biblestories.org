@@ -1,0 +1,46 @@
+.page.story .view .story .text {
+
+  font-weight: normal;
+
+  p {
+    margin: 1.25em 0;
+    font-size: 1.2em;
+    line-height: 1.75em;
+    vertical-align: bottom;
+  }
+
+  p.title {
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  p.poetry {
+    margin: 0 2em;
+  }
+
+  .c {
+    display: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: normal;
+  }
+
+  .v {
+    display: none;
+    font-size: .83em;
+    vertical-align: text-top;
+    font-weight: bold;
+    color: $color-story-verses;
+    line-height: normal;
+  }
+
+  &.show-verses {
+    .c {
+      display: inline;
+    }
+    .v {
+      display: inline;
+    }
+  }
+
+}

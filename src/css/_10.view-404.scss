@@ -1,0 +1,25 @@
+.page.x404 .view {
+  text-align:center;
+
+  .heading {
+    font-size:3em;
+    margin:40px 0;
+    color:$color-title;
+  }
+
+  .description {
+    margin:40px 0;
+    line-height: 1.2em;
+    color:$color-description;
+    font-weight:300;
+  }
+
+  a {
+    color:inherit;
+    text-decoration:none;
+  }
+  .title {
+    margin:40px 0;
+    color:$color-title;
+  }
+}

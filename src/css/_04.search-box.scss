@@ -1,0 +1,33 @@
+@mixin search($width, $color, $color-query, $font-size) {
+  .search-box {
+    padding-bottom: 5px;
+    border-bottom: 2px solid $color;
+    max-width: $width;
+    margin: 0 auto;
+    form {
+      position: relative;
+      .query {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 90%;
+        outline: none;
+        border: none;
+        padding: 0;
+        font-size: $font-size;
+        color: $color-query;
+        background-color: transparent;
+      }
+      .icon-search {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: $font-size;
+        color: $color;
+      }
+      ::placeholder {
+        color: $color;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/* open-sans-300 - latin */
+@font-face {
+  // font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../font/open-sans-v36-latin-300.eot'); /* IE9 Compat Modes */
+  src: url('../font/open-sans-v36-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/open-sans-v36-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../font/open-sans-v36-latin-300.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('../font/open-sans-v36-latin-300.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('../font/open-sans-v36-latin-300.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+/* open-sans-600 - latin */
+@font-face {
+  // font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../font/open-sans-v36-latin-600.eot'); /* IE9 Compat Modes */
+  src: url('../font/open-sans-v36-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/open-sans-v36-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../font/open-sans-v36-latin-600.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('../font/open-sans-v36-latin-600.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('../font/open-sans-v36-latin-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+}

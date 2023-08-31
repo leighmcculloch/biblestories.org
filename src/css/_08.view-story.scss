@@ -1,0 +1,132 @@
+$color-header-menu: #9c9c9c;
+$color-header-controls: #bcbcbc;
+$color-story-title: #1b1b1b;
+$color-story-author: #a9a9a9;
+$color-story-text: #1b1b1b;
+$color-story-verses: #a9a9a9;
+$color-story-call-to-action: #a9a9a9;
+
+.page.story .view {
+
+  /* layout */
+  padding: 20px;
+  .header {
+    display: flex;
+    .item {
+      margin: 0;
+      width: calc(100% / 3);
+    }
+    .controls {
+      text-align: left;
+    }
+  }
+
+  .story {
+    margin: 0 auto;
+    max-width: $width-max;
+  }
+
+  /* appearance */
+  .header {
+    .item {
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .controls {
+      font-size: 1.2em;
+      text-align: left;
+      color: $color-header-controls;
+      span.control, span.separator {
+        font-size: 0.875em;
+        margin: 0 3px;
+      }
+      span.control {
+        cursor: pointer;
+        cursor: hand;
+      }
+      span.control.zoom-larger {
+        font-size: 1.40em;
+      }
+    }
+    .language {
+      text-align: right;
+      color: $color-language;
+      .language-selector {
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  .story {
+    text-align: center;
+    .title {
+      margin: 27px 0;
+      .logo {
+        font-size: 1.60em;
+        margin: 0.4em 0;
+      }
+      h1 {
+        font-size: 2em;
+        color: $color-story-title;
+      }
+      h2 {
+        font-size: 0.8em;
+        color: $color-story-author;
+        font-weight: 400;
+        margin-top: 0.4em;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+    .text {
+      margin: 27px 0;
+      font-family: $font-text;
+      font-weight: normal;
+      font-size: 1em;
+      line-height: 2em;
+      color: $color-story-text;
+      text-align: justify;
+      @media (min-width: $width-compact) {
+        text-align: left;
+      }
+    }
+    .call-to-action {
+      text-align: center;
+      font-size: 0.9em;
+      color: $color-story-call-to-action;
+      margin: 30px 0;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .item {
+        margin: 20px 0;
+        clear: both;
+      }
+      .share {
+        .addthis_sharing_toolbox {
+          width: 275px;
+          margin: 0 auto;
+          text-align: center;
+          a {
+            margin: 0 10px;
+            font-size: 1.6em;
+            i {
+              vertical-align: baseline;
+            }
+          }
+        }
+      }
+      .read-other-accounts {
+        .other-accounts {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+}

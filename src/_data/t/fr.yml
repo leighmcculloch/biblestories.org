@@ -1,0 +1,306 @@
+language                     : Français
+switch_to                    : Lire en français ?
+switch_to_yes                : Oui
+switch_to_no                 : Non
+
+title                        : Les grands récits de la Bible
+title_short                  : Récits bibliques
+description                  : Un index des récits de la Bible
+
+meta_description             : Un index des récits de la Bible. Lire et écouter les récits de la Bible.
+
+search_placeholder           : Rechercher par récit ou par auteur
+search_placeholder_side_menu : Rechercher un récit
+search_no_results            : Aucun résultat
+
+story_text_smaller           : A
+story_text_larger            : A
+audio_label                  : Écouter
+story_verses_long            : Versets
+story_verses_short           : V
+
+story_written_by             : écrit par {{author}}* dans {{bible_ref}}
+story_read_more              : Lire le texte autour de {{bible_ref}}
+story_read_other_accounts    : "Lire les autres versions de ce récit :"
+story_find_other             : Découvrir les autres grands récits de la Bible
+story_author_disclaimer      : Certains spécialistes pensent que {{ref}} est l'œuvre de {{author}}.
+
+copyright_audio_preix        : Audio
+
+page_not_found               : Page introuvable.
+page_not_found_description   : La page que vous cherchez n'existe pas.<br/>Ne vous inquiétez pas, retournez à la  <a href="/">page d'accueil</a> pour trouver l'objet de votre recherche.
+
+why:
+  heading                : Pourquoi
+  url                    : pourquoi
+  why_great_stories      : |
+    Avez-vous déjà vu un verset de la Bible sur les médias sociaux ? Probablement.
+    Avez-vous déjà vu un récit de la Bible sur les médias sociaux ? Probablement pas.
+    Nous partageons des versets pour partager des savoirs, mais la Bible est plus que des savoirs. La Bible parle de Dieu et de sa relation avec les gens.
+    Nous partageons des liens vers des articles tous les jours, pourquoi ne partageons-nous pas des récits de la Bible ? Je pense que cela vient du fait que les récits bibliques ne sont pas bien définis en dehors des livres pour enfants. Il est difficile de partager un pavé de texte, mais beaucoup plus facile de partager quelque chose présenté sous une forme conceptuelle tangible, comme un article ou une histoire.
+    Les grands récits présentent la Bible sous la forme d'histoires courtes, faciles à lire et à partager.
+  read_a_story: Faites un essai, lisez un récit en quelques minutes
+
+# Bible book titles
+bible_book:
+  Genesis:      Genèse
+  Exodus:       Exode
+  Numbers:      Nombres
+  Joshua:       Josué
+  Judges:       Juges
+  Ruth:         Ruth
+  1_Samuel:     1 Samuel
+  2_Samuel:     2 Samuel
+  1_Kings:      1 Rois
+  2_Kings:      2 Rois
+  1_Chronicles: 1 Chroniques
+  2_Chronicles: 2 Chroniques
+  Ezra:         Esdras
+  Nehemiah:     Néhémie
+  Esther:       Esther
+  Job:          Job
+  Ezekiel:      Ézékiel
+  Daniel:       Daniel
+  Jonah:        Jonas
+  Matthew:      Matthieu
+  Mark:         Marc
+  Luke:         Luc
+  John:         Jean
+  Acts:         Actes
+
+bible_book_author:
+  Genesis:      Moïse
+  Exodus:       Moïse
+  Numbers:      Moïse
+  Esther:       un hébreu d'origine perse
+  Ezekiel:      Ezékiel
+  Daniel:       Daniel
+  Jonah:        Jonas (un prophète)
+  Matthew:      Matthieu (un collecteur d'impôt)
+  Mark:         Marc
+  Luke:         Luc (un médecin)
+  John:         Jean (un disciple)
+  Acts:         Luc (un médecin)
+
+story:
+  title:
+    the_creation:                     La création
+    adam_and_eve:                     Adam et Ève
+    cain_and_abel:                    Caïn et Abel
+    the_great_flood:                  Le déluge
+    the_tower_of_babel:               La tour de Babel
+    god_calls_abraham:                Dieu appelle Abraham
+    sodom_and_gomorrah:               Sodome et Gomorrhe
+    abrahams_obedience:               L'obéissance d'Abraham
+    isaac_marries_rebekah:            Isaac épouse Rébecca
+    esaus_birthright:                 Le droit d'aînesse d'Ésaü
+    isaac_blesses_jacob:              Isaac bénit Jacob
+    jacob_and_laban:                  Jacob et Laban
+    jacob_wrestles:                   La lutte de Jacob
+    revenge_against_schechem:         La vengeance contre Sichem
+    joseph_in_prison:                 Joseph emprisonné
+    joseph_as_a_ruler:                Joseph le chef
+    family_reunion:                   Réunion de famille
+    moses_birth:                      La naissance de Moïse
+    the_burning_bush:                 Le buisson ardent
+    the_ten_plagues:                  Les dix plaies d'Égypte
+    the_exodus:                       L'exode
+    the_red_sea:                      La mer rouge
+    the_gold_calf:                    Le veau d'or
+    exploring_the_land:               L'exploration du pays
+    rebellion_in_the_ranks:           La révolte interne
+    balak_and_balaam:                 Balak et Balaam
+    rahab_and_the_spies:              Rahab et les espions
+    jericho_falls:                    Les trompettes de Jéricho
+    gibeons_con_artists:              Les escrocs de Gabaon
+    deborah_and_barak:                Déborah et Barak
+    gideon_as_judge:                  Gédéon le juge
+    abimelechs_ambition:              L'ambition d'Abimélec
+    samson_as_judge:                  Samson le juge
+    ruth_naomi_and_boaz:              Ruth, Naomi et Boaz
+    samuel_is_born:                   La naissance de Samuel
+    samuel_the_prophet:               Samuel le prophète
+    saul_becomes_king:                Saül devient roi
+    jonathans_bravery:                Le courage de Jonathan
+    sauls_disobedience:               La désobéissance de Saül
+    david_kills_goliath:              David contre Goliath
+    david_and_jonathan:               David et Jonathan
+    nabal_and_abigail:                Nabal et Abigaïl
+    sauls_death:                      La mort de Saul
+    davids_success:                   La réussite de David
+    david_and_bathsheba:              David et Bath-Shéba
+    amnon_and_tamar:                  Amnon et Tamar
+    absalom:                          Absalom
+    solomons_wisdom:                  La sagesse de Salomon
+    jeroboam_and_rehoboam:            Jéroboam et Roboam
+    elijahs_challenge:                L'épreuve d'Élie
+    god_speaks_to_elijah:             Dieu s'adresse à Élie
+    micaiah_the_prophet:              Michée le prophète
+    chariot_of_fire:                  Le char de feu
+    elisha_heals_naaman:              Élisée guérit Naaman
+    famine_and_unbelief:              Famine et manque de foi
+    joash_and_jehoiada:               Joas et Jehojada
+    hezekiah_trusts_god:              Ezéchias s'en remet à Dieu
+    josiahs_reign:                    Le règne de Josias
+    fall_of_jerusalem:                La chute de Jérusalem
+    davids_power:                     Le pouvoir de David
+    davids_census:                    Le recensement de David
+    jehoshaphat_and_ahab:             Josaphat et Achab
+    ezra_rebuilds_the_altar:          Esdras rebâtit l'autel
+    nehemiah_builds_the_wall:         Néhémiah bâtit le mur
+    enemy_opposition:                 L'opposition ennemie
+    nehemiahs_justice:                La justice de Néhémiah
+    esther_saves_the_jews:            Ester au secours des Hébreux
+    job_is_tested:                    Job est testé
+    ezekiels_vision:                  La version d'Ezékiel
+    the_fiery_furnace:                La fournaise ardente
+    the_lions_den:                    L'antre du lion
+    jonah:                            Jonas
+    jesus_is_born:                    La naissance de Jésus
+    wise_men_and_king_herod:          Les sages et le roi Hérode
+    jesus_is_tempted:                 La tentation de Jésus
+    jesus_feeds_5000:                 La multiplication des pains
+    the_bread_of_life:                Le pain de la vie
+    jesus_walks_on_water:             Jésus marche sur l'eau
+    the_good_samaritan:               Le bon samaritain
+    the_lost_son:                     Le fils perdu
+    jesus_raises_lazarus:             Jésus ressuscite Lazare
+    jesus_and_zacchaeus:              Jésus et Zachée
+    the_triumphal_entry:              L'entrée triomphale
+    the_last_supper:                  Le dernier repas
+    jesus_trial:                      L'épreuve de Jésus
+    jesus_crucifixion:                La crucifixion de Jésus
+    jesus_resurrection:               La résurrection de Jésus
+    jesus_ascension:                  La montée au ciel de Jésus
+    the_holy_spirit_comes:            La venue de l'Esprit Saint
+    the_apostles_courage:             Le courage des apôtres
+    ananias_and_sapphira:             Ananias et Saphira
+    philip_and_the_eunuch:            Philippe et l'eunuque
+    saul_encounters_jesus:            Saül rencontre Jésus
+    peter_and_cornelius:              Pierre et Corneille
+    paul_in_corinth:                  Paul à Corinthe
+    paul_in_ephesus:                  Paul en Éphèse
+    paul_goes_to_rome:                Paul va à Rome
+  url:
+    the_creation:                     la_creation
+    adam_and_eve:                     adam_et_eve
+    cain_and_abel:                    cain_et_abel
+    the_great_flood:                  le_deluge
+    the_tower_of_babel:               la_tour_de_babel
+    god_calls_abraham:                dieu_appelle_abraham
+    sodom_and_gomorrah:               sodome_et_gomorrhe
+    abrahams_obedience:               lobeissance_dabraham
+    isaac_marries_rebekah:            isaac_epouse_rebecca
+    esaus_birthright:                 le_droit_daînesse_desau
+    isaac_blesses_jacob:              isaac_benit_jacob
+    jacob_and_laban:                  jacob_et_laban
+    jacob_wrestles:                   la_lutte_de_jacob
+    revenge_against_schechem:         la_vengeance_contre_sichem
+    joseph_in_prison:                 joseph_emprisonne
+    joseph_as_a_ruler:                joseph_le_chef
+    family_reunion:                   reunion_de_famille
+    moses_birth:                      la_naissance_de_moise
+    the_burning_bush:                 le_buisson_ardent
+    the_ten_plagues:                  les_dix_plaies_degypte
+    the_exodus:                       lexode
+    the_red_sea:                      la_mer_rouge
+    the_gold_calf:                    le_veau_dor
+    exploring_the_land:               lexploration_du_pays
+    rebellion_in_the_ranks:           la_revolte_interne
+    balak_and_balaam:                 balak_et_balaam
+    rahab_and_the_spies:              rahab_et_les_espions
+    jericho_falls:                    les_trompettes_de_jericho
+    gibeons_con_artists:              les_escrocs_de_gabaon
+    deborah_and_barak:                deborah_et_barak
+    gideon_as_judge:                  gedeon_le_juge
+    abimelechs_ambition:              lambition_dabimelec
+    samson_as_judge:                  samson_le_juge
+    ruth_naomi_and_boaz:              ruth_naomi_et_boaz
+    samuel_is_born:                   la_naissance_de_samuel
+    samuel_the_prophet:               samuel_le_prophete
+    saul_becomes_king:                saul_devient_roi
+    jonathans_bravery:                le_courage_de_jonathan
+    sauls_disobedience:               la_desobeissance_de_saul
+    david_kills_goliath:              david_contre_goliath
+    david_and_jonathan:               david_et_jonathan
+    nabal_and_abigail:                nabal_et_abigail
+    sauls_death:                      la_mort_de_saul
+    davids_success:                   la_reussite_de_david
+    david_and_bathsheba:              david_et_bath_sheba
+    amnon_and_tamar:                  amnon_et_tamar
+    absalom:                          absalom
+    solomons_wisdom:                  la_sagesse_de_salomon
+    jeroboam_and_rehoboam:            jeroboam_et_roboam
+    elijahs_challenge:                lepreuve_delie
+    god_speaks_to_elijah:             dieu_sadresse_a_elie
+    micaiah_the_prophet:              michee_le_prophete
+    chariot_of_fire:                  le_char_de_feu
+    elisha_heals_naaman:              elisee_guerit_naaman
+    famine_and_unbelief:              famine_et_manque_de_foi
+    joash_and_jehoiada:               joas_et_jehojada
+    hezekiah_trusts_god:              ezechias_sen_remet_a_dieu
+    josiahs_reign:                    le_regne_de_josias
+    fall_of_jerusalem:                la_chute_de_jerusalem
+    davids_power:                     le_pouvoir_de_david
+    davids_census:                    le_recensement_de_david
+    jehoshaphat_and_ahab:             josaphat_et_achab
+    ezra_rebuilds_the_altar:          esdras_rebatit_lautel
+    nehemiah_builds_the_wall:         nehemiah_batit_le_mur
+    enemy_opposition:                 lopposition_ennemie
+    nehemiahs_justice:                la_justice_de_nehemiah
+    esther_saves_the_jews:            ester_au_secours_des_hebreux
+    job_is_tested:                    job_est_teste
+    ezekiels_vision:                  la_version_dezekiel
+    the_fiery_furnace:                la_fournaise_ardente
+    the_lions_den:                    lantre_du_lion
+    jonah:                            jonas
+    jesus_is_born_by_matthew:         la_naissance_de_jesus/matthieu
+    jesus_is_born_by_luke:            la_naissance_de_jesus/luc
+    wise_men_and_king_herod:          les_sages_et_le_roi_herode
+    jesus_is_tempted_by_matthew:      la_tentation_de_jesus/matthieu
+    jesus_is_tempted_by_mark:         la_tentation_de_jesus/marc
+    jesus_is_tempted_by_luke:         la_tentation_de_jesus/luc
+    jesus_feeds_5000_by_matthew:      la_multiplication_des_pains/matthieu
+    jesus_feeds_5000_by_mark:         la_multiplication_des_pains/marc
+    jesus_feeds_5000_by_luke:         la_multiplication_des_pains/luc
+    jesus_feeds_5000_by_john:         la_multiplication_des_pains/jean
+    the_bread_of_life:                le_pain_de_la_vie
+    jesus_walks_on_water_by_matthew:  jesus_marche_sur_leau/matthieu
+    jesus_walks_on_water_by_mark:     jesus_marche_sur_leau/marc
+    jesus_walks_on_water_by_john:     jesus_marche_sur_leau/jean
+    the_good_samaritan:               le_bon_samaritain
+    the_lost_son:                     le_fils_perdu
+    jesus_raises_lazarus:             jesus_ressuscite_lazare
+    jesus_and_zacchaeus:              jesus_et_zachee
+    the_triumphal_entry_by_matthew:   lentree_triomphale/matthieu
+    the_triumphal_entry_by_luke:      lentree_triomphale/luc
+    the_triumphal_entry_by_john:      lentree_triomphale/jean
+    the_last_supper_by_matthew:       le_dernier_repas/matthieu
+    the_last_supper_by_mark:          le_dernier_repas/marc
+    the_last_supper_by_luke:          le_dernier_repas/luc
+    the_last_supper_by_john:          le_dernier_repas/jean
+    jesus_trial:                      lepreuve_de_jesus
+    jesus_crucifixion_by_matthew:     la_crucifixion_de_jesus/matthieu
+    jesus_crucifixion_by_mark:        la_crucifixion_de_jesus/marc
+    jesus_crucifixion_by_luke:        la_crucifixion_de_jesus/luc
+    jesus_crucifixion_by_john:        la_crucifixion_de_jesus/jean
+    jesus_resurrection_by_matthew:    la_resurrection_de_jesus/matthieu
+    jesus_resurrection_by_mark:       la_resurrection_de_jesus/marc
+    jesus_resurrection_by_luke:       la_resurrection_de_jesus/luc
+    jesus_resurrection_by_john:       la_resurrection_de_jesus/jean
+    jesus_ascension_luke:             la_montee_au_ciel_de_jesus/luc
+    jesus_ascension_acts:             la_montee_au_ciel_de_jesus/actes
+    the_holy_spirit_comes:            la_venue_de_lesprit_saint
+    the_apostles_courage:             le_courage_des_apotres
+    ananias_and_sapphira:             ananias_et_saphira
+    philip_and_the_eunuch:            philippe_et_leunuque
+    saul_encounters_jesus:            saul_rencontre_jesus
+    peter_and_cornelius:              pierre_et_corneille
+    paul_in_corinth:                  paul_a_corinthe
+    paul_in_ephesus:                  paul_en_ephese
+    paul_goes_to_rome:                paul_va_a_rome
+
+created_by                   : Créé par <a href="http://leighmcculloch.com" target="_blank" rel="noopener">Leigh McCulloch</a>. Design par <a href="http://jtburkholder.com/" target="_blank" rel="noopener">Jason Burkholder</a>.
+thanks                       : Merci à Tyndale House Publishing Inc. de nous accorder le droit d'utiliser l'index « Les grands récits de la Bible », que l'on trouve en annexe de certaines éditions des Bibles « New Living Translation ».
+
+read_more_url                : https://www.biblegateway.com/passage/?version=SG21&search={{ref}}

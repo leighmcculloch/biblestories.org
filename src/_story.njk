@@ -1,0 +1,87 @@
+---
+layout: ./_layout.njk
+pageclasses: story
+---
+
+<div class="header">
+  <div class="item controls">
+    <span class="control menu"><a href="{{ base_url }}"><i class="icon-menu"></i></a></span>
+    <span class="separator"></span>
+    <span class="control toggle-verses verses-long padded-click-controls">{{ t.story_verses_long }}</span>
+  </div>
+  <div class="item"></div>
+  <div class="item language language-1">
+    <div class="language-selector">
+      <select>
+        {% for _, l in langs %}
+          <option value="{{ l.canonical_url }}" {{ "selected" if l.lang == lang }}>{{ l.t.language }}</option>
+        {% endfor %}
+      </select>
+      <i class="icon-globe"></i>
+    </div>
+  </div>
+</div>
+
+<div class="story">
+  <div class="title">
+    <i class="logo icon-leaf"></i>
+    <h1>{{ title }}</h1>
+    <h2>
+      {%- if author -%}
+        {{ t.story_written_by | njk({author: author, bible_ref: ref }) }}
+      {%- else -%}
+        {{ ref }}
+      {%- endif -%}
+      , ~{{ duration }} mins
+    </h2>
+  </div>
+
+  <div class="text">
+    {% for passage in passages %}
+      <div id="reading-{{ loop.index }}">
+        <div class="text">
+          {% for b in passage.books %}
+            {% for l in b.lines %}
+              <p class="{{ l.type }}">
+                {% for v in l.verses %}
+                    {% if v.part == 1 %}
+                      {% if v.verse == 1 %}
+                        <sup class="c">{{ v.chapter }}</sup>
+                      {% else %}
+                        <sup class="v">{{ v.verse }}</sup>
+                      {% endif %}
+                    {% endif %}
+                    {{ v.text }}
+                {% endfor %}
+              </p>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="call-to-action">
+    <div class="item url"><a href="{{ canonical_url }}">{{ canonical_url | replace("https://", "")}}</a></div>
+    {% if t.read_more_url %}
+    <div class="item read-more"><a href="{{ t.read_more_url | njk({ref: ref}) }}" target="_blank" rel="noopener">{{ t.story_read_more | njk({ bible_ref: ref }) }}</a></div>
+    {% endif %}
+    {% if otherAccounts.length > 0 %}
+    <div class="item read-other-accounts">
+      {{ t.story_read_other_accounts }}
+      <div class="other-accounts">
+      {% set comma = joiner() %}
+      {% for account in otherAccounts -%}
+        {{ comma() }} <a href="{{ account.langs[lang].canonical_url }}">{{ t.bible_book[account.book] }} {{ account.ref }}</a>
+      {%- endfor %}
+      </div>
+    {% endif %}
+    <div class="item more-stories"><a href="{{ base_url }}">{{ t.story_find_other }}</a></div>
+  </div>
+</div>
+
+<div class="footer">
+  {% if author %}<div>* {{ t.story_author_disclaimer | njk({ref: ref, author: author}) }}</div>{% endif %}
+  {% if copyright %}<div><a href="{{ copyright.url | safe }}" target="_blank" rel="noopener">{{ copyright.text }}</a></div>{% endif %}
+  {% if t.created_by %}<div><!--sse-->{{ t.created_by | safe }}<!--/sse--></div>{% endif %}
+</div>

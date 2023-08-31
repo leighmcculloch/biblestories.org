@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "clean": "rm -fr ./_site",
+    "build": "deno run --allow-env=LUME_ENV,DEV --allow-read=. --allow-write=./_site --allow-net=localhost:8080 ./build.ts",
+    "serve": "DEV=1 deno run --allow-env=LUME_ENV,DEV --allow-read=. --allow-write=./_site --allow-net=localhost:8080,0.0.0.0:8000 --watch=./src ./serve.ts",
+    "debug": "DEV=1 deno run --allow-env=LUME_ENV,DEV --allow-read=. --allow-write=./_site --allow-net=localhost:8080,0.0.0.0:8000 --inspect-brk ./serve.ts",
+    "deploy": "deno task clean && deno task build && WRANGLER=$(which wrangler) deno run --allow-env=WRANGLER --allow-read=.,$(which wrangler) --allow-write=./_site --allow-run=$(which wrangler) ./deploy.ts"
+  },
+  "imports": {
+    "std/": "https://deno.land/std@0.201.0/",
+    "lume/": "https://deno.land/x/lume@v1.18.4/",
+    "dax/": "https://deno.land/x/dax@0.34.0/"
+  }
+}

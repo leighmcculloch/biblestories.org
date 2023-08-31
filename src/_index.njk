@@ -1,0 +1,57 @@
+---
+layout: ./_layout.njk
+pageclasses: index
+---
+
+<div class="header">
+  <div class="item title"><i class="logo icon-leaf"></i> <h1>{{ t.title_short }}</h1></div>
+  <div class="item description">{{ t.description }}</div>
+  <div class="item language language-1">
+    <div class="language-selector">
+      <select>
+        {% for _, l in langs %}
+          <option value="{{ l.canonical_url }}" {{ "selected" if l.lang == lang }}>{{ l.t.language }}</option>
+        {% endfor %}
+      </select>
+      <i class="icon-globe"></i>
+    </div>
+  </div>
+</div>
+
+<div class="search">
+  <div class="search-box">
+    <form onsubmit="return false;">
+      <input class="query" type="text" placeholder="{{ t.search_placeholder }}" />
+      <i class="icon-search"></i>
+    </form>
+  </div>
+</div>
+
+<div class="search-no-results" style="display:none">
+  {{ t.search_no_results }}
+</div>
+
+<div class="stories">
+  {% for story in stories %}
+    <div class="story">
+      <a class=story-link href="{{ t.story.url[story[0].story_account_id] }}{{ ".html" if dev }}">
+        {{ t.story.title[story[0].story_id] }}
+      </a>
+      <div class="account">
+      {% set comma = joiner() %}
+      {% for account in story -%}
+        {{- comma() }}
+        <a class="account-link" href="{{ t.story.url[account.story_account_id] }}{{ ".html" if dev }}">
+          {{- t.bible_book[account.book] }} {{ account.ref -}}
+        </a>
+      {%- endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="footer">
+  {% if t.thanks %}<div>{{ t.thanks }}</div>{% endif %}
+  {% if t.created_by %}<div><!--sse-->{{ t.created_by | safe }}<!--/sse--></div>{% endif %}
+  {% if t.api %}<div><a href="/api/stories" rel="nofollow">{{ t.api }}</a> | <a href="/about">About</a></div>{% endif %}
+</div>

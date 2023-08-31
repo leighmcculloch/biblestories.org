@@ -1,0 +1,27 @@
+$color-footer: #a9a9a9;
+
+body {
+  font-family: $font-primary;
+  font-size: 1em;
+  font-weight: 600;
+
+  /* disable auto scaling of text */
+  -webkit-text-size-adjust: 100%;
+}
+
+.footer {
+  max-width: $width-max;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $color-footer;
+  text-align: center;
+  margin: 0 auto;
+  div {
+    margin: 10px 0;
+  }
+  a {
+    color: $color-footer;
+    text-decoration: none;
+  }
+}

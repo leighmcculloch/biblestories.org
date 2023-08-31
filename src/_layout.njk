@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+
+    {% for _, l in langs -%}
+    <link ref="alternate" hreflang="{{ l.lang }}" href="{{ l.canonical_url }}" />
+    {% endfor %}
+
+    <link rel="stylesheet" href="/css/styles.css" inline />
+
+    <link rel="icon" href="/favicon-152x152.png" sizes="152x152" />
+
+    <script src="/js/all.js" defer></script>
+  </head>
+  <body class="page {{ pageclasses }}">
+    <div class="container">
+      <div class="view">
+        {{ content | safe }}
+      </div>
+    </div>
+  </body>
+</html>

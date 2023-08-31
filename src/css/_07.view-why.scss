@@ -1,0 +1,63 @@
+$color-why-title: #1b1b1b;
+$color-why-domain: #a9a9a9;
+$color-why-text: #1b1b1b;
+$color-why-call-to-action: #a9a9a9;
+
+.page.why .view {
+  margin: 0 auto;
+  padding: 0 20px 0;
+  max-width: $width-max;
+  color: $color-why-text;
+  line-height: 1.5em;
+
+  .title {
+    margin: 27px 0;
+    text-align: center;
+    .logo {
+      font-size: 1.60em;
+      margin: 0.4em 0;
+    }
+    h1 {
+      font-size: 2em;
+      color: $color-why-title;
+    }
+    h2 {
+      font-size: 0.8em;
+      color: $color-why-domain;
+      font-weight: 400;
+      margin-top: 0.4em;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+
+  .why-great-stories {
+    p {
+      text-align: justify;
+      font-size: 1em;
+      font-weight: 300;
+      margin: 10px 0;
+    }
+  }
+
+  .call-to-action {
+    text-align: center;
+    font-size: 1em;
+    color: $color-why-call-to-action;
+    margin: 30px 0;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .language {
+    margin: 27px 0 0;
+    font-size: 1em;
+    color: $color-language;
+    text-align: center;
+  }
+
+}
