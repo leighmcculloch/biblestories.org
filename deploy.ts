@@ -15,6 +15,6 @@ await Promise.all(
     .flat(),
 );
 
-for (const l in langs) {
-  await $`$WRANGLER pages deploy --project-name biblestories-${l} --production ./_site/${l}`;
+for (const l of langs) {
+  await $`$WRANGLER pages deploy --project-name biblestories-${l.toLocaleLowerCase()} --branch main ./_site/${l}`;
 }
