@@ -6,11 +6,11 @@ Have you seen someone share a Bible verse? Probably. Have you seen someone share
 
 URL | Locale | Locale Name
 :-- |:------ |:-----------
-https://biblestories.org/ | en | English
-https://biblestories.org/es/ | es-419 | Spanish (Latin)
-https://recitsbibliques.com/ | fr | French
+https://biblestories.org | en | English
+https://historiasbiblicas.lat | es-419 | Spanish (Latin)
+https://recitsbibliques.com | fr | French
 https://historiasdabiblia.com.br | pt-br | Portguese (Brazillian)
-https://greatstoriesofthebible.cn/ | zh-Hans | Chinese (Simplified)
+... | zh-Hans | Chinese (Simplified)
 
 ![](README-1.png)
 ![](README-2.png)
