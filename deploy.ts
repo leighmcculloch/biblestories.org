@@ -15,7 +15,6 @@ await Promise.all(
     .flat(),
 );
 
-await $`$WRANGLER pages deploy --project-name biblestories-en ./_site/en`;
-await $`$WRANGLER pages deploy --project-name biblestories-es-419 ./_site/es-419`;
-await $`$WRANGLER pages deploy --project-name biblestories-pt-br ./_site/pt-BR`;
-await $`$WRANGLER pages deploy --project-name biblestories-fr ./_site/fr`;
+for (const l in langs) {
+  await $`$WRANGLER pages deploy --project-name biblestories-${l} --production ./_site/${l}`;
+}
