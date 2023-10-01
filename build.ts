@@ -15,7 +15,7 @@ site.data("langs", [
   },
   {
     lang: "es-419",
-    base_url: dev ? "/es-419" : "https://biblestories.org/es",
+    base_url: dev ? "/es-419" : "https://historiasbiblicas.lat",
     bible: "NET",
   },
   {
@@ -44,7 +44,7 @@ import * as datetime from "std/datetime/mod.ts";
 site.data("imports", { groupBy, datetime });
 
 import inline from "lume/plugins/inline.ts";
-site.use(inline({ extensions: [".html"], attribute: 'inline' }));
+site.use(inline({ extensions: [".html"], attribute: "inline" }));
 
 site.copy("static", "");
 await site.build();
