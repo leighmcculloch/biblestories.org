@@ -16,7 +16,7 @@ site.data("langs", [
   {
     lang: "es-419",
     base_url: dev ? "/es-419" : "https://historiasbiblicas.lat",
-    bible: "NET",
+    bible: "PDDPT",
   },
   {
     lang: "pt-BR",
