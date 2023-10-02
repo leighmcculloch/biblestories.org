@@ -21,7 +21,7 @@ site.data("langs", [
   {
     lang: "pt-BR",
     base_url: dev ? "/pt-BR" : "https://historiasdabiblia.com.br",
-    bible: "NET",
+    bible: "BLIVRE",
   },
   {
     lang: "fr",
