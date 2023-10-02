@@ -47,13 +47,16 @@ export default async function (data): any {
       const ref = `${t[lang].bible_book[s.book]} ${s.ref}`;
       const ref_en = `${t.en.bible_book[s.book]} ${s.ref}`;
 
+      const title = t[lang].story.title[s.story_id];
+
       s.langs[lang] = {
         ...s.langs[lang],
         base_url,
         url: file_url,
         canonical_url,
-        title: t[lang].story.title[s.story_id],
-        description: `${ref}. ${t[lang].story.title[s.story_id]}.`,
+        browser_title: `${title} | ${t[lang].title}`,
+        title,
+        description: `${ref}. ${title}.`,
         ref,
         ref_en,
         passages,
